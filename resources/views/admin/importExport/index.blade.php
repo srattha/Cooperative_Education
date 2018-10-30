@@ -43,7 +43,9 @@
         <button class="btn btn-primary">Import File</button>
       </form>
       <br>
-
+      <button class="btn btn-primary" onclick="location.href='{{ route('CreateUser') }}'">Create User</button>
+      <br>
+      <br>
       <table  id="dataTables-example" class="table table-striped table-bordered table-hover" style="width:100%;">
        <thead>
         <tr>

@@ -69,4 +69,9 @@ class MaatwebsiteController extends Controller
 
         return back()->with('success', 'Insert Record successfully.');
     }
+
+    public function CreateUser(Request $request)
+    {
+        return view('admin.importExport.CreateUser');
+    }
 }
