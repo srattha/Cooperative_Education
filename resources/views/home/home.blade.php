@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
 @section('title','หน้าแรก')
 @section('css')
 @endsection
@@ -78,7 +78,7 @@
         <div class="col-md-12" style="margin-top: 50px"></div>
         <div class="container">
               <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
-              Deverloped By Patiphan Uthang and Yuwa Sawang 
+              Deverloped By Patiphan Uthang and Yuwa Sawang
         </div>
         <div class="row" style="margin-top: 50px"></div>
       </footer>

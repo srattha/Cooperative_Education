@@ -20,6 +20,14 @@ Route::get('/data_student', 'data_studentController@data_student')->name('data_s
 Route::get('/Search_data', 'Search_dataController@Search_data')->name('Search_data');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/upload_pfd', 'Upload_pfdController@upload_pfd')->name('upload_pfd');
-Route::get('importExport', 'MaatwebsiteDemoController@importExport');
-Route::get('downloadExcel/{type}', 'MaatwebsiteDemoController@downloadExcel');
-Route::post('importExcel', 'MaatwebsiteDemoController@importExcel');
+
+// Admin
+Route::get('importExport', 'MaatwebsiteController@importExport');
+Route::get('downloadExcel/{type}', 'MaatwebsiteController@downloadExcel');
+Route::post('importExcel', 'MaatwebsiteController@importExcel');
+Route::get('uploadPdf', 'UploadPdfController@index')->name('upload_file');
+Route::post('uploadPdf', 'UploadPdfController@storeFile');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
