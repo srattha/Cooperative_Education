@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
 @section('title','หน้าแรก')
 @section('css')
 @endsection
@@ -97,7 +97,7 @@
         <div class="col-md-12" style="margin-top: 50px"></div>
         <div class="container" >
               <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
-              Deverloped By Patiphan Uthang and Yuwa Sawang 
+              Deverloped By Patiphan Uthang and Yuwa Sawang
         </div>
         <div class="row" style="margin-top: 50px"></div>
       </footer>
@@ -155,7 +155,10 @@
 @endsection
 @section('javascript')
 @endsection
+<<<<<<< HEAD
 <span class="group-btn">     
 <a href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
 </span>
 </div>
+=======
+>>>>>>> 28f69b4da67e8194447fc908e44b06d2e8a5a1b6
