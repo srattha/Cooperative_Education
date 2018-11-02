@@ -43,13 +43,16 @@
         <button class="btn btn-primary">Import File</button>
       </form>
       <br>
-
+      <button class="btn btn-primary" onclick="location.href='{{ route('CreateUser') }}'">Create User</button>
+      <br>
+      <br>
       <table  id="dataTables-example" class="table table-striped table-bordered table-hover" style="width:100%;">
        <thead>
         <tr>
           <th>#</th>
           <th>รหัสนักศึกษา</th>
           <th>ชื่อ-นามสกุน</th>
+          <th>ประเภทผู้ไช้</th>
           <th>เวลาสร้างข้อมูล</th>
           <th>เวลาแก้ไขข้ัอมูล</th>
           <th class="text-center">แก้ไขข้อมูล</th>
@@ -58,22 +61,33 @@
       <tbody>
         <tr>
           @foreach ($student as $index => $students)
-          <td>{{$students->id}}</td>
+          <td>{{$index+1}}</td>
           <td>{{$students->identification_number}}</td>
           <td>{{$students->name}}</td>
-          <td>{{$students->created_at}}</td>
-          <td>{{$students->updated_at}}</td>
+          <td>
+           @if($students->user_type_id == 1)
+           <span class="label label-default">นักศึกษา</span>
+           @elseif ($students->user_type_id == 2)
+           <span class="label label-primary">ผู้ดูแลระบบ</span>
+           @elseif ($students->user_type_id == 3)
+           <span class="label label-success">พนักงานเคาน์เตอร์</span>
+           @else
+           <span class="label label-warning">กุ๊ก</span>
+           @endif
+         </td>
+         <td>{{$students->created_at}}</td>
+         <td>{{$students->updated_at}}</td>
 
-          <td style="align-content: center;">
+         <td style="align-content: center;">
 
-          </tr>
-          @endforeach
-        </tbody>
-      </table>
+         </tr>
+         @endforeach
+       </tbody>
+     </table>
 
 
-    </div>
-  </div>
+   </div>
+ </div>
 </div>
 @endsection
 @section('javascript')

@@ -278,19 +278,21 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">ผู้ดูแลระบบ</a>
+                <p class="navbar-brand" href="index.html">ผู้ดูแลระบบ : {{ Auth::user()->name }}</p>
               </div>
               <!-- /.navbar-header -->
 
-              <ul class="nav navbar-top-links navbar-right">
+             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
 
-
-            </ul>
+                    </ul>
+                </div>
             <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
-              <div style="text-align: center; padding: 10px;">
-                <img src="/img/g1.jpg" class="img-circle">
+              <div style="text-align: center;">
+                <img src="https://regis.rmutl.ac.th/student/assets/image/logo/rmutl-logo.png" height="120px">
               </div>
               <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
@@ -300,6 +302,13 @@
                   </li>
                   <li>
                     <a href="uploadPdf"><i class="fa fa-upload" aria-hidden="true"></i> จัดการเอกสารไฟล์ PDF</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();"> <i class="fa fa-power-off" aria-hidden="true"></i>
+                    {{ __('ออกจากระบบ') }}
+                  </a>
                   </li>
                </ul>
              </div>

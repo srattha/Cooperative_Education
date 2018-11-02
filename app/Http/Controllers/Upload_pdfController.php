@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class Upload_pfdController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class Upload_pfdController extends Controller
      */
     public function __construct()
     {
-     //   $this->middleware('auth');
+     //  $this->middleware('auth');
 
     }
 
@@ -24,6 +24,8 @@ class Upload_pfdController extends Controller
      */
     public function upload_pfd()
     {
+
+
         return view('upload_pfd.upload_pfd');
     }
 }
