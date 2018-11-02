@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\File;
+use Illuminate\Support\Facades\Auth;
 class UploadPdfController extends Controller
 {
     /**
@@ -13,7 +14,7 @@ class UploadPdfController extends Controller
      */
     public function __construct()
     {
-     //   $this->middleware('auth');
+        $this->middleware('auth');
 
     }
 
@@ -24,8 +25,19 @@ class UploadPdfController extends Controller
      */
     public function index()
     {
-        $file = File::orderBy('id','desc')->get();
-        return view('admin.uploadPdf.index', ['file' => $file]);
+         $user = Auth::user();
+        $users_type_id = $user->user_type_id;
+        switch ($users_type_id) {
+            case '1':
+            return redirect("/");
+            break;
+            case '2':
+           $file = File::orderBy('id','desc')->get();
+            return view('admin.uploadPdf.index', ['file' => $file]);
+            break;
+
+        }
+
     }
     public function storeFile(request $request){
 

@@ -1,25 +1,33 @@
 @extends('layouts.app')
+@section('css')
+<style type="text/css">
 
+</style>
+@endsection
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+   <!--  <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="login" class="col-sm-4 col-form-label text-md-right">
+                                {{ __('Username or Email') }}
+                            </label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="login" type="text"
+                                       class="form-control{{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}"
+                                       name="login" value="{{ old('username') ?: old('email') }}" required autofocus>
 
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                @if ($errors->has('username') || $errors->has('email'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('username') ?: $errors->first('email') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -32,7 +40,7 @@
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
@@ -41,11 +49,9 @@
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
                                     </label>
                                 </div>
                             </div>
@@ -66,6 +72,68 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+    <div class="row" style="padding-top: 20px;">
+        <div class="col-lg-4 col-lg-offset-4">
+            <!-- Brand -->
+            <div class="text-center" style="margin-bottom:0px;">
+                <div><img src="https://regis.rmutl.ac.th/student/assets/image/logo/rmutl-logo.png" height="120px"></div>
+                <h4 class="text-muted mt-5">มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา</h4>
+                <h4 class="text-muted mt-5">( สำหรับนักศึกษา )</h4>
+            </div>
+            <!--/ Brand -->
+            <hr>
+             <form class="panel" method="POST" action="{{ route('login') }}" style="position: relative;
+            border-width: 1px;
+            border-color: #cfd9db;
+            border-bottom-width: 2px;
+            border-bottom-color: #c0cdd1;
+            border-radius: 3px;
+            -webkit-box-shadow: none;
+            box-shadow: none;">
+                        @csrf
+            <div class="panel-body">
+             <div class="form-group row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input id="login" type="text" class="form-control{{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}"
+                        name="login" value="{{ old('username') ?: old('email') }}" placeholder="Username" required autofocus>
+                    </div>
+                    @if ($errors->has('username') || $errors->has('email'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('username') ?: $errors->first('email') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-lock"></i>
+                        </span>
+                        <input id="password" type="password" placeholder="Password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                    </div>
+                    @if ($errors->has('password'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary btn-block">เข้าสู่ระบบ</button>
+             </div>
+         </div>
+     </div>
+ </form>
+</div>
+</div>
+
+
 </div>
 @endsection
