@@ -14,7 +14,6 @@
 @endsection
 @section('content')
 <div class="row">
-<div class="row">
 <h2 style="text-align:center; font-size:24px;margin:40px 0;">
    <p style="margin: 0 0 5px;">แบบฟอร์มกรอกข้อมูล</p>
    <small>(นักศึกษา)</small>
@@ -250,7 +249,7 @@
    </div>
    <!----------- button------------------------->
    <div class="form-group">
-      <div class="container" style="">
+      <div class="container" style="margin: 0 0 5px;">
             <button type="submit" class="btn btn-info">
                <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก
             </button>

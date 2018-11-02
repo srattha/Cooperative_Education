@@ -17,7 +17,7 @@
 Route::get('/form', 'FormController@form')->name('form');
 
 Route::get('/data_student', 'data_studentController@data_student')->name('data_student');
-Route::get('/Search_data', 'Search_dataController@Search_data')->name('Search_data');
+Route::get('/search_data', 'Search_dataController@Search_data')->name('search_data');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/upload_pfd', 'Upload_pfdController@upload_pfd')->name('upload_pfd');
 

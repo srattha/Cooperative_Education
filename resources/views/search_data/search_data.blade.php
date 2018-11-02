@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('student.master')
 @section('title','ค้นหา')
 @section('css')
 @endsection

@@ -24,6 +24,7 @@ class Search_dataController extends Controller
      */
     public function Search_data()
     {
+        //return '555'
         return view('Search_data.Search_data');
     }
 }

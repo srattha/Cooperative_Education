@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="">
       <meta name="author" content="">
-      <link rel="shortcut icon" type="image/png" href="/img/g1.jpg"/>
+      <!--<link rel="shortcut icon" type="image/png" href="/img/g1.jpg"/>-->
       <title>@yield('title')</title>
       <!-- Bootstrap Core CSS -->
       <link href="{{ asset('/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -29,6 +29,7 @@
       <link href="https://fonts.googleapis.com/css?family=Maitree|Sriracha" rel="stylesheet">
       @yield('css')
       <style type="text/css">
+      /*font*/
          body{
          font-family: 'Maitree', serif;
          }
@@ -36,7 +37,13 @@
          color: #333333;
          text-decoration: none;
          }
-      </style>
+         /*menu navbar*/
+         .sidebar ul li a.active{
+          background-color: #337ab7;
+          color: #fefefe;
+        }
+      </style> 
+     
       <!--  <script type="text/javascript">
          ;(function(){
            function id(v){ return document.getElementById(v); }
@@ -93,7 +100,7 @@
          <div id="progress"></div>
       </div>
       <div id="wrapper">
-         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="background: margin-bottom: 0px;background-color: #3F51B5;border-color: #3F51B5;">
             <div class="navbar-header">
                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                <span class="sr-only">Toggle navigation</span>
@@ -101,16 +108,17 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="index.html">ผู้ดูแลระบบ</a>
+               <a class="navbar-brand" href="index.html"></a>
+               
             </div>
             <!-- /.navbar-header -->
             <ul class="nav navbar-nav navbar-right">
                <li>
-                  <a href="" style="right: 380px;">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</a>
+                  <a href="" style="right: 380px; font-size: px; color: #fefefe;">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</a>
                </li>
                @guest
                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                  <a class="nav-link" href="{{ route('login') }}">{{ __('เข้าสู่ระบบ') }}</a>
                </li>
                <li class="nav-item">
                   <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -139,15 +147,15 @@
                   <img src="/img/g1.jpg" class="img-circle">
                </div>
                <div class="sidebar-nav navbar-collapse">
-                  <ul class="nav" id="side-menu">
+                  <ul class="nav" id="side-menu" style="">
                      <li>
                         <a href=""><i class="fa fa-users" aria-hidden="true"></i> จัดการข้อมูลนักศึกษาและสถานประกอบการ</a>
                      </li>
                      <li>
-                        <a href=""><i class="fa fa-cutlery"></i>เอกสารสหกิจศึกษา</a>
+                        <a href=""><i class="glyphicon glyphicon-book"></i>เอกสารสหกิจศึกษา</a>
                      </li>
                      <li>
-                        <a href=""><i class="fa fa-wpforms fa-fw"></i> ค้นหาข้อมูล</a>
+                        <a href=""><i class="glyphicon glyphicon-search"></i> ค้นหาข้อมูล</a>
                      </li>
                   </ul>
                </div>
