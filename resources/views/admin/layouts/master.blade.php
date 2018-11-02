@@ -278,16 +278,16 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <p class="navbar-brand" href="index.html">ผู้ดูแลระบบ : {{ Auth::user()->name }}</p>
+                <a class="navbar-brand" href="index.html">ผู้ดูแลระบบ : {{ Auth::user()->name }}</a>
               </div>
               <!-- /.navbar-header -->
 
-             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left Side Of Navbar -->
+                <ul class="navbar-nav mr-auto">
 
-                    </ul>
-                </div>
+                </ul>
+            </div>
             <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
@@ -309,16 +309,19 @@
                     document.getElementById('logout-form').submit();"> <i class="fa fa-power-off" aria-hidden="true"></i>
                     {{ __('ออกจากระบบ') }}
                   </a>
-                  </li>
-               </ul>
-             </div>
-             <!-- /.sidebar-collapse -->
-           </div>
-           <!-- /.navbar-static-side -->
-         </nav>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                  </form>
+                </li>
+              </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+          </div>
+          <!-- /.navbar-static-side -->
+        </nav>
 
-         <!-- Page Content -->
-         <div id="page-wrapper" style="min-height: 923px;">
+        <!-- Page Content -->
+        <div id="page-wrapper" style="min-height: 923px;">
           <div class="container-fluid">
             @yield('content')
           </div>
