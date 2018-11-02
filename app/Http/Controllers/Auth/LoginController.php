@@ -26,7 +26,7 @@ class LoginController extends Controller
 
          switch ($user['user_type_id']) {
             case '1':
-            return "a";
+            return "/data_student";
             break;
             case '2':
             return redirect('/importExport');

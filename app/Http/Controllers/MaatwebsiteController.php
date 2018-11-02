@@ -107,4 +107,21 @@ class MaatwebsiteController extends Controller
 
 
    }
+
+   public function EditUser($id){
+
+    $edit_user = User::where('id',$id)->first();
+    return view('admin.importExport.edit_user', ["edit_user" => $edit_user]);
+   }
+
+   public function destroy($id)
+    {
+
+        $delete_user = User::where('id',$id)->delete();
+        if($delete_user){
+          return back()->with('success', 'Insert Record successfully.');
+        }else{
+            return "error message..";
+        }
+    }
 }
