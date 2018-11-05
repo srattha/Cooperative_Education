@@ -30,7 +30,8 @@ Route::post('importExcel', 'MaatwebsiteController@importExcel');
 Route::get('uploadPdf', 'UploadPdfController@index')->name('upload_file');
 Route::post('uploadPdf', 'UploadPdfController@storeFile');
 
-
+Route::get('/index', 'IndexController@index')->name('index');
 Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');

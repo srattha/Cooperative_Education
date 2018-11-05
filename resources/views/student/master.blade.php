@@ -37,11 +37,11 @@
          color: #333333;
          text-decoration: none;
          }
-         /*menu navbar*/
+         /*menu navbar
          .sidebar ul li a.active{
           background-color: #337ab7;
           color: #fefefe;
-        }
+        }*/
       </style> 
      
       <!--  <script type="text/javascript">
@@ -100,7 +100,7 @@
          <div id="progress"></div>
       </div>
       <div id="wrapper">
-         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="background: margin-bottom: 0px;background-color: #3F51B5;border-color: #3F51B5;">
+         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="">
             <div class="navbar-header">
                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                <span class="sr-only">Toggle navigation</span>
@@ -114,7 +114,7 @@
             <!-- /.navbar-header -->
             <ul class="nav navbar-nav navbar-right">
                <li>
-                  <a href="" style="right: 380px; font-size: px; color: #fefefe;">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</a>
+                  <a href="" style="right: 380px; font-size: px; ">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</a>
                </li>
                @guest
                <li class="nav-item">

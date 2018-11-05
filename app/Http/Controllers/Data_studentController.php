@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class Data_studentController extends Controller
 {
     /**
@@ -12,7 +12,7 @@ class Data_studentController extends Controller
      */
     public function __construct()
     {
-      //  $this->middleware('auth');
+       $this->middleware('auth');
     }
 
     /**
@@ -23,8 +23,18 @@ class Data_studentController extends Controller
     public function data_student()
     {
 
-        //return "ss";
+        $user = Auth::user();
+        $users_type_id = $user->user_type_id;
+        switch ($users_type_id) {
+            case '1':
+                return view('data_student.data_student');
+            break;
+            case '2':
+                return redirect("/importExport");
+            break;
 
-        return view('data_student.data_student');
+        }
+
+        
     }
 }
