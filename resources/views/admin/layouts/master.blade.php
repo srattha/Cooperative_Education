@@ -298,10 +298,13 @@
                 <ul class="nav" id="side-menu">
 
                   <li>
-                    <a href="/importExport"><i class="fa fa-users" aria-hidden="true"></i> Import Export to Excel</a>
+                    <a href="/importExport"><i class="fa fa-users" aria-hidden="true"></i> จัดการข้อมูลผู้ใช้</a>
                   </li>
                   <li>
                     <a href="uploadPdf"><i class="fa fa-upload" aria-hidden="true"></i> จัดการเอกสารไฟล์ PDF</a>
+                  </li>
+                  <li>
+                    <a href="uploadPdf"><i class="fa fa-cogs" aria-hidden="true"></i> จัดการข้อมูลสถานประกอบการ</a>
                   </li>
                   <li>
                     <a class="dropdown-item" href="{{ route('logout') }}"

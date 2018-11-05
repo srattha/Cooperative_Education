@@ -240,8 +240,8 @@
    </div>
    <div class="col-sm-3" >
       <div class="input-group input-group-sm">
-         <span class="input-group-addon" id="sizing-addon1">หมู</span>
-         <input type="text"name="fullname" class="form-control" id="fullname" placeholder="หมู" aria-describedby="sizing-addon1" required>  
+         <span class="input-group-addon" id="sizing-addon1">หมู่</span>
+         <input type="text"name="fullname" class="form-control" id="fullname" placeholder="หมู่" aria-describedby="sizing-addon1" required>  
       </div>
    </div>
    <div class="col-sm-6" >

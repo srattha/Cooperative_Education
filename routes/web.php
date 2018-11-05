@@ -24,6 +24,8 @@ Route::get('/upload_pfd', 'Upload_pfdController@upload_pfd')->name('upload_pfd')
 // Admin
 Route::get('importExport', 'MaatwebsiteController@importExport');
 Route::get('CreateUser', 'MaatwebsiteController@CreateUser')->name('CreateUser');
+Route::get('EditUser/{id}', 'MaatwebsiteController@EditUser')->name('EditUser')->where('id', '[0-9]+');
+Route::get('DeleteUser/{id}', 'MaatwebsiteController@destroy')->name('DeleteUser')->where('id', '[0-9]+');
 Route::post('CreateUser', 'MaatwebsiteController@store');
 Route::get('downloadExcel/{type}', 'MaatwebsiteController@downloadExcel');
 Route::post('importExcel', 'MaatwebsiteController@importExcel');

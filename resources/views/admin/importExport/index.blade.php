@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title','Import Export to Excel and CS')
+@section('title','จัดการข้อมูลผู้ใช้')
 @section('css')
 @endsection
 @section('content')
@@ -7,15 +7,14 @@
 <div class="row">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h1>Import Export to Excel and CSV</h1>
+      <h1>จัดการข้อมูลผู้ใช้</h1>
     </div>
     <div class="panel-body">
 
-      <a href="{{ url('downloadExcel/xls') }}"><button class="btn btn-success">Download Excel xls</button></a>
-      <a href="{{ url('downloadExcel/xlsx') }}"><button class="btn btn-success">Download Excel xlsx</button></a>
-
-
-      <a href="{{ url('downloadExcel/csv') }}"><button class="btn btn-success">Download CSV</button></a>
+      <a href="{{ url('downloadExcel/xls') }}"><button class="btn btn-success"> <i class="fa fa-download" aria-hidden="true"></i> Download Excel xls</button></a>
+      <a href="{{ url('downloadExcel/xlsx') }}"><button class="btn btn-success"> <i class="fa fa-download" aria-hidden="true"></i> Download Excel xlsx</button></a>
+      <a href="{{ url('downloadExcel/csv') }}"><button class="btn btn-success"> <i class="fa fa-download" aria-hidden="true"></i> Download CSV</button></a>
+      <button class="btn btn-success" onclick="location.href='{{ route('CreateUser') }}'"> <i class="fa fa-plus-circle" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</button>
 
       <form style="border: 4px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ url('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
         @csrf
@@ -40,10 +39,10 @@
 
         <input type="file" name="import_file" />
         <br>
-        <button class="btn btn-primary">Import File</button>
+        <button class="btn btn-primary"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Import File</button>
       </form>
       <br>
-      <button class="btn btn-primary" onclick="location.href='{{ route('CreateUser') }}'">Create User</button>
+      <!-- <button class="btn btn-primary" onclick="location.href='{{ route('CreateUser') }}'">Create User</button> -->
       <br>
       <br>
       <table  id="dataTables-example" class="table table-striped table-bordered table-hover" style="width:100%;">
@@ -79,8 +78,11 @@
          <td>{{$students->updated_at}}</td>
 
          <td style="align-content: center;">
-
-         </tr>
+          <div class="btn-group">
+            <button type="button" class="btn btn-info btn-xs" onclick="location.href='{{ route('EditUser',['id'=>$students->id]) }}'"><i class="fa fa-pencil-square-o"></i> แก้ไขข้อมูล</button>
+            <button type="button" class="btn btn btn-danger btn-xs" onclick="if(confirm('Are you sure ?')) window.location.href = '{{ route('DeleteUser',['id'=>$students->id]) }}'"><i class="fa fa-trash-o"></i> ลบข้อมูล</button>
+          </div>
+        </tr>
          @endforeach
        </tbody>
      </table>

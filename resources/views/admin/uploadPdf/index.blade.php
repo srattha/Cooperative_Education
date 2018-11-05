@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title','uploadPdf')
+@section('title','จัดการเอกสารไฟล์ PDF')
 @section('css')
 @endsection
 @section('content')
@@ -7,7 +7,7 @@
 <div class="row">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h1>uploadPdf</h1>
+      <h1>จัดการเอกสารไฟล์ PDF</h1>
     </div>
     <div class="panel-body">
       <form class="form-horizontal" method="POST" action="{{ route('upload_file') }}" enctype="multipart/form-data">
