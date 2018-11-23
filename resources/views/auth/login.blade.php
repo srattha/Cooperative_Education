@@ -127,13 +127,18 @@
             <div class="form-group row">
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-primary btn-block">เข้าสู่ระบบ</button>
-             </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">   
+   <div class="col-md-12" style="margin-top: 50px"></div>
+      <div class="container">
+         <div class="col-sm-6">
+            <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
+               Deverloped By Patiphan Uthang And Yuwa Saewang 
          </div>
-     </div>
- </form>
-</div>
-</div>
-
-
+      </div>
+   <div class="row" style="margin-top: 50px"></div>
+</footer>
 </div>
 @endsection
