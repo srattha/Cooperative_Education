@@ -14,6 +14,10 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/form', 'FormController@form')->name('form');
 
 Route::get('/data_student', 'data_studentController@data_student')->name('data_student');
@@ -33,7 +37,6 @@ Route::get('uploadPdf', 'UploadPdfController@index')->name('upload_file');
 Route::post('uploadPdf', 'UploadPdfController@storeFile');
 
 Route::get('/index', 'IndexController@index')->name('index');
-Auth::routes();
+Route::post('/addUser', 'HomeController@addUser')->name('addUser');
 
 
-Route::get('/home', 'HomeController@index')->name('home');

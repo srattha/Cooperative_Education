@@ -149,12 +149,15 @@ header {
 /* Dark theme */
 .dark-nav {background-color: #3F51B5}
 
-.dark-nav .list > li > a {color: #ffB}
+.dark-nav .list > li > a {color: #ffB;
+    font-size: 14px;}
 
 .dark-nav .list > li > a:hover,
 .dark-nav .list > li.active > a {color: #FFF}
 
-.dark-nav .nav-heading > a {color: #EEE}
+.dark-nav .nav-heading > a {color: #fefefe;
+    font-family: "kanit", sans-serif;
+    font-size: 14px;}
 
 .dark-nav .nav-heading .toggle-nav {color: #EEE}
 
@@ -249,6 +252,7 @@ header {
         <ul class="list"> 
           <li><a href="#">ดาวน์โหลดเอกสาร</a></li>
           <li><a href="#">เข้าสู่ระบบ</a></li>
+          <li><a href="#">ลงทะเบียนใช้งาน</a></li>
         </ul>
       </div>
     </div>

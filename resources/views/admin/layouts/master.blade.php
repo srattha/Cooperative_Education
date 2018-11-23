@@ -307,6 +307,12 @@
                     <a href="uploadPdf"><i class="fa fa-cogs" aria-hidden="true"></i> จัดการข้อมูลสถานประกอบการ</a>
                   </li>
                   <li>
+                    <a href=""><i class="fa fa-clone" aria-hidden="true"></i> รายงานรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา</a>
+                  </li>
+                  <li>
+                    <a href="uploadPdf"><i class="fa fa-bar-chart" aria-hidden="true"></i> รายงานสถิตินักศึกษาในโครงการสหกิจศึกษา</a>
+                  </li>
+                  <li>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();"> <i class="fa fa-power-off" aria-hidden="true"></i>

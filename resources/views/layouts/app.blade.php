@@ -18,43 +18,55 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <!--  <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
-
-    <link href="{{ asset('/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <script src="{{ asset('/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-    <link href="{{ asset('/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style type="text/css">
+    /*card-header*/
+        .card-header:first-child {
+        background-color: #6bccb4;
+        color:#fefefe;
+        border-color: #bce8f1;
+        }
+        /*navbar-laravel*/
+        .navbar-laravel{
+        background-color: #3F51B5;
+        border-color: #3F51B5;
+        }
+        /*tex navbar*/
+        .navbar-light .navbar-brand, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover{
+        color:#fefefe;
+        }
+        /*login-register*/
+        .navbar-light .navbar-nav .nav-link {
+        color: rgba(0,0,0,.5);
+        color: #fefefe;
+        }
+    </style>
 </head>
-<body style="font-size: 14px;
-    min-height: 100%;
-    background-color: #ecf0f1;
-    overflow-x: hidden;">
+<body>
     <div id="app">
-      <!--   <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" href="{{ url('/') }}">{{ __('ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
+                    <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
 
-
+                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-
+                        <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('เข้าสู่ระบบ') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('ลงทะเบียนใช้งาน') }}</a>
                             </li>
                         @else
                             <li class="nav-item dropdown">
@@ -66,7 +78,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('ออกจากระบบ') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -79,10 +91,10 @@
                 </div>
             </div>
         </nav>
-    -->
-    <main class="py-4">
-        @yield('content')
-    </main>
-</div>
+
+        <main class="py-4">
+            @yield('content')
+        </main>
+    </div>
 </body>
 </html>
