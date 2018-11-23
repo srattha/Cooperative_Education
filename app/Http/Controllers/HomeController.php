@@ -24,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        return "dd";
          $user = Auth::user();
         $users_type_id = $user->user_type_id;
         switch ($users_type_id) {

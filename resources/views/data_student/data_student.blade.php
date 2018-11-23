@@ -57,7 +57,7 @@
                <div class="col-sm-7" >
                   <div class="input-group input-group-sm">
                      <span class="input-group-addon" id="sizing-addon1">ชื่อ-นามสกุล นาย/นางสาว</span>
-                     <input type="text"name="name_student" class="form-control" id="name_student" placeholder=" นาย/นางสาว ชื่อ-นามสกุล" aria-describedby="sizing-addon1" required>  
+                     <input type="text"name="name_student" class="form-control" id="name_student" placeholder=" นาย/นางสาว ชื่อ-นามสกุล" value="{{$user->name}}" aria-describedby="sizing-addon1" required>  
                   </div>
                </div>
                <div class="col-sm-5" >
@@ -212,6 +212,24 @@
             <!-- End row- -->
             <h3>ส่วนที่ 2 ข้อมูลสถานประกอบการ</h3>
             <div class="row">
+               <div class="col-md-6">
+                   <div class="input-group input-group-sm">
+                     <span class="input-group-addon" id="sizing-addon1">Company</span>
+                     <select id="inputState" class="form-control"  onchange="getval(this);">
+                        <option selected>-กรุณาเลือกสาขาวิชา-</option>
+                        @foreach ($company as $index => $companys)
+                        <option value="{{$companys->id}}">{{$companys->company_name}}</option>
+                         @endforeach
+                       
+                     </select>
+                  </div>
+               </div>
+              
+
+            </div>
+            <br>
+            <br>
+            <div class="row">
                <!-- row-I -->
                <div class="col-sm-6" >
                   <div class="input-group input-group-sm">
@@ -359,4 +377,29 @@
 </script>
 @endsection
 @section('javascript')
+<script type="text/javascript">
+   function getval(sel)
+{
+   var value = sel.value;
+    var company_id = {
+                "id": value,
+               };
+               console.log(company_id);
+   $.ajax({                    
+                    url: "/home",
+                    xhrFields: 'withCredentials:true',
+                    type: "POST",
+                    data: {
+                                "id": sel.value,
+                            },
+                    contentType: 'application/x-www-form-urlencoded',
+                    success: function (data) {
+                        alert("Successfully Registered..");
+                    },
+                    error: function (xhRequest, ErrorText, thrownError) {
+                        alert("Failed to process correctly, please try again");
+                    }
+                });
+}
+</script>
 @endsection

@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Company;
 class Data_studentController extends Controller
 {
     /**
@@ -23,15 +24,16 @@ class Data_studentController extends Controller
     public function data_student()
     {
 
+
         $user = Auth::user();
         $users_type_id = $user->user_type_id;
+        $company = Company::get();
         switch ($users_type_id) {
             case '1':
-
-                return view('data_student.data_student');
+                return view('data_student.data_student', ['user'=> $user, 'company' => $company]);
             break;
             case '2':
-                return redirect("/importExport");
+                return redirect("/user");
             break;
 
         }

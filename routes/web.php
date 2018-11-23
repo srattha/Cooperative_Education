@@ -17,7 +17,7 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/home', 'HomeController@index')->name('home');
 Route::get('/form', 'FormController@form')->name('form');
 
 Route::get('/data_student', 'data_studentController@data_student')->name('data_student');
@@ -41,5 +41,6 @@ Route::get('/index', 'IndexController@index')->name('index');
 Route::post('/addUser', 'HomeController@addUser')->name('addUser');
 Route::get('report_cooperative_education', 'ReportCooperativeEducationController@index');
 Route::get('establishment', 'EstablishmentController@index')->name('establishment');
+Route::get('api/getcompany', 'CompanyController@index');
 
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="">
+<html lang="" ng-app>
    <head>
       <meta charset="utf-8">
       <style type="text/css"></style>
@@ -44,6 +44,7 @@
       <script src="{{ asset('/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
       <script src="{{ asset('/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
       <script src="{{ asset('/assets/js/lightbox.js') }}"></script>
+      <script src="{{ asset('/vendor/angularjs/angular.min.js') }}"></script>
       <style type="text/css">
          @yield('css')
         /* Remove dark-nav class from nav tag to see the light version  */
