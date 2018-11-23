@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\User;
-class HomeController extends Controller
+use App\Company;
+class EstablishmentController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -31,11 +31,9 @@ class HomeController extends Controller
             return redirect("/");
             break;
             case '2':
-            $user = User::get();
-               return view('admin.user.index', ["user" => $user]);
+             $company = Company::orderBy('id','desc')->get();
+            return view('admin.establishment.index',['company' => $company]);
             break;
-
         }
-
     }
 }

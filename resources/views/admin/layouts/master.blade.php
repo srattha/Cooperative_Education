@@ -298,16 +298,16 @@
                 <ul class="nav" id="side-menu">
 
                   <li>
-                    <a href="/importExport"><i class="fa fa-users" aria-hidden="true"></i> จัดการข้อมูลผู้ใช้</a>
+                    <a href="/user"><i class="fa fa-users" aria-hidden="true"></i> จัดการข้อมูลผู้ใช้</a>
                   </li>
                   <li>
                     <a href="uploadPdf"><i class="fa fa-upload" aria-hidden="true"></i> จัดการเอกสารไฟล์ PDF</a>
                   </li>
                   <li>
-                    <a href="uploadPdf"><i class="fa fa-cogs" aria-hidden="true"></i> จัดการข้อมูลสถานประกอบการ</a>
+                    <a href="establishment"><i class="fa fa-cogs" aria-hidden="true"></i> จัดการข้อมูลสถานประกอบการ</a>
                   </li>
                   <li>
-                    <a href=""><i class="fa fa-clone" aria-hidden="true"></i> รายงานรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา</a>
+                    <a href="report_cooperative_education"><i class="fa fa-clone" aria-hidden="true"></i> รายงานรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา</a>
                   </li>
                   <li>
                     <a href="uploadPdf"><i class="fa fa-bar-chart" aria-hidden="true"></i> รายงานสถิตินักศึกษาในโครงการสหกิจศึกษา</a>

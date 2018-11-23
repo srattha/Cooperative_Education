@@ -11,12 +11,12 @@
     </div>
     <div class="panel-body">
 
-      <a href="{{ url('downloadExcel/xls') }}"><button class="btn btn-success"> <i class="fa fa-download" aria-hidden="true"></i> Download Excel xls</button></a>
+     <!--  <a href="{{ url('downloadExcel/xls') }}"><button class="btn btn-success"> <i class="fa fa-download" aria-hidden="true"></i> Download Excel xls</button></a>
       <a href="{{ url('downloadExcel/xlsx') }}"><button class="btn btn-success"> <i class="fa fa-download" aria-hidden="true"></i> Download Excel xlsx</button></a>
       <a href="{{ url('downloadExcel/csv') }}"><button class="btn btn-success"> <i class="fa fa-download" aria-hidden="true"></i> Download CSV</button></a>
-      <button class="btn btn-success" onclick="location.href='{{ route('CreateUser') }}'"> <i class="fa fa-plus-circle" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</button>
+      <button class="btn btn-success" onclick="location.href='{{ route('CreateUser') }}'"> <i class="fa fa-plus-circle" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</button> -->
 
-      <form style="border: 4px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ url('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+     <!--  <form style="border: 4px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ url('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
         @csrf
 
         @if ($errors->any())
@@ -40,7 +40,7 @@
         <input type="file" name="import_file" />
         <br>
         <button class="btn btn-primary"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Import File</button>
-      </form>
+      </form> -->
       <br>
       <!-- <button class="btn btn-primary" onclick="location.href='{{ route('CreateUser') }}'">Create User</button> -->
       <br>
@@ -49,7 +49,6 @@
        <thead>
         <tr>
           <th>#</th>
-          <th>รหัสนักศึกษา</th>
           <th>ชื่อ-นามสกุน</th>
           <th>ประเภทผู้ไช้</th>
           <th>เวลาสร้างข้อมูล</th>
@@ -59,28 +58,27 @@
       </thead>
       <tbody>
         <tr>
-          @foreach ($student as $index => $students)
+          @foreach ($user as $index => $users)
           <td>{{$index+1}}</td>
-          <td>{{$students->identification_number}}</td>
-          <td>{{$students->name}}</td>
+          <td>{{$users->name}}</td>
           <td>
-           @if($students->user_type_id == 1)
+           @if($users->user_type_id == 1)
            <span class="label label-default">นักศึกษา</span>
-           @elseif ($students->user_type_id == 2)
+           @elseif ($users->user_type_id == 2)
            <span class="label label-primary">ผู้ดูแลระบบ</span>
-           @elseif ($students->user_type_id == 3)
+           @elseif ($users->user_type_id == 3)
            <span class="label label-success">พนักงานเคาน์เตอร์</span>
            @else
            <span class="label label-warning">กุ๊ก</span>
            @endif
          </td>
-         <td>{{$students->created_at}}</td>
-         <td>{{$students->updated_at}}</td>
+         <td>{{$users->created_at}}</td>
+         <td>{{$users->updated_at}}</td>
 
          <td style="align-content: center;">
           <div class="btn-group">
-            <button type="button" class="btn btn-info btn-xs" onclick="location.href='{{ route('EditUser',['id'=>$students->id]) }}'"><i class="fa fa-pencil-square-o"></i> แก้ไขข้อมูล</button>
-            <button type="button" class="btn btn btn-danger btn-xs" onclick="if(confirm('Are you sure ?')) window.location.href = '{{ route('DeleteUser',['id'=>$students->id]) }}'"><i class="fa fa-trash-o"></i> ลบข้อมูล</button>
+            <button type="button" class="btn btn-info btn-xs" onclick="location.href='{{ route('EditUser',['id'=>$users->id]) }}'"><i class="fa fa-pencil-square-o"></i> แก้ไขข้อมูล</button>
+            <button type="button" class="btn btn btn-danger btn-xs" onclick="if(confirm('Are you sure ?')) window.location.href = '{{ route('DeleteUser',['id'=>$users->id]) }}'"><i class="fa fa-trash-o"></i> ลบข้อมูล</button>
           </div>
         </tr>
          @endforeach

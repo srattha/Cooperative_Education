@@ -26,11 +26,12 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/upload_pfd', 'Upload_pfdController@upload_pfd')->name('upload_pfd');
 
 // Admin
+Route::get('/user', 'UserController@index')->name('user');
+Route::get('CreateUser', 'UserController@CreateUser')->name('CreateUser');
+Route::get('EditUser/{id}', 'UserController@EditUser')->name('EditUser')->where('id', '[0-9]+');
+Route::get('DeleteUser/{id}', 'UserController@destroy')->name('DeleteUser')->where('id', '[0-9]+');
+Route::post('CreateUser', 'UserController@store');
 Route::get('importExport', 'MaatwebsiteController@importExport');
-Route::get('CreateUser', 'MaatwebsiteController@CreateUser')->name('CreateUser');
-Route::get('EditUser/{id}', 'MaatwebsiteController@EditUser')->name('EditUser')->where('id', '[0-9]+');
-Route::get('DeleteUser/{id}', 'MaatwebsiteController@destroy')->name('DeleteUser')->where('id', '[0-9]+');
-Route::post('CreateUser', 'MaatwebsiteController@store');
 Route::get('downloadExcel/{type}', 'MaatwebsiteController@downloadExcel');
 Route::post('importExcel', 'MaatwebsiteController@importExcel');
 Route::get('uploadPdf', 'UploadPdfController@index')->name('upload_file');
@@ -38,5 +39,7 @@ Route::post('uploadPdf', 'UploadPdfController@storeFile');
 
 Route::get('/index', 'IndexController@index')->name('index');
 Route::post('/addUser', 'HomeController@addUser')->name('addUser');
+Route::get('report_cooperative_education', 'ReportCooperativeEducationController@index');
+Route::get('establishment', 'EstablishmentController@index')->name('establishment');
 
 

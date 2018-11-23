@@ -7,6 +7,7 @@ use App\Student;
 use DB;
 use App\User;
 use Excel;
+use App\Company;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,8 +33,8 @@ class MaatwebsiteController extends Controller
             return redirect("/");
             break;
             case '2':
-            $student = User::orderBy('id','desc')->get();
-            return view('admin.importExport.index',['student' => $student]);
+            $company = Company::orderBy('id','desc')->get();
+            return view('admin.establishment.index',['company' => $company]);
             break;
 
         }
@@ -47,7 +48,7 @@ class MaatwebsiteController extends Controller
      */
     public function downloadExcel($type)
     {
-        $data = User::get()->toArray();
+        $data = Company::get()->toArray();
 
         return Excel::create('itsolutionstuff_example', function($excel) use ($data) {
             $excel->sheet('mySheet', function($sheet) use ($data)
@@ -75,12 +76,13 @@ class MaatwebsiteController extends Controller
             foreach ($data as $key => $value) {
 
                 // $arr[] = ['title' => $value->title, 'description' => $value->description];
-                $arr[] = ['identification_number' => $value->identification_number, 'name' => $value->name, 'user_type_id' => 1, 'password' => Hash::make($value->identification_number)];
+                $arr[] = ['company_name' => $value->company_name, 'coordinator' => $value->coordinator, 'coordinator_number' => $value->coordinator_number, 'email' => $value->email, 'home_number' => $value->home_number, 'moo' => $value->moo, 'industrial_estate' => $value->industrial_estate, 'building' => $value->building, 'soi' => $value->soi, 'road' => $value->road,
+              'district' => $value->district, 'amphure' => $value->amphure, 'province' => $value->province, 'post_code' => $value->post_code, 'tel' => $value->tel, 'fax' => $value->fax, 'is_active' => 1];
             }
-
+            //return $arr;
             if(!empty($arr)){
                 // Item::insert($arr);
-                User::insert($arr);
+                Company::insert($arr);
 
             }
         }

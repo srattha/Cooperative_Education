@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title','จัดการข้อมูลผู้ใช้')
+@section('title','จัดการข้อมูลสถานประกอบการ')
 @section('css')
 @endsection
 @section('content')
@@ -7,7 +7,7 @@
 <div class="row">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h1>จัดการข้อมูลผู้ใช้</h1>
+      <h1>จัดการข้อมูลสถานประกอบการ</h1>
     </div>
     <div class="panel-body">
 
@@ -49,33 +49,33 @@
        <thead>
         <tr>
           <th>#</th>
-          <th>รหัสนักศึกษา</th>
-          <th>ชื่อ-นามสกุน</th>
-          <th>ประเภทผู้ไช้</th>
-          <th>เวลาสร้างข้อมูล</th>
-          <th>เวลาแก้ไขข้ัอมูล</th>
+          <th>company_name</th>
+          <th>coordinator</th>
+          <th>coordinator_number</th>
+          <th>tel</th>
+          <th>fix</th>
           <th class="text-center">แก้ไขข้อมูล</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-         <td></td>
-         <td></td>
-         <td style="align-content: center;">
-          <div class="btn-group">
-            <button type="button" class="btn btn-info btn-xs" onclick="location.href='{{ route('EditUser',['id'=>$students->id]) }}'"><i class="fa fa-pencil-square-o"></i> แก้ไขข้อมูล</button>
-            <button type="button" class="btn btn btn-danger btn-xs" onclick="if(confirm('Are you sure ?')) window.location.href = '{{ route('DeleteUser',['id'=>$students->id]) }}'"><i class="fa fa-trash-o"></i> ลบข้อมูล</button>
-          </div>
+         @foreach ($company as $index => $companys)
+         <td>{{$index+1}}</td>
+         <td>{{$companys->company_name}}</td>
+         <td>{{$companys->coordinator}}</td>
+         <td>{{$companys->coordinator_number}}</td>
+         <td>{{$companys->tel}}</td>
+         <td>{{$companys->fax}}</td>
+
+         <td style="align-content: center;"></td>
+
         </tr>
-         @endforeach
-       </tbody>
-     </table>
-   </div>
- </div>
+        @endforeach
+      </tbody>
+
+    </table>
+  </div>
+</div>
 </div>
 @endsection
 @section('javascript')

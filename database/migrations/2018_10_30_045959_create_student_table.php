@@ -15,10 +15,25 @@ class CreateStudentTable extends Migration
     {
         Schema::create('student', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('user_id');
+            $table->string('company_id');
+            $table->string('term');
+            $table->string('year');
+            $table->string('activities');
+            $table->string('institution');
+            $table->string('campus');
+            $table->string('faculty');
+            $table->string('major');
+            $table->string('student_id');
             $table->string('identification_number');
-            $table->string('name');
-            $table->string('user_type_id');
-            $table->string('password');
+            $table->string('name_student');
+            $table->string('year_study');
+            $table->string('class_year');
+            $table->string('gpa_past');
+            $table->string('gpa');
+            $table->string('birthday');
+            $table->string('telephone');
+            $table->tinyInteger('is_active')->default(1);
             $table->timestamps();
         });
     }

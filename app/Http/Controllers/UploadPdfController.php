@@ -40,7 +40,7 @@ class UploadPdfController extends Controller
 
     }
     public function storeFile(request $request){
-
+        $user = Auth::user();
         if ($request->hasFile('file')) {
 
            $file = $request->file('file');
@@ -49,7 +49,8 @@ class UploadPdfController extends Controller
             $path = public_path().'/upload/uploadPdf';
             $uplaod = $file->move($path,$fileName);
            $fileModel = new File;
-           $fileModel->file_name = $fileName;
+           $fileModel->user_id = $user->id;
+           $fileModel->name = $fileName;
            $fileModel->save();
  }
  return redirect('uploadPdf');

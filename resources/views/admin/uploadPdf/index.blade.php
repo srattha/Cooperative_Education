@@ -24,9 +24,10 @@
        <thead>
         <tr>
           <th>#</th>
-          <th>name</th>
-          <th>created_at</th>
-          <th>updated_at</th>
+          <th>Uplaod</th>
+          <th>FileName</th>
+          <th>Created_at</th>
+          <th>Updated_at</th>
           <th class="text-center">แก้ไขข้อมูล</th>
         </tr>
       </thead>
@@ -34,7 +35,8 @@
         <tr>
            @foreach ($file as $index => $files)
           <td>{{$files->id}}</td>
-          <td>{{$files->file_name}}</td>
+          <td>{{$files->name}}</td>
+          <td>{{$files->name}}</td>
           <td>{{$files->created_at}}</td>
           <td>{{$files->updated_at}}</td>
           <td style="align-content: center;">
