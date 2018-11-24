@@ -55,7 +55,7 @@
          <div class="col-sm-5" >
             <div class="input-group input-group-sm">
                <span class="input-group-addon" id="sizing-addon1">เลขบัตรประชาชน</span>
-               <input type="number" name="campus" class="form-control" id="campus" placeholder="เลขบัตรประชาชน" aria-describedby="sizing-addon1" required>  
+               <input type="number" name="identification_number" value="{{$data->identification_number}}" class="form-control" id="identification_number" placeholder="เลขบัตรประชาชน" aria-describedby="sizing-addon1" required>  
             </div>
          </div>
       </div>
@@ -64,13 +64,14 @@
          <div class="col-sm-6" >
             <div class="input-group input-group-sm">
                <span class="input-group-addon" id="sizing-addon1">ว/ด/ป เกิด</span>
-               <input type='date' class="form-control" id="meeting" name="birthday" required title="ว/ด/ปี เกิด" value="{{ old('birthday') }}" />
+               <input type="date" class="form-control" name="birthday" value="{{$data->birthday}}" required title="ว/ด/ปี เกิด" >
+              <!--  <input type='date' class="form-control" id="meeting"  placeholder="เลขบัตรประชาชน" value="dd" name="birthday" required title="ว/ด/ปี เกิด" /> -->
             </div>
          </div>
          <div class="col-sm-6" >
             <div class="input-group input-group-sm">
                <span class="input-group-addon" id="sizing-addon1">ชื่อสถาบัน</span>
-               <input type="text" name="institution" class="form-control" id="institution" placeholder="ชื่อสถาบัน" aria-describedby="sizing-addon1" required>  
+               <input type="text" name="institution" value="{{$data->institution}}" class="form-control" id="institution" placeholder="ชื่อสถาบัน" aria-describedby="sizing-addon1" required>  
             </div>
          </div>
       </div>
@@ -79,22 +80,22 @@
          <div class="col-sm-4" >
             <div class="input-group input-group-sm">
                <span class="input-group-addon" id="sizing-addon1">รหัสนักศึกษา</span>
-               <input type="number" name="student_id" class="form-control" id="student_id" placeholder="รหัสนักศึกษา" aria-describedby="sizing-addon1" required>  
+               <input type="number" name="student_id" value="{{$data->student_id}}" class="form-control" id="student_id" placeholder="รหัสนักศึกษา" aria-describedby="sizing-addon1" required>  
             </div>
          </div>
          <div class="col-sm-4" >
             <div class="input-group input-group-sm">
                <span class="input-group-addon" id="sizing-addon1">วิทยาเขต</span>
-               <input type="text" name="campus" class="form-control" id="campus" placeholder="วิทยาเขต" aria-describedby="sizing-addon1" required>  
+               <input type="text" name="campus" value="{{$data->campus}}" class="form-control" id="campus" placeholder="วิทยาเขต" aria-describedby="sizing-addon1" required>  
             </div>
          </div>
          <div class="col-sm-4" >
             <div class="input-group input-group-sm">
                <span class="input-group-addon" id="sizing-addon1">ภาคเรียน</span>
-               <select id="inputState" class="form-control">
+               <select id="inputState" name="term" value="{{$data->term}}" class="form-control">
                   <option selected>-กรุณาเลือกภาคเรียน-</option>
-                  <option>1</option>
-                  <option>2</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
                </select>
             </div>
          </div>
@@ -104,45 +105,45 @@
          <div class="col-sm-4" >
             <div class="input-group input-group-sm">
                <span class="input-group-addon" id="sizing-addon1">คณะ</span>
-               <select id="inputState" class="form-control">
+               <select id="inputState" name="faculty" value="{{$data->faculty}}" class="form-control">
                   <option selected>-กรุณาเลือกคณะ-</option>
-                  <option>คณะบริหารธุรกิจและศิลปศาสตร์</option>
-                  <option>คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร</option>
-                  <option>คณะวิศวกรรมศาสตร์ </option>
-                  <option>คณะศิลปกรรมและสถาปัตยกรรมศาสตร์</option>
+                  <option value="คณะบริหารธุรกิจและศิลปศาสตร์">คณะบริหารธุรกิจและศิลปศาสตร์</option>
+                  <option value="คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร">คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร</option>
+                  <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์ </option>
+                  <option value="คณะศิลปกรรมและสถาปัตยกรรมศาสตร์">คณะศิลปกรรมและสถาปัตยกรรมศาสตร์</option>
                </select>
             </div>
          </div>
          <div class="col-sm-4" >
             <div class="input-group input-group-sm">
                <span class="input-group-addon" id="sizing-addon1">สาขาวิชา</span>
-               <select id="inputState" class="form-control">
+               <select id="inputState" name="major" value="{{$data->major}}" class="form-control">
                   <option selected>-กรุณาเลือกสาขาวิชา-</option>
-                  <option>บช.บ. การบัญชี</option>
-                  <option>บธ.บ. การจัดการ</option>
-                  <option>บธ.บ. การตลาด</option>
-                  <option>บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์</option>
-                  <option>ศศ.บ การท่องเที่ยวและารโรงแรม</option>
-                  <option>ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล</option>
-                  <option>วท.บ. เทคโนโลยีสารสนเทศ</option>
-                  <option>คศ.บ. คหกรรมศาสตร์</option>
-                  <option>วศ.บ. วิศวกรรมเคื่องกล</option>
-                  <option>ค.อ.บ. วิศวกรรมเครื่องกล</option>
-                  <option>วศ.บ. วิศวกรรมคอมพิงเตอร์</option>
-                  <option>วศ.บ. วิศวกรรมไฟฟ้า</option>
-                  <option>วศ.บ. วิศวะกรรมอิเล็กทรอนิกส์</option>
-                  <option>วศ.บ. วิศวกรรมโยธา</option>
-                  <option>ค.อ.บ วิศวกรรมอุตสาหการ</option>
-                  <option>วศ.บ. วิศวกรรมอุตสาหการ</option>
-                  <option>ศบ.บ ออกแบบอุตสาหกรรม</option>
-                  <option>ทล.บ. ออกแบบอุตสาหกรรม</option>
+                  <option value="บช.บ. การบัญชี">บช.บ. การบัญชี</option>
+                  <option value="บธ.บ. การจัดการ">บธ.บ. การจัดการ</option>
+                  <option value="บธ.บ. การตลาด">บธ.บ. การตลาด</option>
+                  <option value="บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์">บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์</option>
+                  <option value="ศศ.บ การท่องเที่ยวและารโรงแรม">ศศ.บ การท่องเที่ยวและารโรงแรม</option>
+                  <option value="ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล">ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล</option>
+                  <option value="วท.บ. เทคโนโลยีสารสนเทศ">วท.บ. เทคโนโลยีสารสนเทศ</option>
+                  <option value="คศ.บ. คหกรรมศาสตร์">คศ.บ. คหกรรมศาสตร์</option>
+                  <option value="วศ.บ. วิศวกรรมเคื่องกล">วศ.บ. วิศวกรรมเคื่องกล</option>
+                  <option value="ค.อ.บ. วิศวกรรมเครื่องกล">ค.อ.บ. วิศวกรรมเครื่องกล</option>
+                  <option value="วศ.บ. วิศวกรรมคอมพิงเตอร์">วศ.บ. วิศวกรรมคอมพิงเตอร์</option>
+                  <option value="วศ.บ. วิศวกรรมไฟฟ้า">วศ.บ. วิศวกรรมไฟฟ้า</option>
+                  <option value="วศ.บ. วิศวะกรรมอิเล็กทรอนิกส์">วศ.บ. วิศวะกรรมอิเล็กทรอนิกส์</option>
+                  <option value="วศ.บ. วิศวกรรมโยธา">วศ.บ. วิศวกรรมโยธา</option>
+                  <option value="ค.อ.บ วิศวกรรมอุตสาหการ">ค.อ.บ วิศวกรรมอุตสาหการ</option>
+                  <option value="วศ.บ. วิศวกรรมอุตสาหการ">วศ.บ. วิศวกรรมอุตสาหการ</option>
+                  <option value="ศบ.บ ออกแบบอุตสาหกรรม">ศบ.บ ออกแบบอุตสาหกรรม</option>
+                  <option value="ทล.บ. ออกแบบอุตสาหกรรม">ทล.บ. ออกแบบอุตสาหกรรม</option>
                </select>
             </div>
          </div>
          <div class="col-sm-4" >
             <div class="input-group input-group-sm">
                <span class="input-group-addon" id="sizing-addon1">ปีการศึกษา</span>
-               <input type="number" name="year" class="form-control" id="year" placeholder="ปีการศึกษา" aria-describedby="sizing-addon1" required>  
+               <input type="number" name="year" value="{{$data->year}}" class="form-control" id="year" placeholder="ปีการศึกษา" aria-describedby="sizing-addon1" required>  
             </div>
          </div>
       </div>
@@ -151,19 +152,19 @@
          <div class="col-sm-4" >
             <div class="input-group input-group-sm">
                <span class="input-group-addon" id="sizing-addon1">กิจกรรม</span>
-               <input type="text" name="activities" class="form-control" id="activities" placeholder="สหกิจศึกษา" aria-describedby="sizing-addon1" required>  
+               <input type="text" name="activities" value="{{$data->activities}}" class="form-control" id="activities" placeholder="สหกิจศึกษา" aria-describedby="sizing-addon1" required>  
             </div>
          </div>
          <div class="col-sm-4" >
             <div class="input-group input-group-sm">
                <span class="input-group-addon" id="sizing-addon1">ปีที่เข้าศึกษา</span>
-               <input type="number" name="fullname" class="form-control" id="fullname" placeholder="ปีที่เข้าศึกษา" aria-describedby="sizing-addon1" required>  
+               <input type="number" name="year_study" value="{{$data->year_study}}" class="form-control" id="year_study" placeholder="ปีที่เข้าศึกษา" aria-describedby="sizing-addon1" required>  
             </div>
          </div>
          <div class="col-sm-4" >
             <div class="input-group input-group-sm">
                <span class="input-group-addon" id="sizing-addon1">ปีที่รับการฝึก</span>
-               <input type="number" name="fullname" class="form-control" id="fullname" placeholder="ปีที่รับการฝึก" aria-describedby="sizing-addon1" required>  
+               <input type="number" name="class_year" value="{{$data->class_year}}" class="form-control" id="class_year" placeholder="ปีที่รับการฝึก" aria-describedby="sizing-addon1" required>  
             </div>
          </div>
       </div>
@@ -172,19 +173,19 @@
          <div class="col-sm-4" >
             <div class="input-group input-group-sm">
                <span class="input-group-addon" id="sizing-addon1">เกรดเฉลี่ยที่ผ่านมา</span>
-               <input type="number" name="gpa" class="form-control" id="gpa" placeholder="เกรดเฉลี่ยที่ผ่านมา" aria-describedby="sizing-addon1" required>  
+               <input type="number" name="gpa" value="{{$data->gpa}}" class="form-control" id="gpa" placeholder="เกรดเฉลี่ยที่ผ่านมา" aria-describedby="sizing-addon1" required>  
             </div>
          </div>
          <div class="col-sm-4" >
             <div class="input-group input-group-sm">
                <span class="input-group-addon" id="sizing-addon1">เกรดเฉลี่ยสะสม</span>
-               <input type="number" name="gpa_past" class="form-control" id="gpa_past" placeholder="เกรดเฉลี่ยสะสม" aria-describedby="sizing-addon1" required>  
+               <input type="number" name="gpa_past" value="{{$data->gpa}}" class="form-control" id="gpa_past" placeholder="เกรดเฉลี่ยสะสม" aria-describedby="sizing-addon1" required>  
             </div>
          </div>
          <div class="col-sm-4" >
             <div class="input-group input-group-sm">
                <span class="input-group-addon" id="sizing-addon1">เบอร์โทรศัพท์</span>
-               <input type="number" name="telephone" class="form-control" id="telephone" placeholder="เบอร์โทรศัพท์" aria-describedby="sizing-addon1" required>  
+               <input type="number" name="telephone" value="{{$data->telephone}}" class="form-control" id="telephone" placeholder="เบอร์โทรศัพท์" aria-describedby="sizing-addon1" required>  
             </div>
          </div>
       </div>
@@ -192,7 +193,7 @@
       <div class="form-group">
          <label for="upload_file" class="control-label col-sm-3">Upload File</label>
          <div class="col-sm-4">
-            <input class="form-control" type="file" name="upload_file" id="upload_file">
+            <input class="form-control" type="file" name="file" id="upload_file">
          </div>
       </div>
       <br>
@@ -364,7 +365,7 @@
       var company_id = {
         "id": value,
      };
-     console.log(company_id);
+     
      $.ajax({                    
        url: "api/getcompany",
        xhrFields: 'withCredentials:true',

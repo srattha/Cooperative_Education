@@ -89,7 +89,7 @@
             border-bottom-width: 2px;
             border-bottom-color: #c0cdd1;
             border-radius: 3px;
-            -webkit-box-shadow: none;
+            -webkit-box-shadow: none; 
             box-shadow: none;">
                         @csrf
             <div class="panel-body">

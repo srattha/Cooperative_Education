@@ -1,4 +1,4 @@
-@extends('layouts.index')
+@extends('layouts.app')
 @section('title','หน้าหลัก')
 @section('css')
 @endsection

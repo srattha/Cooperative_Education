@@ -346,7 +346,7 @@
 
           <!-- Page Content -->
           <div id="page-wrapper" style="min-height: 923px;">
-            <div class="container-fluid">
+            <div class="container">
               @yield('content')
             </div>
             <!-- /.container-fluid -->
