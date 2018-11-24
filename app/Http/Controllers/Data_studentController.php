@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Company;
+use App\Student;
 class Data_studentController extends Controller
 {
     /**
@@ -39,5 +40,10 @@ class Data_studentController extends Controller
         }
 
 
+    }
+
+    public function add_data_student(Request $request)
+    {
+        return $request->all();
     }
 }
