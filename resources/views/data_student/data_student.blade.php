@@ -215,11 +215,11 @@
       <h3>ส่วนที่ 2 ข้อมูลสถานประกอบการ</h3>
       <br>
       <div class="row">
-         <div class="col-sm-6">
+         <div class="col-sm-5">
           <div class="input-group input-group-sm">
-            <span class="input-group-addon" id="sizing-addon2">เลือกสถานประกอบการ</span>
+            <span class="input-group-addon" id="sizing-addon2"></span>
             <select id="inputState1" class="form-control"  onchange="getval(this);">
-               <option selected>-กรุณาเลือกสถานประกอบการ-</option>
+               <option selected>กรุณาเลือกสถานประกอบการ</option>
                @foreach ($company as $index => $companys)
                <option value="{{$companys->id}}">{{$companys->company_name}}</option>
                @endforeach
