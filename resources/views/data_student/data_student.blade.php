@@ -33,6 +33,18 @@
     border-color: #ddd;
     color:#fff;
 }
+#sizing-addon2{
+   box-shadow: none;
+   font-size: 13px;
+}
+#inputState1{
+   border-top-width: 1px;
+   border-right-width: 1px;
+   border-bottom-width: 1px;
+   border-left-width: 1px;
+   background: none;
+   font-size:13px;
+}
 </style>
 @endsection
 @section('content')
@@ -193,9 +205,9 @@
       </div>
       <br>
       <br>
-      <div class="form-group" style="padding-left: 280px;">
+      <div class="form-group" style="padding-left: 250px;">
          <label for="upload_file" class="control-label col-sm-3">Upload File Project</label>
-         <div class="col-sm-4">
+         <div class="col-sm-5">
             <input class="form-control" type="file" name="file" id="upload_file">
          </div>
       </div>
@@ -203,10 +215,10 @@
       <h3>ส่วนที่ 2 ข้อมูลสถานประกอบการ</h3>
       <br>
       <div class="row">
-         <div class="col-md-6">
+         <div class="col-sm-6">
           <div class="input-group input-group-sm">
-            <span class="input-group-addon" id="sizing-addon1">เลือกสถานประกอบการ</span>
-            <select id="inputState" class="form-control"  onchange="getval(this);">
+            <span class="input-group-addon" id="sizing-addon2">เลือกสถานประกอบการ</span>
+            <select id="inputState1" class="form-control"  onchange="getval(this);">
                <option selected>-กรุณาเลือกสถานประกอบการ-</option>
                @foreach ($company as $index => $companys)
                <option value="{{$companys->id}}">{{$companys->company_name}}</option>
