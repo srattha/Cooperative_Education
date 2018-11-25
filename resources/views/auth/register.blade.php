@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('ชื่อ-นามสกุล') }}<span style=" font-size: 20px;color: red;">*</span></label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('(นาย,นางสาว)ชื่อ-นามสกุล') }}<span style=" font-size: 20px;color: red;">*</span></label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus placeholder="ชื่อ-นามสกุล">
@@ -64,9 +64,9 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('สมัครสมาชิก') }} <i class="fa fa-floppy-o " aria-hidden="true"></i>
+                                    {{ __('สมัครสมาชิก') }} 
                                 </button>
-                                <button class="btn btn-danger" type="reset"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button>
+                                <button class="btn btn-danger" type="reset"> ยกเลิก</button>
                             </div>
 
                         </div>

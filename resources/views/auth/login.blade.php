@@ -1,8 +1,6 @@
 @extends('layouts.app')
 @section('css')
-<style type="text/css">
 
-</style>
 @endsection
 @section('content')
 <div class="container">
@@ -73,8 +71,8 @@
             </div>
         </div>
     </div> -->
-    <div class="row" style="padding-top: 20px;">
-        <div class="col-lg-4 col-lg-offset-4">
+    <div class="row" style="padding-top: 20px; padding-left: 390px">
+        <div class=" col-lg-offset-4">
             <!-- Brand -->
             <div class="text-center" style="margin-bottom:0px;">
                 <div><img src="https://regis.rmutl.ac.th/student/assets/image/logo/rmutl-logo.png" height="120px"></div>
@@ -131,14 +129,14 @@
         </div>
     </div>
     <footer class="footer">   
-   <div class="col-md-12" style="margin-top: 50px"></div>
-      <div class="container">
-         <div class="col-sm-6">
-            <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
-               Deverloped By Patiphan Uthang And Yuwa Saewang 
-         </div>
-      </div>
-   <div class="row" style="margin-top: 50px"></div>
-</footer>
+        <div class="col-md-12" style="margin-top: 50px"></div>
+        <div class="container">
+            <div class="">
+                <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
+                Deverloped By Patiphan Uthang And Yuwa Saewang 
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px"></div>
+    </footer>
 </div>
 @endsection

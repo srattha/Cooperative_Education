@@ -8,7 +8,8 @@
    border-right-width: 0px;
    border-bottom-width: 1px;
    border-left-width: 0px;
-   box-shadow: none
+   box-shadow: none;
+   font-size: 13px;
 } 
 .input-group-addon:first-child {
    border-right: 0;
@@ -17,6 +18,7 @@
    border-bottom-width: 0;
    border-left-width: 0;
    background: none;
+   font-size:13px;
 }
 .panel-info>.panel-heading {
    /* color: #31708f; */
@@ -190,29 +192,28 @@
          </div>
       </div>
       <br>
-      <div class="form-group">
-         <label for="upload_file" class="control-label col-sm-3">Upload File</label>
+      <br>
+      <div class="form-group" style="padding-left: 280px;">
+         <label for="upload_file" class="control-label col-sm-3">Upload File Project</label>
          <div class="col-sm-4">
             <input class="form-control" type="file" name="file" id="upload_file">
          </div>
       </div>
       <br>
       <h3>ส่วนที่ 2 ข้อมูลสถานประกอบการ</h3>
+      <br>
       <div class="row">
          <div class="col-md-6">
           <div class="input-group input-group-sm">
-            <span class="input-group-addon" id="sizing-addon1">Company</span>
+            <span class="input-group-addon" id="sizing-addon1">เลือกสถานประกอบการ</span>
             <select id="inputState" class="form-control"  onchange="getval(this);">
-               <option selected>-กรุณาเลือกสาขาวิชา-</option>
+               <option selected>-กรุณาเลือกสถานประกอบการ-</option>
                @foreach ($company as $index => $companys)
                <option value="{{$companys->id}}">{{$companys->company_name}}</option>
                @endforeach
-
             </select>
          </div>
       </div>
-
-
    </div>
    <br>
    <br>
@@ -331,7 +332,7 @@
       <br>
       <div class="row">
          <div class="col-md-12"></div>
-         <div class="container" style="padding-left: 440px;margin-top: 50px;">
+         <div class="container" style="padding-left: 520px;margin-top: 50px;">
             <br>
             <button type="submit" class="btn btn-info">
                <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
@@ -346,7 +347,7 @@
 </div>
 </div>
 <footer class="footer">   
-   <div class="col-md-12" style="margin-top: 50px"></div>
+   <div class="col-md-12" style="margin-top: 50px">
    <div class="container">
       <div class="col-sm-6">
          <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>

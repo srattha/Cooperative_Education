@@ -22,9 +22,9 @@
     <style type="text/css">
     /*card-header*/
         .card-header:first-child {
-        background-color: #6bccb4;
         color:#fefefe;
-        border-color: #bce8f1;
+        background-color: #3F51B5;
+        border-color: #3F51B5;
         }
         /*navbar-laravel*/
         .navbar-laravel{
