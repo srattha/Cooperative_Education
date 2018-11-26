@@ -1,5 +1,10 @@
 @extends('layouts.app')
-
+@section('css')
+<style type="text/css">
+    .text-md-right {
+    color: #4e4e4e;
+    font-weight: 600;
+</style>
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -12,8 +17,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('(นาย,นางสาว)ชื่อ-นามสกุล') }}<span style=" font-size: 20px;color: red;">*</span></label>
-
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('(นาย,นางสาว)ชื่อ-สกุล :') }}</label>
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus placeholder="ชื่อ-นามสกุล">
 
@@ -40,7 +44,7 @@
                         </div> -->
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('รหัสผ่าน') }}<span style=" font-size: 20px;color: red;">*</span></label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('รหัสผ่าน :') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="รหัสผ่าน">
@@ -54,7 +58,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('ยืนยันรหัสผ่าน') }}<span style=" font-size: 20px;color: red;">*</span></label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('ยืนยันรหัสผ่าน :') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="ยืนยันรหัสผ่าน">
