@@ -5,18 +5,54 @@
 @section('content')
 <div class="container">
    <div class="row">
-      <h6>ค้นหาสถานประกอบการ</h6>
       <form class="form-inline" action="/action_page.php">
-         <div class="form-group">
-            <label for="email">คณะ</label>
-            <input type="text" class="form-control" id="email" placeholder="คณะ" name="email">
+         <div class="col-sm-3" >
+            <h5>ค้นหาสถานประกอบการ</h5>
          </div>
-         <div class="form-group">
-            <label for="pwd">สาขา</label>
-            <input type="text" class="form-control" id="pwd" placeholder="สาขา" name="pwd">
+         <div class="col-sm-3" >
+         <div class="input-group input-group-sm">
+            <span class="input-group-addon" id="sizing-addon1"></span>
+            <select id="inputState" name="faculty" value="" class="form-control">
+               <option selected>-กรุณาเลือกคณะ-</option>
+               <option value="คณะบริหารธุรกิจและศิลปศาสตร์">คณะบริหารธุรกิจและศิลปศาสตร์</option>
+               <option value="คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร">คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร</option>
+               <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์ </option>
+               <option value="คณะศิลปกรรมและสถาปัตยกรรมศาสตร์">คณะศิลปกรรมและสถาปัตยกรรมศาสตร์</option>
+            </select>
          </div>
-         <button type="submit" class="btn btn-default">ค้นหา</button>
-      </form>
+      </div>
+      <div class="col-sm-3" >
+         <div class="input-group input-group-sm">
+            <span class="input-group-addon" id="sizing-addon1"></span>
+            <select id="inputState" name="major"
+               class="form-control">
+               <option selected>-กรุณาเลือกสาขาวิชา-</option>
+               <option value="บช.บ. การบัญชี" >บช.บ. การบัญชี</option>
+               <option value="บธ.บ. การจัดการ">บธ.บ. การจัดการ</option>
+               <option value="บธ.บ. การตลาด">บธ.บ. การตลาด</option>
+               <option value="บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์">บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์</option>
+               <option value="ศศ.บ การท่องเที่ยวและารโรงแรม">ศศ.บ การท่องเที่ยวและารโรงแรม</option>
+               <option value="ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล">ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล</option>
+               <option value="วท.บ. เทคโนโลยีสารสนเทศ">วท.บ. เทคโนโลยีสารสนเทศ</option>
+               <option value="คศ.บ. คหกรรมศาสตร์">คศ.บ. คหกรรมศาสตร์</option>
+               <option value="ค.อ.บ. วิศวกรรมเครื่องกล">ค.อ.บ. วิศวกรรมเครื่องกล</option>
+               <!--<option value="วศ.บ. วิศวกรรมเคื่องกล">วศ.บ. วิศวกรรมเคื่องกล</option> -->
+               <option value="ค.อ.บ. วิศวกรรมเครื่องกล">ค.อ.บ. วิศวกรรมเครื่องกล</option>
+               <option value="วศ.บ. วิศวกรรมคอมพิงเตอร์">วศ.บ. วิศวกรรมคอมพิงเตอร์</option>
+               <option value="วศ.บ. วิศวกรรมไฟฟ้า">วศ.บ. วิศวกรรมไฟฟ้า</option>
+               <option value="วศ.บ. วิศวะกรรมอิเล็กทรอนิกส์">วศ.บ. วิศวะกรรมอิเล็กทรอนิกส์</option>
+               <option value="วศ.บ. วิศวกรรมโยธา">วศ.บ. วิศวกรรมโยธา</option>
+               <option value="ค.อ.บ วิศวกรรมอุตสาหการ">ค.อ.บ วิศวกรรมอุตสาหการ</option>
+               <option value="วศ.บ. วิศวกรรมอุตสาหการ">วศ.บ. วิศวกรรมอุตสาหการ</option>
+               <option value="ศบ.บ ออกแบบอุตสาหกรรม">ศบ.บ ออกแบบอุตสาหกรรม</option>
+               <option value="ทล.บ. ออกแบบอุตสาหกรรม">ทล.บ. ออกแบบอุตสาหกรรม</option>
+            </select>
+         </div>
+      </div>
+      <div class="col-sm-3">
+          <button type="submit" class="btn btn-primary">ค้นหา</button>
+      </div>
+   </form>
    </div>
    <br>
    <div class="row">
