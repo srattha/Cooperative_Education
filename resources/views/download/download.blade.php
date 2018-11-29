@@ -6,9 +6,14 @@
    text-decoration: none;
    color: #513300;
    }
+   .body{
+      color: #555;
+   }
+
 </style>
 @endsection
 @section('content')
+<body>
 <div class="container ">
 <div class="row" style="margin-top: 15px; margin-bottom: 15px;">
    <div class="col-lg-12 col-md-12 col-ms-12">
@@ -67,6 +72,7 @@
    <div class="row" style="margin-top: 50px"></div>
 </footer>
 </div>
+</body>
 @endsection
 @section('javascript')
 @endsection
