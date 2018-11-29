@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','หน้าหลัก')
+@section('title','ค้นหา')
 @section('css')
 @endsection
 @section('content')
@@ -64,22 +64,21 @@
          </div>
          <!--/.Carousel Wrapper-->
       </div>
-       <div class="col-md-5">
+      <div class="col-md-5">
          <div class="activity-header">
             <b class="font-detail-18">ปฏิทิน</b>
          </div>
          <div class="text-centet" style="margin: 20px; padding: 110px 50px;background-color: #f1f1f1;">
-            
          </div>
-          
-       </div>
+      </div>
    </div>
-
-<br>
-   <div class="row">
+   <br>
+   <hr>
+   <br>
+   <div class="row" style="background-color: #3F51B5;">
       <form class="form-inline" action="/action_page.php">
          <div class="col-sm-3" >
-            <h5>ค้นหาสถานประกอบการ</h5>
+            <h5 style="color:  #fff;">ค้นหาสถานประกอบการ</h5>
          </div>
          <div class="col-sm-3" >
             <div class="input-group input-group-sm">
@@ -177,8 +176,8 @@
          </table>
       </div>
    </div>
-   </div>
-   <footer class="footer">
+</div>
+<footer class="footer">
    <div class="col-md-12" style="margin-top: 50px">
    <div class="container">
       <div class="col-sm-6">
@@ -188,8 +187,6 @@
    </div>
    <div class="row" style="margin-top: 50px"></div>
 </footer>
-
-
 @endsection
 @section('javascript')
 @endsection

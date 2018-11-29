@@ -218,6 +218,8 @@
                </div>
             </div>
             <br>
+            <hr>
+            <br>
             <h3 style="color:#4e4e4e; font-weight:600; font-size: 18px;"><p>ส่วนที่ 2 ข้อมูลสถานประกอบการ</p>
               <small style="font-size: 13px;">(นอกเหนือจากระบบให้นักศึกษากรอกข้อมูลเพิ่มเติม)</small></h3>
             <br>

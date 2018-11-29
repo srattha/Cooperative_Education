@@ -15,6 +15,7 @@
       <div class="">
          <h4 class="head-page-title" style="font-weight:550;color:#4e4e4e;">ดาวน์โหลด</h4>
       </div>
+      <hr>
       <div class="row">
          <div class="col-md-12">
             <p>หน้าสำหรับการดาวน์โหลดโปรแกรม เอกสาร แบบฟอร์มสหกิจศึกษา </p>
