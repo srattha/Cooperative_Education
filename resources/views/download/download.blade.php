@@ -9,7 +9,7 @@
 </style>
 @endsection
 @section('content')
-<div class="container">
+<div class="container ">
 <div class="row" style="margin-top: 15px; margin-bottom: 15px;">
    <div class="col-lg-12 col-md-12 col-ms-12">
       <div class="">
