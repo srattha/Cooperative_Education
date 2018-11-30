@@ -132,7 +132,7 @@ $fileModel->user_id = $user->id;
 $fileModel->name = $fileName;
 $fileModel->save();
 }
-return "[ันทึกสำเร็จ";
+return "[บันทึกสำเร็จ";
 }
 
 }

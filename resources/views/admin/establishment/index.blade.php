@@ -52,6 +52,17 @@
           <th>company_name</th>
           <th>coordinator</th>
           <th>coordinator_number</th>
+          <th>email</th>
+          <th>home_number</th>
+          <th>moo</th>
+          <th>industrial_estate</th>
+          <th>building</th>
+          <th>soi</th>
+          <th>road</th>
+          <th>district</th>
+          <th>amphure</th>
+          <th>province</th>
+          <th>post_code</th>
           <th>tel</th>
           <th>fix</th>
           <th class="text-center">แก้ไขข้อมูล</th>
@@ -64,6 +75,17 @@
          <td>{{$companys->company_name}}</td>
          <td>{{$companys->coordinator}}</td>
          <td>{{$companys->coordinator_number}}</td>
+         <td>{{$companys->email}}</td>
+         <td>{{$companys->home_number}}</td>
+         <td>{{$companys->moo}}</td>
+         <td>{{$companys->industrial_estate}}</td>
+         <td>{{$companys->building}}</td>
+         <td>{{$companys->soi}}</td>
+         <td>{{$companys->road}}</td>
+         <td>{{$companys->district}}</td>
+         <td>{{$companys->amphure}}</td>
+         <td>{{$companys->province}}</td>
+         <td>{{$companys->post_code}}</td>
          <td>{{$companys->tel}}</td>
          <td>{{$companys->fax}}</td>
 
