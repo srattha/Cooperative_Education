@@ -216,9 +216,7 @@
                <input class="form-control" type="file" name="file" id="upload_file">
             </div>
          </div>
-         <br>
          <hr>
-         <br>
          <h3 style="color:#4e4e4e; font-weight:600; font-size: 18px;"><p>ส่วนที่ 2 ข้อมูลสถานประกอบการ</p>
            <small style="font-size: 13px;">(นอกเหนือจากระบบให้นักศึกษากรอกข้อมูลเพิ่มเติม)</small></h3>
            <br>
@@ -249,7 +247,7 @@
             <div class="col-sm-6" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">นิคมอุตสาหกรรม</span>
-                  <input type="text" name="industrial_estate" class="form-control" id="industrial_estate" placeholder="นิคมอุตสาหกรรม" aria-describedby="sizing-addon1" required>
+                  <input type="text" name="industrial_estate" class="form-control" id="industrial_estate" value="{{$company->industrial_estate}}" placeholder="นิคมอุตสาหกรรม" aria-describedby="sizing-addon1" required>
                </div>
             </div>
          </div>
@@ -258,19 +256,19 @@
             <div class="col-sm-3" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">ที่อยู่</span>
-                  <input type="text" name="home_number" class="form-control" id="home_number" placeholder=" ที่อยู่" aria-describedby="sizing-addon1" required>
+                  <input type="text" name="home_number" class="form-control" id="home_number" value="{{$company->home_number}}" placeholder=" ที่อยู่" aria-describedby="sizing-addon1" required>
                </div>
             </div>
             <div class="col-sm-3" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">หมู่</span>
-                  <input type="text" name="moo" class="form-control" id="moo" placeholder="หมู่" aria-describedby="sizing-addon1" required>
+                  <input type="text" name="moo" class="form-control" id="moo" value="{{$company->moo}}" placeholder="หมู่" aria-describedby="sizing-addon1" required>
                </div>
             </div>
             <div class="col-sm-6" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">ตึก/อาคาร</span>
-                  <input type="text" name="building" class="form-control" id="building" placeholder="ตึก/อาคาร" aria-describedby="sizing-addon1" required>
+                  <input type="text" name="building" class="form-control" id="building" value="{{$company->building}}"placeholder="ตึก/อาคาร" aria-describedby="sizing-addon1" required>
                </div>
             </div>
          </div>
@@ -279,25 +277,25 @@
             <div class="col-sm-3" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">ซอย</span>
-                  <input type="text" name="soi" class="form-control" id="soi" placeholder=" ซอย" aria-describedby="sizing-addon1" required>
+                  <input type="text" name="soi" class="form-control" id="soi" id="building" value="{{$company->soi}}" placeholder=" ซอย" aria-describedby="sizing-addon1" required>
                </div>
             </div>
             <div class="col-sm-3" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">ถนน</span>
-                  <input type="text" name="road" class="form-control" id="road" placeholder=" ถนน" aria-describedby="sizing-addon1" required>
+                  <input type="text" name="road" class="form-control" id="road" value="{{$company->road}}" placeholder=" ถนน" aria-describedby="sizing-addon1" required>
                </div>
             </div>
             <div class="col-sm-3" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">ตำบล/แขวง</span>
-                  <input type="text" name="district" class="form-control" id="district" placeholder="ตำบล/แขวง" aria-describedby="sizing-addon1" required>
+                  <input type="text" name="district" class="form-control" id="district" value="{{$company->district}}" placeholder="ตำบล/แขวง" aria-describedby="sizing-addon1" required>
                </div>
             </div>
             <div class="col-sm-3" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">อำเภอ/เขต</span>
-                  <input type="text" name="amphure" class="form-control" id="amphure" placeholder="อำเภอ/เขต" aria-describedby="sizing-addon1" required>
+                  <input type="text" name="amphure" class="form-control" id="amphure" value="{{$company->amphure}}" placeholder="อำเภอ/เขต" aria-describedby="sizing-addon1" required>
                </div>
             </div>
          </div>
@@ -306,25 +304,25 @@
             <div class="col-sm-3" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">จังหวัด</span>
-                  <input type="text" name="province" class="form-control" id="province" placeholder=" จังหวัด" aria-describedby="sizing-addon1" required>
+                  <input type="text" name="province" class="form-control" id="province" value="{{$company->province}}" placeholder=" จังหวัด" aria-describedby="sizing-addon1" required>
                </div>
             </div>
             <div class="col-sm-3" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">รหัสไปรษณีย์</span>
-                  <input type="number" name="post_code" class="form-control" id="post_code" placeholder="รหัสไปรษณีย์" aria-describedby="sizing-addon1" required>
+                  <input type="number" name="post_code" class="form-control" id="post_code" value="{{$company->post_code}}" placeholder="รหัสไปรษณีย์" aria-describedby="sizing-addon1" required>
                </div>
             </div>
             <div class="col-sm-3" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">โทรศัพท์</span>
-                  <input type="text" name="tel" class="form-control" id="tel" placeholder="โทรศัพท์" aria-describedby="sizing-addon1" required>
+                  <input type="text" name="tel" class="form-control" id="tel" value="{{$company->tel}}" placeholder="โทรศัพท์" aria-describedby="sizing-addon1" required>
                </div>
             </div>
             <div class="col-sm-3" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">แฟกซ์</span>
-                  <input type="text" name="fax" class="form-control" id="fax" placeholder="แฟกซ์" aria-describedby="sizing-addon1" required>
+                  <input type="text" name="fax" class="form-control" id="fax" value="{{$company->fax}}" placeholder="แฟกซ์" aria-describedby="sizing-addon1" required>
                </div>
             </div>
          </div>
@@ -333,19 +331,19 @@
             <div class="col-sm-4" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">อีเมล</span>
-                  <input type="text" name="email" class="form-control" id="email" placeholder=" อีเมล" aria-describedby="sizing-addon1" required>
+                  <input type="text" name="email" class="form-control" id="email" value="{{$company->email}}" placeholder=" อีเมล" aria-describedby="sizing-addon1" required>
                </div>
             </div>
             <div class="col-sm-4" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">ชื่อผู้ติดต่อ</span>
-                  <input type="text" name="coordinator" class="form-control" id="coordinator" placeholder="ชื่อผู้ติดต่อ" aria-describedby="sizing-addon1" required>
+                  <input type="text" name="coordinator" class="form-control" id="coordinator" value="{{$company->coordinator}}" placeholder="ชื่อผู้ติดต่อ" aria-describedby="sizing-addon1" required>
                </div>
             </div>
             <div class="col-sm-4" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">เบอร์โทรผู้ติดต่อ</span>
-                  <input type="text" name="coordinator_number" class="form-control" id="coordinator_number" placeholder="เบอร์โทรผู้ติดต่อ" aria-describedby="sizing-addon1" required>
+                  <input type="text" name="coordinator_number" class="form-control" id="coordinator_number" value="{{$company->coordinator_number}}" placeholder="เบอร์โทรผู้ติดต่อ" aria-describedby="sizing-addon1" required>
                </div>
             </div>
             <!-- END row -->

@@ -72,10 +72,8 @@
          </div>
       </div>
    </div>
-   <!-- main menu -->
-   <div class="row row-main-menu">
-      
-   </div>
+   <br>
+   <button type="button" class="btn btn-primary btn-block" style="font-size: 20px;">ค้นหาสถานประกอบการ</button>
 </div>
 <footer class="footer">
    <div class="col-md-12" style="margin-top: 50px">

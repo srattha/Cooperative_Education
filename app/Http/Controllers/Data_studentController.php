@@ -106,6 +106,8 @@ $add_company->post_code = $request->post_code;
 $add_company->tel = $request->tel;
 $add_company->fax = $request->fax;
 $add_company->save();
+
+
 $company_id = $add_company->id;
 if($add_company){
     $add_student = new Student;
@@ -140,6 +142,7 @@ $fileModel->user_id = $user->id;
 $fileModel->name = $fileName;
 $fileModel->save();
 }
+
 return "[บันทึกสำเร็จ";
 }
 
