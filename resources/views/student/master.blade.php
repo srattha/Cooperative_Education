@@ -299,6 +299,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-top-links navbar-right">
+                  @if(Auth::user())
                   <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                       <i class="fa fa-user fa-fw"></i>  <span style="color: #fff;">{{Auth::user()->name}}</span> <i class="fa fa-caret-down"></i>
@@ -317,6 +318,13 @@
                     </form>
                   </ul>
                 </li>
+                @else
+                <div style="text-align: right;">
+                  <a href="/login"><i class="fa fa-user-circle" aria-hidden="true"></i> เข้าสู่ระบบ</a>
+                  <a href="/register"><i class="fa fa-user-plus" aria-hidden="true"></i> สมัครสมาชิก</a>
+                </div>
+
+                @endif
 
               </ul>
             </div>
@@ -339,7 +347,7 @@
                   </li>
                 </ul>
               </div>
-            
+
             </div> -->
             <!-- /.navbar-static-side -->
           </nav>

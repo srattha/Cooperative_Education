@@ -136,14 +136,10 @@ header {
          </div>
       </nav>
       <script type="text/javascript">
-         /*global $, console*/
-         /*
-         By Mostafa Omar
-         https://www.facebook.com/MustafaOmarIbrahiem
-         */
+
          $(function () {
          'use strict';
-         // Start navbar 
+         // Start navbar
          (function () {
            // Add class active when the user clicks the lis of the menu
            $('.nav .list li').on('click', 'a', function () {

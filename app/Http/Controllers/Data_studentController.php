@@ -26,10 +26,15 @@ public function data_student()
 $user = Auth::user();
 $users_type_id = $user->user_type_id;
 $data = Student::where('user_id',$user->id)->first();
-$company = Company::get();
-switch ($users_type_id) {
+$company = Company::where('id',$data->company_id)->first();
+$companys = Company::get();
+switch ($users_type_id ) {
 case '1':
-return view('data_student.data_student', ['user'=> $user, 'company' => $company, 'data' => $data]);
+if ($data) {
+
+   return view('data_student.editdata_student', ['user'=> $user, 'companys'=> $companys, 'data'=> $data, 'company'=> $company ]);
+}
+return view('data_student.data_student', ['user'=> $user, 'companys'=> $companys]);
 break;
 case '2':
 return redirect("/user");
