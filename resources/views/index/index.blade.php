@@ -72,6 +72,10 @@
          </div>
       </div>
    </div>
+   <!-- main menu -->
+   <div class="row row-main-menu">
+      
+   </div>
 </div>
 <footer class="footer">
    <div class="col-md-12" style="margin-top: 50px">
