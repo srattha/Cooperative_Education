@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Search_dataController extends Controller
+class SearchController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -22,9 +22,9 @@ class Search_dataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function Search_data()
+    public function search()
     {
         //return '555'
-        return view('Search_data.Search_data');
+        return view('search.search');
     }
 }
