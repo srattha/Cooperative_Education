@@ -26,12 +26,12 @@ public function data_student()
 $user = Auth::user();
 $users_type_id = $user->user_type_id;
 $data = Student::where('user_id',$user->id)->first();
-$company = Company::where('id',$data->company_id)->first();
+
 $companys = Company::get();
 switch ($users_type_id ) {
 case '1':
 if ($data) {
-
+	$company = Company::where('id',$data->company_id)->first();
    return view('data_student.editdata_student', ['user'=> $user, 'companys'=> $companys, 'data'=> $data, 'company'=> $company ]);
 }
 return view('data_student.data_student', ['user'=> $user, 'companys'=> $companys]);
@@ -46,6 +46,7 @@ public function add_data_student(Request $request)
     //data student
 //return $request->all();
 $user = Auth::user();
+
 if ($request->company_id) {
 $add_student = new Student;
 $add_student->user_id = $user->id;
@@ -80,7 +81,9 @@ $fileModel->user_id = $user->id;
 $fileModel->name = $fileName;
 $fileModel->save();
 }
- return redirect()->route('data_student.data_student',['date'=>$add_student, 'user'=> $user,]);
+$companys = Company::get();
+$company = Company::where('id',$request->company_id)->first();
+ return redirect()->route('data_student.editdata_student',['date'=>$add_student, 'user'=> $user, 'company'=> $company,'companys'=> $companys ]);
 
 }
 }
