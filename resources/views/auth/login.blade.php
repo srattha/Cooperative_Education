@@ -90,7 +90,8 @@
             -webkit-box-shadow: none;
             box-shadow: none;">
                         @csrf
-            <div class="panel-body">
+            <div class="panel-body">  
+                <i class="fa fa-address-book" aria-hidden="true"></i>
                @if (Session::has('user'))
                <div class="alert alert-danger">
                   <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -103,6 +104,7 @@
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
+
                         <input id="login" type="text" class="form-control{{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}"
                         name="login" value="{{ old('username') ?: old('email') }}" placeholder="Username" required autofocus>
                     </div>
