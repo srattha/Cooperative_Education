@@ -36,6 +36,7 @@
   <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet">
   <link href="{{ asset('/assets/css/lightbox.css') }}" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Maitree|Sriracha" rel="stylesheet">
+  <link href="{{ asset('/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
   @yield('css')
 
   <style type="text/css">
@@ -304,9 +305,9 @@
                       <i class="fa fa-user fa-fw"></i>  <span style="color: #fff;">{{Auth::user()->name}}</span> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                      <li><a href=""><i class="fa fa-user fa-fw"></i>โปรไฟล์</a>
-                      </li>
-                      <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                      <!--<li><a href=""><i class="fa fa-user fa-fw"></i>โปรไฟล์</a>
+                      </li> -->
+                      <li><a href=""><i class="fa fa-gear fa-fw"></i> เปลี่ยนรหัสผ่าน</a>
                       </li>
                       <li class="divider"></li>
                       <li><a href="{{ route('logout') }}" onclick="event.preventDefault();

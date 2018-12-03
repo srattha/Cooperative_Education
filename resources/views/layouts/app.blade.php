@@ -44,12 +44,16 @@
 a:hover {
     color: #A0DFFF !important;
 }
+#icon{
+    padding-right: 3px;
+}
 </style>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
+                <div><img src="https://regis.rmutl.ac.th/student/assets/image/logo/rmutl-logo.png" height="40px" style="padding-right: 5px;"></div>
                 <a class="navbar-brand" href="{{ url('/') }}">{{ __('ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -67,13 +71,13 @@ a:hover {
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('ดาวน์โหลด') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-download" aria-hidden="true" id="icon"></i>{{ __('ดาวน์โหลด') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="{{ route('login') }}">{{ __('เข้าสู่ระบบ') }}</a>
+                            <a class="nav-link " href="{{ route('login') }}"><i class="fa fa-sign-in" aria-hidden="true" id="icon"></i>{{ __('เข้าสู่ระบบ') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('ลงทะเบียนใช้งาน') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-user-plus" aria-hidden="true" id="icon"></i>{{ __('ลงทะเบียนใช้งาน') }}</a>
                         </li>
                         @else
                         <li class="nav-item dropdown">

@@ -31,29 +31,29 @@
                   <td>
                      <p 18.5714px line-height:>เอกสารสหกิจศึกษาต่างๆ </p>
                     
-                     <a href=""target"_blank">เอกสารหมายเลข 1 </a>
+                     <a href=""><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>เอกสารหมายเลข 1 </a>
                      <br>
-                     <a href=""target"_blank">เอกสารหมายเลข 2 </a>
+                     <a href=""><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>เอกสารหมายเลข 2 </a>
                      <br>
-                     <a href=""target"_blank">เอกสารหมายเลข 3 </a>
+                     <a href=""><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>เอกสารหมายเลข 3 </a>
                      <br>
-                     <a href=""target"_blank">เอกสารหมายเลข 4 </a>
+                     <a href=""><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>เอกสารหมายเลข 4 </a>
                      <br>
-                     <a href=""target"_blank">เอกสารหมายเลข 5 </a>
+                     <a href=""><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>เอกสารหมายเลข 5 </a>
                      <br>
-                     <a href=""target"_blank">เอกสารหมายเลข 6 </a>
+                     <a href=""><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>เอกสารหมายเลข 6 </a>
                      <br>
-                     <a href=""target"_blank">เอกสารหมายเลข 7 </a>
+                     <a href=""><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>เอกสารหมายเลข 7 </a>
                      <br>
-                     <a href=""target"_blank">เอกสารหมายเลข 8 </a>
+                     <a href=""><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>เอกสารหมายเลข 8 </a>
                      <br>
-                     <a href=""target"_blank">เอกสารหมายเลข 9 </a>
+                     <a href=""><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>เอกสารหมายเลข 9 </a>
                      <br>
-                     <a href=""target"_blank">เอกสารหมายเลข 10 </a>
+                     <a href=""><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>เอกสารหมายเลข 10 </a>
                      <br>
-                     <a href=""target"_blank">เอกสารหมายเลข 11 </a>
+                     <a href=""><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>เอกสารหมายเลข 11 </a>
                      <br>
-                     <a href=""target"_blank">เอกสารหมายเลข 12 </a>
+                     <a href=""><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>เอกสารหมายเลข 12 </a>
                   </td>
                </tr>
             </tbody>
@@ -62,6 +62,16 @@
    </div>
 </div>
 </div>
+  <footer class="footer">
+        <div class="col-md-12" style="margin-top: 50px"></div>
+        <div class="container">
+            <div class="">
+                <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
+                Deverloped By Patiphan Uthang And Yuwa Saewang
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px"></div>
+    </footer>
 @endsection
 @section('javascript')
 @endsection
