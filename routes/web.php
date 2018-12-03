@@ -23,8 +23,8 @@ Route::get('/form', 'FormController@form')->name('form');
 
 Route::get('/data_student', 'data_studentController@data_student')->name('data_student');
 Route::post('data_student', 'data_studentController@add_data_student');
-Route::get('/search', 'SearchController@Search')->name('search');
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'SearchController@Search')->name('search');
+// Route::get('/', 'HomeController@index')->name('home');
 Route::get('/upload_pfd', 'Upload_pfdController@upload_pfd')->name('upload_pfd');
 
 // Admin
@@ -41,7 +41,8 @@ Route::post('uploadPdf', 'UploadPdfController@storeFile');
 
 Route::get('/index', 'IndexController@index')->name('index');
 Route::post('/addUser', 'HomeController@addUser')->name('addUser');
-Route::get('report_cooperative_education', 'ReportCooperativeEducationController@index');
+Route::get('/report_cooperative_education', 'ReportCooperativeEducationController@index')->name('search_report');
+Route::post('report_cooperative_education', 'ReportCooperativeEducationController@search_report');
 Route::get('establishment', 'EstablishmentController@index')->name('establishment');
 //Route::get('api/getcompany', 'CompanyController@index');
 
