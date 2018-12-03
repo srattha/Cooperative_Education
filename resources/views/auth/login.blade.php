@@ -87,10 +87,16 @@
             border-bottom-width: 2px;
             border-bottom-color: #c0cdd1;
             border-radius: 3px;
-            -webkit-box-shadow: none; 
+            -webkit-box-shadow: none;
             box-shadow: none;">
                         @csrf
             <div class="panel-body">
+               @if (Session::has('user'))
+               <div class="alert alert-danger">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                  <p>{{ Session::get('user') }}</p>
+              </div>
+              @endif
              <div class="form-group row">
                 <div class="col-md-12">
                     <div class="input-group">
@@ -128,12 +134,12 @@
             </div>
         </div>
     </div>
-    <footer class="footer">   
+    <footer class="footer">
         <div class="col-md-12" style="margin-top: 50px"></div>
         <div class="container">
             <div class="">
                 <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
-                Deverloped By Patiphan Uthang And Yuwa Saewang 
+                Deverloped By Patiphan Uthang And Yuwa Saewang
             </div>
         </div>
         <div class="row" style="margin-top: 50px"></div>

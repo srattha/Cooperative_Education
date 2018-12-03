@@ -24,18 +24,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-         $user = Auth::user();
-        $users_type_id = $user->user_type_id;
-        switch ($users_type_id) {
-            case '1':
-            return redirect("/");
-            break;
-            case '2':
-            $user = User::get();
-               return view('admin.user.index', ["user" => $user]);
-            break;
+        //  $user = Auth::user();
+        // $users_type_id = $user->user_type_id;
+        // switch ($users_type_id) {
+        //     case '1':
+        //     return redirect("/");
+        //     break;
+        //     case '2':
+        //     $user = User::get();
+        //        return view('admin.user.index', ["user" => $user]);
+        //     break;
 
-        }
+        // }
 
     }
 }
