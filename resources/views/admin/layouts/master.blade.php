@@ -35,7 +35,8 @@
   <!-- styel Css -->
   <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet">
   <link href="{{ asset('/assets/css/lightbox.css') }}" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Maitree|Sriracha" rel="stylesheet">
+
+  <link href="{{ asset('/vendor/bootstrap/css/bootstrap-datepicker.css')  }}" rel="stylesheet"/>
   @yield('css')
 
   <style type="text/css">
@@ -287,82 +288,84 @@
                 <ul class="navbar-nav mr-auto">
 
                 </ul>
-            </div>
-            <!-- /.navbar-top-links -->
-
-            <div class="navbar-default sidebar" role="navigation">
-              <div style="text-align: center;">
-                <img src="https://regis.rmutl.ac.th/student/assets/image/logo/rmutl-logo.png" height="120px">
               </div>
-              <div class="sidebar-nav navbar-collapse">
-                <ul class="nav" id="side-menu">
+              <!-- /.navbar-top-links -->
 
-                  <li>
-                    <a href="/user"><i class="fa fa-users" aria-hidden="true"></i> จัดการข้อมูลผู้ใช้</a>
+              <div class="navbar-default sidebar" role="navigation">
+                <div style="text-align: center;">
+                  <img src="https://regis.rmutl.ac.th/student/assets/image/logo/rmutl-logo.png" height="120px">
+                </div>
+                <div class="sidebar-nav navbar-collapse">
+                  <ul class="nav" id="side-menu">
+
+                    <li>
+                      <a href="/user"><i class="fa fa-users" aria-hidden="true"></i> จัดการข้อมูลผู้ใช้</a>
+                    </li>
+                    <li>
+                      <a href="uploadPdf"><i class="fa fa-upload" aria-hidden="true"></i> จัดการเอกสารไฟล์ PDF</a>
+                    </li>
+                    <li>
+                      <a href="establishment"><i class="fa fa-cogs" aria-hidden="true"></i> จัดการข้อมูลสถานประกอบการ</a>
+                    </li>
+                    <li>
+                      <a href="report_cooperative_education"><i class="fa fa-clone" aria-hidden="true"></i> รายงานรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา</a>
+                    </li>
+                    <li>
+                      <a href="uploadPdf"><i class="fa fa-bar-chart" aria-hidden="true"></i> รายงานสถิตินักศึกษาในโครงการสหกิจศึกษา</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{{ route('logout') }}"
+                      onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();"> <i class="fa fa-power-off" aria-hidden="true"></i>
+                      {{ __('ออกจากระบบ') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                    </form>
                   </li>
-                  <li>
-                    <a href="uploadPdf"><i class="fa fa-upload" aria-hidden="true"></i> จัดการเอกสารไฟล์ PDF</a>
-                  </li>
-                  <li>
-                    <a href="establishment"><i class="fa fa-cogs" aria-hidden="true"></i> จัดการข้อมูลสถานประกอบการ</a>
-                  </li>
-                  <li>
-                    <a href="report_cooperative_education"><i class="fa fa-clone" aria-hidden="true"></i> รายงานรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา</a>
-                  </li>
-                  <li>
-                    <a href="uploadPdf"><i class="fa fa-bar-chart" aria-hidden="true"></i> รายงานสถิตินักศึกษาในโครงการสหกิจศึกษา</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();"> <i class="fa fa-power-off" aria-hidden="true"></i>
-                    {{ __('ออกจากระบบ') }}
-                  </a>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                  </form>
-                </li>
-              </ul>
+                </ul>
+              </div>
+              <!-- /.sidebar-collapse -->
             </div>
-            <!-- /.sidebar-collapse -->
-          </div>
-          <!-- /.navbar-static-side -->
-        </nav>
+            <!-- /.navbar-static-side -->
+          </nav>
 
-        <!-- Page Content -->
-        <div id="page-wrapper" style="min-height: 923px;">
-          <div class="container-fluid">
-            @yield('content')
+          <!-- Page Content -->
+          <div id="page-wrapper" style="min-height: 923px;">
+            <div class="container-fluid">
+              @yield('content')
+            </div>
+            <!-- /.container-fluid -->
           </div>
-          <!-- /.container-fluid -->
+          <!-- /#page-wrapper -->
+
         </div>
-        <!-- /#page-wrapper -->
+        <!-- /#wrapper -->
 
-      </div>
-      <!-- /#wrapper -->
+        <!-- jQuery -->
+        <script src="{{ asset('/vendor/jquery/jquery.min.js') }}"></script>
 
-      <!-- jQuery -->
-      <script src="{{ asset('/vendor/jquery/jquery.min.js') }}"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{{ asset('/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 
-      <!-- Bootstrap Core JavaScript -->
-      <script src="{{ asset('/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="{{ asset('/vendor/metisMenu/metisMenu.min.js') }}"></script>
 
-      <!-- Metis Menu Plugin JavaScript -->
-      <script src="{{ asset('/vendor/metisMenu/metisMenu.min.js') }}"></script>
+        <!-- Toastr JavaScript -->
+        <script src="{{ asset('/vendor/toastr/js/toastr.min.js') }}"></script>
 
-      <!-- Toastr JavaScript -->
-      <script src="{{ asset('/vendor/toastr/js/toastr.min.js') }}"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="{{ asset('/assets/js/sb-admin-2.js') }}"></script>
 
-      <!-- Custom Theme JavaScript -->
-      <script src="{{ asset('/assets/js/sb-admin-2.js') }}"></script>
-
-      <script src="{{ asset('/assets/js/lightbox.js') }}"></script>
-      <script src="{{ asset('/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
-      <script src="{{ asset('/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
-      <script src="{{ asset('/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
+        <script src="{{ asset('/assets/js/lightbox.js') }}"></script>
+        <script src="{{ asset('/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
+        <script src="{{ asset('/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
+        <script src="{{ asset('/vendor/bootstrap/js/bootstrap-datepicker.js') }}"></script>
 
 
-      @yield('javascript')
-    </body>
 
-    </html>
+        @yield('javascript')
+      </body>
+
+      </html>

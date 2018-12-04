@@ -54,10 +54,11 @@
       <div class="col-sm-3 col-md-3" >
         <div class="input-group input-group-sm">
          <span class="input-group-addon" id="sizing-addon1">ปีการศึกษา</span>
-         <input type="number" name="year" class="form-control"  placeholder="ปีการศึกษา" aria-describedby="sizing-addon1" required>
+
+         <input type="text" id="datepicker" / name="year" class="form-control"  placeholder="ปีการศึกษา" aria-describedby="sizing-addon1" required>
        </div>
      </div>
-     <div class="col-sm-3 col-md-2">
+     <div class="col-sm-2 col-md-2">
       <div class="input-group input-group-sm">
        <span class="input-group-addon">ภาคเรียน</span>
        <select name="term" class="form-control">
@@ -68,7 +69,7 @@
     </div>
 
   </div>
-  <div class="col-sm-3 col-md-1">
+  <div class="col-sm-1 col-md-1">
     <div class="input-group input-group-sm">
       <button type="submit" class="btn btn-info">
        <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
@@ -79,7 +80,7 @@
 </div>
 <br>
 <br>
-<div class="row">
+<!-- <div class="row">
   <div class="col-sm-3 col-md-3">
     <label>คณะ</label>
   </div>
@@ -93,8 +94,8 @@
     <label>ปีการศึกษา</label>
   </div>
 
-</div>
-<table  id="dataTables-example" class="table table-striped table-bordered table-hover" style="width:100%;">
+</div> -->
+<table   class="table table-striped table-bordered table-hover" style="width:100%;">
  <thead>
   <tr>
     <th>#</th>
@@ -131,11 +132,13 @@
 </tbody>
 </table>
 
+{{ $student->links() }}
 
 
 </div>
 </div>
 </div>
+
 @endsection
 @section('javascript')
 <script>
@@ -143,6 +146,11 @@
     $('#dataTables-example').DataTable({
       responsive: true
     });
+   $("#datepicker").datepicker({
+    format: "yyyy",
+    viewMode: "years",
+    minViewMode: "years"
+});
   });
 </script>
 @endsection

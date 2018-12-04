@@ -42,7 +42,7 @@ Route::post('uploadPdf', 'UploadPdfController@storeFile');
 Route::get('/index', 'IndexController@index')->name('index');
 Route::post('/addUser', 'HomeController@addUser')->name('addUser');
 Route::get('/report_cooperative_education', 'ReportCooperativeEducationController@index')->name('search_report');
-Route::post('report_cooperative_education', 'ReportCooperativeEducationController@search_report');
+Route::post('/report_cooperative_education', 'ReportCooperativeEducationController@search_report');
 Route::get('establishment', 'EstablishmentController@index')->name('establishment');
 //Route::get('api/getcompany', 'CompanyController@index');
 
