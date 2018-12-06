@@ -50,15 +50,30 @@ class ReportCooperativeEducationController extends Controller
 
 public function search_report(Request $request)
 {
-    $student = Student::where('faculty', 'like', '%' . $request->faculty . '%')
-   ->orWhere('major', 'like', '%' . $request->major . '%')
-   ->orWhere('year', 'like', '%' . $request->year . '%')
-   ->orWhere('term', 'like', '%' . $request->term . '%')->paginate(15);
-   foreach ($student as $key => $value) {
-    $student[$key]['user'] = User::where('id',$value->user_id)->get();
-    $student[$key]['company'] = Company::where('id',$value->company_id)->get();
+
+    $faculty = $request->faculty;
+    $major =  $request->major;
+    $year = $request->year;
+    $term = $request->term;
+    $student = Student::where('faculty', 'like', '%' . $faculty . '%')
+    ->Where('major', 'like', '%' . $major . '%')
+    ->Where('year', 'like', '%' . $year . '%')
+    ->Where('term', 'like', '%' . $term . '%')->paginate(15);
+
+   //return $student = Student::where('faculty', 'LIKE', '%' . $faculty . '%')->paginate(15);
+    foreach ($student as $key => $value) {
+        $student[$key]['user'] = User::where('id',$value->user_id)->get();
+        $student[$key]['company'] = Company::where('id',$value->company_id)->get();
+    }
+
+    return view('admin.report_cooperative_education.index', ['student'=>$student]);
 }
 
- return view('admin.report_cooperative_education.index', ['student'=>$student]);
+public function view_report($id)
+{
+    $student = Student::where('id',$id)->first();
+    $user = User::where('id',$student->user_id)->first();
+    $company = Company::where('id',$student->company_id)->first();
+    return view('admin.report_cooperative_education.view', ['student'=>$student, 'company'=>$company]);
 }
 }

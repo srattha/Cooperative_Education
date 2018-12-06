@@ -24,6 +24,7 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
 
+
          switch ($user['user_type_id']) {
             case '1':
 

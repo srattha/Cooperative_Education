@@ -58,8 +58,12 @@
       </div>
       <div class="panel-body">
          <h3 style="color:#4e4e4e; font-weight:600; font-size: 18px;">ส่วนที่ 1 ข้อมูลนักศึกษา</h3>
-         <form class="form-horizontal" method="POST" action="{{ route('data_student') }}" enctype="multipart/form-data">
+         <form class="form-horizontal" method="POST" action="{{ route('editdata_student') }}" enctype="multipart/form-data">
             {{ csrf_field() }}
+
+            <input type="hidden" name="user_id"  value="{{$user->id}}">
+           <input type="hidden" name="update_company_id" value="{{$data->company_id}}">
+            <input type="hidden" name="company_ID" value="{{$company->id}}">
             <div class="row">
                <!-- row-I -->
                <div class="col-sm-7" >
@@ -110,8 +114,8 @@
                      <span class="input-group-addon" id="sizing-addon1">ภาคเรียน</span>
                      <select id="inputState" name="term"  class="form-control">
                         <option selected>-กรุณาเลือกภาคเรียน-</option>
-                        <option value="{{ $data->term }}" {{ 1 == $data->term ? 'selected="selected"' : '' }}">1</option>
-                        <option value="{{ $data->term }}" {{ 2 == $data->term ? 'selected="selected"' : '' }}">2</option>
+                        <option value="1" {{ 1 == $data->term ? 'selected="selected"' : '' }}">1</option>
+                        <option value="2" {{ 2 == $data->term ? 'selected="selected"' : '' }}">2</option>
                      </select>
                   </div>
                </div>
@@ -239,7 +243,7 @@
             <!-- row-I -->
             <div class="col-sm-6" >
                <div class="input-group input-group-sm">
-                  <span class="input-group-addon" id="sizing-addon1">ชื่อบริษัท</span>
+                  <span class="input-group-addon" id="sizing-addon1">ชื่อบริษัท </span>
                   <input type="hidden" name="company_id" id="id">
                   <input type="text" name="company_name" class="form-control" id="company_name" value="{{$company->company_name}}" placeholder=" ชื่อบริษัท"  aria-describedby="sizing-addon1" required>
                </div>

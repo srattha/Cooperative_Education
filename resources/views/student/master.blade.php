@@ -37,6 +37,8 @@
   <link href="{{ asset('/assets/css/lightbox.css') }}" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Maitree|Sriracha" rel="stylesheet">
   <link href="{{ asset('/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('/vendor/bootstrap/css/bootstrap-datepicker.css')  }}" rel="stylesheet"/>
+
   @yield('css')
 
   <style type="text/css">
@@ -47,6 +49,19 @@
     color: #333333;
     text-decoration: none;
   }
+ /* a:hover {
+    color: #A0DFFF !important;
+}*/
+.navbar-default .navbar-brand:hover {
+    color: #A0DFFF !important;
+}
+.navbar-top-links li:hover {
+    color: #A0DFFF !important;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: #3f51b5 !important;
+    border-color: #337ab7 !important;
+}
  /* #overlay{
             position:fixed;
             z-index:99999;
@@ -294,6 +309,7 @@
                   <span class="icon-bar"></span>
                 </button>
                 <span class="navbar-brand">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</span>
+
               </div>
               <!-- /.navbar-header -->
 
@@ -340,7 +356,7 @@
                   </li>
                 </ul>
               </div>
-            
+
             </div> -->
             <!-- /.navbar-static-side -->
           </nav>
@@ -376,6 +392,7 @@
         <script src="{{ asset('/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
         <script src="{{ asset('/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
         <script src="{{ asset('/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
+         <script src="{{ asset('/vendor/bootstrap/js/bootstrap-datepicker.js') }}"></script>
 
 
         @yield('javascript')
