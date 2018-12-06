@@ -52,6 +52,10 @@
  /* a:hover {
     color: #A0DFFF !important;
 }*/
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #5bc0de;
+}
 .navbar-default .navbar-brand:hover {
     color: #A0DFFF !important;
 }
