@@ -53,6 +53,20 @@ Route::post('create_establishment', 'EstablishmentController@add_establishment')
 Route::get('/editestablishment/{id}', 'EstablishmentController@edit_establishment')->name('edit_establishment')->where('id', '[0-9]+');
 Route::post('editestablishment', 'EstablishmentController@update_establishment');
 Route::get('delete_establishment/{id}', 'EstablishmentController@destroy')->name('delete_establishment')->where('id', '[0-9]+');
+
+Route::get('/faculty', 'FacultyController@index')->name('faculty');
+Route::get('/create_faculty', 'FacultyController@create')->name('create_faculty');
+Route::post('/create_faculty', 'FacultyController@store');
+Route::get('edit_faculty/{id}', 'FacultyController@edit')->name('edit_faculty')->where('id', '[0-9]+');
+Route::post('/edit_faculty', 'FacultyController@update');
+Route::get('delete_faculty/{id}', 'FacultyController@destroy')->name('delete_faculty')->where('id', '[0-9]+');
+
+Route::get('/branch', 'BranchController@index')->name('branch');
+Route::get('/create_branch', 'BranchController@create')->name('create_branch');
+Route::post('/create_branch', 'BranchController@store');
+Route::get('edit_branch/{id}', 'BranchController@edit')->name('edit_branch')->where('id', '[0-9]+');
+Route::post('/edit_branch', 'BranchController@update');
+Route::get('delete_branch/{id}', 'BranchController@destroy')->name('delete_branch')->where('id', '[0-9]+');
 //Route::get('api/getcompany', 'CompanyController@index');
 
 

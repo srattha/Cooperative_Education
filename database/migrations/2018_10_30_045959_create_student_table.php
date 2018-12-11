@@ -17,12 +17,12 @@ class CreateStudentTable extends Migration
             $table->increments('id');
             $table->string('user_id');
             $table->string('company_id');
+            $table->string('faculty_id');
             $table->string('term');
             $table->string('year');
             $table->string('activities');
             $table->string('institution');
             $table->string('campus');
-            $table->string('faculty');
             $table->string('major');
             $table->string('student_id');
             $table->string('identification_number');

@@ -6,6 +6,7 @@ use App\Company;
 use App\Student;
 use App\File;
 use Session;
+use App\Faculty;
 class Data_studentController extends Controller
 {
 /**
@@ -35,7 +36,8 @@ public function data_student()
 
            return $this->edit_data_student();
        }
-       return view('data_student.data_student', ['user'=> $user, 'companys'=> $companys]);
+        $faculty = Faculty::get();
+       return view('data_student.data_student', ['user'=> $user, 'companys'=> $companys, 'faculty' => $faculty]);
        break;
        case '2':
        return redirect("/user");
@@ -45,7 +47,7 @@ public function data_student()
 public function add_data_student(Request $request)
 {
 
-
+//return $request->campus;
     $companys = Company::get();
     if(isset($request->identification_number)){
         $id = $request->identification_number;
@@ -67,7 +69,7 @@ public function add_data_student(Request $request)
         if($rev[0] != $check_digit)
         {
             Session::flash('error', 'Invalid Id card number.');
-            return redirect()->back();
+            return redirect()->back()->withInput();
         }
 
     }
@@ -82,7 +84,7 @@ public function add_data_student(Request $request)
         $add_student->activities = $request->activities;
         $add_student->institution = $request->institution;
         $add_student->campus = $request->campus;
-        $add_student->faculty = $request->faculty;
+        $add_student->faculty_id = $request->faculty;
         $add_student->major = $request->major;
         $add_student->student_id = $request->student_id;
         $add_student->identification_number = $request->identification_number;

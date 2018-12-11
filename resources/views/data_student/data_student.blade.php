@@ -135,21 +135,23 @@
                <div class="col-sm-4" >
                   <div class="input-group input-group-sm">
                      <span class="input-group-addon" id="sizing-addon1">คณะ</span>
-                     <select id="inputState" name="faculty" class="form-control">
+                     <select id="faculty" name="faculty" class="form-control">
                         <option selected>-กรุณาเลือกคณะ-</option>
-                        <option value="คณะบริหารธุรกิจและศิลปศาสตร์">คณะบริหารธุรกิจและศิลปศาสตร์</option>
+                        @foreach ($faculty as $index => $f)
+                        <option value="{{$f->id}}">{{$f->name}}</option>
+                        @endforeach
+                        <!-- <option value="คณะบริหารธุรกิจและศิลปศาสตร์">คณะบริหารธุรกิจและศิลปศาสตร์</option>
                         <option value="คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร">คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร</option>
                         <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์ </option>
-                        <option value="คณะศิลปกรรมและสถาปัตยกรรมศาสตร์">คณะศิลปกรรมและสถาปัตยกรรมศาสตร์</option>
+                        <option value="คณะศิลปกรรมและสถาปัตยกรรมศาสตร์">คณะศิลปกรรมและสถาปัตยกรรมศาสตร์</option> -->
                      </select>
                   </div>
                </div>
                <div class="col-sm-4" >
                   <div class="input-group input-group-sm">
                      <span class="input-group-addon" id="sizing-addon1">สาขาวิชา</span>
-                     <select id="inputState" name="major"
-                     class="form-control">
-                     <option selected>-กรุณาเลือกสาขาวิชา-</option>
+                     <select id="major" name="major" class="form-control">
+                    <!--  <option selected>-กรุณาเลือกสาขาวิชา-</option>
                      <option value="บช.บ. การบัญชี" >บช.บ. การบัญชี</option>
                      <option value="บธ.บ. การจัดการ">บธ.บ. การจัดการ</option>
                      <option value="บธ.บ. การตลาด">บธ.บ. การตลาด</option>
@@ -168,7 +170,7 @@
                      <option value="ค.อ.บ วิศวกรรมอุตสาหการ">ค.อ.บ วิศวกรรมอุตสาหการ</option>
                      <option value="วศ.บ. วิศวกรรมอุตสาหการ">วศ.บ. วิศวกรรมอุตสาหการ</option>
                      <option value="ศบ.บ ออกแบบอุตสาหกรรม">ศบ.บ ออกแบบอุตสาหกรรม</option>
-                     <option value="ทล.บ. ออกแบบอุตสาหกรรม">ทล.บ. ออกแบบอุตสาหกรรม</option>
+                     <option value="ทล.บ. ออกแบบอุตสาหกรรม">ทล.บ. ออกแบบอุตสาหกรรม</option> -->
                   </select>
                </div>
             </div>
@@ -237,7 +239,7 @@
             <div class="col-sm-5">
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon2"></span>
-                  <select id="inputState1" class="form-control"  onchange="getval(this);">
+                  <select id="companys" class="form-control">
                      <option selected>เลือกสถานประกอบการ</option>
                      @foreach ($companys as $index => $c)
                      <option value="{{$c->id}}">{{$c->company_name}}</option>
@@ -388,66 +390,71 @@
    @endsection
    @section('javascript')
    <script type="text/javascript">
-      function getval(sel)
-      {
-
-         var value = sel.value;
-         var company_id = {
-          "id": value,
-       };
-
-       $.ajax({
-        url: "api/getcompany",
-        xhrFields: 'withCredentials:true',
-        type: "POST",
-        data: {
-           "id": sel.value,
-        },
-        contentType: 'application/x-www-form-urlencoded',
-        success: function (data) {
-           document.getElementById("id").value = data.id;
-           document.getElementById("company_name").value = data.company_name;
-           document.getElementById("industrial_estate").value = data.industrial_estate;
-           document.getElementById("home_number").value = data.home_number;
-           document.getElementById("moo").value = data.moo;
-           document.getElementById("soi").value = data.soi;
-           document.getElementById("building").value = data.building;
-           document.getElementById("road").value = data.road;
-           document.getElementById("district").value = data.district;
-           document.getElementById("amphure").value = data.amphure;
-           document.getElementById("post_code").value = data.post_code;
-           document.getElementById("tel").value = data.tel;
-           document.getElementById("fax").value = data.fax;
-           document.getElementById("province").value = data.province;
-           document.getElementById("email").value = data.email;
-           document.getElementById("coordinator").value = data.coordinator;
-           document.getElementById("coordinator_number").value = data.coordinator_number;
-           console.log(data.tel);
-        },
-        error: function (xhRequest, ErrorText, thrownError) {
-         alert("Failed to process correctly, please try again");
-      }
-   });
-    }
     $(document).ready(function() {
+      $('#companys').change(function(){
+       var value = $(this).val();
+       $.post("/api/getcompany",{id:value}, function( res ) {
+         if(res){
+           document.getElementById("id").value = res.id;
+           document.getElementById("company_name").value = res.company_name;
+           document.getElementById("industrial_estate").value = res.industrial_estate;
+           document.getElementById("home_number").value = res.home_number;
+           document.getElementById("moo").value = res.moo;
+           document.getElementById("soi").value = res.soi;
+           document.getElementById("building").value = res.building;
+           document.getElementById("road").value = res.road;
+           document.getElementById("district").value = res.district;
+           document.getElementById("amphure").value = res.amphure;
+           document.getElementById("post_code").value = res.post_code;
+           document.getElementById("tel").value = res.tel;
+           document.getElementById("fax").value = res.fax;
+           document.getElementById("province").value = res.province;
+           document.getElementById("email").value = res.email;
+           document.getElementById("coordinator").value = res.coordinator;
+           document.getElementById("coordinator_number").value = res.coordinator_number;
+        }else{
+
+        }
+     });
+    });
+
+
+      $('#faculty').change(function(){
+       var faculty = $(this).val();
+
+       $.post("/api/faculty",{id:faculty}, function( res ) {
+         if(res){
+          $.each(res, function(key, value) {
+            console.log(value.id)
+             $('#major')
+             .append($("<option></option>")
+               .attr("value",value.id)
+               .text(value.name));
+          });
+            console.log(res)
+         }else{
+
+         }
+      });
+    });
+
+
 
       $("#year").datepicker({
         format: "yyyy",
         viewMode: "years",
         minViewMode: "years"
      });
-
-       $("#year_study").datepicker({
+      $("#year_study").datepicker({
         format: "yyyy",
         viewMode: "years",
         minViewMode: "years"
      });
-        $("#class_year").datepicker({
+      $("#class_year").datepicker({
         format: "yyyy",
         viewMode: "years",
         minViewMode: "years"
      });
    });
-
 </script>
 @endsection

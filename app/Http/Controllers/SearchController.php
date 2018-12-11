@@ -27,4 +27,8 @@ class SearchController extends Controller
         //return '555'
         return view('search.search');
     }
+
+    public function index(){
+        return "dd";
+    }
 }
