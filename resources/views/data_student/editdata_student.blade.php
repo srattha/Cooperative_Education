@@ -62,7 +62,7 @@
             {{ csrf_field() }}
 
             <input type="hidden" name="user_id"  value="{{$user->id}}">
-           <input type="hidden" name="update_company_id" value="{{$data->company_id}}">
+            <input type="hidden" name="update_company_id" value="{{$data->company_id}}">
             <input type="hidden" name="company_ID" value="{{$company->id}}">
             <div class="row">
                <!-- row-I -->
@@ -125,22 +125,26 @@
                <div class="col-sm-4" >
                   <div class="input-group input-group-sm">
                      <span class="input-group-addon" id="sizing-addon1">คณะ</span>
-                     <select id="inputState" name="faculty" class="form-control">
+                     <select id="faculty" name="faculty" class="form-control">
                         <option selected>-กรุณาเลือกคณะ-</option>
-                        <option value="{{ $data->faculty }}" {{ "คณะบริหารธุรกิจและศิลปศาสตร์" == $data->faculty ? 'selected="selected"' : '' }}">คณะบริหารธุรกิจและศิลปศาสตร์</option>
+                        @foreach ($faculty as $index => $f)
+                        <option value="{{$f->id}}" {{ "$f->id" == $data->faculty_id ? 'selected="selected"' : '' }}>{{$f->name}}</option>
+                        @endforeach
+                        <!-- <option value="{{ $data->faculty }}" {{ "คณะบริหารธุรกิจและศิลปศาสตร์" == $data->faculty ? 'selected="selected"' : '' }}">คณะบริหารธุรกิจและศิลปศาสตร์</option>
                         <option value="{{ $data->faculty }}" {{ "คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร" == $data->faculty ? 'selected="selected"' : '' }}">คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร</option>
                         <option value="{{ $data->faculty }}" {{ "คณะวิศวกรรมศาสตร์" == $data->faculty ? 'selected="selected"' : '' }}">คณะวิศวกรรมศาสตร์</option>
-                        <option value="{{ $data->faculty }}" {{ "คณะศิลปกรรมและสถาปัตยกรรมศาสตร์" == $data->faculty ? 'selected="selected"' : '' }}">คณะศิลปกรรมและสถาปัตยกรรมศาสตร์</option>
+                        <option value="{{ $data->faculty }}" {{ "คณะศิลปกรรมและสถาปัตยกรรมศาสตร์" == $data->faculty ? 'selected="selected"' : '' }}">คณะศิลปกรรมและสถาปัตยกรรมศาสตร์</option> -->
                      </select>
                   </div>
                </div>
                <div class="col-sm-4" >
                   <div class="input-group input-group-sm">
                      <span class="input-group-addon" id="sizing-addon1">สาขาวิชา</span>
-                     <select id="inputState" name="major"
+                     <select id="major" name="major"
                      class="form-control">
-                     <option selected>-กรุณาเลือกสาขาวิชา-</option>
-                     <option value="{{ $data->major }}" {{ "ช.บ. การบัญชี" == $data->major ? 'selected="selected"' : '' }}">ช.บ. การบัญชี</option>
+                     <!-- <option selected>-กรุณาเลือกสาขาวิชา-</option> -->
+                     <option value="{{ $branch->id }}">{{ $branch->name }}</option>
+                      <!--
                      <option value="{{ $data->major }}" {{ "บธ.บ. การจัดการ" == $data->major ? 'selected="selected"' : '' }}">บธ.บ. การจัดการ</option>
                      <option value="{{ $data->major }}" {{ "การตลาด" == $data->major ? 'selected="selected"' : '' }}">การตลาด</option>
                      <option value="{{ $data->major }}" {{ "บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์" == $data->major ? 'selected="selected"' : '' }}">บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์</option>
@@ -159,7 +163,7 @@
                      <option value="{{ $data->major }}" {{ "วศ.บ. วิศวกรรมโยธา" == $data->major ? 'selected="selected"' : '' }}">วศ.บ. วิศวกรรมโยธา</option>
                      <option value="{{ $data->major }}" {{ "ค.อ.บ วิศวกรรมอุตสาหการ" == $data->major ? 'selected="selected"' : '' }}">ค.อ.บ วิศวกรรมอุตสาหการ</option>
                      <option value="{{ $data->major }}" {{ "วศ.บ. วิศวกรรมอุตสาหการ" == $data->major ? 'selected="selected"' : '' }}">ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล</option>
-                     <option value="{{ $data->major }}" {{ "ศบ.บ ออกแบบอุตสาหกรรม" == $data->major ? 'selected="selected"' : '' }}">ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล</option>
+                     <option value="{{ $data->major }}" {{ "ศบ.บ ออกแบบอุตสาหกรรม" == $data->major ? 'selected="selected"' : '' }}">ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล</option> -->
                   </select>
                </div>
             </div>
@@ -222,13 +226,13 @@
          </div>
          <hr>
          <h3 style="color:#4e4e4e; font-weight:600; font-size: 18px;"><p>ส่วนที่ 2 ข้อมูลสถานประกอบการ</p>
-           <small style="font-size: 13px;">(นอกเหนือจากระบบให้นักศึกษากรอกข้อมูลเพิ่มเติม)</small></h3>
-           <br>
-           <div class="row">
+          <small style="font-size: 13px;">(นอกเหนือจากระบบให้นักศึกษากรอกข้อมูลเพิ่มเติม)</small></h3>
+          <br>
+          <div class="row">
             <div class="col-sm-5">
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon2"></span>
-                  <select id="inputState1" class="form-control"  onchange="getval(this);">
+                  <select id="companys" class="form-control">
                      <option selected>เลือกสถานประกอบการ</option>
                      @foreach ($companys as $index => $c)
                      <option value="{{$c->id}}">{{$c->company_name}}</option>
@@ -379,46 +383,71 @@
    @endsection
    @section('javascript')
    <script type="text/javascript">
-      function getval(sel)
-      {
+       $(document).ready(function() {
+      $('#companys').change(function(){
+       var value = $(this).val();
+       $.post("/api/getcompany",{id:value}, function( res ) {
+         if(res){
+           document.getElementById("id").value = res.id;
+           document.getElementById("company_name").value = res.company_name;
+           document.getElementById("industrial_estate").value = res.industrial_estate;
+           document.getElementById("home_number").value = res.home_number;
+           document.getElementById("moo").value = res.moo;
+           document.getElementById("soi").value = res.soi;
+           document.getElementById("building").value = res.building;
+           document.getElementById("road").value = res.road;
+           document.getElementById("district").value = res.district;
+           document.getElementById("amphure").value = res.amphure;
+           document.getElementById("post_code").value = res.post_code;
+           document.getElementById("tel").value = res.tel;
+           document.getElementById("fax").value = res.fax;
+           document.getElementById("province").value = res.province;
+           document.getElementById("email").value = res.email;
+           document.getElementById("coordinator").value = res.coordinator;
+           document.getElementById("coordinator_number").value = res.coordinator_number;
+        }else{
 
-         var value = sel.value;
-         var company_id = {
-           "id": value,
-        };
+        }
+     });
+    });
 
-        $.ajax({
-          url: "api/getcompany",
-          xhrFields: 'withCredentials:true',
-          type: "POST",
-          data: {
-             "id": sel.value,
-          },
-          contentType: 'application/x-www-form-urlencoded',
-          success: function (data) {
-             document.getElementById("id").value = data.id;
-             document.getElementById("company_name").value = data.company_name;
-             document.getElementById("industrial_estate").value = data.industrial_estate;
-             document.getElementById("home_number").value = data.home_number;
-             document.getElementById("moo").value = data.moo;
-             document.getElementById("soi").value = data.soi;
-             document.getElementById("building").value = data.building;
-             document.getElementById("road").value = data.road;
-             document.getElementById("district").value = data.district;
-             document.getElementById("amphure").value = data.amphure;
-             document.getElementById("post_code").value = data.post_code;
-             document.getElementById("tel").value = data.tel;
-             document.getElementById("fax").value = data.fax;
-             document.getElementById("province").value = data.province;
-             document.getElementById("email").value = data.email;
-             document.getElementById("coordinator").value = data.coordinator;
-             document.getElementById("coordinator_number").value = data.coordinator_number;
-             console.log(data.tel);
-          },
-          error: function (xhRequest, ErrorText, thrownError) {
-            alert("Failed to process correctly, please try again");
+
+      $('#faculty').change(function(){
+       var faculty = $(this).val();
+       console.log(faculty)
+       $.post("/api/faculty",{id:faculty}, function( res ) {
+         if(res){
+          $.each(res, function(key, value) {
+            console.log(value.id)
+             $('#major')
+             .append($("<option></option>")
+               .attr("value",value.id)
+               .text(value.name));
+          });
+            console.log(res)
+         }else{
+
          }
       });
-     }
-  </script>
-  @endsection
+    });
+
+
+
+      $("#year").datepicker({
+        format: "yyyy",
+        viewMode: "years",
+        minViewMode: "years"
+     });
+      $("#year_study").datepicker({
+        format: "yyyy",
+        viewMode: "years",
+        minViewMode: "years"
+     });
+      $("#class_year").datepicker({
+        format: "yyyy",
+        viewMode: "years",
+        minViewMode: "years"
+     });
+   });
+ </script>
+ @endsection

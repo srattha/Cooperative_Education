@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Company;
 use App\Student;
 use App\File;
+use App\Branch;
 use Session;
 use App\Faculty;
 class Data_studentController extends Controller
@@ -34,20 +35,20 @@ public function data_student()
         case '1':
         if ($data) {
 
-           return $this->edit_data_student();
-       }
-        $faculty = Faculty::get();
-       return view('data_student.data_student', ['user'=> $user, 'companys'=> $companys, 'faculty' => $faculty]);
-       break;
-       case '2':
-       return redirect("/user");
-       break;
-   }
+         return $this->edit_data_student();
+     }
+     $faculty = Faculty::get();
+     return view('data_student.data_student', ['user'=> $user, 'companys'=> $companys, 'faculty' => $faculty]);
+     break;
+     case '2':
+     return redirect("/user");
+     break;
+ }
 }
 public function add_data_student(Request $request)
 {
 
-//return $request->campus;
+//return $request->all();
     $companys = Company::get();
     if(isset($request->identification_number)){
         $id = $request->identification_number;
@@ -93,7 +94,7 @@ public function add_data_student(Request $request)
         $add_student->class_year = $request->class_year;
         $add_student->gpa_past = $request->gpa_past;
         $add_student->gpa = $request->gpa;
-        $add_student->birthday = $request->birthday;
+        //$add_student->birthday = $request->birthday;
         $add_student->telephone = $request->telephone;
         $add_student->save();
 // upload file PDF
@@ -146,7 +147,7 @@ if($add_company){
     $add_student->activities = $request->activities;
     $add_student->institution = $request->institution;
     $add_student->campus = $request->campus;
-    $add_student->faculty = $request->faculty;
+    $add_student->faculty_id = $request->faculty;
     $add_student->major = $request->major;
     $add_student->student_id = $request->student_id;
     $add_student->identification_number = $request->identification_number;
@@ -155,7 +156,7 @@ if($add_company){
     $add_student->class_year = $request->class_year;
     $add_student->gpa_past = $request->gpa_past;
     $add_student->gpa = $request->gpa;
-    $add_student->birthday = $request->birthday;
+    //$add_student->birthday = $request->birthday;
     $add_student->telephone = $request->telephone;
     $add_student->save();
     if ($add_student) {
@@ -185,12 +186,15 @@ public function edit_data_student()
     $user = Auth::user();
     $companys = Company::get();
     $data = Student::where('user_id',$user->id)->first();
+    $branch = Branch::where('id', $data->major)->first();
     $company = Company::where('id',$data->company_id)->first();
-    return view('data_student.editdata_student', ['user'=> $user, 'companys'=> $companys, 'data'=> $data, 'company'=> $company ]);
+    $faculty = Faculty::get();
+    return view('data_student.editdata_student', ['user'=> $user, 'companys'=> $companys, 'data'=> $data, 'company'=> $company, 'faculty' => $faculty, 'branch' => $branch]);
 
 }
 public function updatedata_student(Request $request){
-
+//return $request->all();
+    $user = Auth::user();
     if(isset($request->identification_number)){
         $id = $request->identification_number;
         if (strlen($id)!= 13) {
@@ -216,38 +220,37 @@ public function updatedata_student(Request $request){
 
     }
     if (!$request->company_id) {
-       $company_id = $request->company_ID;
-    }else{
-        $company_id = $request->company_id;
-    }
+     $company_id = $request->company_ID;
+ }else{
+    $company_id = $request->company_id;
+}
 
-    $update_data_student = Student::where('user_id',$request->user_id)->first();
-    $update_data_student->user_id = $request->user_id;
-    $update_data_student->company_id = $company_id;
-    $update_data_student->term = $request->term;
-    $update_data_student->year = $request->year;
-    $update_data_student->activities = $request->activities;
-    $update_data_student->institution = $request->institution;
-    $update_data_student->campus = $request->campus;
-    $update_data_student->faculty = $request->faculty;
-    $update_data_student->major = $request->major;
-    $update_data_student->student_id = $request->student_id;
-    $update_data_student->identification_number = $request->identification_number;
-    $update_data_student->name_student = $request->name_student;
-    $update_data_student->year_study = $request->year_study;
-    $update_data_student->class_year = $request->class_year;
-    $update_data_student->gpa_past = $request->gpa_past;
-    $update_data_student->gpa = $request->gpa;
-    $update_data_student->birthday = $request->birthday;
-    $update_data_student->telephone = $request->telephone;
-    $update_data_student->save();
-    if ($update_data_student) {
-     if ($request->hasFile('file')) {
-        $file = $request->file('file');
+$update_data_student = Student::where('user_id',$request->user_id)->first();
+$update_data_student->user_id = $request->user_id;
+$update_data_student->company_id = $company_id;
+$update_data_student->term = $request->term;
+$update_data_student->year = $request->year;
+$update_data_student->activities = $request->activities;
+$update_data_student->institution = $request->institution;
+$update_data_student->campus = $request->campus;
+$update_data_student->faculty_id = $request->faculty;
+$update_data_student->major = $request->major;
+$update_data_student->student_id = $request->student_id;
+$update_data_student->identification_number = $request->identification_number;
+$update_data_student->name_student = $request->name_student;
+$update_data_student->year_study = $request->year_study;
+$update_data_student->class_year = $request->class_year;
+$update_data_student->gpa_past = $request->gpa_past;
+$update_data_student->gpa = $request->gpa;
+    //$update_data_student->birthday = $request->birthday;
+$update_data_student->telephone = $request->telephone;
+$update_data_student->save();
+if ($update_data_student) {
+   if ($request->hasFile('file')) {
+       $file = $request->file('file');
 $extension = $file->getClientOriginalExtension(); // you can also use file name
 $fileName = time().'.'.$extension;
 $path = public_path().'/upload/documentPFD';
-$uplaod = $file->move($path,$fileName);
 $fileModel = new File;
 $fileModel->user_id = $user->id;
 $fileModel->name = $fileName;

@@ -151,7 +151,8 @@
                   <div class="input-group input-group-sm">
                      <span class="input-group-addon" id="sizing-addon1">สาขาวิชา</span>
                      <select id="major" name="major" class="form-control">
-                    <!--  <option selected>-กรุณาเลือกสาขาวิชา-</option>
+                     <option selected>-กรุณาเลือกสาขาวิชา-</option>
+                      <!--
                      <option value="บช.บ. การบัญชี" >บช.บ. การบัญชี</option>
                      <option value="บธ.บ. การจัดการ">บธ.บ. การจัดการ</option>
                      <option value="บธ.บ. การตลาด">บธ.บ. การตลาด</option>
