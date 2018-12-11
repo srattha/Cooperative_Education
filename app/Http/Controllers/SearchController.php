@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Faculty;
 class SearchController extends Controller
 {
     /**
@@ -25,7 +25,8 @@ class SearchController extends Controller
     public function search()
     {
         //return '555'
-        return view('search.search');
+         $faculty = Faculty::get();
+        return view('search.search',['faculty' => $faculty]);
     }
 
     public function index(){

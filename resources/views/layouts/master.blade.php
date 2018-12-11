@@ -44,7 +44,6 @@
       <script src="{{ asset('/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
       <script src="{{ asset('/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
       <script src="{{ asset('/assets/js/lightbox.js') }}"></script>
-      <script src="{{ asset('/vendor/angularjs/angular.min.js') }}"></script>
       <style type="text/css">
          @yield('css')
         /* Remove dark-nav class from nav tag to see the light version  */
@@ -143,7 +142,7 @@ header {
          */
          $(function () {
          'use strict';
-         // Start navbar 
+         // Start navbar
          (function () {
            // Add class active when the user clicks the lis of the menu
            $('.nav .list li').on('click', 'a', function () {

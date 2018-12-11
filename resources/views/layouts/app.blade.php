@@ -11,15 +11,41 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
+   <!--  <script src="{{ asset('js/app.js') }}" defer></script> -->
+   <script src="{{ asset('/vendor/jquery/jquery.min.js') }}"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+<!--     <link href="{{ asset('/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"> -->
+    <link href="{{ asset('/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+  <!-- MetisMenu CSS -->
+  <link href="{{ asset('/vendor/metisMenu/metisMenu.min.css') }}" rel="stylesheet">
+
+  <!-- Toastr CSS -->
+  <link href="{{ asset('/vendor/toastr/css/toastr.min.css') }}" rel="stylesheet">
+
+  <link href="{{ asset('/vendor/datatables-plugins/dataTables.bootstrap.css') }}" rel="stylesheet">
+
+  <!-- DataTables Responsive CSS -->
+  <link href="{{ asset('/vendor/datatables-responsive/dataTables.responsive.css') }}" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="{{ asset('/assets/css/sb-admin-2.css') }}" rel="stylesheet">
+
+  <!-- Morris Charts CSS -->
+  <link href="{{ asset('/vendor/morrisjs/morris.css') }}" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="{{ asset('/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+  <!-- styel Css -->
+  <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet">
+  <link href="{{ asset('/assets/css/lightbox.css') }}" rel="stylesheet">
+
+  <link href="{{ asset('/vendor/bootstrap/css/bootstrap-datepicker.css')  }}" rel="stylesheet"/>
     <style type="text/css">
     /*card-header*/
     .card-header:first-child {
@@ -105,6 +131,7 @@ a:hover {
 
     <main class="py-4">
         @yield('content')
+         @yield('javascript')
     </main>
 </div>
 </body>
