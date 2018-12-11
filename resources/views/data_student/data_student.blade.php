@@ -178,7 +178,7 @@
             <div class="col-sm-4" >
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">ปีการศึกษา</span>
-                  <input type="text" name="year"  class="form-control" id="year" placeholder="ปีการศึกษา" aria-describedby="sizing-addon1" required>
+                  <input type="number" name="year"  class="form-control" id="year" placeholder="ปีการศึกษา" aria-describedby="sizing-addon1" required>
                </div>
             </div>
          </div>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('student.master')
 @section('title','ดาวน์โหลด')
 @section('css')
 <style type="text/css">

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('student.master')
 @section('css')
 
 @endsection
@@ -68,16 +68,18 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> color: #333;
         </div>
     </div> -->
-    <div class="row" style="padding-top: 20px; padding-left: 390px">
-        <div class=" col-lg-offset-4">
+    <div class="row" style="padding-top: 20px; padding-right: 400px;">
+        <div class=" col-lg-offset-6">
             <!-- Brand -->
             <div class="text-center" style="margin-bottom:0px;">
                 <div><img src="https://regis.rmutl.ac.th/student/assets/image/logo/rmutl-logo.png" height="120px"></div>
-                <h4 class="text-muted mt-5">มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา</h4>
-                <h4 class="text-muted mt-5">( สำหรับนักศึกษา )</h4>
+                <h4 class="text-muted mt-5" style="padding-top: 5px;">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ </h4>
+                <h4 class="text-muted mt-5" style="padding-top: 10px;">( สำหรับนักศึกษา )</h4>
+                <h4 class="text-muted mt-5">มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</h4>
+                
             </div>
             <!--/ Brand -->
             <hr>
@@ -134,8 +136,9 @@
             </div>
         </div>
     </div>
-     <footer class="footer">
-        <div class="col-md-12" style="margin-top: 50px"></div>
+</div>
+<footer class="footer">
+        <div class="" style="margin-top: 50px"></div>
         <div class="container">
             <div class="">
                 <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
@@ -144,6 +147,4 @@
         </div>
         <div class="row" style="margin-top: 50px"></div>
     </footer>
-</div>
-
 @endsection

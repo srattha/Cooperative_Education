@@ -244,6 +244,24 @@
             .nav-link{
               color: #fff;
             }
+            /*panel-default */
+            .panel-default>.panel-heading{
+              color: #f8f5f5;
+              background-color: #3F51B5;
+              border-color: #3F51B5;
+            }
+            .container-fluid{
+              padding-top: 15px;
+            }
+            .form-group{
+              padding-top: 15px;
+            }
+            .col-md-11{
+              padding-left: 270px;
+            }
+            .col-md-4{
+              padding-left: 90px;
+            }
 
           </style>
 
@@ -318,7 +336,7 @@
                 <span class="navbar-brand">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</span>
 
               </div>
-              <!-- /.navbar-header -->
+              <!-- /.navbar-header --> 
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->

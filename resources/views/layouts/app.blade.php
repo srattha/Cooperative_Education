@@ -79,7 +79,6 @@ a:hover {
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <div><img src="https://regis.rmutl.ac.th/student/assets/image/logo/rmutl-logo.png" height="40px" style="padding-right: 5px;"></div>
                 <a class="navbar-brand" href="{{ url('/') }}">{{ __('ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
