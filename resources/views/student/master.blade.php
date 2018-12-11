@@ -37,7 +37,7 @@
   <link href="{{ asset('/assets/css/lightbox.css') }}" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Maitree|Sriracha" rel="stylesheet">
   <link href="{{ asset('/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('/vendor/bootstrap/css/bootstrap-datepicker.css')  }}" rel="stylesheet"/>
+  <link href="{{ asset('/vendor/bootstrap/css/bootstrap-datepicker.css')  }}" rel="stylesheet"/>
 
   @yield('css')
 
@@ -51,21 +51,21 @@
   }
  /* a:hover {
     color: #A0DFFF !important;
-}*/
-.nav>li>a:focus, .nav>li>a:hover {
-    text-decoration: none;
-    background-color: #5bc0de;
-}
-.navbar-default .navbar-brand:hover {
-    color: #A0DFFF !important;
-}
-.navbar-top-links li:hover {
-    color: #A0DFFF !important;
-}
-.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
-    background-color: #3f51b5 !important;
-    border-color: #337ab7 !important;
-}
+    }*/
+    .nav>li>a:focus, .nav>li>a:hover {
+      text-decoration: none;
+      background-color: #5bc0de;
+    }
+    .navbar-default .navbar-brand:hover {
+      color: #A0DFFF !important;
+    }
+    .navbar-top-links li:hover {
+      color: #A0DFFF !important;
+    }
+    .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+      background-color: #3f51b5 !important;
+      border-color: #337ab7 !important;
+    }
  /* #overlay{
             position:fixed;
             z-index:99999;
@@ -241,6 +241,9 @@
               padding: 0 30px;
               border-left: 1px solid #e7e7e7;
             }
+            .nav-link{
+              color: #fff;
+            }
 
           </style>
 
@@ -320,28 +323,40 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-top-links navbar-right">
-                  <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                      <i class="fa fa-user fa-fw"></i>  <span style="color: #fff;">{{Auth::user()->name}}</span> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                      <!--<li><a href=""><i class="fa fa-user fa-fw"></i>โปรไฟล์</a>
-                      </li> -->
-                      <li><a href=""><i class="fa fa-gear fa-fw"></i> เปลี่ยนรหัสผ่าน</a>
-                      </li>
-                      <li class="divider"></li>
-                      <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                      document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-fw"></i> ออกจากระบบ</a>
-                    </li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                      {{ csrf_field() }}
-                    </form>
-                  </ul>
-                </li>
+                 @if(Auth::user())
+                 <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-user fa-fw"></i>  <span style="color: #fff;">{{Auth::user()->name}}</span> <i class="fa fa-caret-down"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-user">
 
-              </ul>
-            </div>
-            <!-- /.navbar-top-links -->
+                    <li><a href=""><i class="fa fa-gear fa-fw"></i> เปลี่ยนรหัสผ่าน</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-fw"></i> ออกจากระบบ</a>
+                  </li>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                  </form>
+                </ul>
+              </li>
+              @else
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-download" aria-hidden="true" id="icon"></i>{{ __('ดาวน์โหลด') }}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="{{ route('login') }}"><i class="fa fa-sign-in" aria-hidden="true" id="icon"></i>{{ __('เข้าสู่ระบบ') }}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-user-plus" aria-hidden="true" id="icon"></i>{{ __('ลงทะเบียนใช้งาน') }}</a>
+              </li>
+
+              @endif
+
+            </ul>
+          </div>
+          <!-- /.navbar-top-links -->
 
              <!--  <div class="navbar-default sidebar" role="navigation">
                 <div style="text-align: center;">
@@ -396,7 +411,7 @@
         <script src="{{ asset('/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
         <script src="{{ asset('/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
         <script src="{{ asset('/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
-         <script src="{{ asset('/vendor/bootstrap/js/bootstrap-datepicker.js') }}"></script>
+        <script src="{{ asset('/vendor/bootstrap/js/bootstrap-datepicker.js') }}"></script>
 
 
         @yield('javascript')

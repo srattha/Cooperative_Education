@@ -39,11 +39,11 @@
    </form>
 </div> -->
 <div class="row">
- <form action="{{ route('search_report') }}" method="post" enctype="multipart/form-data">
-  @csrf
-  <div class="col-sm-3 col-md-3">
-   <div class="input-group input-group-sm">
-     <span class="input-group-addon">คณะ</span>
+  <form action="{{ route('search_report') }}" method="post" enctype="multipart/form-data">
+    @csrf
+    <div class="col-sm-3 col-md-3">
+      <div class="input-group input-group-sm">
+       <span class="input-group-addon">คณะ</span>
             <!--  <select  name="faculty" class="form-control">
               <option selected value="">-กรุณาเลือกคณะ-</option>
               <option value="คณะบริหารธุรกิจและศิลปศาสตร์">คณะบริหารธุรกิจและศิลปศาสตร์</option>
@@ -60,8 +60,8 @@
       </div>
    </div>
    <div class="col-sm-3 col-md-3" >
-     <div class="input-group input-group-sm">
-       <span class="input-group-addon">สาขาวิชา</span>
+    <div class="input-group input-group-sm">
+     <span class="input-group-addon">สาขาวิชา</span>
           <!--  <select name="major" class="form-control">
             <option selected value="">-กรุณาเลือกสาขาวิชา-</option>
             <option value="บช.บ. การบัญชี">บช.บ. การบัญชี</option>
@@ -91,7 +91,7 @@
    </div>
 </div>
 <div class="col-sm-3 col-md-3" >
- <div class="input-group input-group-sm">
+  <div class="input-group input-group-sm">
    <span class="input-group-addon" id="sizing-addon1">ปีการศึกษา</span>
 
    <input type="text" id="datepicker" / name="year" class="form-control"  placeholder="ปีการศึกษา" aria-describedby="sizing-addon1">
@@ -99,20 +99,20 @@
 </div>
 <div class="col-sm-2 col-md-2">
    <div class="input-group input-group-sm">
-     <span class="input-group-addon">ภาคเรียน</span>
-     <select name="term" class="form-control">
-       <option selected value="">-กรุณาเลือกภาคเรียน-</option>
-       <option value="1">1</option>
-       <option value="2">2</option>
-    </select>
- </div>
+    <span class="input-group-addon">ภาคเรียน</span>
+    <select name="term" class="form-control">
+     <option selected value="">-กรุณาเลือกภาคเรียน-</option>
+     <option value="1">1</option>
+     <option value="2">2</option>
+  </select>
+</div>
 
 </div>
 <div class="col-sm-1 col-md-1">
-  <div class="input-group input-group-sm">
+ <div class="input-group input-group-sm">
    <button type="submit" class="btn btn-info">
-     <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
-  </div>
+    <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
+ </div>
 
 </div>
 </form>
@@ -172,12 +172,12 @@
 @endsection
 @section('javascript')
 <script type="text/javascript">
- $(document).ready(function() {
+  $(document).ready(function() {
    $('#faculty').change(function(){
 
-    var faculty = $(this).val();
-    var $select = $('#major');
-    $.post("/api/faculty",{id:faculty}, function( res ) {
+     var faculty = $(this).val();
+     var $select = $('#major');
+     $.post("/api/faculty",{id:faculty}, function( res ) {
 
       if(res.length){
 
@@ -193,12 +193,16 @@
       // });
 
    }else{
-    $select.find('option').remove();
+     $select.find('option').remove();
 
- }
+  }
 });
- });
-
+  });
+$("#datepicker").datepicker({
+    format: "yyyy",
+    viewMode: "years",
+    minViewMode: "years"
+});
 });
 </script>
 @endsection
