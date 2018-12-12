@@ -9,6 +9,12 @@
    .body{
       color: #555;
    }
+   .head-page-title{
+    font-family: "kanit", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color:#4e4e4e;
+   }
 </style>
 @endsection
 @section('content')
@@ -17,7 +23,7 @@
 <div class="row" style="margin-top: 15px; margin-bottom: 15px;">
    <div class="col-lg-12 col-md-12 col-ms-12">
       <div class="">
-         <h4 class="head-page-title" style="font-weight:550;color:#4e4e4e;">ดาวน์โหลด</h4>
+         <h4 class="head-page-title">ดาวน์โหลด</h4>
       </div>
       <hr>
       <!-- row I-->
