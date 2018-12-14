@@ -77,9 +77,8 @@
             <div class="text-center" style="margin-bottom:0px;">
                 <div><img src="https://regis.rmutl.ac.th/student/assets/image/logo/rmutl-logo.png" height="120px"></div>
                 <h4 class="text-muted mt-5" style="padding-top: 5px;">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ </h4>
-                <h4 class="text-muted mt-5" style="padding-top: 10px;">( สำหรับนักศึกษา )</h4>
                 <h4 class="text-muted mt-5">มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</h4>
-                
+                <h4 class="text-muted mt-5" style="padding-top: 10px;">( สำหรับนักศึกษา )</h4>
             </div>
             <!--/ Brand -->
             <hr>
