@@ -33,7 +33,7 @@ class LoginController extends Controller
             return "/data_student";
             break;
             case '2':
-            return redirect('/importExport');
+            return redirect('/user');
             break;
             default:
             return "default";

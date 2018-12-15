@@ -35,10 +35,19 @@
    border-color: #ddd;
    color:#fff;
 }
-#sizing-addon2{
+/*#sizing-addon2{
    box-shadow: none;
    font-size: 13px;
+}*/
+.input-group1 .form-control:last-child{
+   background: none;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    box-shadow: none;
+    font-size: 13px;
 }
+
 #inputState1{
    border-top-width: 1px;
    border-right-width: 1px;
@@ -151,7 +160,7 @@
                   <div class="input-group input-group-sm">
                      <span class="input-group-addon" id="sizing-addon1">สาขาวิชา</span>
                      <select id="major" name="major" class="form-control">
-                     <option selected>-กรุณาเลือกสาขาวิชา-</option>
+                     <!-- <option selected>-กรุณาเลือกสาขาวิชา-</option> -->
                       <!--
                      <option value="บช.บ. การบัญชี" >บช.บ. การบัญชี</option>
                      <option value="บธ.บ. การจัดการ">บธ.บ. การจัดการ</option>
@@ -235,11 +244,11 @@
          <hr>
          <h3 style="color:#4e4e4e; font-weight:600; font-size: 18px;"><p>ส่วนที่ 2 ข้อมูลสถานประกอบการ</p>
           <small style="font-size: 13px;">(นอกเหนือจากระบบให้นักศึกษากรอกข้อมูลเพิ่มเติม)</small></h3>
-          <br>
+          
           <div class="row">
-            <div class="col-sm-5">
-               <div class="input-group input-group-sm">
-                  <span class="input-group-addon" id="sizing-addon2"></span>
+            <div class="col-sm-6">
+               <div class="input-group1 input-group-sm">
+                  <span class="input-group-addon" id="sizing-addon1"></span>
                   <select id="companys" class="form-control">
                      <option selected>เลือกสถานประกอบการ</option>
                      @foreach ($companys as $index => $c)

@@ -26,6 +26,7 @@ public function __construct()
 */
 public function data_student()
 {
+
     $user = Auth::user();
     $users_type_id = $user->user_type_id;
     $data = Student::where('user_id',$user->id)->first();
@@ -94,7 +95,7 @@ public function add_data_student(Request $request)
         $add_student->class_year = $request->class_year;
         $add_student->gpa_past = $request->gpa_past;
         $add_student->gpa = $request->gpa;
-        //$add_student->birthday = $request->birthday;
+        $add_student->birthday = $request->birthday;
         $add_student->telephone = $request->telephone;
         $add_student->save();
 // upload file PDF
@@ -156,7 +157,7 @@ if($add_company){
     $add_student->class_year = $request->class_year;
     $add_student->gpa_past = $request->gpa_past;
     $add_student->gpa = $request->gpa;
-    //$add_student->birthday = $request->birthday;
+    $add_student->birthday = $request->birthday;
     $add_student->telephone = $request->telephone;
     $add_student->save();
     if ($add_student) {
@@ -185,8 +186,8 @@ public function edit_data_student()
 
     $user = Auth::user();
     $companys = Company::get();
-    $data = Student::where('user_id',$user->id)->first();
-    $branch = Branch::where('id', $data->major)->first();
+ $data = Student::where('user_id',$user->id)->first();
+$branch = Branch::where('id', $data->major)->first();
     $company = Company::where('id',$data->company_id)->first();
     $faculty = Faculty::get();
     return view('data_student.editdata_student', ['user'=> $user, 'companys'=> $companys, 'data'=> $data, 'company'=> $company, 'faculty' => $faculty, 'branch' => $branch]);
@@ -242,7 +243,7 @@ $update_data_student->year_study = $request->year_study;
 $update_data_student->class_year = $request->class_year;
 $update_data_student->gpa_past = $request->gpa_past;
 $update_data_student->gpa = $request->gpa;
-    //$update_data_student->birthday = $request->birthday;
+$update_data_student->birthday = $request->birthday;
 $update_data_student->telephone = $request->telephone;
 $update_data_student->save();
 if ($update_data_student) {

@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::post('getcompany', 'ApiCompanyController@index');
+Route::post('getcompany', 'CompanyController@index');
 
 // Route::post('faculty', function (Request $request) {
 //     return $request;
