@@ -360,9 +360,9 @@
                 </ul>
               </li>
               @else
-              <li class="nav-item">
+              <!--<li class="nav-item">
                 <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-download" aria-hidden="true" id="icon"></i>{{ __('ดาวน์โหลด') }}</a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link " href="{{ route('login') }}"><i class="fa fa-sign-in" aria-hidden="true" id="icon"></i>{{ __('เข้าสู่ระบบ') }}</a>
               </li>
