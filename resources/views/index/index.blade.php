@@ -574,7 +574,11 @@
    .mcd-menu li ul a i {
    font-size:14px;
    }
-   }
+   /*gallery*/
+   .fancybox{
+    display: inline-block;
+    margin-top: 20px;
+}
 </style>
 @section('content')
 <div class="row">
@@ -612,11 +616,162 @@
          </ul>
       </nav>
    </div>
-   <div class="col-md-6">
+   <div class="col-md-9">
       <div class="_2-sx" style="width: 660px; height: 244px;"><img class="spotlight" alt="ในภาพอาจจะมี ดอกไม้, ข้อความ และธรรมชาติ" aria-busy="true" src="https://scontent.fphs1-1.fna.fbcdn.net/v/t1.0-9/16406920_1265271986888288_2572892987963104611_n.jpg?_nc_cat=104&amp;_nc_ht=scontent.fphs1-1.fna&amp;oh=c4bf67892d094da84f607cb1189c35ed&amp;oe=5CA01094" style="width: 851px; height: 315px;"></div>
    </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+   <div class="col-md-12">
+      <p class="kanit"><b style="padding-left: 300px;">คลังรูปภาพ : </b>ปฐมนิเทศสหกิจศึกษา</p>
+   </div>
+</div>
+<br>
+<div class="row">
+   <div class="col-md-12">
+                            <!-- row I-->
+      <div class="row">
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154228_8999633.jpg" class="fancybox" data-fancybox-group="gallery" title="1 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154228_8999633.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154228_8704114.jpg" class="fancybox" data-fancybox-group="gallery" title="2 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154228_8704114.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154228_6390670.jpg" class="fancybox" data-fancybox-group="gallery" title="3 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154228_6390670.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154228_3778061.jpg" class="fancybox" data-fancybox-group="gallery" title="4 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154228_3778061.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+      </div>
+                        <!-- row II-->
+      <div class="row">
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154257_1027717.jpg" class="fancybox" data-fancybox-group="gallery" title="7 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154257_1027717.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154257_7987470.jpg" class="fancybox" data-fancybox-group="gallery" title="9 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154257_7987470.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154258_6238382.jpg" class="fancybox" data-fancybox-group="gallery" title="10 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154258_6238382.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154324_7122184.jpg" class="fancybox" data-fancybox-group="gallery" title="12 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154324_7122184.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+      </div>
+                              <!-- row III-->
+      <div class="row">
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154324_1219032.jpg" class="fancybox" data-fancybox-group="gallery" title="13 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154324_1219032.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154325_4082370.jpg" class="fancybox" data-fancybox-group="gallery" title="16 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154325_4082370.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154325_1560471.jpg" class="fancybox" data-fancybox-group="gallery" title="17 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154325_1560471.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154325_8168428.jpg" class="fancybox" data-fancybox-group="gallery" title="18 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154325_8168428.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+      </div>
+                              <!-- row IIII-->
+      <div class="row">
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154325_3448727.jpg" class="fancybox" data-fancybox-group="gallery" title="19 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154325_3448727.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154326_2614387.jpg" class="fancybox" data-fancybox-group="gallery" title="21 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154326_2614387.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154445_2722010.jpg" class="fancybox" data-fancybox-group="gallery" title="22 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154445_2722010.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154445_8198243.jpg" class="fancybox" data-fancybox-group="gallery" title="23 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154445_8198243.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+      </div>
+                              <!-- row IIIII-->
+      <div class="row">
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154446_7013246.jpg" class="fancybox" data-fancybox-group="gallery" title="25 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154446_7013246.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154446_1061959.jpg" class="fancybox" data-fancybox-group="gallery" title="26 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154446_1061959.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154446_3971695.jpg" class="fancybox" data-fancybox-group="gallery" title="27 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154446_3971695.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+         <div class="col-md-2" style="left: 300px;">
+            <a href="https://webs.rmutl.ac.th/assets/upload/gallery/2018/11/gallery_20181105154447_2835723.jpg" class="fancybox" data-fancybox-group="gallery" title="28 of 30 | ปฐมนิเทศสหกิจศึกษา ">
+            <img class="img-responsive thumbnail" src="https://webs.rmutl.ac.th/images?src=https://webs.rmutl.ac.th/assets/upload/gallery_w120/2018/11/gallery_20181105154447_2835723.jpg&amp;w=120&amp;h=80" data-pin-nopin="true">
+            </a>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+<footer class="footer">
+   <div class="col-md-12" style="margin-top: 50px">
+      <div class="container">
+         <div class="col-sm-6">
+            <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
+            Deverloped By Patiphan Uthang And Yuwa Saewang
+         </div>
+      </div>
+      <div class="row" style="margin-top: 50px"></div>
+   </footer>
 
 @endsection
 @section('javascript')
+<script type="text/javascript">
+   $(document).ready(function(){
+    //FANCYBOX
+    //https://github.com/fancyapps/fancyBox
+    $(".fancybox").fancybox({
+        openEffect: "none",
+        closeEffect: "none"
+    });
+});
+</script>
 @endsection
