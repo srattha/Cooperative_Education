@@ -324,7 +324,6 @@
           </div>
 
           <div id="wrapper">
-
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -333,8 +332,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <span class="navbar-brand">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</span>
-
+                <span class="navbar-brand" style="padding-left: 100px;">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</span>
               </div>
               <!-- /.navbar-header --> 
 
