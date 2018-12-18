@@ -69,6 +69,9 @@
 </div>
 </div>
   <footer class="footer">
+    <span class="footer-divider" style="height: 5px;
+      display: block;
+      background: #3F51B5;"></span>
         <div class="col-md-12" style="margin-top: 50px"></div>
         <div class="container">
             <div class="">
