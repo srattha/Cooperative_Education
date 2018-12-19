@@ -3,7 +3,7 @@
 @section('css')
 @endsection
 @section('content')
-<div class="container-fluid panel panel-default" style="margin-top: -25px;">
+<div class="container-fluid panel panel-default" style="margin-top: -20px;">
   <h4 style="margin-top: 50px; color: #3F51B5; font-weight: bold"> ค้นหาสถานประกอบการ</h4>
   <hr>
    <div class="row" style="margin-top: 30px;">
