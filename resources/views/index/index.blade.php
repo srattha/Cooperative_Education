@@ -644,7 +644,7 @@
          <hr>
                      <!-- text-->
          <div class="text-inner">
-             <p class="kanit"><b style="font-weight: bold">คลังรูปภาพ : </b><b style="color:  #3F51B5;">ปฐมนิเทศสหกิจศึกษา</b></p>
+             <p class="kanit"><i class="fa fa-camera mr10" style="font-weight: bold">คลังรูปภาพ :</i><b style="color:  #3F51B5;">ปฐมนิเทศสหกิจศึกษา</b></p>
          </div>
                      <!-- row I img-->
          <div class="row">
