@@ -1,4 +1,5 @@
 @extends('student.master')
+@section('title','เข้าสู่ระบบ')
 @section('css')
 
 @endsection

@@ -1,5 +1,5 @@
 @extends('student.master')
-
+@section('title','ลงทะเบียนใช้งาน')
 @section('content')
 <div class="container-fluid">
     <div class="row">

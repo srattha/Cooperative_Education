@@ -1,5 +1,5 @@
 @extends('student.master')
-@section('title','ค้นหา')
+@section('title','ค้นหาสถานประกอบการ')
 @section('css')
 @endsection
 @section('content')
