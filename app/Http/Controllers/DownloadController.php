@@ -1,4 +1,5 @@
- <?php
+<?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -20,9 +21,8 @@ class DownloadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function download()
+    public function Download()
     {
-
-        return view('download.download');
+        return view('Download.Download');
     }
 }
