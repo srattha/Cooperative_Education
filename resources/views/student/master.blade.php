@@ -309,7 +309,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-               <span class="navbar-brand" style="padding-left: 105px;">ระบบบริหารจัดการข้อมูลสหกิจศึกษา</span>
+               <span class="navbar-brand" style="font-size: 16px;">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</span>
             </div>
             <!-- /.navbar-header --> 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
