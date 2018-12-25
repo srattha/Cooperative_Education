@@ -1,5 +1,5 @@
 @extends('student.master')
-@section('title','หน้าหลัก')
+@section('title','ระบบบริหารจัดการข้อมูลสหกิจศึกษา')
 @section('css')
 @endsection
 <style type="text/css"></style>

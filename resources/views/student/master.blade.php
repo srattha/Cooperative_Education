@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="">
       <meta name="author" content="">
-      <link rel="shortcut icon" type="image/png" href="/img/g1.jpg"/>
+      <link rel="shortcut icon" type="image/png" sizes="144x144" href="https://regis.rmutl.ac.th/student/assets/image/touch/apple-touch-icon-114.png"/>
       <title>@yield('title')</title>
       <!-- Bootstrap Core CSS -->
       <link href="{{ asset('/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -309,7 +309,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-               <span class="navbar-brand">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</span>
+               <span class="navbar-brand" style="padding-left: 105px;">ระบบบริหารจัดการข้อมูลสหกิจศึกษา</span>
             </div>
             <!-- /.navbar-header --> 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
