@@ -39,23 +39,7 @@
    box-shadow: none;
    font-size: 13px;
 }*/
-.input-group1 .form-control:last-child{
-   background: none;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    box-shadow: none;
-    font-size: 13px;
-}
 
-#inputState1{
-   border-top-width: 1px;
-   border-right-width: 1px;
-   border-bottom-width: 1px;
-   border-left-width: 1px;
-   background: none;
-   font-size:14px;
-}
 </style>
 @endsection
 @section('content')
@@ -247,7 +231,7 @@
           
           <div class="row">
             <div class="col-sm-6">
-               <div class="input-group1 input-group-sm">
+               <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1"></span>
                   <select id="companys" class="form-control">
                      <option selected>เลือกสถานประกอบการ</option>

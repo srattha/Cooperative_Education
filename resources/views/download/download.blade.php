@@ -18,11 +18,11 @@
 </style>
 @endsection
 @section('content')
-<div class="container ">
-   <h4 class="head-page-title">ดาวน์โหลด</h4>
+<div class="container-fluid panel panel-default" style="margin-top: -20px;">
+   <h1 class="head-page-title" style="color:  #3F51B5;">ดาวน์โหลด</h1>
    <hr>
    <p>หน้าสำหรับการดาวน์โหลดโปรแกรม เอกสาร แบบฟอร์มสหกิจศึกษา </p>
-   <table class="table table-bordered" style=" background: #FFF;">
+   <table class="table table-bordered" style="background-color: #fff;">
       <tbody>
          <tr>
             <td class="well">
@@ -54,7 +54,10 @@
          </tr>
       </tbody>
    </table>
-   <footer class="footer">
+   <br>
+</div>
+<br>
+<footer class="footer">
       <span class="footer-divider" style="height: 5px;
          display: block;
          background: #3F51B5;"></span>
@@ -67,7 +70,6 @@
       </div>
       <div class="row" style="margin-top: 50px"></div>
    </footer>
-</div>
 @endsection
 @section('javascript')
 @endsection

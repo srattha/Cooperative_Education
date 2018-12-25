@@ -4,12 +4,12 @@
 @endsection
 <style type="text/css"></style>
 @section('content')
-<div class="container">
+<div class="container-fluid panel panel-default" style="margin-top: -20px;">
    <div class="col-md-12">
       <div class="row overlay"> 
          <img class="spotlight" alt="ในภาพอาจจะมี ดอกไม้,    ข้อความ และธรรมชาติ" aria-busy="true" src="https://scontent.fphs1-1.fna.fbcdn.net/v/t1.0-9/16406920_1265271986888288_2572892987963104611_n.jpg?_nc_cat=104&amp;_nc_ht=scontent.fphs1-1.fna&amp;oh=c4bf67892d094da84f607cb1189c35ed&amp;oe=5CA01094" style="width: 1140px; display: block;
             max-width: 100%;
-            height: auto;">
+            height: auto; margin-top: -50px;">
       </div>
       <br>
       <hr>
