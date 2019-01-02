@@ -17,6 +17,7 @@
 
 Auth::routes();
 
+Route::get('/statistic', 'statisticController@statistic')->name('statistic');
 Route::get('/download', 'DownloadController@download')->name('download');
 Route::post('/home', 'HomeController@index')->name('home');
 Route::get('/form', 'FormController@form')->name('form');

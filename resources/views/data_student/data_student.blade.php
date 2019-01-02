@@ -335,7 +335,7 @@
                   </div>
                </div>
             </div>
-            <br>
+            <br> 
             <div class="row">
                <div class="col-sm-4" >
                   <div class="input-group input-group-sm">
@@ -359,11 +359,12 @@
                <br>
                <div class="row">
                   <div class="col-md-12">
-                     <div class="container" style="padding-left: 520px;margin-top: 50px;">
+                     <div class="container" style="padding-left: 470px;margin-top: 40px;">
                         <br>
                         <button type="submit" class="btn btn-info">
                         <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
                         <button class="btn btn-danger" type="button" onclick="location.href='/reports';"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button>
+                         <button class="btn btn-primary hidden-print" onclick="myFunction()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
                      </div>
                   </div>
                </div>

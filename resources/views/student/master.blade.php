@@ -341,6 +341,10 @@
                   <li class="nav-item">
                      <a class="nav-link " href="{{('/index') }}"><i class="glyphicon glyphicon-home" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('หน้าแรก') }}</a>
                   </li>
+
+                  <li class="nav-item">
+                     <a class="nav-link " href="{{('/statistic') }}"><i class="fa fa-bar-chart"></i></a>
+                  </li>
                   <!--ค้นหา-->
                   <li class="nav-item">
                      <a class="nav-link " href="{{('/') }}"><i class="glyphicon glyphicon-search" style="padding-right: 2px;"aria-hidden="true" id="icon"></i>{{ __('ค้นหาสถานประกอบการ') }}</a>
