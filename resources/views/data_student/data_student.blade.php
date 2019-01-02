@@ -364,6 +364,7 @@
                         <button type="submit" class="btn btn-info">
                         <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
                         <button class="btn btn-danger" type="button" onclick="location.href='/reports';"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button>
+                         <button class="btn btn-primary hidden-print" onclick="myFunction()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
                      </div>
                   </div>
                </div>
