@@ -17,6 +17,7 @@
 
 Auth::routes();
 
+Route::get('/printstudent', 'PrintstudentController@printstudent')->name('printstudent');
 Route::get('/statistic', 'statisticController@statistic')->name('statistic');
 Route::get('/download', 'DownloadController@download')->name('download');
 Route::post('/home', 'HomeController@index')->name('home');
