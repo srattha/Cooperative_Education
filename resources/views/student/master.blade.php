@@ -314,11 +314,11 @@
             <!-- /.navbar-header --> 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                <!-- Left Side Of Navbar -->
-               <ul class="nav navbar-top-links navbar-right">
+               <!--<ul class="nav navbar-top-links navbar-right">
                   @if(Auth::user())
                   <li class="nav-item">
                      <a class="nav-link " href="{{('/printstudent') }}"><i class="glyphicon glyphicon-print" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('') }}</a>
-                  </li>
+                  </li> -->
 
                   <li class="dropdown">
                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">

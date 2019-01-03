@@ -121,13 +121,14 @@
          </aside> -->
       <section id="main" role="main">
          <div class="container-fluid">
-            <!-- <div class="row">
+             <div class="row">
                <div class="col-md-12">
                   <div class="panel panel-default">
                      <div class="panel-heading">
                         <h3 class="panel-title"><i class=""></i>รายงานนักศึกษาในโครงการสหกิจศึกษา </h3>
                      </div>
-                     <div class="panel-body">
+                     
+                   <!--  <div class="panel-body">
                         <div class="form-horizontal">
                            <div class="form-group">
                               <label class="col-md-4 control-label">คณะ : </label>
@@ -146,7 +147,7 @@
                                  <select id="select_term_year" class="form-control">
                                     <option value="1" >1 </option>
                                     <option value="2" >2 </option>
-                                   <!--  <option value="3/2562" >3 / 2562</option>
+                                    <option value="3/2562" >3 / 2562</option>
                                     <option value="2/2562" >2 / 2562</option>
                                     <option value="1/2562" >1 / 2562</option>
                                     <option value="3/2561" >3 / 2561</option>
