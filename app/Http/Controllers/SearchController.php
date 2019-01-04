@@ -30,6 +30,6 @@ class SearchController extends Controller
     }
 
     public function index(){
-        return "dd";
+        return "dd"; 
     }
 }

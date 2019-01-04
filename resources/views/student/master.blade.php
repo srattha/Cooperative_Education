@@ -314,7 +314,7 @@
             <!-- /.navbar-header --> 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                <!-- Left Side Of Navbar -->
-               <!--<ul class="nav navbar-top-links navbar-right">
+               <ul class="nav navbar-top-links navbar-right">
                   @if(Auth::user())
                   <li class="nav-item">
                      <a class="nav-link " href="{{('/printstudent') }}"><i class="glyphicon glyphicon-print" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('') }}</a>
@@ -337,10 +337,7 @@
                      </ul>
                   </li>
                   @else
-                  <!--<li class="nav-item">
-                     <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-download" aria-hidden="true" id="icon"></i>{{ __('ดาวน์โหลด') }}</a>
-                     </li> -->
-                  
+                 
                   <!--หน้าแรก-->
                   <li class="nav-item">
                      <a class="nav-link " href="{{('/index') }}"><i class="glyphicon glyphicon-home" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('หน้าแรก') }}</a>
