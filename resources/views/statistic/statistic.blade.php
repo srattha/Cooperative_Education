@@ -3,9 +3,6 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <title>รายงานนักศึกษาในโครงการสหกิจศึกษา</title>
-      <meta name="description" content="ระบบทะเบียนกลาง มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ระบบสำหรับบริการนักศึกษา อาจารย์ และเจ้าหน้าที่ รองรับการใช้งานทุกเขตพื้นที่. regis2015.rmutl.ac.th" />
-      <meta name="keywords" content="ระบบทะเบียนกลาง, ทะเบียนกลาง, ระบบทะเบียนกลาง มทร.ล้านนา, ทะเบียนกลาง เทคโนโลยีราชมงคล, ระบบนักศึกษา, ระบบอาจารย์, ระบบเจ้าหน้าที่" />
-      <meta name="author" content="มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา" />
       <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://regis2015.rmutl.ac.th/assets/image/touch/apple-touch-icon-144.png">
       <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://regis2015.rmutl.ac.th/assets/image/touch/apple-touch-icon-114.png">
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://regis2015.rmutl.ac.th/assets/image/touch/apple-touch-icon-72.png">
@@ -66,7 +63,7 @@
                <li>
                   <a href="javascript:void(0);">
                   <span class="meta hidden-lg">
-                  <span class="text" style="font-size: 14px;">ระบบทะเบียนกลาง ( รายวิชาที่เปิดสอน )</span>
+                  <span class="text" style="font-size: 14px;">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก )</span> 
                   </span>
                   <span class="meta hidden-xs hidden-sm hidden-md">
                   <span class="text" style="font-size: 15px;" href="{{('/index') }}">{{ __('ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก ') }}</span>
