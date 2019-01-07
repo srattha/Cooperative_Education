@@ -348,7 +348,7 @@
                   </li>
                   <!--ค้นหา-->
                   <li class="nav-item">
-                     <a class="nav-link " href="{{('/') }}"><i class="glyphicon glyphicon-search" style="padding-right: 2px;"aria-hidden="true" id="icon"></i>{{ __('ค้นหาสถานประกอบการ') }}</a>
+                     <a class="nav-link " href="{{('/search') }}"><i class="glyphicon glyphicon-search" style="padding-right: 2px;"aria-hidden="true" id="icon"></i>{{ __('ค้นหาสถานประกอบการ') }}</a>
                   </li>
                   <!--ดาวน์โหลด-->
                   <li class="nav-item">

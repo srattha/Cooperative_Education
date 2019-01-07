@@ -13,7 +13,7 @@
             <div class="panel-body">
                <div class="form-horizontal">
                   <div class="form-group">
-                     <form action="{{ route('search_report') }}" method="post" enctype="multipart/form-data">
+                     <form action="{{ route('search') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="col-sm-3 col-md-3">
                            <div class="input-group input-group-sm">
@@ -115,7 +115,37 @@
                            <th class="text-center">ผลงานนักศึกษา</th>
                         </tr>
                      </thead>
-                     <tbody></tbody>
+                     <tbody class="text-center">
+                        <tr>
+                           @foreach ($student as $index => $students)
+                           <td>{{$students->year}}</td>
+                           <td>
+                            @foreach ($students->company as $c)
+                              {{$c->company_name}}
+                              @endforeach</td>
+                           <td>
+                              @foreach ($students->user as $u) 
+                              {{$u->name}}
+                              @endforeach
+                           </td>
+                           <td>
+                              @foreach ($students->company as $c)
+                              {{$c->province}}
+                              @endforeach</td>
+                           </td>
+                           <td>
+                              @foreach ($students->company as $c)
+                              {{$c->tel}}
+                              @endforeach</td>
+                           </td>
+                           <td>
+                              @foreach ($students->company as $c)
+                              {{$c->file}}
+                              @endforeach</td>
+                           </td>
+                        </tr>
+                        @endforeach
+                     </tbody>
                   </table>
                </div>
                <div id="show_wait"></div>

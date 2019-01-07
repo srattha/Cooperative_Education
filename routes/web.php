@@ -28,7 +28,8 @@ Route::post('data_student', 'data_studentController@add_data_student');
 Route::get('/editdata_student', 'data_studentController@edit_data_student')->name('editdata_student');
 Route::post('editdata_student', 'data_studentController@updatedata_student');
 
-Route::get('/', 'SearchController@Search')->name('search');
+Route::get('/search', 'SearchController@search')->name('search');
+Route::post('/search','SearchController@Search');
 // Route::get('/', 'HomeController@index')->name('home');
 Route::get('/upload_pfd', 'Upload_pfdController@upload_pfd')->name('upload_pfd');
 
