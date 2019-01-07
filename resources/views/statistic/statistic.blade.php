@@ -118,14 +118,13 @@
          </aside> -->
       <section id="main" role="main">
          <div class="container-fluid">
-             <div class="row">
+            <div class="row">
                <div class="col-md-12">
                   <div class="panel panel-default">
                      <div class="panel-heading">
                         <h3 class="panel-title"><i class=""></i>รายงานนักศึกษาในโครงการสหกิจศึกษา </h3>
                      </div>
-                     
-                   <!--  <div class="panel-body">
+                     <!--  <div class="panel-body">
                         <div class="form-horizontal">
                            <div class="form-group">
                               <label class="col-md-4 control-label">คณะ : </label>
@@ -173,168 +172,171 @@
                               <button class="btn btn-primary" onclick="ajaxCourseList();"><i class=""></i>ค้นหา</button>
                            </div>
                         </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div> -->
+                     <!-- กราฟ-->
+                     <div id="ajax_1" class="row">
+                        <div class="col-md-12">
+                           <div class="panel panel-default">
+                              <div class="panel-body">
+                                 <div id="donut-example"></div>
+                                 <?php 
+                                    $arr = array(
+                                        array('test1', 10),
+                                        array('test2', 25)
+                                    );
+                                    ?>
+                                 <script type="text/javascript">
+                                    Morris.Donut({
+                                        element: 'donut-example',
+                                        data: [
+                                          { label: "{{ $arr[0][0] }}", value: {{ $arr[0][1] }} },
+                                          { label: "In-Store Sales", value: 30 }
+                                        ]
+                                    });
+                                 </script>
+                              </div>
+                           </div>
+                        </div>
                      </div>
-                  </div>
-               </div>
-               </div> -->
-            <!-- กราฟ-->
-            <div id="ajax_1" class="row">
-               <div class="col-md-12">
-                  <div class="panel panel-default">
-                     <div class="panel-body">
-                        <div id="donut-example"></div>
-                        <?php 
-                           $arr = array(
-                               array('test1', 10),
-                               array('test2', 25)
-                           );
-                           ?>
-                        <script type="text/javascript">
-                           Morris.Donut({
-                               element: 'donut-example',
-                               data: [
-                                 { label: "{{ $arr[0][0] }}", value: {{ $arr[0][1] }} },
-                                 { label: "In-Store Sales", value: 30 }
-                               ]
-                           });
-                        </script>
+                     <!--<div id="ajax_2" class="row" style="display: none;">
+                        <div class="col-md-12">
+                           <div class="panel panel-default">
+                           </div>
+                        </div>
                      </div>
+                     <div id="for_modal_department"></div>  -->
                   </div>
                </div>
             </div>
-            <div id="ajax_2" class="row" style="display: none;">
-               <div class="col-md-12">
-                  <div class="panel panel-default">
-                  </div>
-               </div>
-            </div>
-            <div id="for_modal_department"></div>
          </div>
       </section>
       <script src="{{asset('js/morris-data.js')}}"></script>
       <script>
-        /* var service_base_url = $('#service_base_url').val();
-         
-         $('#course_search').keypress(function (event) {
-             if (event.which === 13) {
-                 ajaxCourseList();
-             }
-         });
-         
-         function modalCheckRegis(cam, maj, y, t, pick) {
-             var url = service_base_url + 'course/c05coursereport/modalregistrationlist';
-             $.ajax({
-                 url: url,
-                 type: 'post',
-                 data: {
-                     campus_id_pri: cam,
-                     major_id_pri: maj,
-                     year: y,
-                     term: t,
-                     pick: pick
-                 },
-                 success: function (response) {
-                     $('#for_modal_department').html(response);
-                     $('#modal_department').modal('show', {backdrop: 'true'});
-                 }
-             });
-         }
-         
-         function back_to_1() {
-             $('#ajax_2').attr('style', 'animation:fadeOutRight 0.4s');
-             setTimeout(function () { //หน่วงเพื่อ fade Out ให้จบ
-                 $('#ajax_2').removeAttr('style', 'animation:fadeOutRight 0.4s');
-                 $('#ajax_2').hide();
-                 $('#ajax_1').attr('style', 'animation:fadeInLeft 0.4s');
-                 setTimeout(function () { //หน่วงเพื่อ fade In ให้จบ
-                     $('#ajax_1').removeAttr('style', 'animation:fadeInLeft 0.4s');
-                 }, 400);
-             }, 400);
-         }
-         
-         function ajaxDepartmentRegis(cam, fac, y, t) {
-             $('#for_progress').show();
-             setTimeout(function () {
-                 $('#load').attr('style', 'width:40%');
-             }, 400);
-             var url = service_base_url + 'course/c05coursereport/tablemajorlist';
-             $.ajax({
-                 url: url,
-                 type: 'post',
-                 data: {
-                     campus_id_pri: cam,
-                     faculty_id_pri: fac,
-                     year: y,
-                     term: t
-                 },
-                 success: function (response) {
-                     $('table#table_major_list tbody').html(response);
-                     setTimeout(function () { //หน่วงเพื่อให้ ยัด response ทันเวลา
-                         $('#load').attr('style', 'width:100%');
-                         setTimeout(function () { //หน่วงเพื่อ load progress bar จนครบ 100%
-                             $('#ajax_1').attr('style', 'animation:fadeOutLeft 0.4s');
-                             setTimeout(function () { //หน่วงเพื่อ fade Out ให้จบ
-                                 $('#ajax_1').removeAttr('style', 'animation:fadeOutLeft 0.4s');
-                                 $('#ajax_1').hide();
-                                 $('#ajax_2').attr('style', 'animation:fadeInRight 0.4s');
-                                 setTimeout(function () { //หน่วงเพื่อ fade In ให้จบ
-                                     $('#for_progress').hide();
-                                     $('#load').attr('style', 'width:0%');
-                                     $('#ajax_2').removeAttr('style', 'animation:fadeInRight 0.4s');
-                                 }, 400);
-                             }, 400);
-                         }, 400);
-                     }, 400);
-                 }
-             });
-             var url2 = service_base_url + 'course/c05coursereport/getcfdetail';
-             $.ajax({
-                 url: url2,
-                 type: 'post',
-                 data: {
-                     campus_id_pri: cam,
-                     faculty_id_pri: fac
-                 },
-                 success: function (response) {
-                     var res = response.split("/"); //#3a4049
-                     $('#for_show_faculty').html('<div class="col-md-12"><span style="color: #42C7A4;"><strong>เขตพื้นที่ : </strong></span>' + res[0] + '</div><div class="col-md-12"><span style="color: #42C7A4;"><strong>คณะ : </strong></span>' + res[1] + '</div>');
-                 }
-             });
-         }
-         
-         function ajaxCourseList() {
-             $('#ajax_2').hide();
-             $('table#table_faculty_list tbody').html('');
-             $('#show_wait').html('<div style="text-align:center;margin-top:50px;padding:100px;"><img src="' + service_base_url + 'assets/image/preloader.gif" /></div>');
-             $('#show_wait').show();
-             var str = $('#select_term_year').val();
-             var cam = $('#select_campus').val();
-             var res = str.split("/");
-             var url = service_base_url + 'course/c05coursereport/tablefacultylist';
-             $.ajax({
-                 url: url,
-                 data: {
-                     term: res[0],
-                     year: res[1],
-                     campus: cam
-                 },
-                 type: 'post',
-                 success: function (response) {
-                     $('#show_wait').hide();
-                     $('#show_wait').html('');
-                     $('table#table_faculty_list tbody').html(response);
-                     $('#ajax_1').fadeIn();
-                 }
-             });
-         }*/
-         
+         /* var service_base_url = $('#service_base_url').val();
+          
+          $('#course_search').keypress(function (event) {
+              if (event.which === 13) {
+                  ajaxCourseList();
+              }
+          });
+          
+          function modalCheckRegis(cam, maj, y, t, pick) {
+              var url = service_base_url + 'course/c05coursereport/modalregistrationlist';
+              $.ajax({
+                  url: url,
+                  type: 'post',
+                  data: {
+                      campus_id_pri: cam,
+                      major_id_pri: maj,
+                      year: y,
+                      term: t,
+                      pick: pick
+                  },
+                  success: function (response) {
+                      $('#for_modal_department').html(response);
+                      $('#modal_department').modal('show', {backdrop: 'true'});
+                  }
+              });
+          }
+          
+          function back_to_1() {
+              $('#ajax_2').attr('style', 'animation:fadeOutRight 0.4s');
+              setTimeout(function () { //หน่วงเพื่อ fade Out ให้จบ
+                  $('#ajax_2').removeAttr('style', 'animation:fadeOutRight 0.4s');
+                  $('#ajax_2').hide();
+                  $('#ajax_1').attr('style', 'animation:fadeInLeft 0.4s');
+                  setTimeout(function () { //หน่วงเพื่อ fade In ให้จบ
+                      $('#ajax_1').removeAttr('style', 'animation:fadeInLeft 0.4s');
+                  }, 400);
+              }, 400);
+          }
+          
+          function ajaxDepartmentRegis(cam, fac, y, t) {
+              $('#for_progress').show();
+              setTimeout(function () {
+                  $('#load').attr('style', 'width:40%');
+              }, 400);
+              var url = service_base_url + 'course/c05coursereport/tablemajorlist';
+              $.ajax({
+                  url: url,
+                  type: 'post',
+                  data: {
+                      campus_id_pri: cam,
+                      faculty_id_pri: fac,
+                      year: y,
+                      term: t
+                  },
+                  success: function (response) {
+                      $('table#table_major_list tbody').html(response);
+                      setTimeout(function () { //หน่วงเพื่อให้ ยัด response ทันเวลา
+                          $('#load').attr('style', 'width:100%');
+                          setTimeout(function () { //หน่วงเพื่อ load progress bar จนครบ 100%
+                              $('#ajax_1').attr('style', 'animation:fadeOutLeft 0.4s');
+                              setTimeout(function () { //หน่วงเพื่อ fade Out ให้จบ
+                                  $('#ajax_1').removeAttr('style', 'animation:fadeOutLeft 0.4s');
+                                  $('#ajax_1').hide();
+                                  $('#ajax_2').attr('style', 'animation:fadeInRight 0.4s');
+                                  setTimeout(function () { //หน่วงเพื่อ fade In ให้จบ
+                                      $('#for_progress').hide();
+                                      $('#load').attr('style', 'width:0%');
+                                      $('#ajax_2').removeAttr('style', 'animation:fadeInRight 0.4s');
+                                  }, 400);
+                              }, 400);
+                          }, 400);
+                      }, 400);
+                  }
+              });
+              var url2 = service_base_url + 'course/c05coursereport/getcfdetail';
+              $.ajax({
+                  url: url2,
+                  type: 'post',
+                  data: {
+                      campus_id_pri: cam,
+                      faculty_id_pri: fac
+                  },
+                  success: function (response) {
+                      var res = response.split("/"); //#3a4049
+                      $('#for_show_faculty').html('<div class="col-md-12"><span style="color: #42C7A4;"><strong>เขตพื้นที่ : </strong></span>' + res[0] + '</div><div class="col-md-12"><span style="color: #42C7A4;"><strong>คณะ : </strong></span>' + res[1] + '</div>');
+                  }
+              });
+          }
+          
+          function ajaxCourseList() {
+              $('#ajax_2').hide();
+              $('table#table_faculty_list tbody').html('');
+              $('#show_wait').html('<div style="text-align:center;margin-top:50px;padding:100px;"><img src="' + service_base_url + 'assets/image/preloader.gif" /></div>');
+              $('#show_wait').show();
+              var str = $('#select_term_year').val();
+              var cam = $('#select_campus').val();
+              var res = str.split("/");
+              var url = service_base_url + 'course/c05coursereport/tablefacultylist';
+              $.ajax({
+                  url: url,
+                  data: {
+                      term: res[0],
+                      year: res[1],
+                      campus: cam
+                  },
+                  type: 'post',
+                  success: function (response) {
+                      $('#show_wait').hide();
+                      $('#show_wait').html('');
+                      $('table#table_faculty_list tbody').html(response);
+                      $('#ajax_1').fadeIn();
+                  }
+              });
+          }*/
+          
       </script>
-      <div class="modal fade" id="modal_ajax">
+      <!--<div class="modal fade" id="modal_ajax">
          <div class="modal-dialog">
             <div class="modal-content">
             </div>
          </div>
-      </div>
+         </div>-->
       <div class="modal fade" id="modal_ajax_lg">
          <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -343,25 +345,24 @@
       </div>
       <div style="padding-bottom: 50px;"></div>
       <footer id="footer">
-      <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6">              
-                <p class="nm text-muted">&copy; 2018-Cooperative Education</i></p>
-               Deverloped By Patiphan Uthang And Yuwa Saewang </p>
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-sm-6">
+                  <p class="nm text-muted">&copy; 2018-Cooperative Education</i></p>
+                  Deverloped By Patiphan Uthang And Yuwa Saewang </p>
+               </div>
             </div>
-        </div>
-    </div>
-    </footer>
-
-      <a href="#" id="gotop_btn" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
+         </div>
+      </footer>
+      <!--<a href="#" id="gotop_btn" class="totop animation" data-toggle="waypoints totop" data-showanim="bounceIn" data-hideanim="bounceOut" data-offset="50%"><i class="ico-angle-up"></i></a>
+         <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87588904-26"></script>
       <script>
-       /*  window.dataLayer = window.dataLayer || [];
-         function gtag(){dataLayer.push(arguments);}
-         gtag('js', new Date());
-         
-         gtag('config', 'UA-87588904-26');*/
+         /*  window.dataLayer = window.dataLayer || [];
+           function gtag(){dataLayer.push(arguments);}
+           gtag('js', new Date());
+           
+           gtag('config', 'UA-87588904-26');*/
       </script>
    </body>
 </html>
