@@ -10,7 +10,7 @@
       <h1>จัดการข้อมูลคณะ</h1>
     </div>
     <div class="panel-body">
-      <button class="btn btn-success" onclick="location.href='{{ route('create_branch') }}'"> <i class="fa fa-plus-circle" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</button>
+      <button class="btn btn-success" onclick="location.href='{{ route('create_branch') }}'"> <i class="fa fa-plus-circle" aria-hidden="true"></i> เพิ่มสาขาวิชา</button>
       <br>
       <br>
       <table  id="dataTables-example" class="table table-striped table-bordered table-hover" style="width:100%;">

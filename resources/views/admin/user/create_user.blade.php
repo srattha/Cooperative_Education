@@ -19,7 +19,7 @@
       <form action="{{ url('CreateUser') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
         @csrf
         <div>
-          <label for="text">ชื่อ-นามสกุน</label>
+          <label for="text">ชื่อ-นามสกุล</label>
           <input type="text" name="name" class="form-control" id="pwd">
         </div>
         <br>

@@ -10,7 +10,7 @@
    border-left-width: 0px;
    box-shadow: none;
    font-size: 13px;
-   }
+   } 
    .input-group-addon:first-child {
    border-right: 0;
    border-top-width: 0;
