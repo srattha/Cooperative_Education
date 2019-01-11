@@ -48,6 +48,11 @@
       <div class="panel-heading">
          <h3 style="color:#fff; font-weight:550; font-size: 20px;">แบบแจ้งรายละเอียดข้อมูลนักศึกษา และข้อมูลสถานประกอบการโครงการสหกิจศึกษา</h3>
       </div>
+      <div class="row">
+         <div class="col-md-5" align="right" style="padding-left: 1050px; padding-top: 20px;">
+            <a href="{{('/mpdf_student') }}" class="btn btn-danger"><i class="fa fa-print">Print PDF</i></a>
+         </div>
+      </div>
       <div class="panel-body">
          @if(count($errors) > 0)
          <div>
@@ -358,20 +363,40 @@
                <!-- END row -->
                <br>
                <div class="row">
-                  <div class="col-md-12">
-                     <div class="container" style="padding-left: 470px;margin-top: 40px;">
-                        <br>
-                        <button type="submit" class="btn btn-info">
-                        <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
-                        <button class="btn btn-danger" type="button" onclick="location.href='/reports';"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button>
-                         <button class="btn btn-primary hidden-print" onclick="myFunction()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
-                     </div>
+                  <div class="col-md-12"></div>
+                  <div class="container" style="padding-left: 520px;margin-top: 50px;">
+                     <br>
+                     <button type="submit" class="btn btn-info">
+                     <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
+                     <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#modalalert"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button>
+                     <!--<button type="button" class="btn btn-primary" ><span class="fa fa-download mr10" aria-hidden="true"></span><a href="{{('/mpdf_student') }}" style="color: white;"> ดาวน์โหลด </a></button> {{('/mpdf_student/$data->id') }}   {{$data->id}}-->
                   </div>
+               </div>
                </div>
             </div>
          </form>
       </div>
    </div>
+</div>
+<div class="modal in" id="modalalert">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title">คำเตือน !</h4>
+         </div>
+         <div class="modal-body">
+            <p>คุณแน่ใจหรือว่าต้องการยกเลิก  (สิ่งนี้)</p>
+            <div class="row">
+               <div class="col-12-xs text-center">
+                  <button class="btn btn-success btn-md" data-dismiss="modal" onclick="$('form')[1].reset();$('form')[0].reset();">Yes</button>
+                  <button class="btn btn-danger btn-md" data-dismiss="modal">No</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- /.modal-content -->
+   </div>
+   <!-- /.modal-dialog -->
 </div>
 <footer class="footer">
    <div class="col-md-12" style="margin-top: 50px">
@@ -447,9 +472,5 @@
        minViewMode: "years"
     });
    });
-         /*print*/
-   function myFunction() {
-    window.print();
-}
 </script>
 @endsection

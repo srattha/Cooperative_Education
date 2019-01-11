@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Company;
 use App\Student;
 use App\File;
+use mPDF;
+use PDF;
 use App\Branch;
 use Session;
 use App\Faculty;
@@ -15,6 +17,88 @@ class Data_studentController extends Controller
 *
 * @return void
 */
+public function mpdf_student($id)
+{
+    $Student = Student::where('user_id', $id)->get();
+    // return $Student[0];
+    //require_once __DIR__ . '/vendor/autoload.php';
+$mpdf = new \Mpdf\Mpdf([
+    'default_font_size' => 16,
+    'default_font' => 'sarabun'
+]);
+$mpdf->SetImportUse();
+
+// Add First page
+$mpdf->AddPage();
+
+$pagecount = $mpdf->SetSourceFile('Temple.pdf');
+$tplId = $mpdf->ImportPage($pagecount);
+$actualsize = $mpdf->UseTemplate($tplId);
+$html = "";
+// The height of the template as it was printed is returned as $actualsize['h']
+// The width of the template as it was printed is returned as $actualsize['w']
+// row I Student
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 110px;top: 245px;"><b>'.$Student[0]->name_student.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 540px;top: 245px;"><b>'.$Student[0]->identification_number.'</b></p>';
+// row II
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 150px;top: 279px;"><b>'.$Student[0]->birthday.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 450px;top: 279px;"><b>'.$Student[0]->institution.'</b></p>';
+//row IIII
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 150px;top: 311px;"><b>'.$Student[0]->student_id.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 380px;top: 311px;"><b>'.$Student[0]->campus.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 650px;top: 311px;"><b>'.$Student[0]->term.'</b></p>';
+//row IIIII
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 90px;top: 340px;"><b>'.$Student[0]->activities.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 470px;top: 340px;"><b>'.$Student[0]->activities.'</b></p>';
+//row IIIIII
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 150px;top: 378px;"><b>'.$Student[0]->year.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 290px;top: 378px;"><b>'.$Student[0]->activities.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 490px;top: 378px;"><b>'.$Student[0]->year_study.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 680px;top: 379px;"><b>'.$Student[0]->class_year.'</b></p>';
+//row IIIIIII
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 200px;top: 411px;"><b>'.$Student[0]->gpa.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 450px;top: 411px;"><b>'.$Student[0]->gpa_past.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 650px;top: 411px;"><b>'.$Student[0]->telephone.'</b></p>';
+
+// row I Company
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 110px;top: 518px;"><b>'.$Student[0]->gpa.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 500px;top: 518px;"><b>'.$Student[0]->gpa_past.'</b></p>';
+// row II
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 110px;top: 550px;"><b>'.$Student[0]->gpa.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 380px;top: 550px;"><b>'.$Student[0]->gpa_past.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 610px;top: 550px;"><b>'.$Student[0]->gpa_past.'</b></p>';
+//row III
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 80px;top: 583px;"><b>'.$Student[0]->gpa.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 350px;top: 583px;"><b>'.$Student[0]->gpa_past.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 600px;top: 583px;"><b>'.$Student[0]->gpa_past.'</b></p>';
+// row IIII
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 110px;top: 600px;"><b>'.$Student[0]->gpa.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 380px;top: 600px;"><b>'.$Student[0]->gpa_past.'</b></p>';
+$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 680px;top: 600px;"><b>'.$Student[0]->gpa_past.'</b></p>';
+
+$mpdf->Output();
+    //$mpdf = new \Mpdf\Mpdf();
+    //$mpdf->SetImportUse();
+    //$mpdf->SetDocTemplate('../../../temple.pdf', true);
+//$mpdf->WriteHTML ('<h1>Hello world!</h1>');
+//return $mpdf->Output();
+    // $data = [
+    //     'foo' => 'bar'
+    // ];
+    // $mpdf = new \Mpdf\Mpdf();
+    // // return view('data_student.mpdf_student',['mpdf' => $mpdf]);
+    // // $config = ['instanceConfigurator' => function($mpdf) {
+    // //     $mpdf->SetImportUse();
+    // //     $mpdf->SetDocTemplate('../../public/temple.pdf', true);
+    // // }];
+  // / $pdf = PDF::loadView('mpdf_student',$data , [], $config);
+   //  return $pdf->stream('document.pdf');
+   // ////  $pdf = new PDF;
+        
+   //  $mpdf->loadView('data_student.mpdf_student');
+    // return $mpdf->stream('mpdf_student.pdf');
+}
+
 public function __construct() 
 {
     $this->middleware('auth'); 
