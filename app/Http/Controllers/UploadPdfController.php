@@ -18,6 +18,13 @@ class UploadPdfController extends Controller
 
     }
 
+
+    public function delete($name, $id){
+        File::where('id', $id)->delete();
+        $path = public_path().'/adminpdf';
+        unlink($path.'/'.$name);
+        return redirect('uploadPdf');
+    }
     /**
      * Show the application dashboard.
      *
@@ -40,17 +47,19 @@ class UploadPdfController extends Controller
 
     }
     public function storeFile(request $request){
+        // return public_path();
         $user = Auth::user();
         if ($request->hasFile('file')) {
 
            $file = $request->file('file');
             $extension = $file->getClientOriginalExtension(); // you can also use file name
             $fileName = time().'.'.$extension;
-            $path = public_path().'/upload/uploadPdf';
-            $uplaod = $file->move($path,$fileName);
+            $path = public_path().'/adminpdf';
+            $uplaod = $file->move($path,$fileName); 
            $fileModel = new File;
            $fileModel->user_id = $user->id;
            $fileModel->name = $fileName;
+           $fileModel->status_file = $request->status;
            $fileModel->save();
  }
  return redirect('uploadPdf');

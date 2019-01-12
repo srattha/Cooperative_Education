@@ -316,10 +316,9 @@
                <!-- Left Side Of Navbar -->
                <ul class="nav navbar-top-links navbar-right">
                   @if(Auth::user())
-                 <!-- <li class="nav-item">
+                  <!-- <li class="nav-item">
                      <a class="nav-link " href="{{('/printstudent') }}"><i class="glyphicon glyphicon-print" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('') }}</a>
-                  </li> -->
-
+                     </li> -->
                   <li class="dropdown">
                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                      <i class="fa fa-user fa-fw"></i>  <span style="color: #fff;">{{Auth::user()->name}}</span> <i class="fa fa-caret-down"></i>
@@ -337,12 +336,10 @@
                      </ul>
                   </li>
                   @else
-                 
                   <!--หน้าแรก-->
                   <li class="nav-item">
                      <a class="nav-link " href="{{('/index') }}"><i class="glyphicon glyphicon-home" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('หน้าแรก') }}</a>
                   </li>
-
                   <li class="nav-item">
                      <a class="nav-link " href="{{('/statistic') }}"><i class="fa fa-bar-chart"></i></a>
                   </li>

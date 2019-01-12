@@ -33,7 +33,7 @@
           <td style="align-content: center;">
             <div class="btn-group">
               <button type="button" class="btn btn-info btn-xs" onclick="location.href='{{ route('edit_faculty',['id'=>$facultys->id]) }}'"><i class="fa fa-pencil-square-o"></i> แก้ไขข้อมูล</button>
-              <button type="button" class="btn btn btn-danger btn-xs" onclick="if(confirm('Are you sure ?')) window.location.href = '{{ route('delete_faculty',['id'=>$facultys->id]) }}'"><i class="fa fa-trash-o"></i> ลบข้อมูล</button>
+              <button type="button" class="btn btn btn-danger btn-xs" onclick="if(confirm('คุณต้องการลบ หรือ ไม่')) window.location.href = '{{ route('delete_faculty',['id'=>$facultys->id]) }}'"><i class="fa fa-trash-o"></i> ลบข้อมูล</button>
             </div>
           </tr>
           @endforeach

@@ -17,6 +17,9 @@ class Upload_pfdController extends Controller
 
     }
 
+    public function down($name){
+        return response()->download('adminpdf/'.$name, $name, [], 'inline');
+    }
     /**
      * Show the application dashboard.
      *

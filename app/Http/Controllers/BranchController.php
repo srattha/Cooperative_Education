@@ -29,10 +29,9 @@ class BranchController extends Controller
             case '2':
             $branch = Branch::get();
             foreach ($branch as $key => $value) {
-
                 $branch[$key]['faculty'] = Faculty::where('id',$value->faculty_id)->get();
             }
-              
+            
             return view('admin.branch.index',['branch' => $branch]);
             break;
         }

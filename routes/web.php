@@ -34,6 +34,8 @@ Route::get('/search', 'SearchController@search')->name('search');
 Route::post('/search','SearchController@Search');
 // Route::get('/', 'HomeController@index')->name('home');
 Route::get('/upload_pfd', 'Upload_pfdController@upload_pfd')->name('upload_pfd');
+Route::get('/deletePDF/{name}/{id}', 'UploadPdfController@delete');
+Route::get('/down/{name}', 'Upload_pfdController@down');
 
 // Admin
 Route::get('/user', 'UserController@index')->name('user');

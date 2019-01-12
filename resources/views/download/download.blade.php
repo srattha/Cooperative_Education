@@ -4,7 +4,7 @@
 <style type="text/css">
    .a{
    text-decoration: none;
-   color: #513300;
+   color: #513300; 
    }
    .body{
    color: #555;
@@ -34,6 +34,28 @@
                <tr>
                   <td>
                      <p 18.5714px="" line-height:="">แบบฟอร์มสหกิจศึกษาต่างๆ<br />
+                     <?php 
+                        $array = [
+                           ['', ''],
+                           ['เอกสารหมายเลข 1', 'แบบแจ้งรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา'],
+                           ['เอกสารหมายเลข 2', 'แบบตอบกลับนักศึกษาโครงการสหกิจศึกษา'],
+                           ['เอกสารหมายเลข 3', 'ใบสมัครงานโครงการสหกิจศึกษา'],
+                           ['เอกสารหมายเลข 4', 'แบบแจ้งรายชื่อนักศึกษาโครงการสหกิจศึกษา'],
+                           ['เอกสารหมายเลข 5', 'แแบแจ้งรายละเอียดสถานประกอบการโครงการสหกิจศึกษา'],
+                           ['เอกสารหมายเลข 6', 'แบบแจ้งรายละเอียดงาน ตำแหน่งงาน พนักงานที่ปรึกษาโครงการสหกิจศึกษา'],
+                           ['เอกสารหมายเลข 7', 'แบบแจ้งแผนปฏอบัติงานโครงการสหกิจศึกษา'],
+                           ['เอกสารหมายเลข 8', 'แบบแจ้งโครงร่างรายงานการปฏิบัติงานโครงการสหกิจศึกษา'],
+                           ['เอกสารหมายเลข 9', 'แบบแจ้งยืนยันการนิเทศงานนักศึกษาโครงการสหกิจศึกษา'],
+                           ['เอกสารหมายเลข 10', 'แบบบันทึกการนิเทศงานโครงการสหกิจศึกษา'],
+                           ['เอกสารหมายเลข 11', 'แบบประเมินผลนักศึกษาโครงการสหกิจศึกษา'],
+                           ['เอกสารหมายเลข 12', 'แบบประเมินรางานนักศึกษาโครงการสหกิจศึกษา'],
+                        ];
+                        foreach ($file as $key => $value) {
+                           echo '&nbsp; &nbsp; '.$array[$value->status_file][0].'&nbsp;&nbsp;<a href="down/'.$value->name.'"style="text-decoration:none; target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;'.$array[$value->status_file][1].' </a><br />';
+                        }
+                     ?>
+                     </p>
+                    <!-- <p 18.5714px="" line-height:="">แบบฟอร์มสหกิจศึกษาต่างๆ<br />
                         &nbsp; &nbsp; เอกสารหมายเลข 1&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา </a><br />
                         &nbsp; &nbsp; เอกสารหมายเลข 2&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบตอบกลับนักศึกษาโครงการสหกิจศึกษา</a><br />
                         <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 3&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;ใบสมัครงานโครงการสหกิจศึกษา</a></span><br />
@@ -45,7 +67,7 @@
                         <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 9&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งยืนยันการนิเทศงานนักศึกษาโครงการสหกิจศึกษา</a></span><br />
                         <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 10&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบบันทึกการนิเทศงานโครงการสหกิจศึกษา</a></span><br />
                         <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 11&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบประเมินผลนักศึกษาโครงการสหกิจศึกษา</a></span><br />
-                        <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 12&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบประเมินรางานนักศึกษาโครงการสหกิจศึกษา</a></span><br />
+                        <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 12&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบประเมินรางานนักศึกษาโครงการสหกิจศึกษา</a></span><br />-->
                   </td>
                </tr>
             </tbody>

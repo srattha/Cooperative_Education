@@ -50,7 +50,7 @@
       </div>
       <div class="row">
          <div class="col-md-5" align="right" style="padding-left: 1050px; padding-top: 20px;">
-            <a href="{{('/mpdf_student') }}" class="btn btn-danger"><i class="fa fa-print">Print PDF</i></a>
+            <a href="{{ '/mpdf_student/'.$user->id}}" class="btn btn-danger"><i class="fa fa-print">Print PDF</i></a>
          </div>
       </div>
       <div class="panel-body">
@@ -369,7 +369,7 @@
                      <button type="submit" class="btn btn-info">
                      <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
                      <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#modalalert"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button>
-                     <!--<button type="button" class="btn btn-primary" ><span class="fa fa-download mr10" aria-hidden="true"></span><a href="{{('/mpdf_student') }}" style="color: white;"> ดาวน์โหลด </a></button> {{('/mpdf_student/$data->id') }}   {{$data->id}}-->
+                     
                   </div>
                </div>
                </div>

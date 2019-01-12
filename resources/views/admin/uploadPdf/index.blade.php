@@ -17,7 +17,30 @@
         <p class="help-block">uploadPDF</p>
         <!-- <label for="exampleInputFile">File input</label>.
         <input type="text" name="text"> -->
-        <button type="submit" class="btn btn-info">Submit</button>
+        <div class="col-sm-4" >
+          <div class="input-group input-group-sm">
+            <span class="input-group-addon" id="sizing-addon1">สเตตัสไฟล์</span>
+            <select id="inputState" name="status"  class="form-control">
+            <option selected>-กรุณาเลือก-</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <!-- <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option> -->
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-info">บันทึก</button>
       </form>
       <br>
        <table  id="dataTables-example" class="table table-striped table-bordered table-hover" style="width:100%;">
@@ -41,8 +64,7 @@
           <td>{{$files->updated_at}}</td>
           <td style="align-content: center;">
             <button type="button" class="btn btn btn-default btn-xs"><i class="fa fa-cloud-download" aria-hidden="true"></i> <a href="{{ asset('upload/uploadPdf/'.$files->file_name) }}" download>{{$files->file_name}}</a></button>
-            <button type="button" class="btn btn btn-danger btn-xs" onclick="if(confirm('Are you sure ?')) window.location.href = ''"><i class="fa fa-trash-o"></i> ลบข้อมูล</button>
-
+            <button type="button" class="btn btn btn-danger btn-xs" onclick="if(confirm('คุณต้องลบข้อมูล หรือ ไม่')) window.location.href = '/deletePDF/{{$files->name}}/{{$files->id}}'"><i class="fa fa-trash-o"></i> ลบข้อมูล</button>
           </tr>
           @endforeach
         </tbody>

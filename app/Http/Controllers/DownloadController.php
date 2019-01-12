@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\File;
 use Illuminate\Http\Request;
 
 class DownloadController extends Controller
@@ -11,7 +11,7 @@ class DownloadController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct() 
     {
         //$this->middleware('auth');
     }
@@ -23,6 +23,9 @@ class DownloadController extends Controller
      */
     public function Download()
     {
-        return view('Download.Download');
+        $file = File::orderBy('status_file','asc')->get();
+        // return $file;
+        return view('Download.Download', ['file' => $file]);
     }
+   
 }
