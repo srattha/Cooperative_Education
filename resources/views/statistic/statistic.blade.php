@@ -33,8 +33,7 @@
       <script type="text/javascript" src="http://regis2015.rmutl.ac.th/assets/plugins/datetimepicker/js/jquery.datetimepicker.js" ></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
       <!--<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-      / Plugins and page level script : optional -->
-
+         / Plugins and page level script : optional -->
    </head>
    <body>
       <input type="hidden" id="service_base_url" value="http://regis2015.rmutl.ac.th/" />
@@ -74,104 +73,106 @@
             </ul>
          </div>
       </header>
-      <section id="main" role="main">
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="panel panel-default">
-                     <div class="panel-heading">
-                        <h3 class="panel-title">รายงานนักศึกษาในโครงการสหกิจศึกษา<a class="nav-link " href="{{('/index') }}"><i style="padding-right: 2px; padding-left: 50px;" aria-hidden="true" id="icon"></i>{{ __('หน้าแรก') }}</a></h3>
+      <div class="container">
+         <section id="main" role="main">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h3 class="panel-title">รายงานนักศึกษาในโครงการสหกิจศึกษา<a class="nav-link " href="{{('/index') }}"><i style="padding-right: 2px; padding-left: 50px;" aria-hidden="true" id="icon"></i>{{ __('หน้าแรก') }}</a></h3>
+                        </div>
+                        <!-- กราฟ-->
+                        <div id="chart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
                      </div>
-                     <!-- กราฟ-->
-                     <div id="chart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
                   </div>
                </div>
             </div>
-         </div>
-      </section>
-      <!--<script src="{{asset('js/morris-data.js')}}"></script> -->
-      <div class="modal fade" id="modal_ajax_lg">
-         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-            </div>
-         </div>
-      </div>
-      <div style="padding-bottom: 50px;"></div>
-      <footer id="footer">
-         <div class="container">
-            <div class="row">
-               <div class="col-sm-6">
-                  <p class="nm text-muted">&copy; 2018-Cooperative Education</i></p>
-                  Deverloped By Patiphan Uthang And Yuwa Saewang </p>
+         </section>
+         <!--<script src="{{asset('js/morris-data.js')}}"></script> -->
+         <div class="modal fade" id="modal_ajax_lg">
+            <div class="modal-dialog modal-lg">
+               <div class="modal-content">
                </div>
             </div>
          </div>
-      </footer>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87588904-26"></script>
-      <!--chart-->
-      <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-      <script src="https://code.highcharts.com/highcharts.js"></script>
-      <script src="https://code.highcharts.com/modules/exporting.js"></script>
-      <script src="https://code.highcharts.com/modules/export-data.js"></script>
-      <script type="text/javascript">
-         // Build the chart
-         Highcharts.chart('chart', {
-         chart: {
-         plotBackgroundColor: null,
-         plotBorderWidth: null,
-         plotShadow: false,
-         type: 'pie'
-         },
-         title: {
-         text: 'รายงานนักศึกษาโครงการสหกิจศึกษา'
-         },
-         tooltip: {
-         pointFormat: '{series.name}: <b>{point.y}</b>'
-         },
-         plotOptions: {
-         pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: false
+         <div style="padding-bottom: 50px;"></div>
+         <footer id="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-6">
+                     <p class="nm text-muted">&copy; 2018-Cooperative Education</i></p>
+                     Deverloped By Patiphan Uthang And Yuwa Saewang </p>
+                  </div>
+               </div>
+            </div>
+         </footer>
+         <!-- Global site tag (gtag.js) - Google Analytics -->
+         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87588904-26"></script>
+         <!--chart-->
+         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+         <script src="https://code.highcharts.com/highcharts.js"></script>
+         <script src="https://code.highcharts.com/modules/exporting.js"></script>
+         <script src="https://code.highcharts.com/modules/export-data.js"></script>
+         <script type="text/javascript">
+            // Build the chart
+            Highcharts.chart('chart', {
+            chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
             },
-            showInLegend: true
-         }
-         },
-         series: [{
-         name: 'นักศึกษา',
-         colorByPoint: true,
-         data: [ 
-         <?php 
-            for($i = 0; $i < count($data); $i++){
-               echo '{name: "'.$data[$i]['y'].'", y: '.$data[$i]['name'].'},';
+            title: {
+            text: 'รายงานนักศึกษาโครงการสหกิจศึกษา'
+            },
+            tooltip: {
+            pointFormat: '{series.name}: <b>{point.y}</b>'
+            },
+            plotOptions: {
+            pie: {
+               allowPointSelect: true,
+               cursor: 'pointer',
+               dataLabels: {
+                   enabled: false
+               },
+               showInLegend: true
             }
-         ?>
-         ]
-         // [{
-         //    name: ' All Faculty ',
-         //    y: 61.41,
-         //    // sliced: true,
-         //    // selected: true
-         // }, {
-         //    name: 'Faculty of Business Administration and Liberal Arts',
-         //    y: 11.84
-         // }, {
-         //    name: 'Faculty of Sciences and Agricultural Technology',
-         //    y: 10.85
-         // }, {
-         //    name: 'Faculty of Engineering',
-         //    y: 4.67
-         // }, {
-         //    name: 'Faculty of Fine Arts and Architecture',
-         //    y: 4.18
-         // }, {
-         //    name: 'Other',
-         //    y: 7.05
-         // }]
-         }]
-         });
-      </script>
+            },
+            series: [{
+            name: 'นักศึกษา',
+            colorByPoint: true,
+            data: [ 
+            <?php 
+               for($i = 0; $i < count($data); $i++){
+                  echo '{name: "'.$data[$i]['y'].'", y: '.$data[$i]['name'].'},';
+               }
+               ?>
+            ]
+            // [{
+            //    name: ' All Faculty ',
+            //    y: 61.41,
+            //    // sliced: true,
+            //    // selected: true
+            // }, {
+            //    name: 'Faculty of Business Administration and Liberal Arts',
+            //    y: 11.84
+            // }, {
+            //    name: 'Faculty of Sciences and Agricultural Technology',
+            //    y: 10.85
+            // }, {
+            //    name: 'Faculty of Engineering',
+            //    y: 4.67
+            // }, {
+            //    name: 'Faculty of Fine Arts and Architecture',
+            //    y: 4.18
+            // }, {
+            //    name: 'Other',
+            //    y: 7.05
+            // }]
+            }]
+            });
+         </script>
+      </div>
    </body>
 </html>

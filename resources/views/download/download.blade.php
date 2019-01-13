@@ -18,78 +18,80 @@
 </style>
 @endsection
 @section('content')
-<div class="container-fluid panel panel-default" style="margin-top: -10px;">
-   <div class="row">
-      <div class="col-md-12">
-         <h1 class="head-page-title" style="color: #3f51b5;">ดาวน์โหลด</h1>
+<div class="container panel-body">
+   <div class="container-fluid panel panel-default">
+      <div class="row">
+         <div class="col-md-12">
+            <h1 class="head-page-title" style="color: #3f51b5;">ดาวน์โหลด</h1>
+         </div>
+      </div>
+      <hr>
+      <div class="row">
+         <div class="col-md-12">
+            <p>หน้าสำหรับการดาวน์โหลดโปรแกรม เอกสารต่างๆ&nbsp;</p>
+            <p>&nbsp;</p>
+            <table class="table table-bordered">
+               <tbody>
+                  <tr>
+                     <td>
+                        <p 18.5714px="" line-height:="">แบบฟอร์มสหกิจศึกษาต่างๆ<br />
+                           <?php 
+                              $array = [
+                                 ['', ''], 
+                                 ['เอกสารหมายเลข 1', 'แบบแจ้งรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา'],
+                                 ['เอกสารหมายเลข 2', 'แบบตอบกลับนักศึกษาโครงการสหกิจศึกษา'],
+                                 ['เอกสารหมายเลข 3', 'ใบสมัครงานโครงการสหกิจศึกษา'],
+                                 ['เอกสารหมายเลข 4', 'แบบแจ้งรายชื่อนักศึกษาโครงการสหกิจศึกษา'],
+                                 ['เอกสารหมายเลข 5', 'แแบแจ้งรายละเอียดสถานประกอบการโครงการสหกิจศึกษา'],
+                                 ['เอกสารหมายเลข 6', 'แบบแจ้งรายละเอียดงาน ตำแหน่งงาน พนักงานที่ปรึกษาโครงการสหกิจศึกษา'],
+                                 ['เอกสารหมายเลข 7', 'แบบแจ้งแผนปฏอบัติงานโครงการสหกิจศึกษา'],
+                                 ['เอกสารหมายเลข 8', 'แบบแจ้งโครงร่างรายงานการปฏิบัติงานโครงการสหกิจศึกษา'],
+                                 ['เอกสารหมายเลข 9', 'แบบแจ้งยืนยันการนิเทศงานนักศึกษาโครงการสหกิจศึกษา'],
+                                 ['เอกสารหมายเลข 10', 'แบบบันทึกการนิเทศงานโครงการสหกิจศึกษา'],
+                                 ['เอกสารหมายเลข 11', 'แบบประเมินผลนักศึกษาโครงการสหกิจศึกษา'],
+                                 ['เอกสารหมายเลข 12', 'แบบประเมินรางานนักศึกษาโครงการสหกิจศึกษา'],
+                              ];
+                              foreach ($file as $key => $value) {
+                                 if($value->status_file != null){
+                                    echo '&nbsp; &nbsp; '.$array[$value->status_file][0].'&nbsp;&nbsp;<a href="down/'.$value->name.'"style="text-decoration:none; target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;'.$array[$value->status_file][1].' </a><br />';
+                                 }
+                              }
+                              ?>
+                        </p>
+                        <!-- <p 18.5714px="" line-height:="">แบบฟอร์มสหกิจศึกษาต่างๆ<br />
+                           &nbsp; &nbsp; เอกสารหมายเลข 1&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา </a><br />
+                           &nbsp; &nbsp; เอกสารหมายเลข 2&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบตอบกลับนักศึกษาโครงการสหกิจศึกษา</a><br />
+                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 3&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;ใบสมัครงานโครงการสหกิจศึกษา</a></span><br />
+                           <span style="line-height: 1.42857;">&nbsp;&nbsp;&nbsp; เอกสารหมายเลข 4&nbsp;&nbsp;</span><font color="#337ab7"><a href=""><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งรายชื่อนักศึกษาโครงการสหกิจศึกษา</a></font><br />
+                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 5&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แแบแจ้งรายละเอียดสถานประกอบการโครงการสหกิจศึกษา</a></span><br />
+                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 6&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งรายละเอียดงาน ตำแหน่งงาน พนักงานที่ปรึกษาโครงการสหกิจศึกษา</a></span><br />
+                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 7&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งแผนปฏอบัติงานโครงการสหกิจศึกษา</a></span><br />
+                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 8&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งโครงร่างรายงานการปฏิบัติงานโครงการสหกิจศึกษา</a></span><br />
+                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 9&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งยืนยันการนิเทศงานนักศึกษาโครงการสหกิจศึกษา</a></span><br />
+                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 10&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบบันทึกการนิเทศงานโครงการสหกิจศึกษา</a></span><br />
+                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 11&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบประเมินผลนักศึกษาโครงการสหกิจศึกษา</a></span><br />
+                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 12&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบประเมินรางานนักศึกษาโครงการสหกิจศึกษา</a></span><br />-->
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
       </div>
    </div>
-   <hr>
-   <div class="row">
-      <div class="col-md-12">
-         <p>หน้าสำหรับการดาวน์โหลดโปรแกรม เอกสารต่างๆ&nbsp;</p>
-         <p>&nbsp;</p>
-         <table class="table table-bordered">
-            <tbody>
-               <tr>
-                  <td>
-                     <p 18.5714px="" line-height:="">แบบฟอร์มสหกิจศึกษาต่างๆ<br />
-                     <?php 
-                        $array = [
-                           ['', ''], 
-                           ['เอกสารหมายเลข 1', 'แบบแจ้งรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา'],
-                           ['เอกสารหมายเลข 2', 'แบบตอบกลับนักศึกษาโครงการสหกิจศึกษา'],
-                           ['เอกสารหมายเลข 3', 'ใบสมัครงานโครงการสหกิจศึกษา'],
-                           ['เอกสารหมายเลข 4', 'แบบแจ้งรายชื่อนักศึกษาโครงการสหกิจศึกษา'],
-                           ['เอกสารหมายเลข 5', 'แแบแจ้งรายละเอียดสถานประกอบการโครงการสหกิจศึกษา'],
-                           ['เอกสารหมายเลข 6', 'แบบแจ้งรายละเอียดงาน ตำแหน่งงาน พนักงานที่ปรึกษาโครงการสหกิจศึกษา'],
-                           ['เอกสารหมายเลข 7', 'แบบแจ้งแผนปฏอบัติงานโครงการสหกิจศึกษา'],
-                           ['เอกสารหมายเลข 8', 'แบบแจ้งโครงร่างรายงานการปฏิบัติงานโครงการสหกิจศึกษา'],
-                           ['เอกสารหมายเลข 9', 'แบบแจ้งยืนยันการนิเทศงานนักศึกษาโครงการสหกิจศึกษา'],
-                           ['เอกสารหมายเลข 10', 'แบบบันทึกการนิเทศงานโครงการสหกิจศึกษา'],
-                           ['เอกสารหมายเลข 11', 'แบบประเมินผลนักศึกษาโครงการสหกิจศึกษา'],
-                           ['เอกสารหมายเลข 12', 'แบบประเมินรางานนักศึกษาโครงการสหกิจศึกษา'],
-                        ];
-                        foreach ($file as $key => $value) {
-                           if($value->status_file != null){
-                              echo '&nbsp; &nbsp; '.$array[$value->status_file][0].'&nbsp;&nbsp;<a href="down/'.$value->name.'"style="text-decoration:none; target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;'.$array[$value->status_file][1].' </a><br />';
-                           }
-                        }
-                     ?>
-                     </p>
-                    <!-- <p 18.5714px="" line-height:="">แบบฟอร์มสหกิจศึกษาต่างๆ<br />
-                        &nbsp; &nbsp; เอกสารหมายเลข 1&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา </a><br />
-                        &nbsp; &nbsp; เอกสารหมายเลข 2&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบตอบกลับนักศึกษาโครงการสหกิจศึกษา</a><br />
-                        <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 3&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;ใบสมัครงานโครงการสหกิจศึกษา</a></span><br />
-                        <span style="line-height: 1.42857;">&nbsp;&nbsp;&nbsp; เอกสารหมายเลข 4&nbsp;&nbsp;</span><font color="#337ab7"><a href=""><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งรายชื่อนักศึกษาโครงการสหกิจศึกษา</a></font><br />
-                        <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 5&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แแบแจ้งรายละเอียดสถานประกอบการโครงการสหกิจศึกษา</a></span><br />
-                        <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 6&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งรายละเอียดงาน ตำแหน่งงาน พนักงานที่ปรึกษาโครงการสหกิจศึกษา</a></span><br />
-                        <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 7&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งแผนปฏอบัติงานโครงการสหกิจศึกษา</a></span><br />
-                        <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 8&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งโครงร่างรายงานการปฏิบัติงานโครงการสหกิจศึกษา</a></span><br />
-                        <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 9&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งยืนยันการนิเทศงานนักศึกษาโครงการสหกิจศึกษา</a></span><br />
-                        <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 10&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบบันทึกการนิเทศงานโครงการสหกิจศึกษา</a></span><br />
-                        <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 11&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบประเมินผลนักศึกษาโครงการสหกิจศึกษา</a></span><br />
-                        <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 12&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบประเมินรางานนักศึกษาโครงการสหกิจศึกษา</a></span><br />-->
-                  </td>
-               </tr>
-            </tbody>
-         </table>
+   <footer class="footer">
+      <span class="footer-divider" style="height: 5px;
+         display: block;
+         background: #3F51B5;"></span>
+      <div class="col-md-12" style="margin-top: 50px"></div>
+      <div class="container">
+         <div class="">
+            <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
+            Deverloped By Patiphan Uthang And Yuwa Saewang
+         </div>
       </div>
-   </div>
+      <div class="row" style="margin-top: 50px"></div>
+   </footer>
 </div>
-<footer class="footer">
-   <span class="footer-divider" style="height: 5px;
-      display: block;
-      background: #3F51B5;"></span>
-   <div class="col-md-12" style="margin-top: 50px"></div>
-   <div class="container">
-      <div class="">
-         <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
-         Deverloped By Patiphan Uthang And Yuwa Saewang
-      </div>
-   </div>
-   <div class="row" style="margin-top: 50px"></div>
-</footer>
 @endsection
 @section('javascript')
 @endsection

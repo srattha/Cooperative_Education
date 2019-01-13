@@ -3,6 +3,7 @@
 @section('css')
 @endsection
 @section('content')
+<div class="container">
 <div class="container-fluid">
    <div class="row">
       <div class="col-md-12">
@@ -126,38 +127,37 @@
                            <td><a href="down/{{$students['file'][0]->name}}"style="text-decoration:none; target="_blank">&nbsp;&nbsp;{{$students['file'][0]->name}}</a><br /></td>
                         </tr>
                         @endforeach
-
                         <!--
-                            <tr>
+                           <tr>
                            @foreach ($student as $index => $students)
                            <td>{{$students->year}}</td>
                            <td>
-                            @foreach ($students->company as $c)
-                              {{$c->company_name}}
-                              @endforeach
+                           @foreach ($students->company as $c)
+                             {{$c->company_name}}
+                             @endforeach
                            <td>
-                              @foreach ($students->user as $u) 
-                              {{$u->name}}
-                              @endforeach
+                             @foreach ($students->user as $u) 
+                             {{$u->name}}
+                             @endforeach
                            </td>
                            <td>
-                              @foreach ($students->company as $c)
-                              {{$c->province}}
-                              @endforeach
+                             @foreach ($students->company as $c)
+                             {{$c->province}}
+                             @endforeach
                            </td>
                            <td>
-                              @foreach ($students->company as $c)
-                              {{$c->tel}}
-                              @endforeach
+                             @foreach ($students->company as $c)
+                             {{$c->tel}}
+                             @endforeach
                            </td>
                            <td>
-                              @foreach ($students->file as $c)
-                              {{$c->name}}
-                              @endforeach
+                             @foreach ($students->file as $c)
+                             {{$c->name}}
+                             @endforeach
                            </td>
-                        </tr>
-                        @endforeach
-                        -->
+                           </tr>
+                           @endforeach
+                           -->
                      </tbody>
                   </table>
                </div>
@@ -180,6 +180,7 @@
    </div>
    <div class="col-md-12" style="margin-top: 50px">
 </footer>
+</div>
 @endsection
 @section('javascript')
 <script type="text/javascript">
