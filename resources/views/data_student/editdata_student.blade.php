@@ -223,7 +223,7 @@
             <br>
             <br>
             <div class="form-group" style="padding-left: 250px;">
-               <label for="upload_file" class="control-label col-sm-3" style="font-size: 18px;" >Upload File Project</label>
+               <label for="upload_file" class="control-label col-sm-3" style="font-size: 18px;" > อัพไฟล์</label>
                <div class="col-sm-5">
                   <input class="form-control" type="file" name="file" id="upload_file">
                </div>

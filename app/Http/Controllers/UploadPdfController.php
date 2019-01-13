@@ -53,7 +53,6 @@ class UploadPdfController extends Controller
 
            $file = $request->file('file');
             $extension = $file->getClientOriginalExtension(); // you can also use file name
-            //$name = $fileName->getClientOriginalExtensionName();
             $fileName = time().'.'.$extension;
             $path = public_path().'/adminpdf';
             $uplaod = $file->move($path,$fileName); 
