@@ -126,7 +126,7 @@
          text: ''
          },
          tooltip: {
-         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+         pointFormat: '{series.name}: <b>{point.y}</b>'
          },
          plotOptions: {
          pie: {
@@ -139,29 +139,36 @@
          }
          },
          series: [{
-         name: 'Brands',
+         name: 'นักศึกษา',
          colorByPoint: true,
-         data: [{
-            name: ' All Faculty ',
-            y: 61.41,
-            sliced: true,
-            selected: true
-         }, {
-            name: 'Faculty of Business Administration and Liberal Arts',
-            y: 11.84
-         }, {
-            name: 'Faculty of Sciences and Agricultural Technology',
-            y: 10.85
-         }, {
-            name: 'Faculty of Engineering',
-            y: 4.67
-         }, {
-            name: 'Faculty of Fine Arts and Architecture',
-            y: 4.18
-         }, {
-            name: 'Other',
-            y: 7.05
-         }]
+         data: [ 
+         <?php 
+            for($i = 0; $i < count($data); $i++){
+               echo '{name: "'.$data[$i]['y'].'", y: '.$data[$i]['name'].'},';
+            }
+         ?>
+         ]
+         // [{
+         //    name: ' All Faculty ',
+         //    y: 61.41,
+         //    // sliced: true,
+         //    // selected: true
+         // }, {
+         //    name: 'Faculty of Business Administration and Liberal Arts',
+         //    y: 11.84
+         // }, {
+         //    name: 'Faculty of Sciences and Agricultural Technology',
+         //    y: 10.85
+         // }, {
+         //    name: 'Faculty of Engineering',
+         //    y: 4.67
+         // }, {
+         //    name: 'Faculty of Fine Arts and Architecture',
+         //    y: 4.18
+         // }, {
+         //    name: 'Other',
+         //    y: 7.05
+         // }]
          }]
          });
       </script>

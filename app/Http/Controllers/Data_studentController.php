@@ -19,7 +19,7 @@ class Data_studentController extends Controller
 */
 public function mpdf_student($id)
 {
-    //return $id;
+    ///return $id;
     $Student = Student::where('user_id', $id)->first();
 
     $branch = Branch::where('id', $Student->major)->first();
@@ -175,7 +175,7 @@ public function add_data_student(Request $request)
 
     if ($request->company_id) {
         $add_student = new Student;
-        $add_student->user_id = $user->id;
+        $add_student->user_id = $request->user_id;
         $add_student->company_id = $request->company_id;
         $add_student->term = $request->term;
         $add_student->year = $request->year;
@@ -200,10 +200,10 @@ public function add_data_student(Request $request)
                 $file = $request->file('file');
 $extension = $file->getClientOriginalExtension(); // you can also use file name
 $fileName = time().'.'.$extension;
-$path = public_path().'/upload/documentPFD';
+$path = public_path().'/adminpdf';
 $uplaod = $file->move($path,$fileName);
 $fileModel = new File;
-$fileModel->user_id = $user->id;
+$fileModel->user_id = $request->user_id;
 $fileModel->name = $fileName;
 $fileModel->save();
 }
@@ -261,7 +261,7 @@ if($add_company){
             $file = $request->file('file');
 $extension = $file->getClientOriginalExtension(); // you can also use file name
 $fileName = time().'.'.$extension;
-$path = public_path().'/upload/documentPFD';
+$path = public_path().'/adminpdf';
 $uplaod = $file->move($path,$fileName);
 $fileModel = new File;
 $fileModel->user_id = $user->id;
@@ -347,7 +347,7 @@ if ($update_data_student) {
        $file = $request->file('file');
 $extension = $file->getClientOriginalExtension(); // you can also use file name
 $fileName = time().'.'.$extension;
-$path = public_path().'/upload/documentPFD';
+$path = public_path().'/adminpdf';
 $fileModel = new File;
 $fileModel->user_id = $user->id;
 $fileModel->name = $fileName;

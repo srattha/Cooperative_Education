@@ -36,7 +36,7 @@
                      <p 18.5714px="" line-height:="">แบบฟอร์มสหกิจศึกษาต่างๆ<br />
                      <?php 
                         $array = [
-                           ['', ''],
+                           ['', ''], 
                            ['เอกสารหมายเลข 1', 'แบบแจ้งรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา'],
                            ['เอกสารหมายเลข 2', 'แบบตอบกลับนักศึกษาโครงการสหกิจศึกษา'],
                            ['เอกสารหมายเลข 3', 'ใบสมัครงานโครงการสหกิจศึกษา'],
@@ -51,7 +51,9 @@
                            ['เอกสารหมายเลข 12', 'แบบประเมินรางานนักศึกษาโครงการสหกิจศึกษา'],
                         ];
                         foreach ($file as $key => $value) {
-                           echo '&nbsp; &nbsp; '.$array[$value->status_file][0].'&nbsp;&nbsp;<a href="down/'.$value->name.'"style="text-decoration:none; target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;'.$array[$value->status_file][1].' </a><br />';
+                           if($value->status_file != null){
+                              echo '&nbsp; &nbsp; '.$array[$value->status_file][0].'&nbsp;&nbsp;<a href="down/'.$value->name.'"style="text-decoration:none; target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;'.$array[$value->status_file][1].' </a><br />';
+                           }
                         }
                      ?>
                      </p>

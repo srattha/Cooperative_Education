@@ -116,13 +116,25 @@
                         </tr>
                      </thead>
                      <tbody class="text-center">
+                        @foreach ($student as $index => $students)
                         <tr>
+                           <td>{{$students->year}}</td>
+                           <td>{{$students['company'][0]->company_name}}</td>
+                           <td>{{$students->name_student}}</td>
+                           <td>{{$students['company'][0]->province}}</td>
+                           <td>{{$students['company'][0]->tel}}</td>
+                           <td><a href="down/{{$students['file'][0]->name}}"style="text-decoration:none; target="_blank">&nbsp;&nbsp;{{$students['file'][0]->name}}</a><br /></td>
+                        </tr>
+                        @endforeach
+
+                        <!--
+                            <tr>
                            @foreach ($student as $index => $students)
                            <td>{{$students->year}}</td>
                            <td>
                             @foreach ($students->company as $c)
                               {{$c->company_name}}
-                              @endforeach</td>
+                              @endforeach
                            <td>
                               @foreach ($students->user as $u) 
                               {{$u->name}}
@@ -131,20 +143,21 @@
                            <td>
                               @foreach ($students->company as $c)
                               {{$c->province}}
-                              @endforeach</td>
+                              @endforeach
                            </td>
                            <td>
                               @foreach ($students->company as $c)
                               {{$c->tel}}
-                              @endforeach</td>
+                              @endforeach
                            </td>
                            <td>
-                              @foreach ($students->company as $c)
-                              {{$c->file}}
-                              @endforeach</td>
+                              @foreach ($students->file as $c)
+                              {{$c->name}}
+                              @endforeach
                            </td>
                         </tr>
                         @endforeach
+                        -->
                      </tbody>
                   </table>
                </div>

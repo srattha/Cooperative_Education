@@ -91,6 +91,7 @@
                <div class="col-sm-6" >
                   <div class="input-group input-group-sm">
                      <span class="input-group-addon" id="sizing-addon1">ว/ด/ป เกิด</span>
+                     <input type="hidden" name="user_id" value="{{$user->id}}">
                      <input type="date" " class="form-control" name="birthday" required title="ว/ด/ปี เกิด" >
                      <!--  <input type='date' class="form-control" id="meeting"  placeholder="เลขบัตรประชาชน" value="dd" name="birthday" required title="ว/ด/ปี เกิด" /> -->
                   </div>
@@ -230,7 +231,7 @@
                </div>
             </div>
             <hr>
-            <h3 style="color:#4e4e4e; font-weight:600; font-size: 18px;">
+            <h3 style="color:#4e4e4e; font-weight:600; font-size: 18px;"> 
                <p>ส่วนที่ 2 ข้อมูลสถานประกอบการ</p>
                <small style="font-size: 13px;">(นอกเหนือจากระบบให้นักศึกษากรอกข้อมูลเพิ่มเติม)</small>
             </h3>
