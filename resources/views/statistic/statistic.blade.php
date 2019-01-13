@@ -34,6 +34,7 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
       <!--<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
       / Plugins and page level script : optional -->
+
    </head>
    <body>
       <input type="hidden" id="service_base_url" value="http://regis2015.rmutl.ac.th/" />
@@ -79,7 +80,7 @@
                <div class="col-md-12">
                   <div class="panel panel-default">
                      <div class="panel-heading">
-                        <h3 class="panel-title"><i class=""></i>รายงานนักศึกษาในโครงการสหกิจศึกษา </h3>
+                        <h3 class="panel-title">รายงานนักศึกษาในโครงการสหกิจศึกษา<a class="nav-link " href="{{('/index') }}"><i style="padding-right: 2px; padding-left: 50px;" aria-hidden="true" id="icon"></i>{{ __('หน้าแรก') }}</a></h3>
                      </div>
                      <!-- กราฟ-->
                      <div id="chart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
@@ -123,7 +124,7 @@
          type: 'pie'
          },
          title: {
-         text: ''
+         text: 'รายงานนักศึกษาโครงการสหกิจศึกษา'
          },
          tooltip: {
          pointFormat: '{series.name}: <b>{point.y}</b>'
