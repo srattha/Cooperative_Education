@@ -221,7 +221,7 @@
                         <input type="text" name="telephone"  class="form-control" id="telephone" placeholder="เบอร์โทรศัพท์" aria-describedby="sizing-addon1" required>
                      </div>
                   </div>
-               </div>
+               </div> 
                <br>
                <br>
                <div class="form-group" style="padding-left: 250px;">

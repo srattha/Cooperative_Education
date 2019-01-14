@@ -20,7 +20,7 @@
    background: none;
    font-size:13px;
    color: #4e4e4e;
-   font-weight: 600;
+   font-weight: 600; 
    }
    .panel-info>.panel-heading {
    /* color: #31708f; */

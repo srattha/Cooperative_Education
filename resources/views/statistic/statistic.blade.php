@@ -1,6 +1,8 @@
 <html>
    <head>
-      <meta charset="utf-8">
+      
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <title>รายงานนักศึกษาในโครงการสหกิจศึกษา</title>
       <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://regis2015.rmutl.ac.th/assets/image/touch/apple-touch-icon-144.png">
@@ -108,15 +110,20 @@
             </div>
          </footer>
          <!-- Global site tag (gtag.js) - Google Analytics -->
-         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87588904-26"></script>
+         <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87588904-26"></script> -->
+     <!--  <script src="{{ asset('/js/js.js') }}"></script> -->
          <!--chart-->
-         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-         <script src="https://code.highcharts.com/highcharts.js"></script>
+         
+          <script src="{{ asset('/js/js1.js') }}"></script> -->
+         <!--chart-->
+        <!--  <script src="https://code.highcharts.com/highcharts.js"></script> -->
          <script src="https://code.highcharts.com/modules/exporting.js"></script>
          <script src="https://code.highcharts.com/modules/export-data.js"></script>
          <script type="text/javascript">
             // Build the chart
             Highcharts.chart('chart', {
+
+
             chart: {
             plotBackgroundColor: null,
             plotBorderWidth: null,
@@ -171,6 +178,8 @@
             //    y: 7.05
             // }]
             }]
+
+
             });
          </script>
       </div>

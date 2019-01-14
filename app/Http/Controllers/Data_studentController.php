@@ -20,12 +20,12 @@ class Data_studentController extends Controller
 public function mpdf_student($id)
 {
     ///return $id;
-    $Student = Student::where('user_id', $id)->first();
-
-    $branch = Branch::where('id', $Student->major)->first();
-    $faculty = Branch::where('id', $Student->faculty_id)->first();
+  $Student = Student::where('user_id', $id)->first();
+  $faculty = Faculty::where('id', $Student->faculty_id)->first();
+  $branch = Branch::where('faculty_id', $faculty->id)->first();
+    
     $company = Company::where('id',$Student->company_id)->first();
-   ///return $Student->name_student;
+   //return $faculty->name;
     //require_once __DIR__ . '/vendor/autoload.php';
 $mpdf = new \Mpdf\Mpdf([
     'default_font_size' => 16,
@@ -43,50 +43,71 @@ $html = "";
 // The height of the template as it was printed is returned as $actualsize['h']
 // The width of the template as it was printed is returned as $actualsize['w']
 // row I Student
+//name
 $html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 110px;top: 245px;"><b>'.$Student->name_student.'</b></p>';
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 540px;top: 245px;"><b>'.$Student->identification_number.'</b></p>';
-// row II
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 150px;top: 279px;"><b>'.$Student->birthday.'</b></p>';
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 450px;top: 279px;"><b>'.$Student->institution.'</b></p>';
-//row IIII
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 150px;top: 311px;"><b>'.$Student->student_id.'</b></p>';
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 380px;top: 311px;"><b>'.$Student->campus.'</b></p>';
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 650px;top: 311px;"><b>'.$Student->term.'</b></p>';
-// row IIIII
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 90px;top: 344px;"><b>'.$branch->name.'</b></p>';
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 470px;top: 344px;"><b>'.$faculty->name.'</b></p>';
-//row IIIIII
+//identification_number
+$html .= '<p style="width: 260px;/*border: 1px solid black;*/ position: absolute;left: 500px;top: 245px;"><b>'.$Student->identification_number.'</b></p>';
+// row II user_id
+$html .= '<p style="width: 160px;/*border: 1px solid black;*/ position: absolute;left: 120px;top: 279px;"><b>'.$Student->birthday.'</b></p>';
+//institution
+$html .= '<p style="width: 404px;/*border: 1px solid black;*/ position: absolute;left: 360px;top: 279px;"><b>'.$Student->institution.'</b></p>';
+//row IIII student_id
+$html .= '<p style="width: 165px;/*border: 1px solid black;*/ position: absolute;left: 125px;top: 311px;"><b>'.$Student->student_id.'</b></p>';
+//campus
+$html .= '<p style="width: 170px;/*border: 1px solid black;*/ position: absolute;left: 380px;top: 311px;"><b>'.$Student->campus.'</b></p>';
+//term
+$html .= '<p style="width: 100px;/*border: 1px solid black;*/ position: absolute;left: 650px;top: 311px;"><b>'.$Student->term.'</b></p>';
+// row IIIII faculty
+$html .= '<p style="width: 330px;/*border: 1px solid black;*/ position: absolute;left: 80px;top: 344px;"><b>'.$faculty->name.'</b></p>';
+//major
+$html .= '<p style="width: 300px;/*border: 1px solid black;*/ position: absolute;left: 470px;top: 344px;"><b>'.$branch->name.'</b></p>';
+//row IIIIII number
 $html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 150px;top: 378px;"><b>'.$Student->year.'</b></p>';
+//activities
 $html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 290px;top: 378px;"><b>'.$Student->activities.'</b></p>';
+//year_study
 $html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 490px;top: 378px;"><b>'.$Student->year_study.'</b></p>';
+//class_year
 $html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 680px;top: 379px;"><b>'.$Student->class_year.'</b></p>';
-//row IIIIIII
+//row IIIIIII gpa
 $html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 200px;top: 411px;"><b>'.$Student->gpa.'</b></p>';
+//gpa_past
 $html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 450px;top: 411px;"><b>'.$Student->gpa_past.'</b></p>';
+//telephone
 $html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 650px;top: 411px;"><b>'.$Student->telephone.'</b></p>';
 
-// row I Company
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 110px;top: 517px;"><b>'.$company->company_name.'</b></p>';
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 500px;top: 517px;"><b>'.$company->industrial_estate.'</b></p>';
-// row II
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 110px;top: 550px;"><b>'.$company->home_number.'</b></p>';
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 380px;top: 550px;"><b>'.$company->moo.'</b></p>';
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 610px;top: 550px;"><b>'.$company->building.'</b></p>';
-//row III
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 90px;top: 583px;"><b>'.$company->soi.'</b></p>';
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 350px;top: 583px;"><b>'.$company->road.'</b></p>';
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 600px;top: 583px;"><b>'.$company->district.'</b></p>';
-// row IIII
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 130px;top: 617px;"><b>'.$company->amphure.'</b></p>';
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 370px;top: 617px;"><b>'.$company->province.'</b></p>';
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 660px;top: 617px;"><b>'.$company->post_code.'</b></p>';
-//row IIIII
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 130px;top: 650px;"><b>'.$company->tel.'</b></p>';
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 370px;top: 650px;"><b>'.$company->fax.'</b></p>';
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 545px;top: 650px;"><b>'.$company->email.'</b></p>';
-//row IIIIII
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 130px;top: 683px;"><b>'.$company->fax.'</b></p>';
-$html .= '<p style="width: 270px;/*border: 1px solid black;*/ position: absolute;left: 590px;top: 683px;"><b>'.$company->email.'</b></p>';
+// row I Company name
+$html .= '<p style="width: 650px;/*border: 1px solid black;*/ position: absolute;left: 110px;top: 515px;"><b>'.$company->company_name.'</b></p>';
+    //row II industrial_estate
+$html .= '<p style="width: 348px;/*border: 1px solid black;*/ position: absolute;left: 160px;top: 550px;"><b>'.$company->industrial_estate.'</b></p>';
+// row III home_number
+$html .= '<p style="width: 230px;/*border: 1px solid black;*/ position: absolute;left: 540px;top: 550px;"><b>'.$company->home_number.'</b></p>';
+//row IIII moo
+$html .= '<p style="width: 179px;/*border: 1px solid black;*/ position: absolute;left: 80px;top: 580px;"><b>'.$company->moo.'</b></p>';
+// row IIIII building
+$html .= '<p style="width: 420px;/*border: 1px solid black;*/ position: absolute;left: 339px;top: 580px;"><b>'.$company->building.'</b></p>';
+//row IIIIII soi
+$html .= '<p style="width: 310px;/*border: 1px solid black;*/ position: absolute;left: 80px;top: 615px;"><b>'.$company->soi.'</b></p>';
+// road
+$html .= '<p style="width: 340px;/*border: 1px solid black;*/ position: absolute;left: 430px;top: 615px;"><b>'.$company->road.'</b></p>';
+// row IIIIII district
+$html .= '<p style="width: 275px;/*border: 1px solid black;*/ position: absolute;left: 120px;top: 650px;"><b>'.$company->district.'</b></p>';
+//amphure
+$html .= '<p style="width: 300px;/*border: 1px solid black;*/ position: absolute;left: 469px;top: 650px;"><b>'.$company->amphure.'</b></p>';
+// IIIIIII province
+$html .= '<p style="width: 279px;/*border: 1px solid black;*/ position: absolute;left: 95px;top: 683px;"><b>'.$company->province.'</b></p>';
+//post_code
+$html .= '<p style="width: 120px;/*border: 1px solid black;*/ position: absolute;left: 462px;top: 683px;"><b>'.$company->post_code.'</b></p>';
+//tel
+$html .= '<p style="width: 140px;/*border: 1px solid black;*/ position: absolute;left: 640px;top: 683px;"><b>'.$company->tel.'</b></p>';
+//row IIIIIIII fax
+$html .= '<p style="width: 180px;/*border: 1px solid black;*/ position: absolute;left: 90px;top: 715px;"><b>'.$company->fax.'</b></p>';
+//email
+$html .= '<p style="width: 450px;/*border: 1px solid black;*/ position: absolute;left: 320px;top: 715px;"><b>'.$company->email.'</b></p>';
+//row IIIIIIIII coordinator
+$html .= '<p style="width: 344px;/*border: 1px solid black;*/ position: absolute;left: 130px;top: 748px;"><b>'.$company->coordinator.'</b></p>';
+//coordinator_number
+$html .= '<p style="width: 190px;/*border: 1px solid black;*/ position: absolute;left: 580px;top: 748;"><b>'.$company->coordinator_number.'</b></p>';
 $mpdf->WriteHTML ($html);
 $mpdf->Output();
     //$mpdf = new \Mpdf\Mpdf();
@@ -146,6 +167,19 @@ public function add_data_student(Request $request)
 {
 
 //return $request->all();
+     if ($request->hasFile('file')) {
+                $file = $request->file('file');
+$extension = $file->getClientOriginalExtension(); // you can also use file name
+return $fileName = time().'.'.$extension;
+$path = public_path().'/adminpdf';
+$uplaod = $file->move($path,$fileName);
+$fileModel = new File;
+$fileModel->user_id = $request->user_id;
+$fileModel->name = $fileName;
+$fileModel->save();
+}
+return;
+    $faculty = Faculty::get();
     $companys = Company::get();
     if(isset($request->identification_number)){
         $id = $request->identification_number;
@@ -207,8 +241,10 @@ $fileModel->user_id = $request->user_id;
 $fileModel->name = $fileName;
 $fileModel->save();
 }
+
+ $branch = Branch::where('id', $add_student->major)->first();
 $company = Company::where('id',$request->company_id)->first();
-return view('data_student.editdata_student',['date'=>$add_student, 'user'=> $user, 'company'=> $company,'companys'=> $companys ]);
+return view('data_student.editdata_student',['data'=>$add_student, 'user'=> $user, 'company'=> $company,'companys'=> $companys,'faculty' => $faculty,'branch'=>$branch ]);
 //return redirect()->route('data_student.editdata_student',['date'=>$add_student, 'user'=> $user, 'company'=> $company,'companys'=> $companys ]);
 
 }
@@ -268,8 +304,9 @@ $fileModel->user_id = $user->id;
 $fileModel->name = $fileName;
 $fileModel->save();
 }
+ $branch = Branch::where('id', $add_student->major)->first();
 
-return view('data_student.editdata_student',['date'=>$add_student, 'user'=> $user, 'company'=> $add_company,'companys'=> $companys ]);
+return view('data_student.editdata_student',['date'=>$add_student, 'user'=> $user, 'company'=> $add_company,'companys'=> $companys,'faculty' => $faculty,'branch'=>$branch]);
 
 }
 }
@@ -280,7 +317,7 @@ return view('data_student.editdata_student',['date'=>$add_student, 'user'=> $use
 public function edit_data_student()
 {
 
-    $user = Auth::user();
+$user = Auth::user();
     $companys = Company::get();
  $data = Student::where('user_id',$user->id)->first();
 $branch = Branch::where('id', $data->major)->first();
@@ -290,7 +327,7 @@ $branch = Branch::where('id', $data->major)->first();
 
 }
 public function updatedata_student(Request $request){
-//return $request->all();
+//return $request->all()
     $user = Auth::user();
     if(isset($request->identification_number)){
         $id = $request->identification_number;
@@ -345,8 +382,8 @@ $update_data_student->save();
 if ($update_data_student) {
    if ($request->hasFile('file')) {
        $file = $request->file('file');
-$extension = $file->getClientOriginalExtension(); // you can also use file name
-$fileName = time().'.'.$extension;
+$extension = $file->getClientOriginalName(); // you can also use file name
+$fileName = $extension;
 $path = public_path().'/adminpdf';
 $fileModel = new File;
 $fileModel->user_id = $user->id;
