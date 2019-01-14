@@ -140,7 +140,7 @@
             }
             },
             series: [{
-            name: 'นักศึกษา',
+            name: 'จำนวนนักศึกษา',
             colorByPoint: true,
             data: [ 
             <?php 
