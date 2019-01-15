@@ -48,11 +48,15 @@
          <div class="panel-heading">
             <h3 style="color:#fff; font-weight:550; font-size: 20px;">แบบแจ้งรายละเอียดข้อมูลนักศึกษา และข้อมูลสถานประกอบการโครงการสหกิจศึกษา</h3>
          </div>
+         @if(isset($usersType))
          <div class="row">
             <div class="col-md-5" align="right" style="padding-left: 1050px; padding-top: 20px;">
-               <a href="{{ '/mpdf_student/'.$user->id}}" class="btn btn-danger"><i class="fa fa-print">Print PDF</i></a>
+               @foreach( $usersType as $type )
+               <a href="{{ '/mpdf_student/'.$user->id}}" class="btn btn-danger"><i class="fa fa-print"><span>{{ $type->type }}</span> Print PDF </i></a>
+               @endforeach
             </div>
          </div>
+         @endif
          <div class="panel-body">
             @if(count($errors) > 0)
             <div>
@@ -473,5 +477,7 @@
        minViewMode: "years"
     });
    });
+
+
 </script>
 @endsection

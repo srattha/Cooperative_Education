@@ -134,7 +134,8 @@
             text: 'รายงานนักศึกษาโครงการสหกิจศึกษา'
             },
             tooltip: {
-            pointFormat: '{series.name}: <b>{point.y}</b>'
+               //{point.y}
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
             },
             plotOptions: {
             pie: {

@@ -22,7 +22,7 @@ public function mpdf_student($id)
     ///return $id;
   $Student = Student::where('user_id', $id)->first();
   $faculty = Faculty::where('id', $Student->faculty_id)->first();
-  $branch = Branch::where('faculty_id', $faculty->id)->first();
+ $branch = Branch::where('faculty_id', $faculty->id)->first();
     
     $company = Company::where('id',$Student->company_id)->first();
    //return $faculty->name;
@@ -52,7 +52,7 @@ $html .= '<p style="width: 160px;/*border: 1px solid black;*/ position: absolute
 //institution
 $html .= '<p style="width: 404px;/*border: 1px solid black;*/ position: absolute;left: 360px;top: 279px;"><b>'.$Student->institution.'</b></p>';
 //row IIII student_id
-$html .= '<p style="width: 165px;/*border: 1px solid black;*/ position: absolute;left: 125px;top: 311px;"><b>'.$Student->student_id.'</b></p>';
+$html .= '<p style="width: 135px;/*border: 1px solid black;*/ position: absolute;left: 155px;top: 311px;"><b>'.$Student->student_id.'</b></p>';
 //campus
 $html .= '<p style="width: 170px;/*border: 1px solid black;*/ position: absolute;left: 380px;top: 311px;"><b>'.$Student->campus.'</b></p>';
 //term
@@ -117,7 +117,7 @@ $mpdf->Output();
 //return $mpdf->Output();
     // $data = [
     //     'foo' => 'bar'
-    // ];
+    // ]; 
     // $mpdf = new \Mpdf\Mpdf();
     // // return view('data_student.mpdf_student',['mpdf' => $mpdf]);
     // // $config = ['instanceConfigurator' => function($mpdf) {
@@ -168,17 +168,17 @@ public function add_data_student(Request $request)
 
 //return $request->all();
      if ($request->hasFile('file')) {
-                $file = $request->file('file');
-$extension = $file->getClientOriginalExtension(); // you can also use file name
-return $fileName = time().'.'.$extension;
-$path = public_path().'/adminpdf';
-$uplaod = $file->move($path,$fileName);
-$fileModel = new File;
-$fileModel->user_id = $request->user_id;
-$fileModel->name = $fileName;
-$fileModel->save();
+//                 $file = $request->file('file');
+// $extension = $file->getClientOriginalExtension(); // you can also use file name
+//  $fileName = time().'.'.$extension;
+// $path = public_path().'/adminpdf';
+// $uplaod = $file->move($path,$fileName);
+// $fileModel = new File;
+// $fileModel->user_id = $request->user_id;
+// $fileModel->name = $fileName;
+// $fileModel->save();
 }
-return;
+
     $faculty = Faculty::get();
     $companys = Company::get();
     if(isset($request->identification_number)){
@@ -234,7 +234,7 @@ return;
                 $file = $request->file('file');
 $extension = $file->getClientOriginalExtension(); // you can also use file name
 $fileName = time().'.'.$extension;
-$path = public_path().'/adminpdf';
+$path = public_path().'/studentfile';
 $uplaod = $file->move($path,$fileName);
 $fileModel = new File;
 $fileModel->user_id = $request->user_id;
@@ -297,7 +297,7 @@ if($add_company){
             $file = $request->file('file');
 $extension = $file->getClientOriginalExtension(); // you can also use file name
 $fileName = time().'.'.$extension;
-$path = public_path().'/adminpdf';
+$path = public_path().'/studentfile';
 $uplaod = $file->move($path,$fileName);
 $fileModel = new File;
 $fileModel->user_id = $user->id;
@@ -382,10 +382,10 @@ $update_data_student->save();
 if ($update_data_student) {
    if ($request->hasFile('file')) {
        $file = $request->file('file');
-$extension = $file->getClientOriginalName(); // you can also use file name
-$fileName = $extension;
-$path = public_path().'/adminpdf';
-$fileModel = new File;
+//$extension = $file->getClientOriginalExtension();  // you can also use file name
+$fileName = $file->getClientOriginalName();
+$path = public_path().'/studentfile';
+$fileModel = new File; 
 $fileModel->user_id = $user->id;
 $fileModel->name = $fileName;
 $fileModel->save();
