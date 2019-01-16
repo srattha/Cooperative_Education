@@ -3,7 +3,6 @@
 @section('css')
 @endsection
 @section('content')
-<div class="container">
 <div class="container-fluid">
    <div class="row">
       <div class="col-md-12">
@@ -31,7 +30,7 @@
                                  @foreach ($faculty as $index => $f)
                                  <option value="{{$f->id}}">{{$f->name}}</option>
                                  @endforeach
-                              </select>
+                              </select> 
                            </div>
                         </div>
                         <div class="col-sm-3 col-md-3" >
@@ -113,7 +112,7 @@
                            <th class="text-center">นักศึกษา</th>
                            <th class="text-center">จังหวัด</th>
                            <th class="text-center">เบอร์โทรบริษัท</th>
-                           <th class="text-center">ผลงานนักศึกษา</th>
+                           <th class="text-center">ผลงานนักศึกษา</th> 
                         </tr>
                      </thead>
                      <tbody class="text-center">
@@ -180,7 +179,7 @@
    </div>
    <div class="col-md-12" style="margin-top: 50px">
 </footer>
-</div>
+
 @endsection
 @section('javascript')
 <script type="text/javascript">

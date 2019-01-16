@@ -319,42 +319,10 @@
                   <!-- <li class="nav-item">
                      <a class="nav-link " href="{{('/printstudent') }}"><i class="glyphicon glyphicon-print" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('') }}</a>
                      </li> -->
-                  <li class="dropdown">
-                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                     <i class="fa fa-user fa-fw"></i>  <span style="color: #fff;">{{Auth::user()->name}}</span> <i class="fa fa-caret-down"></i>
-                     </a>
-                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                           document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-fw"></i> ออกจากระบบ</a>
-                        </li>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                           {{ csrf_field() }}
-                        </form>
-                     </ul>
-                  </li>
                   @else
                   <!--หน้าแรก-->
                   <li class="nav-item">
                      <a class="nav-link " href="{{('/index') }}"><i class="glyphicon glyphicon-home" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('หน้าแรก') }}</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link " href="{{('/statistic') }}"><i class="fa fa-bar-chart"></i></a>
-                  </li>
-                  <!--ค้นหา-->
-                  <li class="nav-item">
-                     <a class="nav-link " href="{{('/search') }}"><i class="glyphicon glyphicon-search" style="padding-right: 2px;"aria-hidden="true" id="icon"></i>{{ __('ค้นหาสถานประกอบการ') }}</a>
-                  </li>
-                  <!--ดาวน์โหลด-->
-                  <li class="nav-item">
-                     <a class="nav-link " href="{{('/download') }}"><i class="fa fa-download mr10" style="padding-right: 2px;"aria-hidden="true" id="icon"></i>{{ __('ดาวน์โหลด') }}</a>
-                  </li>
-                  <!--เข้าสู่ระบบ-->
-                  <li class="nav-item">
-                     <a class="nav-link " href="{{ route('login') }}"><i class="fa fa-sign-in"style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('เข้าสู่ระบบ') }}</a>
-                  </li>
-                  <!--ลงทะเบียน-->
-                  <li class="nav-item">
-                     <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-user-plus"style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('ลงทะเบียนใช้งาน') }}</a>
                   </li>
                   @endif
                </ul>

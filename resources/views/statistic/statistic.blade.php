@@ -1,188 +1,162 @@
-<html>
-   <head>
-      
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>รายงานนักศึกษาในโครงการสหกิจศึกษา</title>
-      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://regis2015.rmutl.ac.th/assets/image/touch/apple-touch-icon-144.png">
-      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://regis2015.rmutl.ac.th/assets/image/touch/apple-touch-icon-114.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://regis2015.rmutl.ac.th/assets/image/touch/apple-touch-icon-72.png">
-      <link rel="apple-touch-icon-precomposed" href="http://regis2015.rmutl.ac.th/assets/image/touch/apple-touch-icon-57.png">
-      <link rel="shortcut icon" href="http://regis2015.rmutl.ac.th/assets/image/favicon.png">
-      <link href="{{asset('css/morris.css')}}" rel="stylesheet">
-      <!-- Plugins stylesheet : optional -->
-      <link rel="stylesheet" href="http://regis2015.rmutl.ac.th/assets/plugins/datatables/css/datatables.css" type="text/css" />
-      <link rel="stylesheet" href="http://regis2015.rmutl.ac.th/assets/plugins/datetimepicker/css/jquery.datetimepicker.css" type="text/css" />
-      <link rel="stylesheet" href="http://regis2015.rmutl.ac.th/assets/css/jquery-ui.min.css" type="text/css" />
-      <!--/ Plugins stylesheet : optional -->
-      <!-- Application stylesheet : mandatory -->
-      <link rel="stylesheet" href="http://regis2015.rmutl.ac.th/assets/css/bootstrap.css" type="text/css" />
-      <link rel="stylesheet" href="http://regis2015.rmutl.ac.th/assets/css/layout.css" type="text/css" />
-      <link rel="stylesheet" href="http://regis2015.rmutl.ac.th/assets/css/uielement.css" type="text/css" />
-      <link rel="stylesheet" href="http://regis2015.rmutl.ac.th/assets/css/animate.css" type="text/css" />
-      <!--/ Application stylesheet -->
-      <!-- Application and main script : mandatory -->
-      <script type="text/javascript" src="http://regis2015.rmutl.ac.th/assets/plugins/modernizr/js/modernizr.js" ></script>
-      <script type="text/javascript" src="http://regis2015.rmutl.ac.th/assets/js/vendor.js" ></script>
-      <script type="text/javascript" src="http://regis2015.rmutl.ac.th/assets/js/core.js" ></script>
-      <script type="text/javascript" src="http://regis2015.rmutl.ac.th/assets/js/backend/app.js" ></script>
-      <!--/ Application and main script : mandatory -->
-      <!-- Plugins and page level script : optional -->
-      <script type="text/javascript" src="http://regis2015.rmutl.ac.th/assets/plugins/datatables/js/jquery.dataTables.min.js" ></script>
-      <script type="text/javascript" src="http://regis2015.rmutl.ac.th/assets/plugins/datatables/js/dataTables.bootstrap.js" ></script>
-      <script type="text/javascript" src="http://regis2015.rmutl.ac.th/assets/plugins/parsley/js/parsley.min.js" ></script>
-      <script type="text/javascript" src="http://regis2015.rmutl.ac.th/assets/plugins/datetimepicker/js/jquery.datetimepicker.js" ></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-      <!--<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-         / Plugins and page level script : optional -->
-   </head>
-   <body>
-      <input type="hidden" id="service_base_url" value="http://regis2015.rmutl.ac.th/" />
-      <header id="header" class="navbar">
-         <div class="navbar-header">
-            <a class="navbar-brand" href="javascript:void(0);">
-            <span class="logo-figure"></span>
-            <span class=""></span>
-            </a>
-         </div>
-         <div class="navbar-toolbar clearfix">
-            <ul class="nav navbar-nav navbar-left">
-               <li class="hidden-xs hidden-sm">
-                  <a href="javascript:void(0);" class="sidebar-minimize" data-toggle="minimize" title="Minimize sidebar">
-                  <span class="meta">
-                  <span class=""></span>
-                  </span>
-                  </a>
-               </li>
-               <li class="navbar-main hidden-lg hidden-md hidden-sm">
-                  <a href="javascript:void(0);" data-toggle="sidebar" data-direction="ltr" rel="tooltip" title="Menu sidebar">
-                  <span class="meta">
-                  <span class="icon"><i class="ico-paragraph-justify3"></i></span>
-                  </span>
-                  </a>
-               </li>
-               <li>
-                  <a href="javascript:void(0);">
-                  <span class="meta hidden-lg">
-                  <span class="text" style="font-size: 14px;">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก )</span> 
-                  </span>
-                  <span class="meta hidden-xs hidden-sm hidden-md">
-                  <span class="text" style="font-size: 15px;" href="{{('/index') }}">{{ __('ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก ') }}</span>
-                  </span>
-                  </a>
-               </li>
-            </ul>
-         </div>
-      </header>
-      <div class="container">
-         <section id="main" role="main">
-            <div class="container-fluid">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                           <h3 class="panel-title">รายงานนักศึกษาในโครงการสหกิจศึกษา<a class="nav-link " href="{{('/index') }}"><i style="padding-right: 2px; padding-left: 50px;" aria-hidden="true" id="icon"></i>{{ __('หน้าแรก') }}</a></h3>
+@extends('layouts.statistic')
+@section('title','สถิติ')
+@section('css')
+@endsection
+@section('content')
+<div class="container">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                  <h3 class="panel-title" ><i class="fa fa-bar-chart"></i>รายงานการนักศึกษาโครงงานสหกิจศึกษา</h3>
+               </div>
+               <div class="panel-body">
+                  <div class="form-horizontal">
+                     <div class="form-group">
+                        <label class="col-md-4 control-label">ปี พ.ศ. &nbsp; : </label>
+                        <div class="col-md-4">
+                           <select id="class_year" name="year" class="form-control">
+                              <option value="2580" >2580</option>
+                              <option value="2579" >2579</option>
+                              <option value="2578" >2578</option>
+                              <option value="2577" >2577</option>
+                              <option value="2576" >2576</option>
+                              <option value="2575" >2575</option>
+                              <option value="2574" >2574</option>
+                              <option value="2573" >2573</option>
+                              <option value="2572" >2572</option>
+                              <option value="2571" >2571</option>
+                              <option value="2570" >2570</option>
+                              <option value="2569" >2569</option>
+                              <option value="2568" >2568</option>
+                              <option value="2567" >2567</option>
+                              <option value="2566" >2566</option>
+                              <option value="2565" >2565</option>
+                              <option value="2564" >2564</option>
+                              <option value="2563" >2563</option>
+                              <option value="2562" >2562</option>
+                              <option value="2561" >2561</option>
+                              <option value="2560" >2560</option>
+                              <option value="2559" >2559</option>
+                           </select>
                         </div>
-                        <!-- กราฟ-->
-                        <div id="chart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                     </div>
+                     <!-- <div class="form-group">
+                        <label class="col-md-4 control-label">เทอม / ปี : </label>
+                        <div class="col-md-4">
+                           <select id="select_term_year" class="form-control">
+                               <option value="1">เชียงราย</option>
+                              <option value="2">ตาก</option>
+                              <option value="3">น่าน</option>
+                              <option value="4">พิษณุโลก</option>
+                              <option value="5">เชียงใหม่</option>
+                              <option value="6">ลำปาง</option>
+                              <option value="7">สถาบันวิจัยเทคโนโลยีเกษตร</option>
+                           </select>
+                        </div>
+                        </div> -->
+                     <!--                            <div id="message_fill_course_search" class="form-group text-center" style="display:none;">
+                        <span class="badge badge-info"><i class="ico-info-sign mr5"></i>กรุณากรอกข้อมูลวิชาที่จะค้นหา 5 ตัวขึ้นไป</span>
+                        </div>-->
+                     <div class="text-center" style="padding-left: 80px;">
+                        <button type="submit" class="btn btn-info">
+                           <i class="glyphicon glyphicon-search " aria-hidden="true"></i>ค้นหา
+                        </button>
                      </div>
                   </div>
                </div>
             </div>
-         </section>
-         <!--<script src="{{asset('js/morris-data.js')}}"></script> -->
-         <div class="modal fade" id="modal_ajax_lg">
-            <div class="modal-dialog modal-lg">
-               <div class="modal-content">
-               </div>
-            </div>
-         </div>
-         <div style="padding-bottom: 50px;"></div>
-         <footer id="footer">
-            <div class="container">
-               <div class="row">
-                  <div class="col-sm-6">
-                     <p class="nm text-muted">&copy; 2018-Cooperative Education</i></p>
-                     Deverloped By Patiphan Uthang And Yuwa Saewang </p>
+         </div> 
+      </div>
+      <div id="ajax_1" class="row">
+      <div class="col-md-12">
+         <div class="panel panel-default">
+            <div class="panel-body">
+               <div id="for_progress" class="row" style="display: none;">
+                  <div class="col-md-4 col-md-offset-4">
+                     <div class="progress progress-striped active">
+                        <div id="load" class="progress-bar progress-bar-success" style="width: 0%"></div>
+                     </div>
                   </div>
                </div>
+                <div id="charts_container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">  
+                </div>
+               <div id="show_wait"></div>
             </div>
-         </footer>
-         <!-- Global site tag (gtag.js) - Google Analytics -->
-         <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87588904-26"></script> -->
-     <!--  <script src="{{ asset('/js/js.js') }}"></script> -->
-         <!--chart-->
-         
-          <script src="{{ asset('/js/js1.js') }}"></script> -->
-         <!--chart-->
-        <!--  <script src="https://code.highcharts.com/highcharts.js"></script> -->
-         <script src="https://code.highcharts.com/modules/exporting.js"></script>
-         <script src="https://code.highcharts.com/modules/export-data.js"></script>
-         <script type="text/javascript">
-            // Build the chart
-            Highcharts.chart('chart', {
-
-
-            chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-            },
-            title: {
-            text: 'รายงานนักศึกษาโครงการสหกิจศึกษา'
-            },
-            tooltip: {
-               //{point.y}
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-            pie: {
-               allowPointSelect: true,
-               cursor: 'pointer',
-               dataLabels: {
-                   enabled: false
-               },
-               showInLegend: true
-            }
-            },
-            series: [{
-            name: 'จำนวนนักศึกษา',
-            colorByPoint: true,
-            data: [ 
-            <?php 
-               for($i = 0; $i < count($data); $i++){
-                  echo '{name: "'.$data[$i]['y'].'", y: '.$data[$i]['name'].'},';
-               }
-               ?>
-            ]
-            // [{
-            //    name: ' All Faculty ',
-            //    y: 61.41,
-            //    // sliced: true,
-            //    // selected: true
-            // }, {
-            //    name: 'Faculty of Business Administration and Liberal Arts',
-            //    y: 11.84
-            // }, {
-            //    name: 'Faculty of Sciences and Agricultural Technology',
-            //    y: 10.85
-            // }, {
-            //    name: 'Faculty of Engineering',
-            //    y: 4.67
-            // }, {
-            //    name: 'Faculty of Fine Arts and Architecture',
-            //    y: 4.18
-            // }, {
-            //    name: 'Other',
-            //    y: 7.05
-            // }]
-            }]
-
-
-            });
-         </script>
+         </div>
       </div>
-   </body>
-</html>
+   </div>
+   <footer class="footer">
+      <span class="footer-divider" style="height: 5px;
+         display: block;
+         background: #3F51B5;"></span>
+      <div class="col-md-12" style="margin-top: 50px"></div>
+      <div class="container">
+         <div class="">
+            <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
+            Deverloped By Patiphan Uthang And Yuwa Saewang
+         </div>
+      </div>
+   </footer>
+</div>
+@endsection
+@section('javascript')
+   <script src="{{ asset('/js/js1.js') }}"></script>
+   <!--chart-->
+   <!--  <script src="https://code.highcharts.com/highcharts.js"></script> -->
+   <script src="https://code.highcharts.com/modules/exporting.js"></script>
+   <script src="https://code.highcharts.com/modules/export-data.js"></script>
+   <script type="text/javascript">
+      // Build the chart
+Highcharts.chart('charts_container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Student statistics report for cooperative education'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: false
+            },
+            showInLegend: true
+        }
+    },
+    series: [{
+        name: 'Student',
+        colorByPoint: true,
+        data: [{
+            name: 'Faculty of Business Administration and Liberal Arts',
+            y: 61.41,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'Faculty of Sciences and Agricultural Technology',
+            y: 14.19
+        }, {
+            name: 'Faculty of Engineering',
+            y: 13.2
+        }, {
+            name: 'Faculty of Fine Arts and Architecture',
+            y: 11.2
+        // //}, {
+        //   //  name: 'Safari',
+        //     y: 4.18
+        // }, {
+        //     name: 'Other',
+        //     y: 7.05
+        }]
+    }]
+});
+   </script>
+   @endsection

@@ -48,7 +48,7 @@
          <div class="panel-heading">
             <h3 style="color:#fff; font-weight:550; font-size: 20px;">แบบแจ้งรายละเอียดข้อมูลนักศึกษา และข้อมูลสถานประกอบการโครงการสหกิจศึกษา</h3>
          </div>
-         @if(isset($usersType))
+         @if(isset($usersType)) 
          <div class="row">
             <div class="col-md-5" align="right" style="padding-left: 1050px; padding-top: 20px;">
                @foreach( $usersType as $type )

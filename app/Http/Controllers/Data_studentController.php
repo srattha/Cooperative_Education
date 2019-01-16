@@ -19,10 +19,10 @@ class Data_studentController extends Controller
 */
 public function mpdf_student($id)
 {
-    ///return $id;
-  $Student = Student::where('user_id', $id)->first();
-  $faculty = Faculty::where('id', $Student->faculty_id)->first();
- $branch = Branch::where('faculty_id', $faculty->id)->first();
+    //return $file;
+    $Student = Student::where('user_id', $id)->first();
+    $faculty = Faculty::where('id', $Student->faculty_id)->first();
+    $branch = Branch::where('id', $Student->major)->first();
     
     $company = Company::where('id',$Student->company_id)->first();
    //return $faculty->name;
@@ -81,23 +81,23 @@ $html .= '<p style="width: 650px;/*border: 1px solid black;*/ position: absolute
     //row II industrial_estate
 $html .= '<p style="width: 348px;/*border: 1px solid black;*/ position: absolute;left: 160px;top: 550px;"><b>'.$company->industrial_estate.'</b></p>';
 // row III home_number
-$html .= '<p style="width: 230px;/*border: 1px solid black;*/ position: absolute;left: 540px;top: 550px;"><b>'.$company->home_number.'</b></p>';
+$html .= '<p style="width: 200px;/*border: 1px solid black;*/ position: absolute;left: 580px;top: 550px;"><b>'.$company->home_number.'</b></p>';
 //row IIII moo
-$html .= '<p style="width: 179px;/*border: 1px solid black;*/ position: absolute;left: 80px;top: 580px;"><b>'.$company->moo.'</b></p>';
+$html .= '<p style="width: 169px;/*border: 1px solid black;*/ position: absolute;left: 100px;top: 580px;"><b>'.$company->moo.'</b></p>';
 // row IIIII building
 $html .= '<p style="width: 420px;/*border: 1px solid black;*/ position: absolute;left: 339px;top: 580px;"><b>'.$company->building.'</b></p>';
 //row IIIIII soi
 $html .= '<p style="width: 310px;/*border: 1px solid black;*/ position: absolute;left: 80px;top: 615px;"><b>'.$company->soi.'</b></p>';
 // road
-$html .= '<p style="width: 340px;/*border: 1px solid black;*/ position: absolute;left: 430px;top: 615px;"><b>'.$company->road.'</b></p>';
+$html .= '<p style="width: 300px;/*border: 1px solid black;*/ position: absolute;left: 460px;top: 615px;"><b>'.$company->road.'</b></p>';
 // row IIIIII district
-$html .= '<p style="width: 275px;/*border: 1px solid black;*/ position: absolute;left: 120px;top: 650px;"><b>'.$company->district.'</b></p>';
+$html .= '<p style="width: 260px;/*border: 1px solid black;*/ position: absolute;left: 140px;top: 650px;"><b>'.$company->district.'</b></p>';
 //amphure
 $html .= '<p style="width: 300px;/*border: 1px solid black;*/ position: absolute;left: 469px;top: 650px;"><b>'.$company->amphure.'</b></p>';
 // IIIIIII province
 $html .= '<p style="width: 279px;/*border: 1px solid black;*/ position: absolute;left: 95px;top: 683px;"><b>'.$company->province.'</b></p>';
 //post_code
-$html .= '<p style="width: 120px;/*border: 1px solid black;*/ position: absolute;left: 462px;top: 683px;"><b>'.$company->post_code.'</b></p>';
+$html .= '<p style="width: 110px;/*border: 1px solid black;*/ position: absolute;left: 472px;top: 683px;"><b>'.$company->post_code.'</b></p>';
 //tel
 $html .= '<p style="width: 140px;/*border: 1px solid black;*/ position: absolute;left: 640px;top: 683px;"><b>'.$company->tel.'</b></p>';
 //row IIIIIIII fax
@@ -165,7 +165,6 @@ public function data_student()
 }
 public function add_data_student(Request $request)
 {
-
 //return $request->all();
      if ($request->hasFile('file')) {
 //                 $file = $request->file('file');
@@ -203,7 +202,6 @@ public function add_data_student(Request $request)
             Session::flash('error', 'Invalid Id card number.');
             return redirect()->back()->withInput();
         }
-
     }
     $user = Auth::user();
 
@@ -233,8 +231,8 @@ public function add_data_student(Request $request)
             if ($request->hasFile('file')) {
                 $file = $request->file('file');
 $extension = $file->getClientOriginalExtension(); // you can also use file name
-$fileName = time().'.'.$extension;
-$path = public_path().'/studentfile';
+ $fileName = time().'.'.$extension;
+$path = public_path().'/adminpdf';
 $uplaod = $file->move($path,$fileName);
 $fileModel = new File;
 $fileModel->user_id = $request->user_id;
@@ -244,7 +242,7 @@ $fileModel->save();
 
  $branch = Branch::where('id', $add_student->major)->first();
 $company = Company::where('id',$request->company_id)->first();
-return view('data_student.editdata_student',['data'=>$add_student, 'user'=> $user, 'company'=> $company,'companys'=> $companys,'faculty' => $faculty,'branch'=>$branch ]);
+return view('data_student.editdata_student',['data'=>$add_student, 'user'=> $user, 'company'=> $company,'companys'=> $companys,'faculty' => $faculty,'branch'=>$branch]);
 //return redirect()->route('data_student.editdata_student',['date'=>$add_student, 'user'=> $user, 'company'=> $company,'companys'=> $companys ]);
 
 }
@@ -296,15 +294,15 @@ if($add_company){
         if ($request->hasFile('file')) {
             $file = $request->file('file');
 $extension = $file->getClientOriginalExtension(); // you can also use file name
-$fileName = time().'.'.$extension;
-$path = public_path().'/studentfile';
+ $fileName = time().'.'.$extension;
+$path = public_path().'/adminpdf';
 $uplaod = $file->move($path,$fileName);
 $fileModel = new File;
 $fileModel->user_id = $user->id;
 $fileModel->name = $fileName;
 $fileModel->save();
 }
- $branch = Branch::where('id', $add_student->major)->first();
+$branch = Branch::where('id', $add_student->major)->first();
 
 return view('data_student.editdata_student',['date'=>$add_student, 'user'=> $user, 'company'=> $add_company,'companys'=> $companys,'faculty' => $faculty,'branch'=>$branch]);
 
@@ -319,8 +317,8 @@ public function edit_data_student()
 
 $user = Auth::user();
     $companys = Company::get();
- $data = Student::where('user_id',$user->id)->first();
-$branch = Branch::where('id', $data->major)->first();
+    $data = Student::where('user_id',$user->id)->first();
+    $branch = Branch::where('id', $data->major)->first();
     $company = Company::where('id',$data->company_id)->first();
     $faculty = Faculty::get();
     return view('data_student.editdata_student', ['user'=> $user, 'companys'=> $companys, 'data'=> $data, 'company'=> $company, 'faculty' => $faculty, 'branch' => $branch]);
@@ -382,9 +380,9 @@ $update_data_student->save();
 if ($update_data_student) {
    if ($request->hasFile('file')) {
        $file = $request->file('file');
-//$extension = $file->getClientOriginalExtension();  // you can also use file name
+//$extension = $file->getClientOriginalExtensionName();  // you can also use file name
 $fileName = $file->getClientOriginalName();
-$path = public_path().'/studentfile';
+$path = public_path().'/adminpdf';
 $fileModel = new File; 
 $fileModel->user_id = $user->id;
 $fileModel->name = $fileName;

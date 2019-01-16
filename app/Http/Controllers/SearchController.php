@@ -36,26 +36,26 @@ class SearchController extends Controller
 
     public function down($name){
         return response()->download('adminpdf/'.$name, $name, [], 'inline');
-         return $name;
+        return $name;
     }
 
-    public function search(Request $request)
+    public function search(Request $request)  
     {  
 
-      
      $faculty = Faculty::get();      
      $student = Student::where('faculty_id', 'like', '%' . $request->faculty . '%')
     ->Where('major', 'like', '%' . $request->major . '%')
     ->Where('year', 'like', '%' . $request->year . '%')
     ->paginate(15);
-    // return $student;
+     //return $student;
     foreach ($student as $key => $value) {
         $student[$key]['user'] = User::where('id',$value->user_id)->get();
         $student[$key]['file'] = File::where('user_id',$value->user_id)->get();
         $student[$key]['company'] = Company::where('id',$value->company_id)->get();
     }
-    // $student = json_encode($student);
+    //$student = json_encode($student);
     // return $student[0]['company'][0]->company_name;
+    //return $student;
     return view('search.search',['faculty' => $faculty,'student' => $student]);
          
     }
