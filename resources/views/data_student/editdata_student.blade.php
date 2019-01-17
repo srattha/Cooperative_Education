@@ -58,7 +58,7 @@
          </div>
          <div class="row">
             <div class="col-md-5" align="right" style="padding-left: 1050px; padding-top: 20px;">
-               <a href="{{ '/mpdf_student/'.$user->id}}" class="btn btn-danger"><i class="fa fa-print">Print PDF</i></a>
+               <a href="{{ '/mpdf_student/'.$user->id}}" class="btn btn-danger"><i class="fa fa-print"> ปริ้น</i></a>
             </div>
          </div>
          <div class="panel-body">

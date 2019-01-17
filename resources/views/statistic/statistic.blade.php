@@ -9,14 +9,15 @@
          <div class="col-md-12">
             <div class="panel panel-default">
                <div class="panel-heading">
-                  <h3 class="panel-title" ><i class="fa fa-bar-chart"></i>รายงานการนักศึกษาโครงงานสหกิจศึกษา</h3>
+                  <h3 class="panel-title" ><i class="fa fa-bar-chart"></i>&nbsp;รายงานการนักศึกษาโครงงานสหกิจศึกษา</h3>
                </div>
                <div class="panel-body">
                   <div class="form-horizontal">
                      <div class="form-group">
-                        <label class="col-md-4 control-label">ปี พ.ศ. &nbsp; : </label>
+                        <label class="col-md-4 control-label"><i class="glyphicon glyphicon-calendar"></i> ปี พ.ศ. &nbsp; : </label>
                         <div class="col-md-4">
-                           <select id="class_year" name="year" class="form-control">
+                           <select id="class_year" name="class_year" class="form-control">
+                           
                               <option value="2580" >2580</option>
                               <option value="2579" >2579</option>
                               <option value="2578" >2578</option>
@@ -37,8 +38,8 @@
                               <option value="2563" >2563</option>
                               <option value="2562" >2562</option>
                               <option value="2561" >2561</option>
-                              <option value="2560" >2560</option>
-                              <option value="2559" >2559</option>
+                             <!--  <option value="2560" >2560</option>
+                              <option value="2559" >2559</option> -->
                            </select>
                         </div>
                      </div>
@@ -80,7 +81,7 @@
                      </div>
                   </div>
                </div>
-                <div id="charts_container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">  
+                <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">
                 </div>
                <div id="show_wait"></div>
             </div>
@@ -109,20 +110,23 @@
    <script src="https://code.highcharts.com/modules/export-data.js"></script>
    <script type="text/javascript">
       // Build the chart
-Highcharts.chart('charts_container', {
-    chart: {
+   Highcharts.chart('container', 
+   {
+      chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
         plotShadow: false,
         type: 'pie'
-    },
-    title: {
-        text: 'Student statistics report for cooperative education'
-    },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    plotOptions: {
+      },
+      title: {
+       //  text: 'Student statistics report for cooperative education'
+         text: 'สรุปนักศึกษาโครงการสหกิจศึกษา'
+      },
+      tooltip: {
+        //pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        pointFormat: '<b>{series.name}</b>: {point.y} คน',
+      },
+      plotOptions: {
         pie: {
             allowPointSelect: true,
             cursor: 'pointer',
@@ -131,11 +135,18 @@ Highcharts.chart('charts_container', {
             },
             showInLegend: true
         }
-    },
-    series: [{
-        name: 'Student',
+      },
+      series: [{
+        // //name: 'Student'
+        name: 'จำนวนนักศึกษา',
         colorByPoint: true,
         data: [{
+         // <?php 
+         //    for($i = 0; $i < count($data); $i++){
+         //       echo '{name: "'.$data[$i]['y'].'", y: '.$data[$i]['name'].'},';
+         //    }
+         // ?>
+
             name: 'Faculty of Business Administration and Liberal Arts',
             y: 61.41,
             sliced: true,
@@ -156,7 +167,7 @@ Highcharts.chart('charts_container', {
         //     name: 'Other',
         //     y: 7.05
         }]
-    }]
-});
+      }]
+   });
    </script>
-   @endsection
+@endsection

@@ -165,8 +165,8 @@ public function data_student()
 }
 public function add_data_student(Request $request)
 {
-//return $request->all();
-     if ($request->hasFile('file')) {
+// return $request->all();
+    if ($request->hasFile('file')) {
 //                 $file = $request->file('file');
 // $extension = $file->getClientOriginalExtension(); // you can also use file name
 //  $fileName = time().'.'.$extension;
@@ -230,8 +230,9 @@ public function add_data_student(Request $request)
         if ($add_student) {
             if ($request->hasFile('file')) {
                 $file = $request->file('file');
-$extension = $file->getClientOriginalExtension(); // you can also use file name
- $fileName = time().'.'.$extension;
+// $extension = $file->getClientOriginalExtension(); // you can also use file name
+//  $fileName = time().'.'.$extension;
+                $fileName = $file->getClientOriginalName();
 $path = public_path().'/adminpdf';
 $uplaod = $file->move($path,$fileName);
 $fileModel = new File;
@@ -293,8 +294,9 @@ if($add_company){
     if ($add_student) {
         if ($request->hasFile('file')) {
             $file = $request->file('file');
-$extension = $file->getClientOriginalExtension(); // you can also use file name
- $fileName = time().'.'.$extension;
+// $extension = $file->getClientOriginalExtension(); // you can also use file name
+//  $fileName = time().'.'.$extension;
+            $fileName = $file->getClientOriginalName();
 $path = public_path().'/adminpdf';
 $uplaod = $file->move($path,$fileName);
 $fileModel = new File;

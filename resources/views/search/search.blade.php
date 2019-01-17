@@ -101,7 +101,7 @@
                      <div class="progress progress-striped active">
                         <div id="load" class="progress-bar progress-bar-success" style="width: 0%"></div>
                      </div>
-                  </div>
+                  </div> 
                </div>
                <div class="table-responsive">
                   <table id="table_faculty_list" class="table table-hover table-bordered table-striped">
@@ -116,7 +116,7 @@
                         </tr>
                      </thead>
                      <tbody class="text-center">
-                        @foreach ($student as $index => $students)
+                        @foreach ($student as $index => $students) 
                         <tr>
                            <td>{{$students->year}}</td>
                            <td>{{$students['company'][0]->company_name}}</td>

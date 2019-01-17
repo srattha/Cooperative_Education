@@ -11,13 +11,13 @@
                   <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
                      @csrf
                      <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right" >{{ __('(นาย,นางสาว)ชื่อ-สกุล ') }}<span style=" font-size: 20px;color: red;">*</span></label>
+                        <label for="name" class="col-md-4 col-form-label text-md-right" >{{ __('ชื่อนักศึกษา ') }}<span style=" font-size: 20px;color: red;">*</span></label>
                         <div class="col-md-6">
                            <div class="input-group">
                               <span class="input-group-addon">
                               <i class="glyphicon glyphicon-user"></i>
                               </span>
-                              <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"  name="name" value="{{ old('name') }}" required autofocus placeholder="ชื่อ-นามสกุล">
+                              <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"  name="name" value="{{ old('name') }}" required autofocus placeholder="(นาย, นาง, นางสาว) ชื่อ-นามสกุล">
                            </div>
                            @if ($errors->has('name'))
                            <span class="invalid-feedback" role="alert" >

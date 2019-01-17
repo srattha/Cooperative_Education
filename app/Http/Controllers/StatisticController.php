@@ -16,26 +16,16 @@ class StatisticController extends Controller
     {
         //$this->middleware('auth');
     }
-    // public function index(){
-    //     $student = Student::get();
-    //     return $student;
-    //     return view('search.search',['student' => $student]);
-    // }
+   
     
     public function statistic(Request $request)
     {  
 
-       //  $student = student::get(); 
-       // return $student = Student::where('id', 'like', '%' . $request->student. '%')
-       //  ->Where('class_year', 'like', '%' . $request->class_year . '%') 
-       //  ->paginate(15);    
-
-       // return view('statistic.statistic');
+          ///Highcharts
          $data = array();
          $min = 0;
          $num = 0;
          $sum = 0;
-        //return view('statistic.statistic');
         $Student = Student::select('faculty_id')->orderBy('faculty_id','asc')->get();
         $min = $Student[0]->faculty_id;
         $data[0]['name'] = 0;
