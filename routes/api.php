@@ -24,5 +24,6 @@ Route::post('getcompany', 'CompanyController@index');
 // });
 
  Route::post('faculty', 'CompanyController@faculty');
+ Route::post('statistic', 'statisticController@index');
 // Route::post('test','FacultyApiController@index');
 
