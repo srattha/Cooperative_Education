@@ -46,7 +46,7 @@ class SearchController extends Controller
      $student = Student::where('faculty_id', 'like', '%' . $request->faculty . '%')
     ->Where('major', 'like', '%' . $request->major . '%')
     ->Where('year', 'like', '%' . $request->year . '%')
-    ->paginate(15);
+    ->paginate(25);
      //return $student;
     foreach ($student as $key => $value) {
         $student[$key]['user'] = User::where('id',$value->user_id)->get();
