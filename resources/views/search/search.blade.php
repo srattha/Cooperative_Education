@@ -167,11 +167,11 @@
    </div>
 </div>
 <footer class="footer">
-   <div class="col-md-12" style="margin-top: 50px">
+   <div class="col-md-12" style="margin-top: 20px">
    <span class="footer-divider" style="height: 5px;
       display: block;
       background: #3F51B5;"></span>
-   <div class="container" style="margin-top: 20px;">
+   <div class="container" style="margin-top: 50px;">
       <div class="col-sm-6">
          <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
          Deverloped By Patiphan Uthang And Yuwa Saewang

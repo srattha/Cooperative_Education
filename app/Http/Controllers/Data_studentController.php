@@ -232,7 +232,7 @@ public function add_data_student(Request $request)
                 $file = $request->file('file');
 // $extension = $file->getClientOriginalExtension(); // you can also use file name
 //  $fileName = time().'.'.$extension;
-                $fileName = $file->getClientOriginalName();
+$fileName = $file->getClientOriginalName();
 $path = public_path().'/adminpdf';
 $uplaod = $file->move($path,$fileName);
 $fileModel = new File;
