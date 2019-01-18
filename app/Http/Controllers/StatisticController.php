@@ -17,7 +17,7 @@ class StatisticController extends Controller
         //$this->middleware('auth');
     }
 
-    // public function create()
+    // public function create() 
     // {
     //     $items = Subject::all(['id', 'name']);
     //     return View::make('your view', compact('items',$items));
