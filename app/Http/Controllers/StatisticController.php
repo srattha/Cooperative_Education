@@ -12,7 +12,7 @@ class StatisticController extends Controller
      *
      * @return void
      */
-    public function __construct() 
+    public function __construct()  
     {
         //$this->middleware('auth');
     }
@@ -52,10 +52,8 @@ class StatisticController extends Controller
                $data[$num]['name']++; 
             }
         }
-        return $data;
+        return $data; 
         }
-        
-       
     }
 
     public function statistic(Request $request)

@@ -313,9 +313,9 @@
                     <li>
                       <a href="/establishment"><i class="fa fa-cogs" aria-hidden="true"></i> จัดการข้อมูลสถานประกอบการ</a>
                     </li>
-                    <li>
+                   <!--  <li>
                       <a href="/report_cooperative_education"><i class="fa fa-cogs" aria-hidden="true"></i> จัดการข้อมูลนักศึกษา</a>
-                    </li>
+                    </li> -->
                    <!-- <li>
                       <a href="/uploadPdf"><i class="fa fa-bar-chart" aria-hidden="true"></i> รายงานสถิตินักศึกษาในโครงการสหกิจศึกษา</a>
                     </li> -->

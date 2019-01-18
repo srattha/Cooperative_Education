@@ -7,11 +7,11 @@
 <div class="row">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h1>รายงานรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา</h1>
+      <h1>จัดการข้อมูลนักศึกษา</h1>
     </div>
-    <div class="panel-body">
-      <div class="row">
-        <form action="{{ route('search_report') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+   <!--  <div class="panel-body">
+      <div class="row"> -->
+        <!-- <form action="{{ route('search_report') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
           @csrf
           <div class="col-sm-3 col-md-3">
             <div class="input-group input-group-sm">
@@ -76,7 +76,7 @@
      </div>
 
    </div>
- </form>
+ </form> -->
 </div>
 <br>
 <br>
@@ -86,10 +86,10 @@
   <tr>
     <th>#</th>
     <th>รหัสนักศึกษา</th>
-    <th>ชื่อ-นามสกุน</th>
+    <th>ชื่อ-นามสกุล</th>
     <th>ชื่อ-สถานประกอบการ</th>
     <th>เวลาสร้างข้อมูล</th>
-    <th>เวลาแก้ไขข้ัอมูล</th>
+    <th>เวลาแก้ไขข้อมูล</th>
     <th class="text-center">แก้ไขข้อมูล</th>
   </tr>
 </thead>

@@ -16,7 +16,7 @@
                   <div class="form-group">
                      <label class="col-md-4 control-label"><i class="glyphicon glyphicon-calendar"></i> ปี พ.ศ. &nbsp; : </label>
                      <div class="col-md-4">
-                        <select id="class_year" name="class_year" class="form-control">
+                        <select id="class_year" name="class_year" class="form-control" >
                            <option value="2580" >2580</option>
                            <option value="2579" >2579</option>
                            <option value="2578" >2578</option>
