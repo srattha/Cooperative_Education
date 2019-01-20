@@ -76,6 +76,7 @@
             Deverloped By Patiphan Uthang And Yuwa Saewang
          </div>
       </div>
+      <div class="col-md-12" style="margin-top: 50px"></div>
    </footer>
 </div>
 @endsection

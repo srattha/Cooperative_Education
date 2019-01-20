@@ -134,7 +134,7 @@
                </div>
                <br>
                <div class="row">
-                  <div class="col-sm-4" >
+                  <div class="col-sm-4" > 
                      <div class="input-group input-group-sm">
                         <span class="input-group-addon" id="sizing-addon1">คณะ</span>
                         <select id="faculty" name="faculty" class="form-control">

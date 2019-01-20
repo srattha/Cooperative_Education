@@ -379,10 +379,10 @@
                </div>
                
                </div> -->
-            <!-- /.navbar-static-side -->
+            <!-- /.navbar-static-side --> 
          </nav>
          <!-- Page Content -->
-         <div id="page-wrapper" style="min-height: 923px; background: #ecf0f1">
+         <div id="page-wrapper" style=" background: #ecf0f1">
             <div class="container">
                @yield('content')
             </div>
