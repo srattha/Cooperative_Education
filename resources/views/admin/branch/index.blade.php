@@ -7,7 +7,7 @@
 <div class="row">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h1>จัดการข้อมูลคณะ</h1>
+      <h1>จัดการข้อมูลสาขาวิชา</h1>
     </div>
     <div class="panel-body">
       <button class="btn btn-success" onclick="location.href='{{ route('create_branch') }}'"> <i class="fa fa-plus-circle" aria-hidden="true"></i> เพิ่มสาขาวิชา</button>
