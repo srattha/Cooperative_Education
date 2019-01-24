@@ -17,14 +17,15 @@ class DownloadController extends Controller
     }
 
     /** 
-     * Show the application dashboard.
+     * Show the application dashboard. 
      *
      * @return \Illuminate\Http\Response
      */
     public function Download()
     {
+        
         $file = File::orderBy('status_file','asc')->get();
-        // return $file;
+         //return $file;
         return view('Download.Download', ['file' => $file]);
     }
    

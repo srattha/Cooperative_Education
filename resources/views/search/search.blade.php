@@ -16,7 +16,7 @@
                      <form action="{{ route('search') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="col-sm-3 col-md-3">
-                           <div class="input-group input-group-sm">
+                           <div class="input-group input-group-sm"> 
                               <span class="input-group-addon">คณะ</span>
                               <!--  <select  name="faculty" class="form-control">
                                  <option selected value="">-กรุณาเลือกคณะ-</option>

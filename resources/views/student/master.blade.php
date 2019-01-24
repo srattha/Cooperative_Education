@@ -192,7 +192,7 @@
          -moz-transform: rotate(360deg);
          -ms-transform: rotate(360deg);
          -o-transform: rotate(360deg);
-         transform: rotate(360deg);
+         transform: rotate(360deg); 
          }
          }
          .clock-button {
@@ -382,13 +382,14 @@
             <!-- /.navbar-static-side --> 
          </nav>
          <!-- Page Content -->
-         <div id="page-wrapper" style=" background: #ecf0f1"> <!-- min-height: 923px; -->
+         <div id="page-wrapper" style=" background: #ecf0f1; min-height: 600px; ">
+          <!--  -->
             <div class="container">
                @yield('content')
             </div>
             <!-- /.container-fluid -->
          </div>
-         <!-- /#page-wrapper -->
+         <!-- /#page-wrapper --> 
       </div>
       <!-- /#wrapper -->
       <!-- jQuery -->
@@ -405,7 +406,12 @@
       <script src="{{ asset('/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
       <script src="{{ asset('/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
       <script src="{{ asset('/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
+      <script type="text/javascript">
+            height = innerHeight;
+            // $('div#page-wrapper').css('min-height' , height);
+         </script>
       <script src="{{ asset('/vendor/bootstrap/js/bootstrap-datepicker.js') }}"></script>
+
       @yield('javascript')
    </body>
 </html> 
