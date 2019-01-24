@@ -406,10 +406,10 @@
       <script src="{{ asset('/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
       <script src="{{ asset('/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
       <script src="{{ asset('/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
-      <script type="text/javascript">
+      <!-- <script type="text/javascript">
             height = innerHeight;
             // $('div#page-wrapper').css('min-height' , height);
-         </script>
+         </script> -->
       <script src="{{ asset('/vendor/bootstrap/js/bootstrap-datepicker.js') }}"></script>
 
       @yield('javascript')
