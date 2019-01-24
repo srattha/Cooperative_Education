@@ -382,7 +382,7 @@
             <!-- /.navbar-static-side --> 
          </nav>
          <!-- Page Content -->
-         <div id="page-wrapper"<div style=" background: #ecf0f1"> <!-- min-height: 923px; -->
+         <div id="page-wrapper" style=" background: #ecf0f1"> <!-- min-height: 923px; -->
             <div class="container">
                @yield('content')
             </div>
