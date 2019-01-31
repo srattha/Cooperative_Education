@@ -268,7 +268,7 @@ $add_company->tel = $request->tel;
 $add_company->fax = $request->fax;
 $add_company->save();
 
-
+//add_company
 $company_id = $add_company->id;
 if($add_company){
     $add_student = new Student;
