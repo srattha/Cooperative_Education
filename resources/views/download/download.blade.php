@@ -53,7 +53,7 @@
                               ];
                               foreach ($file as $key => $value) {
                                  if($value->status_file != null){
-                                    echo '&nbsp; &nbsp; '.$array[$value->status_file][0].'&nbsp;&nbsp;<a href="down/'.$value->name.'"style="text-decoration:none; target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;'.$array[$value->status_file][1].' </a><br />';
+                                    echo '&nbsp; &nbsp; '.$array[$value->status_file][0].'&nbsp;&nbsp;<a href="down/'.$value->name.'"style="text-decoration:none;target="_blank"><i class="fa fa-file-pdf-o " aria-hidden="true" id="pdf"></i>&nbsp;'.$array[$value->status_file][1].' </a><br />';
                                  }
                               }
                               ?>
