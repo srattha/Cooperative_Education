@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 class UserController extends Controller
@@ -24,7 +25,7 @@ class UserController extends Controller
      */
     public function index()
     {
-         $user = Auth::user();
+        $user = Auth::user();
         $users_type_id = $user->user_type_id;
         switch ($users_type_id) {
             case '1':
@@ -41,12 +42,13 @@ class UserController extends Controller
 
      public function store(Request $request)
     {
-        $add_user = new User;
+
+        $add_user = new User; 
         $add_user->name = $request->name;
-        $add_user->identification_number = "0000000000-0";
+       // $add_user->identification_number = "0000000000-0";
         $add_user->user_type_id = $request->user_type_id;
         $add_user->password = Hash::make($request->password);
-        $add_user->save();
+        $add_user->save(); 
         if ($add_user) {
            return back()->with('success', 'Insert Record successfully.');
        }
