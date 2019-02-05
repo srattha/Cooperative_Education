@@ -1,5 +1,5 @@
 @extends('layouts.statistic')
-@section('title','สถิติ')
+@section('title','สถิติ') 
 @section('css')
 @endsection
 @section('content')
@@ -17,26 +17,27 @@
                      <label class="col-md-4 control-label"><i class="glyphicon glyphicon-calendar"></i> ปี พ.ศ. &nbsp; : </label>
                      <div class="col-md-4">
                         <select id="class_year" name="class_year" class="form-control" >
-                           <option value="2580" >2580</option>
-                           <option value="2579" >2579</option>
-                           <option value="2578" >2578</option>
-                           <option value="2577" >2577</option>
-                           <option value="2576" >2576</option>
-                           <option value="2575" >2575</option>
-                           <option value="2574" >2574</option>
-                           <option value="2573" >2573</option>
-                           <option value="2572" >2572</option>
-                           <option value="2571" >2571</option>
-                           <option value="2570" >2570</option>
-                           <option value="2569" >2569</option>
-                           <option value="2568" >2568</option>
-                           <option value="2567" >2567</option>
-                           <option value="2566" >2566</option>
-                           <option value="2565" >2565</option>
-                           <option value="2564" >2564</option>
-                           <option value="2563" >2563</option>
-                           <option value="2562" >2562</option>
+                          <option selected>-กรุณาเลือก ปี พ.ศ.-</option>
                            <option value="2561" >2561</option>
+                           <option value="2562" >2562</option>
+                           <option value="2563" >2563</option>
+                           <option value="2564" >2564</option>
+                           <option value="2565" >2565</option>
+                           <option value="2566" >2566</option>
+                           <option value="2567" >2567</option>
+                           <option value="2568" >2568</option>
+                           <option value="2569" >2569</option>
+                           <option value="2570" >2570</option>
+                           <!-- <option value="2571" >2570</option>
+                           <option value="2572" >2569</option>
+                           <option value="2573" >2568</option>
+                           <option value="2574" >2567</option>
+                           <option value="2575" >2566</option>
+                           <option value="2576" >2565</option>
+                           <option value="2577" >2564</option>
+                           <option value="2578" >2563</option>
+                           <option value="2579" >2562</option>
+                           <option value="2580" >2561</option> -->
                            <!--  <option value="2560" >2560</option>
                               <option value="2559" >2559</option> -->
                         </select>

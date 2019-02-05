@@ -19,27 +19,27 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers; 
 
-    protected function authenticated(Request $request, $user)
-    {
+//     protected function authenticated(Request $request, $user)
+//     {
 
 
-         switch ($user['user_type_id']) {
-            case '1':
+//          switch ($user['user_type_id']) {
+//             case '1':
 
-            return redirect('/data_student');
+//             return redirect('/data_student');
 
-            return "/data_student";
-            break;
-            case '2':
-            return redirect('/user');
-            break;
-            default:
-            return "default";
-            break;
-        }
-}
+//             return "/data_student";
+//             break;
+//             case '2':
+//             return redirect('/user');
+//             break;
+//             default:
+//             return "default";
+//             break;
+//         }
+// }
 
     /**
      * Where to redirect users after login.

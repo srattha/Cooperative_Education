@@ -17,7 +17,11 @@ class Data_studentController extends Controller
 *
 * @return void
 */
-public function mpdf_student($id)
+public function __construct()
+    {
+        $this->middleware('auth'); 
+    }
+public function mpdf_student($id) 
 {
     //return $file;
     $Student = Student::where('user_id', $id)->first();
@@ -132,10 +136,10 @@ $mpdf->Output();
     // return $mpdf->stream('mpdf_student.pdf');
 }
 
-public function __construct() 
-{
-    $this->middleware('auth'); 
-}
+// public function __construct() 
+// {
+//     $this->middleware('auth'); 
+// }
 /**
 * Show the application dashboard.
 *
