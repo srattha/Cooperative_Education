@@ -12,7 +12,7 @@ class StatisticController extends Controller
      *
      * @return void
      */
-    public function __construct()  
+    public function __construct()   
     {
         //$this->middleware('auth');
     }
@@ -32,7 +32,7 @@ class StatisticController extends Controller
          $min = $Student[0]->faculty_id;
         $data[0]['name'] = 0;
         $i = 0;
-        if ($Student) {
+        if ($Student) { 
             # code...
             foreach ($Student as $key => $value) {
             if($min == $Student[$key]->faculty_id && $i == 0){

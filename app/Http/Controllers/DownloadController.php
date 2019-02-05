@@ -23,10 +23,10 @@ class DownloadController extends Controller
      */
     public function Download()
     {
-        
+       
         $file = File::orderBy('status_file','asc')->get();
          //return $file;
-        return view('Download.Download', ['file' => $file]);
+        return view('download.download', ['file' => $file]);
     }
    
 }

@@ -88,7 +88,7 @@
 <script type="text/javascript">
    // Build the chart
      $(document).ready(function() {
-   $('#class_year').change(function(){
+   $('#class_year').change(function(){ 
    
    var class_year = $(this).val();
    
@@ -105,8 +105,7 @@
          items .push(list);
       }
 
-console.log(items)
-   
+    console.log(items)
    
    Highcharts.chart('container', {
    chart: {
@@ -116,7 +115,7 @@ console.log(items)
      type: 'pie'
    },
    title: {
-     text: 'สรุปนักศึกษาโครงการสหกิจศึกษา'
+     text: 'สรุปนักศึกษาโครงการสหกิจศึกษา' 
    },
    tooltip: {
      pointFormat: '<b>{series.name}</b> : {point.y} คน',

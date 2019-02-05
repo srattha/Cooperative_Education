@@ -19,19 +19,19 @@ Auth::routes();
 
 Route::get('/printstudent', 'PrintstudentController@printstudent')->name('printstudent');
 
-Route::get('/statistic', 'statisticController@statistic')->name('statistic');
+Route::get('/statistic', 'StatisticController@statistic')->name('statistic');
 // Route::post('/statistic','statistic@statistic'); 
 
 Route::get('/download', 'DownloadController@download')->name('download');
 Route::post('/home', 'HomeController@index')->name('home');
 Route::get('/form', 'FormController@form')->name('form');
 
-Route::get('/data_student', 'data_studentController@data_student')->name('data_student');
-Route::post('data_student', 'data_studentController@add_data_student');
-Route::get('/editdata_student', 'data_studentController@edit_data_student')->name('editdata_student');
-Route::post('editdata_student', 'data_studentController@updatedata_student');
+Route::get('/data_student', 'Data_studentController@data_student')->name('data_student');
+Route::post('data_student', 'Data_studentController@add_data_student');
+Route::get('/editdata_student', 'Data_studentController@edit_data_student')->name('editdata_student');
+Route::post('editdata_student', 'Data_studentController@updatedata_student');
 //mpf
-Route::get('/mpdf_student/{id}', 'data_studentController@mpdf_student');
+Route::get('/mpdf_student/{id}', 'Data_studentController@mpdf_student');
 //search
 Route::get('/search', 'SearchController@search')->name('search'); 
 Route::post('/search','SearchController@Search');  
@@ -54,7 +54,7 @@ Route::post('importExcel', 'MaatwebsiteController@importExcel');
 Route::get('/uploadPdf', 'UploadPdfController@index')->name('upload_file');
 Route::post('uploadPdf', 'UploadPdfController@storeFile');
 
-Route::get('/index', 'IndexController@index')->name('index');
+Route::get('/', 'IndexController@index')->name('index');
 Route::post('/addUser', 'HomeController@addUser')->name('addUser');
 Route::get('/report_cooperative_education', 'ReportCooperativeEducationController@index')->name('search_report');
 Route::get('/view_cooperative_education/{id}', 'ReportCooperativeEducationController@view_report')->name('view_report')->where('id', '[0-9]+');

@@ -7,7 +7,7 @@ use App\Faculty;
 use App\Student;
 use App\Company;
 use App\User;
-use App\file;
+use App\File;
 class SearchController extends Controller
 {
     /**

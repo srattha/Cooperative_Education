@@ -334,8 +334,8 @@
                   </li>
                   @else
                   <!--หน้าแรก-->
-                  <li class="nav-item">
-                     <a class="nav-link " href="{{('/index') }}"><i class="glyphicon glyphicon-home" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('หน้าแรก') }}</a>
+                  <li class="nav-item"> 
+                     <a class="nav-link " href="{{('/') }}"><i class="glyphicon glyphicon-home" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('หน้าแรก') }}</a>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link " href="{{('/statistic') }}"><i class="fa fa-bar-chart"></i></a>
@@ -357,7 +357,7 @@
                      <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-user-plus"style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('ลงทะเบียนใช้งาน') }}</a>
                   </li>
                   @endif
-               </ul>
+               </ul> 
             </div>
             <!-- /.navbar-top-links -->
             <!--  <div class="navbar-default sidebar" role="navigation">

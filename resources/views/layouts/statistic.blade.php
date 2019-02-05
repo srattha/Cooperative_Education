@@ -322,7 +322,7 @@
                   @else
                   <!--หน้าแรก-->
                   <li class="nav-item">
-                     <a class="nav-link " href="{{('/index') }}"><i class="glyphicon glyphicon-home" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('หน้าแรก') }}</a>
+                     <a class="nav-link " href="{{('/') }}"><i class="glyphicon glyphicon-home" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('หน้าแรก') }}</a>
                   </li>
                   @endif
                </ul>
