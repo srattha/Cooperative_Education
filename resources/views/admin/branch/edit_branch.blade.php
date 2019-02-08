@@ -9,7 +9,7 @@
     <div class="panel-heading">
       <h1>แก้ไขสาขา</h1>
     </div>
-    <div class="panel-body">
+    <div class="panel-body"> 
      @if (Session::has('success'))
      <div class="alert alert-success">
       <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>

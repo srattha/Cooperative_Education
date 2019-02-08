@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title','จัดการข้อมูลสถานประกอบการ') 
+@section('title','จัดการข้อมูลนักศึกษา') 
 @section('css')
 @endsection
 @section('content')
@@ -7,16 +7,16 @@
 <div class="row">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h1>จัดการข้อมูลสถานประกอบการ</h1>
+      <h1>จัดการข้อมูลนักศึกษา</h1>
     </div>
     <div class="panel-body">
 
       <a href="{{ url('downloadExcel/xls') }}"><button class="btn btn-success"> <i class="fa fa-download" aria-hidden="true"></i> Download Excel xls</button></a>
       <a href="{{ url('downloadExcel/xlsx') }}"><button class="btn btn-success"> <i class="fa fa-download" aria-hidden="true"></i> Download Excel xlsx</button></a>
       <a href="{{ url('downloadExcel/csv') }}"><button class="btn btn-success"> <i class="fa fa-download" aria-hidden="true"></i> Download CSV</button></a>
-      <button class="btn btn-success" onclick="location.href='{{ route('create_establishment') }}'"> <i class="fa fa-plus-circle" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</button>
+      <button class="btn btn-success" onclick="location.href='{{ route('create_student') }}'"> <i class="fa fa-plus-circle" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</button>
 
-      <form style="border: 4px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ url('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+      <form style="border: 4px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ url('create_student') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
         @csrf
 
         @if ($errors->any())
@@ -49,49 +49,49 @@
        <thead>
         <tr>
           <th>#</th>
-          <th>company_name</th>
-          <th>coordinator</th>
-          <th>coordinator_number</th>
-          <th>email</th>
-          <th>home_number</th>
-          <th>moo</th>
-          <th>industrial_estate</th>
-          <th>building</th>
-          <th>soi</th>
-          <th>road</th>
-          <th>district</th>
-          <th>amphure</th>
-          <th>province</th>
-          <th>post_code</th>
-          <th>tel</th>
-          <th>fix</th>
+          <th>term</th>
+          <th>year</th>
+          <th>activities</th>
+          <th>institution</th>
+          <th>campus</th>
+          <th>faculty</th>
+          <th>major</th>
+          <th>student_id</th>
+          <th>identification_number</th>
+          <th>name_student</th>
+          <th>year_study</th>
+          <th>class_year</th>
+          <th>gpa_past</th>
+          <th>gpa</th>
+          <th>birthday</th>
+          <th>telephone</th>
           <th class="text-center">แก้ไขข้อมูล</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-         @foreach ($company as $index => $companys)
+         @foreach ($student as $index => $students)
          <td>{{$index+1}}</td>
-         <td>{{$companys->company_name}}</td>
-         <td>{{$companys->coordinator}}</td>
-         <td>{{$companys->coordinator_number}}</td>
-         <td>{{$companys->email}}</td>
-         <td>{{$companys->home_number}}</td>
-         <td>{{$companys->moo}}</td>
-         <td>{{$companys->industrial_estate}}</td>
-         <td>{{$companys->building}}</td>
-         <td>{{$companys->soi}}</td>
-         <td>{{$companys->road}}</td>
-         <td>{{$companys->district}}</td>
-         <td>{{$companys->amphure}}</td>
-         <td>{{$companys->province}}</td>
-         <td>{{$companys->post_code}}</td>
-         <td>{{$companys->tel}}</td>
-         <td>{{$companys->fax}}</td>
+         <td>{{$students->term}}</td>
+         <td>{{$students->year}}</td>
+         <td>{{$students->activities}}</td>
+         <td>{{$students->institution}}</td>
+         <td>{{$students->campus}}</td>
+         <td>{{$students->faculty}}</td>
+         <td>{{$students->major}}</td>
+         <td>{{$students->student_id}}</td>
+         <td>{{$students->identification_number}}</td>
+         <td>{{$students->name_student}}</td>
+         <td>{{$students->year_study}}</td>
+         <td>{{$students->class_year}}</td>
+         <td>{{$students->gpa_past}}</td>
+         <td>{{$students->gpa}}</td>
+         <td>{{$students->birthday}}</td>
+         <td>{{$students->telephone}}</td>
 
          <td style="align-content: center;">
-            <button type="button" class="btn btn-info btn-xs" onclick="location.href='{{ route('edit_establishment',['id'=>$companys->id]) }}'"><i class="fa fa-pencil-square-o"></i> แก้ไขข้อมูล</button>
-         <button type="button" class="btn btn btn-danger btn-xs" onclick="if(confirm('Are you sure ?')) window.location.href = '{{ route('delete_establishment',['id'=>$companys->id]) }}'"><i class="fa fa-trash-o"></i> ลบข้อมูล</button>
+            <button type="button" class="btn btn-info btn-xs" onclick="location.href='{{ route('edit_student',['id'=>$students->id]) }}'"><i class="fa fa-pencil-square-o"></i> แก้ไขข้อมูล</button>
+         <button type="button" class="btn btn btn-danger btn-xs" onclick="if(confirm('Are you sure ?')) window.location.href = '{{ route('delete_student',['id'=>$students->id]) }}'"><i class="fa fa-trash-o"></i> ลบข้อมูล</button>
          </td>
         </tr>
         @endforeach

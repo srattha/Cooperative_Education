@@ -5,138 +5,206 @@
 @section('content')
 <br>
 <div class="row">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h1>จัดการข้อมูลนักศึกษา</h1>
-    </div>
-   <!--  <div class="panel-body">
-      <div class="row"> -->
-        <!-- <form action="{{ route('search_report') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
-          @csrf
-          <div class="col-sm-3 col-md-3">
-            <div class="input-group input-group-sm">
-             <span class="input-group-addon">คณะ</span>
-             <select  name="faculty" class="form-control">
-              <option selected value="">-กรุณาเลือกคณะ-</option>
-              <option value="คณะบริหารธุรกิจและศิลปศาสตร์">คณะบริหารธุรกิจและศิลปศาสตร์</option>
-              <option value="คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร">คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร</option>
-              <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์ </option>
-              <option value="คณะศิลปกรรมและสถาปัตยกรรมศาสตร์">คณะศิลปกรรมและสถาปัตยกรรมศาสตร์</option>
-            </select>
-          </div>
-        </div>
-        <div class="col-sm-3 col-md-3" >
-          <div class="input-group input-group-sm">
-           <span class="input-group-addon">สาขาวิชา</span>
-           <select name="major" class="form-control">
-            <option selected value="">-กรุณาเลือกสาขาวิชา-</option>
-            <option value="บช.บ. การบัญชี">บช.บ. การบัญชี</option>
-            <option value="บธ.บ. การจัดการ">บธ.บ. การจัดการ</option>
-            <option value="บธ.บ. การตลาด">บธ.บ. การตลาด</option>
-            <option value="บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์">บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์</option>
-            <option value="ศศ.บ การท่องเที่ยวและารโรงแรม">ศศ.บ การท่องเที่ยวและารโรงแรม</option>
-            <option value="ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล">ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล</option>
-            <option value="วท.บ. เทคโนโลยีสารสนเทศ">วท.บ. เทคโนโลยีสารสนเทศ</option>
-            <option value="คศ.บ. คหกรรมศาสตร์">คศ.บ. คหกรรมศาสตร์</option>
-            <option value="วศ.บ. วิศวกรรมเคื่องกล">วศ.บ. วิศวกรรมเคื่องกล</option>
-            <option value="ค.อ.บ. วิศวกรรมเครื่องกล">ค.อ.บ. วิศวกรรมเครื่องกล</option>
-            <option value="วศ.บ. วิศวกรรมคอมพิงเตอร์">วศ.บ. วิศวกรรมคอมพิงเตอร์</option>
-            <option value="วศ.บ. วิศวกรรมไฟฟ้า">วศ.บ. วิศวกรรมไฟฟ้า</option>
-            <option value="วศ.บ. วิศวะกรรมอิเล็กทรอนิกส์">วศ.บ. วิศวะกรรมอิเล็กทรอนิกส์</option>
-            <option value="วศ.บ. วิศวกรรมโยธา">วศ.บ. วิศวกรรมโยธา</option>
-            <option value="ค.อ.บ วิศวกรรมอุตสาหการ">ค.อ.บ วิศวกรรมอุตสาหการ</option>
-            <option value="วศ.บ. วิศวกรรมอุตสาหการ">วศ.บ. วิศวกรรมอุตสาหการ</option>
-            <option value="ศบ.บ ออกแบบอุตสาหกรรม">ศบ.บ ออกแบบอุตสาหกรรม</option>
-            <option value="ทล.บ. ออกแบบอุตสาหกรรม">ทล.บ. ออกแบบอุตสาหกรรม</option>
-          </select>
-        </div>
+   <div class="panel panel-default">
+      <div class="panel-heading">
+         <h1>รายงานข้อมูลนักศึกษาและสถานประกอบการ</h1>
       </div>
-      <div class="col-sm-3 col-md-3" >
-        <div class="input-group input-group-sm">
-         <span class="input-group-addon" id="sizing-addon1">ปีการศึกษา</span>
-
-         <input type="text" id="datepicker" / name="year" class="form-control"  placeholder="ปีการศึกษา" aria-describedby="sizing-addon1">
-       </div>
-     </div>
-     <div class="col-sm-2 col-md-2">
-      <div class="input-group input-group-sm">
-       <span class="input-group-addon">ภาคเรียน</span>
-       <select name="term" class="form-control">
-        <option selected value="">-กรุณาเลือกภาคเรียน-</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-      </select>
-    </div>
-
-  </div>
-  <div class="col-sm-1 col-md-1">
-    <div class="input-group input-group-sm">
-      <button type="submit" class="btn btn-info">
-       <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
-     </div>
-
    </div>
- </form> -->
-</div>
-<br>
-<br>
-
-<table   class="table table-striped table-bordered table-hover" style="width:100%;">
+<input type="button" onclick="tableToExcel('testTable', 'ข้อมูลนักศึกษาและสถานประกอบการ')" value="ดาวน์โหลด Excel">
+<div class="table-responsive">
+  <table id="testTable" class="table table-striped table-bordered table-hover" style="width:100%;">
  <thead>
   <tr>
-    <th>#</th>
-    <th>รหัสนักศึกษา</th>
-    <th>ชื่อ-นามสกุล</th>
-    <th>ชื่อ-สถานประกอบการ</th>
-    <th>เวลาสร้างข้อมูล</th>
-    <th>เวลาแก้ไขข้อมูล</th>
-    <th class="text-center">แก้ไขข้อมูล</th>
-  </tr>
+    <th>รวมทุกสาขา</th>
+    <th>ภาคเรียน</th>
+    <th>ปีการศึกษา</th>
+    <th>กิจกรรม/ฝึกสหกิจ/ฝึกงาน/ฝึกสอน</th>
+    <th>ชื่อสถาบันการศึกษา</th>
+    <th>วิทยาเขต</th>
+    <th>คณะ</th>
+    <th>สาขาวิชา</th>
+    <th>รหัสประจำตัวนักศึกษา</th>
+    <th>เลขประจำตัวบัตรประชาชน</th>
+    <th>ชื่อ-สกุล</th>
+    <th>ปีที่เข้าศึกษา</th>
+    <th>ชั้นปีที่ (ขณะฝึก)</th>
+    <th>เกรดเฉลี่ยภาคการศึกษาที่ผ่านมา</th>
+    <th>เกรดเฉลี่ยสะสม</th>
+    <th>ปี พ.ศ./เดือน/วันเกิด</th>
+    <th>ชื่อสถานประกอบการ</th>
+    <th>ผู้ประสานงาน</th>
+    <th>เบอร์โทรศัพท์ผู้ประสานงาน</th>
+    <th>อีเมล</th>
+    <th>เลขที่</th>
+    <th>หมู่</th>
+    <th>นิคมอุตสาหกรรม</th>
+    <th>ตึก/อาคาร</th>
+    <th>ซอย</th>
+    <th>ถนน</th>
+    <th>ตำบล/แขวง</th>
+    <th>อำเภอ/เขต</th>
+    <th>จังหวัด</th>
+    <th>รหัส</th>
+    <th>โทรศัพท์ </th>
+    <th>แฟกซ์</th>
+    <!-- <th>แก้ไข</th> -->
+   </tr>
 </thead>
 <tbody>
   <tr>
    @foreach ($student as $index => $students)
    <td>{{$index+1}}</td>
-   <td>{{$students->student_id}}</td>
+   <td>{{$students->term}}</td>
+   <td>{{$students->year}}</td> 
+   <td>{{$students->activities}}</td>
+   <td>{{$students->institution}}</td>
+   <td>{{$students->campus}}</td>
    <td>
-    @foreach ($students->user as $u)
-    {{$u->name}}
+    @foreach ($students->faculty as $s)
+    {{$s->name}}
     @endforeach
   </td>
   <td>
+    @foreach ($students->branch as $s)
+    {{$s->name}}
+    @endforeach
+  </td>
+   <td>{{$students->student_id}}</td>
+   <td>{{$students->identification_number}}</td>
+   <td>{{$students->name_student}}</td>
+   <td>{{$students->year_study}}</td>
+   <td>{{$students->class_year}}</td>
+   <td>{{$students->gpa}}</td>
+   <td>{{$students->gpa_past}}</td>
+   <td>{{$students->birthday}}</td>
+ <!--  company -->
+ <td>
     @foreach ($students->company as $c)
     {{$c->company_name}}
     @endforeach
   </td>
-  <td>{{$students->created_at}}</td>
-  <td>{{$students->updated_at}}</td>
-
-  <td style="text-align: center;"><button type="button" class="btn btn-info btn-xs" onclick="location.href='{{ route('view_report',['id'=>$students->id]) }}'"><i class="fa fa-eye" aria-hidden="true"></i> View</button></td>
-
-</tr>
+ <td>
+    @foreach ($students->company as $c)
+    {{$c->coordinator}}
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->coordinator_number}}
+    @endforeach
+  </td>
+   <td>
+    @foreach ($students->company as $c)
+    {{$c->email}}
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->home_number}}
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->moo}}
+    @endforeach
+  </td>
+ <td>
+    @foreach ($students->company as $c)
+    {{$c->industrial_estate}}
+    @endforeach
+  </td>
+ <td>
+    @foreach ($students->company as $c)
+    {{$c->building}}
+    @endforeach
+  </td>
+ <td>
+    @foreach ($students->company as $c)
+    {{$c->soi}}
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->road}}
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->district}}
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->amphure}}
+    @endforeach
+  </td>
+   <td>
+    @foreach ($students->company as $c)
+    {{$c->province}}
+    @endforeach
+  </td>
+   <td>
+    @foreach ($students->company as $c)
+    {{$c->post_code}} 
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->tel}}
+    @endforeach 
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->fax}}
+    @endforeach
+  </td>
+  <!-- <td style="text-align: center;"><button type="button" class="btn btn-info btn-xs" onclick="location.href='{{ route('view_report',['id'=>$students->id]) }}'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> แก้ไข</button></td> -->
+  </tr>
   @endforeach
 </tbody>
 </table>
+</div>
+
 
 {{ $student->links() }}
 
-
-</div>
-</div>
-</div>
-
+</dvi>
+</dvi>
+</dvi>
 @endsection
 @section('javascript')
 <script>
-  $(document).ready(function() {
-    $('#dataTables-example').DataTable({
-      responsive: true
-    });
-   $("#datepicker").datepicker({
-    format: "yyyy",
-    viewMode: "years",
-    minViewMode: "years"
-});
-  });
+   $(document).ready(function() {
+     $('#dataTables-example').DataTable({
+       responsive: true
+     });
+    $("#datepicker").datepicker({
+     format: "yyyy",
+     viewMode: "years",
+     minViewMode: "years"
+   });
+   });
+</script>
+<script type="text/javascript">
+    var tableToExcel = (function() {
+        var uri = 'data:application/vnd.ms-excel;base64,',
+            template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
+            base64 = function(s) {
+                return window.btoa(unescape(encodeURIComponent(s)))
+            },
+            format = function(s, c) {
+                return s.replace(/{(\w+)}/g, function(m, p) {
+                    return c[p];
+                })
+            }
+        return function(table, name) {
+            if (!table.nodeType) table = document.getElementById(table)
+            var ctx = {
+                worksheet: name || 'Worksheet',
+                table: table.innerHTML
+            }
+            window.location.href = uri + base64(format(template, ctx))
+        }
+    })()
 </script>
 @endsection

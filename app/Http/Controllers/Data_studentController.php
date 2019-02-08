@@ -327,6 +327,8 @@ $user = Auth::user();
     $branch = Branch::where('id', $data->major)->first();
     $company = Company::where('id',$data->company_id)->first();
     $faculty = Faculty::get();
+    // return ['user'=> $user, 'companys'=> $companys, 'data'=> $data, 'company'=> $company, 'faculty' => $faculty, 'branch' => $branch];
+
     return view('data_student.editdata_student', ['user'=> $user, 'companys'=> $companys, 'data'=> $data, 'company'=> $company, 'faculty' => $faculty, 'branch' => $branch]);
 
 }

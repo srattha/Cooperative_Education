@@ -37,7 +37,8 @@
               <button type="button" class="btn btn-info btn-xs" onclick="location.href='{{ route('edit_branch',['id'=>$branchs->id]) }}'"><i class="fa fa-pencil-square-o"></i> แก้ไขข้อมูล</button>
               <button type="button" class="btn btn btn-danger btn-xs" onclick="if(confirm('คุณต้องการลบ หรือ ไม่')) window.location.href = '{{ route('delete_branch',['id'=>$branchs->id]) }}'"><i class="fa fa-trash-o"></i> ลบข้อมูล</button>
             </div>
-          </tr>
+          </td>
+        </tr>
           @endforeach
         </tbody>
       </table>

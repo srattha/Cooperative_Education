@@ -54,11 +54,21 @@ Route::post('importExcel', 'MaatwebsiteController@importExcel');
 Route::get('/uploadPdf', 'UploadPdfController@index')->name('upload_file');
 Route::post('uploadPdf', 'UploadPdfController@storeFile');
 Route::get('/index', 'IndexController@index');
-Route::get('/', 'IndexController@index');
+Route::get('/', 'IndexController@index'); 
 Route::post('/addUser', 'HomeController@addUser')->name('addUser');
-Route::get('/report_cooperative_education', 'ReportCooperativeEducationController@index')->name('search_report');
-Route::get('/view_cooperative_education/{id}', 'ReportCooperativeEducationController@view_report')->name('view_report')->where('id', '[0-9]+');
+
+// Route::get('/student', 'StudentController@index')->name('student');
+// Route::get('create_student', 'StudentController@create_student')->name('create_student');
+// Route::post('create_student', 'StudentController@add_student');
+// Route::get('/editstudent/{id}', 'StudentController@edit_student')->name('edit_student')->where('id', '[0-9]+');
+// Route::post('editstudent', 'StudentController@update_student');
+// Route::get('delete_student/{id}', 'StudentController@destroy')->name('delete_Student')->where('id', '[0-9]+');
+Route::get('/report_cooperative_education', 'ReportCooperativeEducationController@index')->name('search_report'); 
 Route::post('/report_cooperative_education', 'ReportCooperativeEducationController@search_report');
+Route::get('/view_cooperative_education/{id}', 'ReportCooperativeEducationController@view_report')->name('view_report')->where('id', '[0-9]+');
+Route::post('view_cooperative_education', 'ReportCooperativeEducationController@view_report');
+// Route::get('downloadcooperative_education/{type}', 'ReportCooperativeEducationController@downloadExcel');
+
 Route::get('/establishment', 'EstablishmentController@index')->name('establishment');
 Route::get('create_establishment', 'EstablishmentController@create_establishment')->name('create_establishment');
 Route::post('create_establishment', 'EstablishmentController@add_establishment');

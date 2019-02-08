@@ -17,7 +17,18 @@
                      <label class="col-md-4 control-label"><i class="glyphicon glyphicon-calendar"></i> ปี พ.ศ. &nbsp; : </label>
                      <div class="col-md-4">
                         <select id="class_year" name="class_year" class="form-control" >
-                          <option selected>-กรุณาเลือก ปี พ.ศ.-</option>
+                           <option selected>-กรุณาเลือก ปี พ.ศ.-</option>
+                           <option value="2550" >2550</option>
+                           <option value="2551" >2551</option>
+                           <option value="2552" >2552</option>
+                           <option value="2553" >2553</option>
+                           <option value="2554" >2554</option>
+                           <option value="2555" >2555</option>
+                           <option value="2556" >2556</option>
+                           <option value="2557" >2557</option>
+                           <option value="2558" >2558</option>
+                           <option value="2559" >2559</option>
+                           <option value="2560" >2560</option>
                            <option value="2561" >2561</option>
                            <option value="2562" >2562</option>
                            <option value="2563" >2563</option>
@@ -28,18 +39,6 @@
                            <option value="2568" >2568</option>
                            <option value="2569" >2569</option>
                            <option value="2570" >2570</option>
-                           <!-- <option value="2571" >2570</option>
-                           <option value="2572" >2569</option>
-                           <option value="2573" >2568</option>
-                           <option value="2574" >2567</option>
-                           <option value="2575" >2566</option>
-                           <option value="2576" >2565</option>
-                           <option value="2577" >2564</option>
-                           <option value="2578" >2563</option>
-                           <option value="2579" >2562</option>
-                           <option value="2580" >2561</option> -->
-                           <!--  <option value="2560" >2560</option>
-                              <option value="2559" >2559</option> -->
                         </select>
                      </div>
                   </div>
@@ -48,24 +47,21 @@
          </div>
       </div>
    </div>
-   <div id="ajax_1" class="row">
+   <div class="row">
       <div class="col-md-12">
-         <div class="panel panel-default">
-            <div class="panel-body">
-               <div id="for_progress" class="row" style="display: none;">
-                  <div class="col-md-4 col-md-offset-4">
-                     <div class="progress progress-striped active">
-                        <div id="load" class="progress-bar progress-bar-success" style="width: 0%"></div>
-                     </div>
-                  </div>
+         <div id="for_progress" class="row" style="display: none;">
+            <div class="col-md-4 col-md-offset-4">
+               <div class="progress progress-striped active">
+                  <div id="load" class="progress-bar progress-bar-success" style="width: 0%"></div>
                </div>
-               <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">
-               </div>
-               <div id="show_wait"></div>
             </div>
          </div>
+         <div id="container" style="">
+         </div>
+         <div id="show_wait"></div>
       </div>
    </div>
+   <br>
    <footer class="footer">
       <span class="footer-divider" style="height: 5px;
          display: block;
@@ -105,7 +101,7 @@
          var list = {'name':r.y,'y':r.name};
          items .push(list);
       }
-
+   
     console.log(items)
    
    Highcharts.chart('container', {

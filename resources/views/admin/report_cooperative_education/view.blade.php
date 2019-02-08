@@ -1,93 +1,207 @@
-@extends('admin.layouts.master')
-@section('title','รายงานรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา')
+ @extends('admin.layouts.master')
+@section('title','แก้ไขรายงานรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา')
 @section('css')
-<style type="text/css">
-  .fontstudent{
-    color:#4e4e4e; font-weight:600; font-size: 30px;
-  }
-</style>
 @endsection
 @section('content')
 <br>
 <div class="row">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h1>รายงานรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา</h1>
-    </div>
-    <div class="panel-body">
-      <div class="col-md-6">
-        <h3 style="color:#4e4e4e; font-weight:600; font-size: 18px;">ส่วนที่ 1 ข้อมูลนักศึกษา</h3>
-        <label>ชื่อ-สกุล:</label> <span class="fontstudent">{{$student->name_student}}</span>
-        <br>
-        <label>เลขบัตรประชาชน:</label> <span class="fontstudent">{{$student->identification_number}}</span>
-        <br>
-        <label>ว/ด/ป เกิด:</label> <span class="fontstudent">{{$student->birthday}}</span>
-        <br>
-        <label>ชื่อสถาบัน:</label> <span class="fontstudent">{{$student->institution}}</span>
-        <br>
-        <label>รหัสนักศึกษา:</label> <span class="fontstudent">{{$student->student_id}}</span>
-        <br>
-        <label>วิทยาเขต:</label> <span class="fontstudent">{{$student->campus}}</span>
-        <br>
-        <label>ภาคเรียน:</label> <span class="fontstudent">{{$student->term}}</span>
-        <br>
-        <label>คณะ:</label> <span class="fontstudent">{{$student->faculty}}</span>
-        <br>
-        <label>สาขาวิชา:</label> <span class="fontstudent">{{$student->major}}</span>
-        <br>
-        <label>ปีการศึกษา:</label> <span class="fontstudent">{{$student->year}}</span>
-        <br>
-        <label>กิจกรรม:</label> <span class="fontstudent">{{$student->activities}}</span>
-        <br>
-        <label>ปีที่เข้าศึกษา:</label> <span class="fontstudent">{{$student->year_study}}</span>
-        <br>
-        <label>เกรดเฉลี่ยที่ผ่านมา:</label> <span class="fontstudent">{{$student->gpa}}</span>
-        <br>
-        <label>เกรดเฉลี่ยสะสม:</label> <span class="fontstudent">{{$student->gpa_past}}</span>
-        <br>
-        <label>เบอร์โทรศัพท์:</label> <span class="fontstudent">{{$student->telephone}}</span>
+   <div class="panel panel-default">
+      <div class="panel-heading">
+         <h1>รายงานข้อมูลนักศึกษาและสถานประกอบการ</h1>
       </div>
-
-      <div class="col-md-6">
-         <h3 style="color:#4e4e4e; font-weight:600; font-size: 18px;">ส่วนที่ 2 ข้อมูลสถานประกอบการ</h3>
-         <label>ชื่อบริษัท:</label> <span class="fontstudent">{{$company->company_name}}</span>
-        <br>
-        <label>นิคมอุตสาหกรรม:</label> <span class="fontstudent">{{$company->industrial_estate}}</span>
-        <br>
-        <label>ที่อยู่:</label> <span class="fontstudent">{{$company->home_number}}</span>
-        <br>
-        <label>หมู่:</label> <span class="fontstudent">{{$company->moo}}</span>
-        <br>
-        <label>ตึก/อาคาร:</label> <span class="fontstudent">{{$company->building}}</span>
-        <br>
-        <label>ซอย:</label> <span class="fontstudent">{{$company->soi}}</span>
-        <br>
-        <label>ถนน:</label> <span class="fontstudent">{{$company->road}}</span>
-        <br>
-        <label>ตำบล/แขวง:</label> <span class="fontstudent">{{$company->district}}</span>
-        <br>
-        <label>อำเภอ/เขต:</label> <span class="fontstudent">{{$company->amphure}}</span>
-        <br>
-        <label>จังหวัด:</label> <span class="fontstudent">{{$company->province}}</span>
-        <br>
-        <label>รหัสไปรษณีย์:</label> <span class="fontstudent">{{$company->post_code}}</span>
-        <br>
-        <label>โทรศัพท์:</label> <span class="fontstudent">{{$company->tel}}</span>
-        <br>
-        <label>แฟกซ์:</label> <span class="fontstudent">{{$company->fax}}</span>
-        <br>
-        <label>อีเมล:</label> <span class="fontstudent">{{$company->email}}</span>
-        <br>
-        <label>ชื่อผู้ติดต่อ:</label> <span class="fontstudent">{{$company->coordinator}}</span>
-        <br>
-        <label>เบอร์โทรผู้ติดต่อ:</label> <span class="fontstudent">{{$company->coordinator_number}}</span>
-      </div>
-
-    </div>
-  </div>
+   </div>
+<input type="button" onclick="tableToExcel('testTable', 'ข้อมูลนักศึกษาและสถานประกอบการ')" value="Export to Excel">
+<div class="table-responsive">
+  <table id="testTable" class="table table-striped table-bordered table-hover" style="width:100%;">
+ <thead>
+  <tr>
+    <th>รวมทุกสาขา</th>
+    <th>ภาคเรียน</th>
+    <th>ปีการศึกษา</th>
+    <th>กิจกรรม/ฝึกสหกิจ/ฝึกงาน/ฝึกสอน</th>
+    <th>ชื่อสถาบันการศึกษา</th>
+    <th>วิทยาเขต</th>
+    <th>คณะ</th>
+    <th>สาขาวิชา</th>
+    <th>รหัสประจำตัวนักศึกษา</th>
+    <th>เลขประจำตัวบัตรประชาชน</th>
+    <th>ชื่อ-สกุล</th>
+    <th>ปีที่เข้าศึกษา</th>
+    <th>ชั้นปีที่ (ขณะฝึก)</th>
+    <th>เกรดเฉลี่ยภาคการศึกษาที่ผ่านมา</th>
+    <th>เกรดเฉลี่ยสะสม</th>
+    <th>ปี พ.ศ./เดือน/วันเกิด</th>
+    <th>ชื่อสถานประกอบการ</th>
+    <th>ผู้ประสานงาน</th>
+    <th>เบอร์โทรศัพท์ผู้ประสานงาน</th>
+    <th>อีเมล</th>
+    <th>เลขที่</th>
+    <th>หมู่</th>
+    <th>นิคมอุตสาหกรรม</th>
+    <th>ตึก/อาคาร</th>
+    <th>ซอย</th>
+    <th>ถนน</th>
+    <th>ตำบล/แขวง</th> 
+    <th>อำเภอ/เขต</th>
+    <th>จังหวัด</th>
+    <th>รหัส</th>
+    <th>โทรศัพท์ </th>
+    <th>แฟกซ์</th>
+   </tr>
+</thead>
+<tbody>
+  <tr>
+   @foreach ($student as $index => $students)
+   <td>{{$index+1}}</td>
+   <td>{{$students->term}}</td>
+   <td>{{$students->year}}</td>
+   <td>{{$students->activities}}</td>
+   <td>{{$students->institution}}</td>
+   <td>{{$students->campus}}</td>
+   <td>
+    @foreach ($students->faculty as $s)
+    {{$s->name}}
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->branch as $s)
+    {{$s->name}}
+    @endforeach
+  </td>
+   <td>{{$students->student_id}}</td>
+   <td>{{$students->identification_number}}</td>
+   <td>{{$students->name_student}}</td>
+   <td>{{$students->year_study}}</td>
+   <td>{{$students->class_year}}</td>
+   <td>{{$students->gpa}}</td>
+   <td>{{$students->gpa_past}}</td>
+   <td>{{$students->birthday}}</td>
+ <!--  company -->
+ <td>
+    @foreach ($students->company as $c)
+    {{$c->company_name}}
+    @endforeach
+  </td>
+ <td>
+    @foreach ($students->company as $c)
+    {{$c->coordinator}}
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->coordinator_number}}
+    @endforeach
+  </td>
+   <td>
+    @foreach ($students->company as $c)
+    {{$c->email}}
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->home_number}}
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->moo}}
+    @endforeach
+  </td>
+ <td>
+    @foreach ($students->company as $c)
+    {{$c->industrial_estate}}
+    @endforeach
+  </td>
+ <td>
+    @foreach ($students->company as $c)
+    {{$c->building}}
+    @endforeach
+  </td>
+ <td>
+    @foreach ($students->company as $c)
+    {{$c->soi}}
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->road}}
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->district}}
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->amphure}}
+    @endforeach
+  </td>
+   <td>
+    @foreach ($students->company as $c)
+    {{$c->province}}
+    @endforeach
+  </td>
+   <td>
+    @foreach ($students->company as $c)
+    {{$c->post_code}}
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->tel}}
+    @endforeach
+  </td>
+  <td>
+    @foreach ($students->company as $c)
+    {{$c->fax}}
+    @endforeach
+  </td>
+  </tr>
+  @endforeach 
+</tbody>
+</table>
 </div>
 
+{{ $student->links() }}
+
+</dvi>
+</dvi>
+</dvi> 
 @endsection
 @section('javascript')
-
-@endsection
+<script>
+   $(document).ready(function() {
+     $('#dataTables-example').DataTable({
+       responsive: true
+     });
+    $("#datepicker").datepicker({
+     format: "yyyy",
+     viewMode: "years",
+     minViewMode: "years"
+   });
+   });
+</script>
+<script type="text/javascript">
+    var tableToExcel = (function() {
+        var uri = 'data:application/vnd.ms-excel;base64,',
+            template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
+            base64 = function(s) {
+                return window.btoa(unescape(encodeURIComponent(s)))
+            },
+            format = function(s, c) {
+                return s.replace(/{(\w+)}/g, function(m, p) {
+                    return c[p];
+                })
+            }
+        return function(table, name) {
+            if (!table.nodeType) table = document.getElementById(table)
+            var ctx = {
+                worksheet: name || 'Worksheet',
+                table: table.innerHTML
+            }
+            window.location.href = uri + base64(format(template, ctx))
+        }
+    })()
+</script>
+@endsection 

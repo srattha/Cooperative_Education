@@ -287,7 +287,7 @@
       </script>
    </head>
    <body>
-      <div class="preloader">
+      <!-- <div class="preloader">
          <div class="spinner">
             <div class="rect1"></div>
             <div class="rect2"></div>
@@ -299,7 +299,8 @@
       <div id="overlay">
          <div id="progstat"></div>
          <div id="progress"></div>
-      </div>
+      </div> -->
+      <div class="row row-main-menu">
       <div id="wrapper">
          <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -312,7 +313,7 @@
                <span class="navbar-brand" style="font-size: 16px;">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</span>
             </div>
             <!-- /.navbar-header --> 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse navHeader" id="navbarSupportedContent">
                <!-- Left Side Of Navbar -->
                <ul class="nav navbar-top-links navbar-right">
                   @if(Auth::user())
@@ -391,6 +392,7 @@
          </div>
          <!-- /#page-wrapper --> 
       </div>
+       </div>
       <!-- /#wrapper -->
       <!-- jQuery -->
       <script src="{{ asset('/vendor/jquery/jquery.min.js') }}"></script>

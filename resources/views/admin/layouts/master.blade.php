@@ -10,7 +10,9 @@
   <link rel="shortcut icon" type="image/png" href="/img/g1.jpg"/>
   <link rel="shortcut icon" type="image/png" sizes="144x144" href="https://regis.rmutl.ac.th/student/assets/image/touch/apple-touch-icon-114.png"/>
   <title>@yield('title')</title>
-
+  <!-- Excel  PDF CSV
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css"> -->
   <!-- Bootstrap Core CSS -->
   <link href="{{ asset('/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -314,12 +316,12 @@
                     <li>
                       <a href="/establishment"><i class="fa fa-cogs" aria-hidden="true"></i> จัดการข้อมูลสถานประกอบการ</a>
                     </li>
+                    <li>
+                      <a href="/report_cooperative_education"><i class="fa fa-users" aria-hidden="true"></i> รายงานข้อมูลนักศึกษาและสถานประกอบการ</a>
+                    </li> 
                    <!--  <li>
-                      <a href="/report_cooperative_education"><i class="fa fa-cogs" aria-hidden="true"></i> จัดการข้อมูลนักศึกษา</a>
-                    </li> -->
-                   <!-- <li>
                       <a href="/uploadPdf"><i class="fa fa-bar-chart" aria-hidden="true"></i> รายงานสถิตินักศึกษาในโครงการสหกิจศึกษา</a>
-                    </li> -->
+                    </li>  -->
                     <li>
                       <a class="dropdown-item" href="{{ route('logout') }}"
                       onclick="event.preventDefault();

@@ -40,7 +40,7 @@ class SearchController extends Controller
     }
 
     public function search(Request $request)  
-    {  
+    {   
 
      $faculty = Faculty::get();      
      $student = Student::where('faculty_id', 'like', '%' . $request->faculty . '%')
@@ -54,9 +54,9 @@ class SearchController extends Controller
         $student[$key]['company'] = Company::where('id',$value->company_id)->get();
     }
     //$student = json_encode($student);
-    // return $student[0]['company'][0]->company_name; 
+    //return $student[0]['company'][0]->company_name; 
     //return $student;
     return view('search.search',['faculty' => $faculty,'student' => $student]);
          
     } 
-}
+} 
