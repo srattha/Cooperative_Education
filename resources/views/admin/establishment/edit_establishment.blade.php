@@ -2,7 +2,7 @@
 @section('title','แก้ไขข้อมูลสถานประกอบการ')
 @section('css')
 @endsection
-@section('content')
+@section('content') 
 <br>
 <div class="row">
   <div class="panel panel-default">

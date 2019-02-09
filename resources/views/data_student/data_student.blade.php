@@ -39,9 +39,9 @@
    box-shadow: none;
    font-size: 13px;
    }*/
-</style>
+</style> 
 @endsection
-@section('content')
+@section('content') 
 <div class="container panel-body">
    <div class="row">
       <div class="panel panel-default">
@@ -86,7 +86,8 @@
                <div class="col-sm-5" >
                   <div class="input-group input-group-sm">
                      <span class="input-group-addon" id="sizing-addon1">เลขบัตรประชาชน</span>
-                     <input type="text" name="identification_number" class="form-control" id="identification_number" placeholder="เลขบัตรประชาชน" aria-describedby="sizing-addon1" required>
+                     <input type="text" name="identification_number" class="form-control" id="identification_number" placeholder="เลขบัตรประชาชน" aria-describedby="sizing-addon1" value=" " required>
+                     
                   </div>
                </div>
             </div>
@@ -475,7 +476,5 @@
        minViewMode: "years"
     });
    });
-   
-   
 </script>
 @endsection

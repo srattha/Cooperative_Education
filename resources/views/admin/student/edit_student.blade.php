@@ -81,14 +81,7 @@
                   <div class="input-group input-group-sm">
                      <span class="input-group-addon" id="sizing-addon1">คณะ</span>
                      <select id="faculty" name="faculty" class="form-control">
-                       <!--  <option selected>-กรุณาเลือกคณะ-</option>
-                        @foreach ($faculty as $index => $f)
-                        <option value="{{$f->id}}">{{$f->name}}</option>
-                        @endforeach -->
-                        <!-- <option value="คณะบริหารธุรกิจและศิลปศาสตร์">คณะบริหารธุรกิจและศิลปศาสตร์</option>
-                           <option value="คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร">คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร</option>
-                           <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์ </option>
-                           <option value="คณะศิลปกรรมและสถาปัตยกรรมศาสตร์">คณะศิลปกรรมและสถาปัตยกรรมศาสตร์</option> -->
+                      
                      </select>
                   </div>
                </div>

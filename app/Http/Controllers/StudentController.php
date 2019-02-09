@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Student;
 use Excel;
+use App\Faculty;
+use App\Branch;
+use App\Company;
 class StudentController extends Controller
 {
     /**
@@ -52,29 +55,42 @@ class StudentController extends Controller
 
         if($data->count()){
             foreach ($data as $key => $value) {
+          
+               // return $value->major;
+               $company = Company::where('company_name',$value->company_id)->first();
 
-                $arr[] = ['term' => $value->term, 'year' => $value->year, 'activities' => $value->activities, 'institution' => $value->institution, 'campus' => $value->campus, 'faculty_id' => $value->faculty_id, 'major' => $value->major, 'student_id' => $value->student_id, 'identification_number' => $value->identification_number, 'name_student' => $value->name_student,
-              'year_study' => $value->year_study, 'class_year' => $value->class_year, 'gpa_past' => $value->gpa_past, 'gpa' => $value->gpa, 'birthday' => $value->birthday, 'telephone' => $value->telephone, 'is_active' => 1];
+                if ($company->company_name) {
+                 $companyId = $company->id;
+                }else{
+                 $companyId = $value->company_id;
+                }
+                $faculty = Faculty::where('name',"คณะ".$value->faculty_id)->first();
+                if ($faculty) {
+                 $faculty_id =  $faculty->id;
+                }
+
+                $branch = Branch::where('name', 'like', '%'.$value->major.'%')->first();
+                if ($branch) {
+                   $branch_id =  $branch->id;
+                }
+
+                $arr[] = ['user_id' => $value->user_id, 'company_id' => $companyId, 'faculty_id' =>$faculty_id, 'term' => $value->term, 'year' => $value->year, 'activities' => $value->activities, 'institution' => $value->institution, 'campus' => $value->campus, 'major' => $branch_id, 'student_id' => $value->student_id, 'identification_number' => $value->identification_number,
+              'name_student' => $value->name_student, 'year_study' => $value->year_study, 'class_year' => $value->class_year, 'gpa_past' => $value->gpa_past, 'gpa' => $value->gpa, 'telephone' => $value->telephone, 'birthday' => $value->birthday,'is_active' => 1];
             }
-            //return $arr;
+        //return $arr;
             if(!empty($arr)){
                 // Item::insert($arr);
                 Student::insert($arr);
                  return back()->with('success', 'Insert Record successfully.');
-
+ 
             }
         }
-
-
-
-        
-
     }
 
     public function edit_student($id)
     {
 
-         $student = Student::where('id',$id)->first();
+        $student = Student::where('id',$id)->first();
         return view('admin.student.edit_student',['student' => $student]);
     }
 

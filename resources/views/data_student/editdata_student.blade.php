@@ -48,6 +48,13 @@
          <div class="panel-heading">
             <h3 style="color:#fff; font-weight:550; font-size: 20px;">แก้ไข แบบแจ้งรายละเอียดข้อมูลนักศึกษา และข้อมูลสถานประกอบการโครงการสหกิจศึกษา</h3>
          </div>
+         
+         <div class="row">
+            <div class="col-md-5" align="right" style="padding-left: 1050px; padding-top: 20px;">
+               <a href="{{ '/mpdf_student/'.$user->id}}" class="btn btn-danger"><i class="fa fa-print"><span></span> ปริ้น </i></a>
+            </div>
+         </div>
+         
          <div class="panel-body">
             <h3 style="color:#4e4e4e; font-weight:600; font-size: 18px;">ส่วนที่ 1 ข้อมูลนักศึกษา</h3>
             <form class="form-horizontal" method="POST" action="{{ route('editdata_student') }}" enctype="multipart/form-data">

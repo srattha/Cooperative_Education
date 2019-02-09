@@ -14,7 +14,7 @@
       <a href="{{ url('downloadExcel/xls') }}"><button class="btn btn-success"> <i class="fa fa-download" aria-hidden="true"></i> Download Excel xls</button></a>
       <a href="{{ url('downloadExcel/xlsx') }}"><button class="btn btn-success"> <i class="fa fa-download" aria-hidden="true"></i> Download Excel xlsx</button></a>
       <a href="{{ url('downloadExcel/csv') }}"><button class="btn btn-success"> <i class="fa fa-download" aria-hidden="true"></i> Download CSV</button></a>
-      <button class="btn btn-success" onclick="location.href='{{ route('create_student') }}'"> <i class="fa fa-plus-circle" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</button>
+      <!-- <button class="btn btn-success" onclick="location.href='{{ route('create_student') }}'"> <i class="fa fa-plus-circle" aria-hidden="true"></i> เพิ่มผู้ใช้งาน</button> -->
 
       <form style="border: 4px solid #a1a1a1;margin-top: 15px;padding: 10px;" action="{{ url('create_student') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
         @csrf
@@ -49,7 +49,7 @@
        <thead>
         <tr>
           <th>#</th>
-          <th>term</th>
+          <th>term</th> 
           <th>year</th>
           <th>activities</th>
           <th>institution</th>
@@ -91,7 +91,7 @@
 
          <td style="align-content: center;">
             <button type="button" class="btn btn-info btn-xs" onclick="location.href='{{ route('edit_student',['id'=>$students->id]) }}'"><i class="fa fa-pencil-square-o"></i> แก้ไขข้อมูล</button>
-         <button type="button" class="btn btn btn-danger btn-xs" onclick="if(confirm('Are you sure ?')) window.location.href = '{{ route('delete_student',['id'=>$students->id]) }}'"><i class="fa fa-trash-o"></i> ลบข้อมูล</button>
+         <button type="button" class="btn btn btn-danger btn-xs" onclick="if(confirm('Are you sure ?')) window.location.href = '{{ route('delete_Student',['id'=>$students->id]) }}'"><i class="fa fa-trash-o"></i> ลบข้อมูล</button>
          </td>
         </tr>
         @endforeach

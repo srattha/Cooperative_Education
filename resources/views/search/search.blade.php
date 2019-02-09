@@ -3,64 +3,36 @@
 @section('css')
 @endsection
 @section('content')
-<div class="container-fluid">
-   <div class="row">
-      <div class="col-md-12"> 
-         <div class="panel panel-default">
-            <div class="panel-heading">
-               <h3 class="panel-title"><i class="ico-filter mr5"></i>ค้นหาสถานที่ประกอบการ</h3>
-            </div>
-            <div class="panel-body">
-               <div class="form-horizontal">
-                  <div class="form-group">
-                     <form action="{{ route('search') }}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="col-sm-3 col-md-3">
-                           <div class="input-group input-group-sm"> 
-                              <span class="input-group-addon">คณะ</span>
-                              <!--  <select  name="faculty" class="form-control">
-                                 <option selected value="">-กรุณาเลือกคณะ-</option>
-                                 <option value="คณะบริหารธุรกิจและศิลปศาสตร์">คณะบริหารธุรกิจและศิลปศาสตร์</option>
-                                 <option value="คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร">คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร</option>
-                                 <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์ </option>
-                                 <option value="คณะศิลปกรรมและสถาปัตยกรรมศาสตร์">คณะศิลปกรรมและสถาปัตยกรรมศาสตร์</option>
-                                 </select> -->
-                              <select id="faculty" name="faculty" class="form-control">
-                                 <option selected>-กรุณาเลือกคณะ-</option>
-                                 @foreach ($faculty as $index => $f)
-                                 <option value="{{$f->id}}">{{$f->name}}</option>
-                                 @endforeach
-                              </select> 
-                           </div>
-                        </div>
-                        <div class="col-sm-3 col-md-3" >
-                           <div class="input-group input-group-sm">
-                              <span class="input-group-addon">สาขาวิชา</span>
-                              <!--  <select name="major" class="form-control">
-                                 <option selected value="">-กรุณาเลือกสาขาวิชา-</option>
-                                 <option value="บช.บ. การบัญชี">บช.บ. การบัญชี</option>
-                                 <option value="บธ.บ. การจัดการ">บธ.บ. การจัดการ</option>
-                                 <option value="บธ.บ. การตลาด">บธ.บ. การตลาด</option>
-                                 <option value="บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์">บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์</option>
-                                 <option value="ศศ.บ การท่องเที่ยวและารโรงแรม">ศศ.บ การท่องเที่ยวและารโรงแรม</option>
-                                 <option value="ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล">ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล</option>
-                                 <option value="วท.บ. เทคโนโลยีสารสนเทศ">วท.บ. เทคโนโลยีสารสนเทศ</option>
-                                 <option value="คศ.บ. คหกรรมศาสตร์">คศ.บ. คหกรรมศาสตร์</option>
-                                 <option value="วศ.บ. วิศวกรรมเคื่องกล">วศ.บ. วิศวกรรมเคื่องกล</option>
-                                 <option value="ค.อ.บ. วิศวกรรมเครื่องกล">ค.อ.บ. วิศวกรรมเครื่องกล</option>
-                                 <option value="วศ.บ. วิศวกรรมคอมพิงเตอร์">วศ.บ. วิศวกรรมคอมพิงเตอร์</option>
-                                 <option value="วศ.บ. วิศวกรรมไฟฟ้า">วศ.บ. วิศวกรรมไฟฟ้า</option>
-                                 <option value="วศ.บ. วิศวะกรรมอิเล็กทรอนิกส์">วศ.บ. วิศวะกรรมอิเล็กทรอนิกส์</option>
-                                 <option value="วศ.บ. วิศวกรรมโยธา">วศ.บ. วิศวกรรมโยธา</option>
-                                 <option value="ค.อ.บ วิศวกรรมอุตสาหการ">ค.อ.บ วิศวกรรมอุตสาหการ</option>
-                                 <option value="วศ.บ. วิศวกรรมอุตสาหการ">วศ.บ. วิศวกรรมอุตสาหการ</option>
-                                 <option value="ศบ.บ ออกแบบอุตสาหกรรม">ศบ.บ ออกแบบอุตสาหกรรม</option>
-                                 <option value="ทล.บ. ออกแบบอุตสาหกรรม">ทล.บ. ออกแบบอุตสาหกรรม</option>
-                                 </select> -->
-                              <select id="major" name="major"
-                                 class="form-control">
-                                 <option selected>-กรุณาเลือกสาขาวิชา-</option>
-                              </select>
+<div class="container">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                  <h3 class="panel-title"><i class="ico-filter mr5"></i>ค้นหาสถานที่ประกอบการ</h3>
+               </div>
+               <div class="panel-body">
+                  <div class="form-horizontal">
+                     <div class="form-group">
+                        <form action="{{ route('search') }}" method="post" enctype="multipart/form-data">
+                           @csrf
+                           <div class="col-sm-3 col-md-3">
+                              <div class="input-group input-group-sm">
+                                 <span class="input-group-addon">คณะ</span>
+                                 <!--  <select  name="faculty" class="form-control">
+                                    <option selected value="">-กรุณาเลือกคณะ-</option>
+                                    <option value="คณะบริหารธุรกิจและศิลปศาสตร์">คณะบริหารธุรกิจและศิลปศาสตร์</option>
+                                    <option value="คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร">คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร</option>
+                                    <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์ </option>
+                                    <option value="คณะศิลปกรรมและสถาปัตยกรรมศาสตร์">คณะศิลปกรรมและสถาปัตยกรรมศาสตร์</option>
+                                    </select> -->
+                                 <select id="faculty" name="faculty" class="form-control">
+                                    <option selected>-กรุณาเลือกคณะ-</option>
+                                    @foreach ($faculty as $index => $f)
+                                    <option value="{{$f->id}}">{{$f->name}}</option>
+                                    @endforeach
+                                 </select>
+                              </div>
                            </div>
                            <div class="col-sm-3 col-md-3" >
                               <div class="input-group input-group-sm">
