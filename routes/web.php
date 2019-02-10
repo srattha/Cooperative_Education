@@ -15,7 +15,7 @@
 //     return view('welcome');
 // });
 
-Auth::routes();
+Auth::routes(); 
 
 Route::get('/printstudent', 'PrintstudentController@printstudent')->name('printstudent');
 
@@ -57,12 +57,13 @@ Route::get('/index', 'IndexController@index');
 Route::get('/', 'IndexController@index'); 
 Route::post('/addUser', 'HomeController@addUser')->name('addUser');
 
-// Route::get('/student', 'StudentController@index')->name('student');
-// Route::get('create_student', 'StudentController@create_student')->name('create_student');
-// Route::post('create_student', 'StudentController@add_student');
-// Route::get('/editstudent/{id}', 'StudentController@edit_student')->name('edit_student')->where('id', '[0-9]+');
-// Route::post('editstudent', 'StudentController@update_student');
-// Route::get('delete_student/{id}', 'StudentController@destroy')->name('delete_Student')->where('id', '[0-9]+');
+Route::get('/student', 'StudentController@index')->name('student');
+Route::get('create_student', 'StudentController@create_student')->name('create_student');
+Route::post('create_student', 'StudentController@add_student');
+Route::get('/editstudent/{id}', 'StudentController@edit_student')->name('edit_student')->where('id', '[0-9]+');
+Route::post('editstudent', 'StudentController@update_student');
+Route::get('delete_student/{id}', 'StudentController@destroy')->name('delete_Student')->where('id', '[0-9]+');
+
 Route::get('/report_cooperative_education', 'ReportCooperativeEducationController@index')->name('search_report'); 
 Route::post('/report_cooperative_education', 'ReportCooperativeEducationController@search_report');
 Route::get('/view_cooperative_education/{id}', 'ReportCooperativeEducationController@view_report')->name('view_report')->where('id', '[0-9]+');

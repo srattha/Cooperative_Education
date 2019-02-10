@@ -56,7 +56,7 @@ class StudentController extends Controller
         if($data->count()){
             foreach ($data as $key => $value) {
           
-               // return $value->major;
+              // return $value->major;
                $company = Company::where('company_name',$value->company_id)->first();
 
                 if ($company->company_name) {
@@ -64,20 +64,28 @@ class StudentController extends Controller
                 }else{
                  $companyId = $value->company_id;
                 }
-                $faculty = Faculty::where('name',"คณะ".$value->faculty_id)->first();
+                $faculty = Faculty::where('name', $value->faculty_id)->first();
                 if ($faculty) {
                  $faculty_id =  $faculty->id;
                 }
 
-                $branch = Branch::where('name', 'like', '%'.$value->major.'%')->first();
+                 $branch = Branch::where('name', $value->major)->first();
                 if ($branch) {
-                   $branch_id =  $branch->id;
+                  $branch_id =  $branch->id;
+                }else{
+                  $add = new Branch;
+                  $add->name = $value->major;
+                  $add->faculty_id = $faculty_id;
+                  $add->save();
+                  if ($add) {
+                    $branch_id = $add->id;
+                  }
                 }
 
                 $arr[] = ['user_id' => $value->user_id, 'company_id' => $companyId, 'faculty_id' =>$faculty_id, 'term' => $value->term, 'year' => $value->year, 'activities' => $value->activities, 'institution' => $value->institution, 'campus' => $value->campus, 'major' => $branch_id, 'student_id' => $value->student_id, 'identification_number' => $value->identification_number,
               'name_student' => $value->name_student, 'year_study' => $value->year_study, 'class_year' => $value->class_year, 'gpa_past' => $value->gpa_past, 'gpa' => $value->gpa, 'telephone' => $value->telephone, 'birthday' => $value->birthday,'is_active' => 1];
             }
-        //return $arr;
+     //return $arr;
             if(!empty($arr)){
                 // Item::insert($arr);
                 Student::insert($arr);
@@ -91,7 +99,10 @@ class StudentController extends Controller
     {
 
         $student = Student::where('id',$id)->first();
-        return view('admin.student.edit_student',['student' => $student]);
+        $company = Company::where('id',$student->company_id)->first();
+        $faculty = Faculty::get();
+        $branch = Branch::where('id', $student->major)->first();
+        return view('admin.student.edit_student',['student' => $student,'company' => $company, 'branch' => $branch, 'faculty' => $faculty]);
     }
 
     public function update_student(Request $request)

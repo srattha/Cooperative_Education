@@ -74,7 +74,7 @@
                <div class="input-group input-group-sm">
                   <span class="input-group-addon" id="sizing-addon1">ตำบล/แขวง</span>
                   <input type="text" name="district" class="form-control" id="district" value="{{$company->district}}" placeholder="ตำบล/แขวง" aria-describedby="sizing-addon1" required>
-               </div>
+               </div> 
             </div>
             <div class="col-sm-3" >
                <div class="input-group input-group-sm">
@@ -138,15 +138,12 @@
                   <br>
                   <button type="submit" class="btn btn-info">
                      <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
-                     <button class="btn btn-danger" type="button"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button>
+                     <!-- <button class="btn btn-danger" type="button"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button> -->
                   </div>
                </div>
             </div>
-
+         </div>
       </form>
-
-
-
   </div>
 </div>
 </div>

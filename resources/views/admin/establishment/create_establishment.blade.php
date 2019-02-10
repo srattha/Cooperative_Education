@@ -136,7 +136,7 @@
                      <br>
                      <button type="submit" class="btn btn-info">
                      <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
-                     <button class="btn btn-danger" type="button"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button>
+                     <!-- <button class="btn btn-danger" type="button"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button> -->
                   </div>
                </div>
             </div>

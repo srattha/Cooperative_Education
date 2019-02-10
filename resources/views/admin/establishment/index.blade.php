@@ -65,7 +65,7 @@
           <th>post_code</th>
           <th>tel</th>
           <th>fix</th>
-          <th class="text-center">แก้ไขข้อมูล</th>
+          <th class="text-center">ลบข้อมูล</th>
         </tr>
       </thead>
       <tbody>
@@ -90,7 +90,7 @@
          <td>{{$companys->fax}}</td>
 
          <td style="align-content: center;">
-            <button type="button" class="btn btn-info btn-xs" onclick="location.href='{{ route('edit_establishment',['id'=>$companys->id]) }}'"><i class="fa fa-pencil-square-o"></i> แก้ไขข้อมูล</button>
+           <!--  <button type="button" class="btn btn-info btn-xs" onclick="location.href='{{ route('edit_establishment',['id'=>$companys->id]) }}'"><i class="fa fa-pencil-square-o"></i> แก้ไขข้อมูล</button> -->
          <button type="button" class="btn btn btn-danger btn-xs" onclick="if(confirm('Are you sure ?')) window.location.href = '{{ route('delete_establishment',['id'=>$companys->id]) }}'"><i class="fa fa-trash-o"></i> ลบข้อมูล</button>
          </td>
         </tr>

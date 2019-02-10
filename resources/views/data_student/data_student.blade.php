@@ -39,9 +39,9 @@
    box-shadow: none;
    font-size: 13px;
    }*/
-</style> 
+</style>
 @endsection
-@section('content') 
+@section('content')
 <div class="container panel-body">
    <div class="row">
       <div class="panel panel-default">

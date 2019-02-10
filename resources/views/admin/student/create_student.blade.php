@@ -8,7 +8,7 @@
    <div class="panel panel-default">
       <div class="panel-heading">
          <h1>จัดการข้อมูลนักศึกษา</h1>
-      </div>
+      </div> 
       <div class="panel-body">
          @if (Session::has('success')) 
          <div class="alert alert-success">
@@ -176,7 +176,7 @@
                      <br>
                      <button type="submit" class="btn btn-info">
                      <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
-                     <button class="btn btn-danger" type="button"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button>
+                     <!-- <button class="btn btn-danger" type="button"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button> -->
                   </div>
                </div>
             </div>

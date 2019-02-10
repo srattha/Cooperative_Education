@@ -318,7 +318,7 @@ return view('data_student.editdata_student',['date'=>$add_student, 'user'=> $use
 
 }
 
-public function edit_data_student()
+public function edit_data_student() 
 {
 
 $user = Auth::user();
