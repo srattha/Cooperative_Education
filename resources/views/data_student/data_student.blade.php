@@ -227,14 +227,14 @@
                   </div>
                </div>
             </div>
-            <br>
+           <!--  <br>
             <br>
             <div class="form-group">
                <label for="upload_file" class="control-label col-sm-3" style="font-size: 18px;" > อัพไฟล์</label>
                <div class="col-sm-5">
                   <input class="form-control" type="file" name="file" id="upload_file">
                </div>
-            </div>
+            </div> -->
             <hr>
             <h3 style="color:#4e4e4e; font-weight:600; font-size: 18px;">
                <p>ส่วนที่ 2 ข้อมูลสถานประกอบการ</p>

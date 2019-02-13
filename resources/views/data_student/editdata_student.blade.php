@@ -48,10 +48,11 @@
          <div class="panel-heading">
             <h3 style="color:#fff; font-weight:550; font-size: 20px;">แก้ไข แบบแจ้งรายละเอียดข้อมูลนักศึกษา และข้อมูลสถานประกอบการโครงการสหกิจศึกษา</h3>
          </div>
-         
+         <br>
          <div class="row">
-            <div class="col-md-5" align="right" style="padding-left: 1050px; padding-top: 20px;">
-               <a href="{{ '/mpdf_student/'.$user->id}}" class="btn btn-danger"><i class="fa fa-print"><span></span> ปริ้น </i></a>
+            <div class="col-md-6 col-md-offset-4" >
+               <a href="{{ '/mpdf_student/'.$user->id}}" class="btn btn-danger"><i class="fa fa-print"><span></span> ปริ้นข้อมูล </i></a>
+               <a href="{{ '/mpdf_report/'.$user->id}}" class="btn btn-danger"><i class="fa fa-print"><span></span> ปริ้นรายงานการอัพไฟล์สหกิจศึกษา </i></a>
             </div>
          </div>
          
@@ -163,7 +164,7 @@
                               <option value="{{ $data->major }}" {{ "วศ.บ. วิศวกรรมอุตสาหการ" == $data->major ? 'selected="selected"' : '' }}">ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล</option>
                               <option value="{{ $data->major }}" {{ "ศบ.บ ออกแบบอุตสาหกรรม" == $data->major ? 'selected="selected"' : '' }}">ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล</option> -->
                         </select>
-                     </div>
+                     </div> 
                   </div>
                   <div class="col-sm-4" >
                      <div class="input-group input-group-sm">
@@ -216,12 +217,12 @@
                </div>
                <br>
                <br>
-               <div class="form-group" style="padding-left: 250px;">
-                  <label for="upload_file" class="control-label col-sm-3" style="font-size: 18px;" >Upload File Project</label>
-                  <div class="col-sm-5">
-                     <input class="form-control" type="file" name="file" id="upload_file">
-                  </div>
+               <div class="form-group">
+               <label for="upload_file" class="control-label col-sm-3" style="font-size: 18px;" > อัพไฟล์</label>
+               <div class="col-sm-5">
+                  <input class="form-control" type="file" name="file" id="upload_file">
                </div>
+            </div>
                <hr>
                <h3 style="color:#4e4e4e; font-weight:600; font-size: 18px;">
                   <p>ส่วนที่ 2 ข้อมูลสถานประกอบการ</p>
@@ -356,14 +357,12 @@
                   </div>
                   <!-- END row -->
                   <br>
-                  <div class="row">
-                     <div class="col-md-12"></div>
-                     <div class="container" style="padding-left: 520px;margin-top: 50px;">
-                        <br>
-                        <button type="submit" class="btn btn-info">
-                        <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
-                        <button class="btn btn-danger" type="button" onclick="location.href='/reports';"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button>
-                     </div>
+                  <br>
+               <div class="row" style="padding-left: 80px;">
+                  <div class="col-md-6 col-md-offset-4">
+                     <button type="submit" class="btn btn-info">
+                     <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
+                     <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#modalalert"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button>
                   </div>
                </div>
             </form>

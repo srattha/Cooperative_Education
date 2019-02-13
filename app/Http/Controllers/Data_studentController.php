@@ -21,13 +21,43 @@ public function __construct()
     {
         $this->middleware('auth'); 
     }
+public function mpdf_report($id)
+{
+    $Student = Student::where('user_id', $id)->first();
+    $faculty = Faculty::where('id', $Student->faculty_id)->first();
+    $branch = Branch::where('id', $Student->major)->first(); 
+
+$mpdf = new \Mpdf\Mpdf([
+    'default_font_size' => 16,
+    'default_font' => 'sarabun'
+]);
+$mpdf->SetImportUse();
+
+// Add First page
+$mpdf->AddPage();
+$pagecount = $mpdf->SetSourceFile('Report.pdf');
+$tplId = $mpdf->ImportPage($pagecount);
+$actualsize = $mpdf->UseTemplate($tplId);
+$html = "";
+$html .= '<p style="width: 400px;/*border: 1px solid black;*/ position: absolute;left: 151px;top: 132px;"><b>'.$Student->name_student.'</b></p>';
+//row II
+$html .= '<p style="width: 400px;/*border: 1px solid black;*/ position: absolute;left: 185px;top: 168px;"><b>'.$Student->identification_number.'</b></p>';
+//  row II 
+$html .= '<p style="width: 400px;/*border: 1px solid black;*/ position: absolute;left: 140px;top: 207px;"><b>'.$faculty->name.'</b></p>';
+//row III
+$html .= '<p style="width: 400px;/*border: 1px solid black;*/ position: absolute;left: 155px;top: 242px;"><b>'.$branch->name.'</b></p>';
+//row IIII
+$html .= '<p style="width: 400px;/*border: 1px solid black;*/ position: absolute;left: 130px;top: 316px;"><b>'.$Student->updated_at.'</b></p>';
+$mpdf->WriteHTML ($html);
+$mpdf->Output();
+}
+
 public function mpdf_student($id) 
 {
     //return $file;
     $Student = Student::where('user_id', $id)->first();
     $faculty = Faculty::where('id', $Student->faculty_id)->first();
-    $branch = Branch::where('id', $Student->major)->first();
-    
+    $branch = Branch::where('id', $Student->major)->first(); 
     $company = Company::where('id',$Student->company_id)->first();
    //return $faculty->name;
     //require_once __DIR__ . '/vendor/autoload.php';
@@ -136,7 +166,7 @@ $mpdf->Output();
     // return $mpdf->stream('mpdf_student.pdf');
 }
 
-// public function __construct() 
+// public function __construct()  
 // {
 //     $this->middleware('auth'); 
 // }
@@ -323,6 +353,7 @@ public function edit_data_student()
 
 $user = Auth::user();
     $companys = Company::get();
+  
     $data = Student::where('user_id',$user->id)->first();
     $branch = Branch::where('id', $data->major)->first();
     $company = Company::where('id',$data->company_id)->first();

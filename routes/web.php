@@ -32,6 +32,7 @@ Route::get('/editdata_student', 'Data_studentController@edit_data_student')->nam
 Route::post('editdata_student', 'Data_studentController@updatedata_student');
 //mpf 
 Route::get('/mpdf_student/{id}', 'Data_studentController@mpdf_student');
+Route::get('/mpdf_report/{id}', 'Data_studentController@mpdf_report');
 //search
 Route::get('/search', 'SearchController@search')->name('search'); 
 Route::post('/search','SearchController@Search');  
@@ -68,7 +69,7 @@ Route::get('/report_cooperative_education', 'ReportCooperativeEducationControlle
 Route::post('/report_cooperative_education', 'ReportCooperativeEducationController@search_report');
 Route::get('/view_cooperative_education/{id}', 'ReportCooperativeEducationController@view_report')->name('view_report')->where('id', '[0-9]+');
 Route::post('view_cooperative_education', 'ReportCooperativeEducationController@view_report');
-// Route::get('downloadcooperative_education/{type}', 'ReportCooperativeEducationController@downloadExcel');
+Route::get('downloadcooperative_education/{type}', 'ReportCooperativeEducationController@downloadExcelFile');
 
 Route::get('/establishment', 'EstablishmentController@index')->name('establishment');
 Route::get('create_establishment', 'EstablishmentController@create_establishment')->name('create_establishment');

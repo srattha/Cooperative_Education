@@ -10,6 +10,8 @@ use App\User;
 use App\Faculty;
 use App\Branch;
 use Excel;
+//ini_set('memory_limit', '3000M');
+ini_set('max_execution_time', '300000');
 class ReportCooperativeEducationController extends Controller
 {
     /**
@@ -93,7 +95,7 @@ public function downloadExcel($type)
             $data[$key]['company'] = Company::where('id',$value['company_id'])->get();
             $data[$key]['faculty'] = Faculty::where('id',$value['faculty_id'])->get();
             foreach ($data[$key]['faculty'] as $key1 => $val1) {
-               $data[$key]['branch'] = Branch::where('id',$val1->id)->get();
+            $data[$key]['branch'] = Branch::where('id',$val1->id)->get();
             }
             
         }
@@ -107,4 +109,62 @@ public function downloadExcel($type)
         })->download($type);
     }
 
+public function downloadExcelFile($type)
+{
+
+   $student = Student::get()->toArray();
+
+        foreach ($student as $key => $value) {
+            //return $value;
+            $company = Company::where('id',$value['company_id'])->first();
+            $company_name = $company['company_name'];
+            $faculty = Faculty::where('id',$value['faculty_id'])->first();
+            $faculty->name = $faculty['name'];
+            $branch = Branch::where('id', $value['faculty_id'])->first();
+            $branch->id = $branch['name'];
+            $head[] = array(
+                // 'id' => $value['id']
+                'ภาคเรียน' => $value['term'],
+                'ปีการศึกษา' => $value['year'],
+                'กิจกรรม/ฝึกสหกิจ/ฝึกงาน/ฝึกสอน' => $value['activities'],
+                'ชื่อสถาบันการศึกษา' => $value['institution'],
+                'วิทยาเขต' => $value['campus'],
+                'คณะ' =>$faculty['name'],
+                'สาขาวิชา' => $branch['name'],
+                'รหัสประจำตัวนักศึกษา' => $value['student_id'],
+                'เลขประจำตัวบัตรประชาชน' => $value['identification_number'],
+                'ชื่อ-สกุล' => $value['name_student'],
+                'ปีที่เข้าศึกษา' => $value['year_study'],
+                'ชั้นปีที่ (ขณะฝึก)' => $value['class_year'],
+                'เกรดเฉลี่ยภาคการศึกษาที่ผ่านมา' => $value['gpa'],
+                'เกรดเฉลี่ยสะสม' => $value['gpa_past'],
+                'ปี พ.ศ./เดือน/วันเกิด' => $value['birthday'],
+                'เบอร์โทรศัพท์นักศึกษา' =>$value['telephone'],
+                'ชื่อสถานประกอบการ' => $company['company_name'],
+                'ผู้ประสานงาน' =>$company['coordinator'],
+                'เบอร์โทรศัพท์ผู้ประสานงาน' => $company['coordinator_number'],
+                'อีเมล  ' => $company['email'],
+                'เลขที่' => $company['home_number'],
+                'หมู่' => $company['moo'],
+                'นิคมอุตสาหกรรม' => $company['industrial_estate'],
+                'ตึก/อาคาร' => $company['building'],
+                'ซอย' => $company['soi'],
+                'ถนน' => $company['road'],
+                'ตำบล/แขวง' => $company['district'],
+                'อำเภอ/เขต' => $company['amphure'],
+                'จังหวัด' => $company['province'],
+                'รหัส' => $company['post_code'],
+                'โทรศัพท์' => $company['tel'],
+                'แฟกซ์' => $company['fax'],
+            );
+        }
+   
+    $data = $head;
+        return \Excel::create('expertphp_demo', function($excel) use ($data) {
+            $excel->sheet('sheet name', function($sheet) use ($data)
+            {
+             $sheet->fromArray($data);
+            });
+        })->download($type);
+}
 }

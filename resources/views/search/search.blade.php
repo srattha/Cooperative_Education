@@ -110,9 +110,9 @@
                            <tr>
                               <th class="text-center">พ.ศ.</th>
                               <th class="text-center">บริษัท</th>
-                              <th class="text-center">นักศึกษา</th>
                               <th class="text-center">จังหวัด</th>
                               <th class="text-center">เบอร์โทรบริษัท</th>
+                              <th class="text-center">นักศึกษา</th>
                               <th class="text-center">ผลงานนักศึกษา</th>
                            </tr>
                         </thead>
@@ -121,9 +121,9 @@
                            <tr>
                               <td>{{$students->year}}</td>
                               <td>{{$students['company'][0]->company_name}}</td>
-                              <td>{{$students->name_student}}</td>
                               <td>{{$students['company'][0]->province}}</td>
                               <td>{{$students['company'][0]->tel}}</td>
+                               <td>{{$students->name_student}}</td>
                               <td>
                                  <a href="down/<?php if(isset($students['file'][0]->name)){echo $students['file'][0]->name;} ?>"style="text-decoration:none; target="_blank">&nbsp;&nbsp;<?php if(isset($students['file'][0]->name)){echo $students['file'][0]->name;} ?></a>
                                  <br />

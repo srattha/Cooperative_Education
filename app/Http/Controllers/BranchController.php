@@ -113,7 +113,7 @@ class BranchController extends Controller
      * @param  \App\Branch  $branch
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Branch $branch)
+    public function destroy( $id)
     {
         $delete_faculty = Branch::where('id',$id)->delete();
         if($delete_faculty){
@@ -122,6 +122,4 @@ class BranchController extends Controller
             return "error message..";
         }
     }
-
-
 }

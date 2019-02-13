@@ -60,7 +60,7 @@ class StudentController extends Controller
                $company = Company::where('company_name',$value->company_id)->first();
 
                 if ($company->company_name) {
-                 $companyId = $company->id;
+                $companyId = $company->id;
                 }else{
                  $companyId = $value->company_id;
                 }
@@ -85,7 +85,7 @@ class StudentController extends Controller
                 $arr[] = ['user_id' => $value->user_id, 'company_id' => $companyId, 'faculty_id' =>$faculty_id, 'term' => $value->term, 'year' => $value->year, 'activities' => $value->activities, 'institution' => $value->institution, 'campus' => $value->campus, 'major' => $branch_id, 'student_id' => $value->student_id, 'identification_number' => $value->identification_number,
               'name_student' => $value->name_student, 'year_study' => $value->year_study, 'class_year' => $value->class_year, 'gpa_past' => $value->gpa_past, 'gpa' => $value->gpa, 'telephone' => $value->telephone, 'birthday' => $value->birthday,'is_active' => 1];
             }
-     //return $arr;
+    // return $arr;
             if(!empty($arr)){
                 // Item::insert($arr);
                 Student::insert($arr);
