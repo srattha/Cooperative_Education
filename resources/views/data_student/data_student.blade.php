@@ -14,7 +14,7 @@
    .input-group-addon:first-child {
    border-right: 0;
    border-top-width: 0;
-   border-right-width: 0;
+   border-right-width: 0; 
    border-bottom-width: 0;
    border-left-width: 0;
    background: none;
@@ -184,7 +184,7 @@
                      <input type="number" name="year"  class="form-control" id="year" placeholder="ปีการศึกษา" aria-describedby="sizing-addon1" required>
                   </div>
                </div>
-            </div>
+            </div> 
             <br>
             <div class="row">
                <div class="col-sm-4" >
@@ -227,7 +227,8 @@
                   </div>
                </div>
             </div>
-           <!--  <br>
+            <br>
+            <!-- <br>
             <br>
             <div class="form-group">
                <label for="upload_file" class="control-label col-sm-3" style="font-size: 18px;" > อัพไฟล์</label>

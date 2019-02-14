@@ -49,6 +49,12 @@
             <h3 style="color:#fff; font-weight:550; font-size: 20px;">แก้ไข แบบแจ้งรายละเอียดข้อมูลนักศึกษา และข้อมูลสถานประกอบการโครงการสหกิจศึกษา</h3>
          </div>
          <br>
+         @if (Session::has('success'))
+            <div class="alert alert-danger">
+               <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+               <p>{{ Session::get('success') }}</p>
+            </div>
+         @endif
          <div class="row">
             <div class="col-md-6 col-md-offset-4" >
                <a href="{{ '/mpdf_student/'.$user->id}}" class="btn btn-danger"><i class="fa fa-print"><span></span> ปริ้นข้อมูล </i></a>
@@ -59,13 +65,13 @@
          <div class="panel-body">
             <h3 style="color:#4e4e4e; font-weight:600; font-size: 18px;">ส่วนที่ 1 ข้อมูลนักศึกษา</h3>
             <form class="form-horizontal" method="POST" action="{{ route('editdata_student') }}" enctype="multipart/form-data">
-               {{ csrf_field() }}
+               {{ csrf_field() }} 
                <input type="hidden" name="user_id"  value="{{$user->id}}">
                <input type="hidden" name="update_company_id" value="{{$data->company_id}}">
                <input type="hidden" name="company_ID" value="{{$company->id}}">
                <div class="row">
                   <!-- row-I -->
-                  <div class="col-sm-7" >
+                  <div class="col-sm-7" > 
                      <div class="input-group input-group-sm">
                         <span class="input-group-addon" id="sizing-addon1">ชื่อ-สกุล</span>
                         <input type="text" name="name_student" class="form-control" placeholder=" นาย/นางสาว ชื่อ-นามสกุล" value="{{$user->name}}" aria-describedby="sizing-addon1" required>
@@ -218,11 +224,10 @@
                <br>
                <br>
                <div class="form-group">
-               <label for="upload_file" class="control-label col-sm-3" style="font-size: 18px;" > อัพไฟล์</label>
-               <div class="col-sm-5">
-                  <input class="form-control" type="file" name="file" id="upload_file">
+                  <label for="upload_file" class="control-label col-sm-3" style="font-size: 18px;" > อัพไฟล์</label>
+                  <div class="col-sm-5">
+                  <input class="form-control" type="file" name="file" id="upload_file"></div>
                </div>
-            </div>
                <hr>
                <h3 style="color:#4e4e4e; font-weight:600; font-size: 18px;">
                   <p>ส่วนที่ 2 ข้อมูลสถานประกอบการ</p>

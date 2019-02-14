@@ -113,7 +113,7 @@
                               <th class="text-center">จังหวัด</th>
                               <th class="text-center">เบอร์โทรบริษัท</th>
                               <th class="text-center">นักศึกษา</th>
-                              <th class="text-center">ผลงานนักศึกษา</th>
+                              <th class="text-center">ผลงานนักศึกษา</th> 
                            </tr>
                         </thead>
                         <tbody class="text-center">
@@ -170,8 +170,7 @@
          </div>
       </div>
    </div>
-</div>
-<footer class="footer">
+   <footer class="footer">
    <div class="col-md-12" style="margin-top: 20px">
    <span class="footer-divider" style="height: 5px;
       display: block;
@@ -184,6 +183,8 @@
    </div>
    <div class="col-md-12" style="margin-top: 50px">
 </footer>
+</div>
+
 @endsection
 @section('javascript')
 <script type="text/javascript">

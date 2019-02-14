@@ -49,8 +49,9 @@ class SearchController extends Controller
     ->paginate(25);
      //return $student;
     foreach ($student as $key => $value) {
+
         $student[$key]['user'] = User::where('id',$value->user_id)->get();
-        $student[$key]['file'] = File::where('user_id',$value->user_id)->get();
+        $student[$key]['file'] = File::where('user_id',$value->user_id)->orderBy('id', 'DESC')->get();
         $student[$key]['company'] = Company::where('id',$value->company_id)->get();
     }
     //$student = json_encode($student);

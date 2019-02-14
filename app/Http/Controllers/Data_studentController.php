@@ -10,6 +10,7 @@ use PDF;
 use App\Branch;
 use Session;
 use App\Faculty;
+use Illuminate\Support\Facades\Storage;
 class Data_studentController extends Controller
 {
 /**
@@ -23,9 +24,14 @@ public function __construct()
     }
 public function mpdf_report($id)
 {
+
     $Student = Student::where('user_id', $id)->first();
     $faculty = Faculty::where('id', $Student->faculty_id)->first();
     $branch = Branch::where('id', $Student->major)->first(); 
+    $file = File::where('user_id',$id)->first();
+    if(!$file){
+         return back()->with('success', 'Insert Record successfully.');
+    }
 
 $mpdf = new \Mpdf\Mpdf([
     'default_font_size' => 16,
@@ -47,7 +53,7 @@ $html .= '<p style="width: 400px;/*border: 1px solid black;*/ position: absolute
 //row III
 $html .= '<p style="width: 400px;/*border: 1px solid black;*/ position: absolute;left: 155px;top: 242px;"><b>'.$branch->name.'</b></p>';
 //row IIII
-$html .= '<p style="width: 400px;/*border: 1px solid black;*/ position: absolute;left: 130px;top: 316px;"><b>'.$Student->updated_at.'</b></p>';
+$html .= '<p style="width: 400px;/*border: 1px solid black;*/ position: absolute;left: 130px;top: 316px;"><b>'.$file->updated_at.'</b></p>';
 $mpdf->WriteHTML ($html);
 $mpdf->Output();
 }
@@ -265,17 +271,16 @@ public function add_data_student(Request $request)
             if ($request->hasFile('file')) {
                 $file = $request->file('file');
 // $extension = $file->getClientOriginalExtension(); // you can also use file name
-//  $fileName = time().'.'.$extension;
 $fileName = $file->getClientOriginalName();
 $path = public_path().'/adminpdf';
-$uplaod = $file->move($path,$fileName);
-$fileModel = new File;
-$fileModel->user_id = $request->user_id;
+// $uplaod = $file->move($path,$fileName); 
+$fileModel = new File; 
+$fileModel->user_id = $user->id;
 $fileModel->name = $fileName;
 $fileModel->save();
 }
 
- $branch = Branch::where('id', $add_student->major)->first();
+$branch = Branch::where('id', $add_student->major)->first();
 $company = Company::where('id',$request->company_id)->first();
 return view('data_student.editdata_student',['data'=>$add_student, 'user'=> $user, 'company'=> $company,'companys'=> $companys,'faculty' => $faculty,'branch'=>$branch]);
 //return redirect()->route('data_student.editdata_student',['date'=>$add_student, 'user'=> $user, 'company'=> $company,'companys'=> $companys ]);
@@ -329,11 +334,10 @@ if($add_company){
         if ($request->hasFile('file')) {
             $file = $request->file('file');
 // $extension = $file->getClientOriginalExtension(); // you can also use file name
-//  $fileName = time().'.'.$extension;
-            $fileName = $file->getClientOriginalName();
+$fileName = $file->getClientOriginalName();
 $path = public_path().'/adminpdf';
-$uplaod = $file->move($path,$fileName);
-$fileModel = new File;
+// $uplaod = $file->move($path,$fileName); 
+$fileModel = new File; 
 $fileModel->user_id = $user->id;
 $fileModel->name = $fileName;
 $fileModel->save();
@@ -419,9 +423,26 @@ $update_data_student->save();
 if ($update_data_student) {
    if ($request->hasFile('file')) {
        $file = $request->file('file');
+    $deleteFile = File::where('user_id',$user->id)->first();
+
+    if ($deleteFile) {
+          $delete_faculty = File::where('id',$deleteFile->id)->delete();
+          
+          if(file_exists(public_path('/adminpdf/' . $deleteFile->name))){
+
+      unlink(public_path('/adminpdf/' . $deleteFile->name));
+
+    }else{
+
+      dd('File does not exists.');
+
+    }
+       }   
 //$extension = $file->getClientOriginalExtensionName();  // you can also use file name
 $fileName = $file->getClientOriginalName();
 $path = public_path().'/adminpdf';
+$uplaod = $file->move($path,$fileName);
+
 $fileModel = new File; 
 $fileModel->user_id = $user->id;
 $fileModel->name = $fileName;
