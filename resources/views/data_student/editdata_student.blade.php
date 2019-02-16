@@ -50,12 +50,12 @@
          </div>
          <br>
          @if (Session::has('success'))
-            <div class="alert alert-danger">
-               <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-               <p>{{ Session::get('success') }}</p>
-            </div>
+            <!-- <div class="alert alert-danger"> -->
+               <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a> -->
+               <p class="alert alert-danger" align="center">{{ Session::get('success') }}</p>
+           <!--  </div> -->
          @endif
-         <div class="row">
+         <div class="row"> 
             <div class="col-md-6 col-md-offset-4" >
                <a href="{{ '/mpdf_student/'.$user->id}}" class="btn btn-danger"><i class="fa fa-print"><span></span> ปริ้นข้อมูล </i></a>
                <a href="{{ '/mpdf_report/'.$user->id}}" class="btn btn-danger"><i class="fa fa-print"><span></span> ปริ้นรายงานการอัพไฟล์สหกิจศึกษา </i></a>

@@ -30,7 +30,7 @@ public function mpdf_report($id)
     $branch = Branch::where('id', $Student->major)->first(); 
     $file = File::where('user_id',$id)->first();
     if(!$file){
-         return back()->with('success', 'Insert Record successfully.');
+         return back()->with('success', 'กรุณาอัพไฟล์ผลงาน หสกิจศึกษา');
     }
 
 $mpdf = new \Mpdf\Mpdf([
@@ -223,7 +223,7 @@ public function add_data_student(Request $request)
     if(isset($request->identification_number)){
         $id = $request->identification_number;
         if (strlen($id)!= 13) {
-            Session::flash('error', 'Invalid Id card number.');
+            Session::flash('error', 'เลขบัตรประจำตัวไม่ถูกต้อง');
             return redirect()->back()->withInput();
         }
         $rev = strrev($id);
@@ -239,7 +239,7 @@ public function add_data_student(Request $request)
         $check_digit = $sub % 10;
         if($rev[0] != $check_digit)
         {
-            Session::flash('error', 'Invalid Id card number.');
+            Session::flash('error', 'เลขบัตรประจำตัวไม่ถูกต้อง');
             return redirect()->back()->withInput();
         }
     }
@@ -373,7 +373,7 @@ public function updatedata_student(Request $request){
     if(isset($request->identification_number)){
         $id = $request->identification_number;
         if (strlen($id)!= 13) {
-            Session::flash('error', 'Invalid Id card number.');
+            Session::flash('error', 'เลขบัตรประจำตัวไม่ถูกต้อง');
             return redirect()->back()->withInput();
         }
         $rev = strrev($id);
@@ -389,7 +389,7 @@ public function updatedata_student(Request $request){
         $check_digit = $sub % 10;
         if($rev[0] != $check_digit)
         {
-            Session::flash('error', 'Invalid Id card number.');
+            Session::flash('error', 'เลขบัตรประจำตัวไม่ถูกต้อง');
             return redirect()->back();
         }
 
