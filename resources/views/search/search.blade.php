@@ -1,4 +1,4 @@
-@extends('student.master')
+@extends('layouts.search')
 @section('title','ค้นหาสถานประกอบการ')
 @section('css')
 @endsection
@@ -209,7 +209,7 @@
        // });
    
     }else{
-      $select.find('option').remove();
+      $select.find('option').remove(); 
    
    }
    });

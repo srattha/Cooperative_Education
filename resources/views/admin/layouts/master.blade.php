@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="shortcut icon" type="image/png" href="/img/g1.jpg"/>
-  <link rel="shortcut icon" type="image/png" sizes="144x144" href="https://regis.rmutl.ac.th/student/assets/image/touch/apple-touch-icon-114.png"/>
+  <link rel="shortcut icon" type="image/png" sizes="144x144" href="assets/gallery/image-icon.jpg"/>
   <title>@yield('title')</title>
   <!-- Excel  PDF CSV
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">

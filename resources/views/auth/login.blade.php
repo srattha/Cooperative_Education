@@ -1,4 +1,4 @@
-@extends('student.master')
+@extends('layouts.login')
 @section('title','เข้าสู่ระบบ')
 @section('css')
 @endsection

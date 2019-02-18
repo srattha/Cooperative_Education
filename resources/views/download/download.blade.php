@@ -1,4 +1,4 @@
-@extends('student.master')
+@extends('layouts.download')
 @section('title','ดาวน์โหลด')
 @section('css')
 <style type="text/css">
@@ -58,19 +58,6 @@
                               }
                               ?>
                         </p>
-                        <!-- <p 18.5714px="" line-height:="">แบบฟอร์มสหกิจศึกษาต่างๆ<br />
-                           &nbsp; &nbsp; เอกสารหมายเลข 1&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งรายละเอียดการเข้าร่วมโครงการสหกิจศึกษา </a><br />
-                           &nbsp; &nbsp; เอกสารหมายเลข 2&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบตอบกลับนักศึกษาโครงการสหกิจศึกษา</a><br />
-                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 3&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;ใบสมัครงานโครงการสหกิจศึกษา</a></span><br />
-                           <span style="line-height: 1.42857;">&nbsp;&nbsp;&nbsp; เอกสารหมายเลข 4&nbsp;&nbsp;</span><font color="#337ab7"><a href=""><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งรายชื่อนักศึกษาโครงการสหกิจศึกษา</a></font><br />
-                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 5&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แแบแจ้งรายละเอียดสถานประกอบการโครงการสหกิจศึกษา</a></span><br />
-                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 6&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งรายละเอียดงาน ตำแหน่งงาน พนักงานที่ปรึกษาโครงการสหกิจศึกษา</a></span><br />
-                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 7&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งแผนปฏอบัติงานโครงการสหกิจศึกษา</a></span><br />
-                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 8&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งโครงร่างรายงานการปฏิบัติงานโครงการสหกิจศึกษา</a></span><br />
-                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 9&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบแจ้งยืนยันการนิเทศงานนักศึกษาโครงการสหกิจศึกษา</a></span><br />
-                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 10&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบบันทึกการนิเทศงานโครงการสหกิจศึกษา</a></span><br />
-                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 11&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบประเมินผลนักศึกษาโครงการสหกิจศึกษา</a></span><br />
-                           <span style="line-height: 1.42857;">&nbsp; &nbsp; เอกสารหมายเลข 12&nbsp;&nbsp;<a href="" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true" id="pdf"></i>&nbsp;แบบประเมินรางานนักศึกษาโครงการสหกิจศึกษา</a></span><br />-->
                      </td>
                   </tr>
                </tbody>

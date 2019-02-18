@@ -76,6 +76,7 @@
       <div class="col-md-12" style="margin-top: 50px"></div>
    </footer>
 </div>
+</div>
 @endsection
 @section('javascript')
 <script src="{{ asset('/js/js1.js') }}"></script>

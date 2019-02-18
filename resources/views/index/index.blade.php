@@ -1,4 +1,4 @@
-@extends('student.master')
+@extends('layouts.index')
 @section('title','ระบบบริหารจัดการข้อมูลสหกิจศึกษา')
 @section('css')
 @endsection
@@ -50,7 +50,7 @@
 </div>
 @endsection
 @section('javascript')
-<script type="text/javascript">
+<!-- <script type="text/javascript">
    $(document).ready(function(){
     //FANCYBOX
     //https://github.com/fancyapps/fancyBox
@@ -59,5 +59,5 @@
         closeEffect: "none"
     });
    });
-</script>
+</script> -->
 @endsection

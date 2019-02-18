@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="">
+      <meta name="description" content=""> 
       <meta name="author" content="">
       <link rel="shortcut icon" type="image/png" sizes="144x144" href="assets/gallery/image-icon.jpg"/>
       <title>@yield('title')</title>
@@ -20,7 +20,7 @@
       <!-- Custom CSS -->
       <link href="{{ asset('/assets/css/sb-admin-2.css') }}" rel="stylesheet">
       <!-- Morris Charts CSS -->
-      <!--  <link href="{{ asset('/vendor/morrisjs/morris.css') }}" rel="stylesheet"> -->
+      <link href="{{ asset('/vendor/morrisjs/morris.css') }}" rel="stylesheet">
       <!-- Custom Fonts -->
       <link href="{{ asset('/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
       <!-- styel Css -->
@@ -28,7 +28,7 @@
       <link href="{{ asset('/assets/css/lightbox.css') }}" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Maitree|Sriracha" rel="stylesheet">
       <link href="{{ asset('/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-      <link href="{{ asset('/vendor/bootstrapdatapicker/bootstrap-datetimepicker.css')  }}" rel="stylesheet"/>
+      <!-- <link href="{{ asset('/vendor/bootstrap/css/bootstrap-datepicker.css')  }}" rel="stylesheet"/> -->
       @yield('css')
       <style type="text/css">
          body{
@@ -245,7 +245,7 @@
          padding-left: 90px;
          }
       </style>
-      <!-- <script type="text/javascript">
+     <!--  <script type="text/javascript">
          ;(function(){
            function id(v){ return document.getElementById(v); }
            function loadbar() {
@@ -264,12 +264,12 @@
                stat.innerHTML = "Loading "+ perc;
                if(c===tot) return doneLoading();
              }
-             // function doneLoading(){
-             //   ovrl.style.opacity = 0;
-             //   setTimeout(function(){
-             //     $('.sidebar-category').fadeIn();
-             //     $('.navbar-right').fadeIn();
-             //   }, 300);
+             function doneLoading(){
+               ovrl.style.opacity = 0;
+               setTimeout(function(){
+                 $('.sidebar-category').fadeIn();
+                 $('.navbar-right').fadeIn();
+               }, 300);
          
                setTimeout(function(){
                  ovrl.style.display = "none";
@@ -284,7 +284,7 @@
            }
            document.addEventListener('DOMContentLoaded', loadbar, false);
          }());
-         </script> -->
+      </script> -->
    </head>
    <body>
       <!-- <div class="preloader">
@@ -295,123 +295,124 @@
             <div class="rect4"></div>
             <div class="rect5"></div>
          </div>
-         </div>
-         <div id="overlay">
+      </div>
+      <div id="overlay">
          <div id="progstat"></div>
          <div id="progress"></div>
-         </div> -->
-         <div id="wrapper">
-            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-               <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  </button>
-                  <span class="navbar-brand" style="font-size: 16px;">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</span>
-               </div>
-               <!-- /.navbar-header --> 
-               <div class="collapse navbar-collapse navHeader" id="navbarSupportedContent">
-                  <!-- Left Side Of Navbar -->
-                  <ul class="nav navbar-top-links navbar-right">
-                     @if(Auth::user())
-                     <!-- <li class="nav-item">
-                        <a class="nav-link " href="{{('/printstudent') }}"><i class="glyphicon glyphicon-print" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('') }}</a>
-                        </li> -->
-                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <span style="color: #fff;">{{Auth::user()->name}}</span> <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                           <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                              document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-fw"></i> ออกจากระบบ</a>
-                           </li>
-                           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                              {{ csrf_field() }}
-                           </form>
-                        </ul>
-                     </li>
-                     @else
-                     <!--หน้าแรก-->
-                     <li class="nav-item"> 
-                        <a class="nav-link " href="{{('/') }}"><i class="glyphicon glyphicon-home" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('หน้าแรก') }}</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link " href="{{('/statistic') }}"><i class="fa fa-bar-chart"></i></a>
-                     </li>
-                     <!--ค้นหา-->
-                     <li class="nav-item">
-                        <a class="nav-link " href="{{('/search') }}"><i class="glyphicon glyphicon-search" style="padding-right: 2px;"aria-hidden="true" id="icon"></i>{{ __('ค้นหาสถานประกอบการ') }}</a>
-                     </li>
-                     <!--ดาวน์โหลด-->
-                     <li class="nav-item">
-                        <a class="nav-link " href="{{('/download') }}"><i class="fa fa-download mr10" style="padding-right: 2px;"aria-hidden="true" id="icon"></i>{{ __('ดาวน์โหลด') }}</a>
-                     </li>
-                     <!--เข้าสู่ระบบ-->
-                     <li class="nav-item">
-                        <a class="nav-link " href="{{ route('login') }}"><i class="fa fa-sign-in"style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('เข้าสู่ระบบ') }}</a>
-                     </li>
-                     <!--ลงทะเบียน-->
-                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-user-plus"style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('ลงทะเบียนใช้งาน') }}</a>
-                     </li>
-                     @endif
-                  </ul>
-               </div>
-               <!-- /.navbar-top-links -->
-               <!--  <div class="navbar-default sidebar" role="navigation">
-                  <div style="text-align: center;">
-                    <img src="https://regis.rmutl.ac.th/student/assets/image/logo/rmutl-logo.png" height="120px">
-                  </div>
-                  <div class="sidebar-nav navbar-collapse">
-                   <ul class="nav" id="side-menu" style="">
-                     <li>
-                      <a href=""><i class="fa fa-users" aria-hidden="true"></i> จัดการข้อมูลนักศึกษาและสถานประกอบการ</a>
-                    </li>
-                    <li>
-                      <a href=""><i class="glyphicon glyphicon-book"></i>เอกสารสหกิจศึกษา</a>
-                    </li>
-                    <li>
-                      <a href=""><i class="glyphicon glyphicon-search"></i> ค้นหาข้อมูล</a>
-                    </li>
-                  </ul>
-                  </div> 
-                  
-                  </div> -->
-               <!-- /.navbar-static-side --> 
-            </nav>
-            <!-- Page Content -->
-            <div id="page-wrapper" style=" background: #ecf0f1; min-height: 600px; ">
-               <!--  -->
-               <div class="container">
-                  @yield('content')
-               </div>
-               <!-- /.container-fluid -->
+      </div> -->
+      <div id="wrapper">
+         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <span class="navbar-brand" style="font-size: 16px;">ระบบบริหารจัดการข้อมูลสหกิจศึกษาออนไลน์ มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา ตาก</span>
             </div>
-            <!-- /#page-wrapper --> 
+            <!-- /.navbar-header --> 
+            <div class="collapse navbar-collapse navHeader" id="navbarSupportedContent">
+               <!-- Left Side Of Navbar -->
+               <ul class="nav navbar-top-links navbar-right">
+                  @if(Auth::user())
+                  <!-- <li class="nav-item">
+                     <a class="nav-link " href="{{('/printstudent') }}"><i class="glyphicon glyphicon-print" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('') }}</a>
+                     </li> -->
+                  <li class="dropdown">
+                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                     <i class="fa fa-user fa-fw"></i>  <span style="color: #fff;">{{Auth::user()->name}}</span> <i class="fa fa-caret-down"></i>
+                     </a>
+                     <ul class="dropdown-menu dropdown-user">
+                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-fw"></i> ออกจากระบบ</a>
+                        </li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                           {{ csrf_field() }}
+                        </form>
+                     </ul>
+                  </li>
+                  @else
+                  <!--หน้าแรก-->
+                  <li class="nav-item"> 
+                     <a class="nav-link " href="{{('/') }}"><i class="glyphicon glyphicon-home" style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('หน้าแรก') }}</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link " href="{{('/statistic') }}"><i class="fa fa-bar-chart"></i></a>
+                  </li>
+                  <!--ค้นหา-->
+                  <li class="nav-item">
+                     <a class="nav-link " href="{{('/search') }}"><i class="glyphicon glyphicon-search" style="padding-right: 2px;"aria-hidden="true" id="icon"></i>{{ __('ค้นหาสถานประกอบการ') }}</a>
+                  </li>
+                  <!--ดาวน์โหลด-->
+                  <li class="nav-item">
+                     <a class="nav-link " href="{{('/download') }}"><i class="fa fa-download mr10" style="padding-right: 2px;"aria-hidden="true" id="icon"></i>{{ __('ดาวน์โหลด') }}</a>
+                  </li>
+                  <!--เข้าสู่ระบบ-->
+                  <li class="nav-item">
+                     <a class="nav-link " href="{{ route('login') }}"><i class="fa fa-sign-in"style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('เข้าสู่ระบบ') }}</a>
+                  </li>
+                  <!--ลงทะเบียน-->
+                  <li class="nav-item">
+                     <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-user-plus"style="padding-right: 2px;" aria-hidden="true" id="icon"></i>{{ __('ลงทะเบียนใช้งาน') }}</a>
+                  </li>
+                  @endif
+               </ul> 
+            </div>
+            <!-- /.navbar-top-links -->
+            <!--  <div class="navbar-default sidebar" role="navigation">
+               <div style="text-align: center;">
+                 <img src="https://regis.rmutl.ac.th/student/assets/image/logo/rmutl-logo.png" height="120px">
+               </div>
+               <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu" style="">
+                  <li>
+                   <a href=""><i class="fa fa-users" aria-hidden="true"></i> จัดการข้อมูลนักศึกษาและสถานประกอบการ</a>
+                 </li>
+                 <li>
+                   <a href=""><i class="glyphicon glyphicon-book"></i>เอกสารสหกิจศึกษา</a>
+                 </li>
+                 <li>
+                   <a href=""><i class="glyphicon glyphicon-search"></i> ค้นหาข้อมูล</a>
+                 </li>
+               </ul>
+               </div>
+               
+               </div> -->
+            <!-- /.navbar-static-side --> 
+         </nav>
+         <!-- Page Content -->
+         <div id="page-wrapper" style=" background: #ecf0f1; min-height: 600px; ">
+          <!--  -->
+            <div class="container">
+               @yield('content')
+            </div>
+            <!-- /.container-fluid -->
          </div>
-     
+         <!-- /#page-wrapper --> 
+      </div>
+      
       <!-- /#wrapper -->
       <!-- jQuery -->
-      <!--  <script src="{{ asset('/vendor/jquery/jquery.min.js') }}"></script> -->
+      <script src="{{ asset('/vendor/jquery/jquery.min.js') }}"></script>
       <!-- Bootstrap Core JavaScript -->
-      <!--  <script src="{{ asset('/vendor/bootstrap/js/bootstrap.min.js') }}"></script> -->
+      <!-- <script src="{{ asset('/vendor/bootstrap/js/bootstrap.min.js') }}"></script> -->
       <!-- Metis Menu Plugin JavaScript -->
-      <!--       <script src="{{ asset('/vendor/metisMenu/metisMenu.min.js') }}"></script> -->
+     <!--  <script src="{{ asset('/vendor/metisMenu/metisMenu.min.js') }}"></script> -->
       <!-- Toastr JavaScript -->
-      <!-- <script src="{{ asset('/vendor/toastr/js/toastr.min.js') }}"></script> -->
+    <!--   <script src="{{ asset('/vendor/toastr/js/toastr.min.js') }}"></script> -->
       <!-- Custom Theme JavaScript -->
       <!-- <script src="{{ asset('/assets/js/sb-admin-2.js') }}"></script>
-         <script src="{{ asset('/assets/js/lightbox.js') }}"></script>
-         <script src="{{ asset('/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
-         <script src="{{ asset('/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script> -->
-      <!-- <script src="{{ asset('/vendor/datatables-responsive/dataTables.responsive.js') }}"></script> -->
+      <script src="{{ asset('/assets/js/lightbox.js') }}"></script>
+      <script src="{{ asset('/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+      <script src="{{ asset('/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
+      <script src="{{ asset('/vendor/datatables-responsive/dataTables.responsive.js') }}"></script> -->
       <!-- <script type="text/javascript">
-         height = innerHeight;
-         // $('div#page-wrapper').css('min-height' , height);
+            height = innerHeight;
+            // $('div#page-wrapper').css('min-height' , height);
          </script> -->
-      <!--  <script src="{{ asset('/vendor/bootstrapdatapicker/bootstrapdatetimepicker.js') }}"></script> -->
+     <!--  <script src="{{ asset('/vendor/bootstrap/js/bootstrap-datepicker.js') }}"></script> -->
+
       @yield('javascript')
    </body>
-</html>
+</html> 

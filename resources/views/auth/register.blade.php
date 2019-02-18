@@ -1,4 +1,4 @@
-@extends('student.master')
+@extends('layouts.register')
 @section('title','ลงทะเบียนใช้งาน')
 @section('content')
 <div class="container">

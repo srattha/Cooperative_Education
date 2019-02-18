@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="">
       <meta name="author" content="">
-      <link rel="shortcut icon" type="image/png" sizes="144x144" href="https://regis.rmutl.ac.th/student/assets/image/touch/apple-touch-icon-114.png"/>
+      <link rel="shortcut icon" type="image/png" sizes="144x144" href="assets/gallery/image-icon.jpg"/>
       <title>@yield('title')</title>
       <!-- Bootstrap Core CSS -->
       <link href="{{ asset('/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -28,7 +28,7 @@
       <link href="{{ asset('/assets/css/lightbox.css') }}" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Maitree|Sriracha" rel="stylesheet">
       <link href="{{ asset('/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-      <link href="{{ asset('/vendor/bootstrap/css/bootstrap-datepicker.css')  }}" rel="stylesheet"/>
+     <!--  <link href="{{ asset('/vendor/bootstrap/css/bootstrap-datepicker.css')  }}" rel="stylesheet"/> -->
       @yield('css')
       <style type="text/css">
          body{
@@ -295,7 +295,7 @@
             <div class="rect4"></div>
             <div class="rect5"></div>
          </div>
-      </div>
+      </div> 
       <div id="overlay">
          <div id="progstat"></div>
          <div id="progress"></div>
@@ -362,18 +362,18 @@
       <!-- jQuery -->
       <script src="{{ asset('/vendor/jquery/jquery.min.js') }}"></script>
       <!-- Bootstrap Core JavaScript -->
-      <script src="{{ asset('/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+     <!--  <script src="{{ asset('/vendor/bootstrap/js/bootstrap.min.js') }}"></script> -->
       <!-- Metis Menu Plugin JavaScript -->
-      <script src="{{ asset('/vendor/metisMenu/metisMenu.min.js') }}"></script>
+      <!-- <script src="{{ asset('/vendor/metisMenu/metisMenu.min.js') }}"></script> -->
       <!-- Toastr JavaScript -->
-      <script src="{{ asset('/vendor/toastr/js/toastr.min.js') }}"></script>
+     <!--  <script src="{{ asset('/vendor/toastr/js/toastr.min.js') }}"></script> -->
       <!-- Custom Theme JavaScript -->
-      <script src="{{ asset('/assets/js/sb-admin-2.js') }}"></script>
+      <!-- <script src="{{ asset('/assets/js/sb-admin-2.js') }}"></script>
       <script src="{{ asset('/assets/js/lightbox.js') }}"></script>
-      <script src="{{ asset('/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
-      <script src="{{ asset('/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
-      <script src="{{ asset('/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
-      <script src="{{ asset('/vendor/bootstrap/js/bootstrap-datepicker.js') }}"></script>
+      <script src="{{ asset('/vendor/datatables/js/jquery.dataTables.min.js') }}"></script> -->
+      <!-- <script src="{{ asset('/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
+      <script src="{{ asset('/vendor/datatables-responsive/dataTables.responsive.js') }}"></script> -->
+      <!-- script src="{{ asset('/vendor/bootstrap/bootstrap-datepicker.js') }}"></script> -->
       @yield('javascript')
    </body>
 </html>

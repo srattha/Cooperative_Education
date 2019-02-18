@@ -44,8 +44,8 @@
       <script src="{{ asset('/vendor/datatables-plugins/dataTables.bootstrap.min.js') }}"></script>
       <script src="{{ asset('/vendor/datatables-responsive/dataTables.responsive.js') }}"></script>
       <script src="{{ asset('/assets/js/lightbox.js') }}"></script>
-      <style type="text/css">
-         @yield('css')
+      @yield('css')
+<style type="text/css">
         /* Remove dark-nav class from nav tag to see the light version  */
 * {
   padding: 0;
