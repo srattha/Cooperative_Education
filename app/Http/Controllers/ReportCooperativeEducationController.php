@@ -113,15 +113,16 @@ public function downloadExcelFile($type)
 {
 
    $student = Student::get()->toArray();
-
+ 
         foreach ($student as $key => $value) {
             //return $value;
+            //$Student = Student::where('user_id', $value['id'])->first();
             $company = Company::where('id',$value['company_id'])->first();
             $company_name = $company['company_name'];
             $faculty = Faculty::where('id',$value['faculty_id'])->first();
             $faculty->name = $faculty['name'];
-            $branch = Branch::where('id', $value['faculty_id'])->first();
-            $branch->id = $branch['name'];
+            $branch = Branch::where('id',$value['major'])->first();
+           /// $branch->id = $branch['name'];
             $head[] = array(
                 // 'id' => $value['id']
                 'ภาคเรียน' => $value['term'],
