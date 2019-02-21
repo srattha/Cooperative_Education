@@ -53,7 +53,24 @@ $html .= '<p style="width: 400px;/*border: 1px solid black;*/ position: absolute
 //row III
 $html .= '<p style="width: 400px;/*border: 1px solid black;*/ position: absolute;left: 155px;top: 242px;"><b>'.$branch->name.'</b></p>';
 //row IIII
-$html .= '<p style="width: 400px;/*border: 1px solid black;*/ position: absolute;left: 130px;top: 316px;"><b>'.$file->updated_at.'</b></p>';
+$date = explode("-", $file->updated_at);
+$day = explode(" ", $date[2]);
+switch (intval($date[1]))
+{ 
+case 1 : $month="มกราคม"; break;
+case 2 : $month="กุมภาพันธ์"; break;
+case 3 : $month="มีนาคม"; break;
+case 4 : $month="เมษายน"; break;
+case 5 : $month="พฤษภาคม"; break;
+case 6 : $month="มิถุนายน"; break;
+case 7 : $month="กรกฎาคม"; break;
+case 8 : $month="สิงหาคม"; break;
+case 9 : $month="กันยายน"; break;
+case 10 : $month="ตุลาคม"; break;
+case 11 : $month="พฤศจิกายน"; break;
+case 12 : $month="ธันวาคม"; break;
+}
+$html .= '<p style="width: 400px;/*border: 1px solid black;*/ position: absolute;left: 130px;top: 316px;"><b>'.$day[0].' '.$month.' '.(intval($date[0])+543).'</b></p>';
 $mpdf->WriteHTML ($html);
 $mpdf->Output();
 }

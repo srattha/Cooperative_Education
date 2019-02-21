@@ -459,23 +459,23 @@
    
         }
      });
-   });
+   }); 
    
-     $("#year").datepicker({
-       format: "yyyy",
-       viewMode: "years",
-       minViewMode: "years"
-    });
-     $("#year_study").datepicker({
-       format: "yyyy",
-       viewMode: "years",
-       minViewMode: "years"
-    });
-     $("#class_year").datepicker({
-       format: "yyyy",
-       viewMode: "years",
-       minViewMode: "years"
-    });
+    //  $("#year").datepicker({
+    //    format: "yyyy",
+    //    viewMode: "years",
+    //    minViewMode: "years"
+    // });
+    //  $("#year_study").datepicker({
+    //    format: "yyyy",
+    //    viewMode: "years",
+    //    minViewMode: "years"
+    // });
+    //  $("#class_year").datepicker({
+    //    format: "yyyy",
+    //    viewMode: "years",
+    //    minViewMode: "years"
+    // });
    });
 </script>
 @endsection

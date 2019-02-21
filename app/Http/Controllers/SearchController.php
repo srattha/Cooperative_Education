@@ -27,7 +27,7 @@ class SearchController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function index(){
+    public function index(){ 
          $faculty = Faculty::get();
          return $faculty;
         return view('search.search',['faculty' => $faculty]);
@@ -46,7 +46,7 @@ class SearchController extends Controller
      $student = Student::where('faculty_id', 'like', '%' . $request->faculty . '%')
     ->Where('major', 'like', '%' . $request->major . '%')
     ->Where('year', 'like', '%' . $request->year . '%')
-    ->paginate(25);
+    ->paginate(100);
      //return $student;
     foreach ($student as $key => $value) {
 

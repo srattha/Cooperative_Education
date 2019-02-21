@@ -67,7 +67,7 @@
                            <div class="col-sm-3 col-md-3" >
                               <div class="input-group input-group-sm">
                                  <span class="input-group-addon" id="sizing-addon1">ปีการศึกษา</span>
-                                 <input type="text" id="datepicker" / name="year" class="form-control"  placeholder="ปีการศึกษา" aria-describedby="sizing-addon1">
+                                 <input type="text" id="datepicker" name="year" class="form-control"  placeholder="ปีการศึกษา" aria-describedby="sizing-addon1">
                               </div>
                            </div>
                            <!--<div class="col-sm-2 col-md-2">
@@ -108,23 +108,25 @@
                      <table id="table_faculty_list" class="table table-hover table-bordered table-striped">
                         <thead>
                            <tr>
-                              <th class="text-center">พ.ศ.</th>
-                              <th class="text-center">บริษัท</th>
-                              <th class="text-center">จังหวัด</th>
-                              <th class="text-center">เบอร์โทรบริษัท</th>
-                              <th class="text-center">นักศึกษา</th>
-                              <th class="text-center">ผลงานนักศึกษา</th> 
+                              <th class="text">พ.ศ.</th>
+                              <th class="text">บริษัท</th>
+                              <th class="text">จังหวัด</th>
+                              <th class="text">เบอร์โทรบริษัท</th>
+                              <th class="text">นักศึกษา</th>
+                              <th class="text">เบอร์โทรนักศึกษา</th>
+                              <th class="text">ผลงานนักศึกษา</th> 
                            </tr>
                         </thead>
-                        <tbody class="text-center">
+                        <tbody>
                            @foreach ($student as $index => $students) 
                            <tr>
-                              <td>{{$students->year}}</td>
-                              <td>{{$students['company'][0]->company_name}}</td>
-                              <td>{{$students['company'][0]->province}}</td>
-                              <td>{{$students['company'][0]->tel}}</td>
-                               <td>{{$students->name_student}}</td>
-                              <td>
+                              <td class="text-right">{{$students->year}}</td>
+                              <td class="text-left">{{$students['company'][0]->company_name}}</td>
+                              <td class="text-left">{{$students['company'][0]->province}}</td>
+                              <td class="text-right">{{$students['company'][0]->tel}}</td>
+                              <td class="text-left">{{$students->name_student}}</td>
+                              <td class="text-right">{{str_replace('\n', "",$students->telephone)}}</td>
+                              <td class="text-left">
                                  <a href="down/<?php if(isset($students['file'][0]->name)){echo $students['file'][0]->name;} ?>"style="text-decoration:none; target="_blank">&nbsp;&nbsp;<?php if(isset($students['file'][0]->name)){echo $students['file'][0]->name;} ?></a>
                                  <br />
                               </td>
@@ -164,6 +166,7 @@
                         </tbody>
                      </table>
                   </div>
+                  {{ $student->links() }}
                   <div id="show_wait"></div>
                </div>
             </div>
@@ -214,11 +217,11 @@
    }
    });
    });
-   $("#datepicker").datepicker({
-     format: "yyyy",
-     viewMode: "years",
-     minViewMode: "years"
-   });
+   // $("#datepicker").datepicker({
+   //   format: "yyyy",
+   //   viewMode: "years",
+   //   minViewMode: "years"
+   // });
    });
 </script>
 @endsection
