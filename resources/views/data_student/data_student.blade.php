@@ -15,7 +15,7 @@
    border-right: 0;
    border-top-width: 0;
    border-right-width: 0; 
-   border-bottom-width: 0;
+   border-bottom-width: 0; 
    border-left-width: 0;
    background: none;
    font-size:13px;

@@ -224,7 +224,7 @@
                <br>
                <br>
                <div class="form-group">
-                  <label for="upload_file" class="control-label col-sm-3" style="font-size: 18px;" > อัพไฟล์</label>
+                  <label for="upload_file" class="control-label col-sm-3" style="font-size: 18px;" > อัพโหลดไฟล์</label>ขนาดไฟล์ไม่เกิน 10 MB
                   <div class="col-sm-5">
                   <input class="form-control" type="file" name="file" id="upload_file"></div>
                </div>
