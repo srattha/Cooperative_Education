@@ -6,7 +6,7 @@
 <br>
 <div class="row">
   <div class="panel panel-default">
-    <div class="panel-heading">
+    <div class="panel-heading"> 
       <h1>จัดการข้อมูลสาขาวิชา</h1>
     </div>
     <div class="panel-body">
@@ -42,11 +42,22 @@
           @endforeach
         </tbody>
       </table>
-
-
     </div>
   </div>
 </div>
+<hr> 
+<footer id="footer">
+  <div class="col-md-12" style="margin-top: 20px">
+    <div class="container-fluid">
+      <div class="row">           
+        <div class="col-sm-6">
+          <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
+            Deverloped By Patiphan Uthang And Yuwa Saewang
+        </div>
+      </div>
+    </div>
+  <div class="col-md-12" style="margin-top: 20px">
+</footer>
 @endsection
 @section('javascript')
 <script>

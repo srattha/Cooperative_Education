@@ -14,7 +14,7 @@ class StudentController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @return void 
      */
     public function __construct()
     {
@@ -93,45 +93,44 @@ class StudentController extends Controller
  
             }
         }
-    }
+    } 
 
     public function edit_student($id)
     {
-
+       //$id;
         $student = Student::where('id',$id)->first();
-        $company = Company::where('id',$student->company_id)->first();
+        // $company = Company::where('id',$student->company_id)->first(); 
         $faculty = Faculty::get();
         $branch = Branch::where('id', $student->major)->first();
-        return view('admin.student.edit_student',['student' => $student,'company' => $company, 'branch' => $branch, 'faculty' => $faculty]);
+        // return $id;
+        return view('admin.student.edit_student',['student' => $student, 'branch' => $branch, 'faculty' => $faculty]);
+        //,'company' => $company
     }
 
     public function update_student(Request $request)
     {
-       $update[] = ['term' => $request->term, 'year' => $request->year, 'activities' => $request->activities, 'institution' => $request->institution, 'campus' => $request->campus, 'faculty' => $request->faculty, 'major' => $request->major, 'student_id' => $request->student_id, 'identification_number' => $request->identification_number, 'name_student' => $request->name_student,
-              'year_study' => $request->year_study, 'class_year' => $request->class_year, 'gpa_past' => $request->gpa_past, 'gpa' => $request->gpa, 'birthday' => $request->birthday, 'telephone' => $request->telephone, 'is_active' => 1];
-        $update_student = Student::where('id',$request->student_ID)->first();
-        $add_student->term = $request->term;
-        $add_student->year = $request->year;
-        $add_student->activities = $request->activities;
-        $add_student->institution = $request->institution;
-        $add_student->campus = $request->campus;
-        $add_student->faculty_id = $request->faculty;
-        $add_student->major = $request->major;
-        $add_student->student_id = $request->student_id;
-        $add_student->identification_number = $request->identification_number;
-        $add_student->name_student = $request->name_student;
-        $add_student->year_study = $request->year_study;
-        $add_student->class_year = $request->class_year;
-        $add_student->gpa_past = $request->gpa_past;
-        $add_student->gpa = $request->gpa;
-        $add_student->birthday = $request->birthday;
-        $add_student->telephone = $request->telephone;
-        $add_student->save();
+        
+        $update_student = Student::where('id',$request->id)->first();
+        $update_student->term = $request->term;
+        $update_student->year = $request->year;
+        $update_student->activities = $request->activities;
+        $update_student->institution = $request->institution; 
+        $update_student->campus = $request->campus;
+        $update_student->faculty_id = $request->faculty;
+        $update_student->major = $request->major;
+        $update_student->student_id = $request->student_id;
+        $update_student->identification_number = $request->identification_number;
+        $update_student->name_student = $request->name_student;
+        $update_student->year_study = $request->year_study;
+        $update_student->class_year = $request->class_year;
+        $update_student->gpa_past = $request->gpa_past;
+        $update_student->gpa = $request->gpa;
+        $update_student->birthday = $request->birthday;
+        $update_student->telephone = $request->telephone;
+        $update_student->save();
         if ($update_student) {
-            return back()->with('success', 'Update Record successfully');
+           return back()->with('success', 'Update Record successfully');
         }
-
-
     }
 
     public function destroy($id)

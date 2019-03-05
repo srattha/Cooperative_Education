@@ -19,7 +19,7 @@
 
     <form action="{{ url('edit_faculty') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
       @csrf
-      <div>
+      <div> 
         <label for="text">คณะ</label>
         <input type="hidden" name="faculty_id" value="{{$faculty->id}}">
         <input type="text" name="name" value="{{$faculty->name}}" class="form-control">

@@ -65,7 +65,7 @@
           <th>post_code</th>
           <th>tel</th>
           <th>fix</th>
-          <th class="text-center">ลบข้อมูล</th>
+          <th class="text-center">แก้ไข</th>
         </tr>
       </thead>
       <tbody>
@@ -90,17 +90,29 @@
          <td>{{$companys->fax}}</td>
 
          <td style="align-content: center;">
-           <!--  <button type="button" class="btn btn-info btn-xs" onclick="location.href='{{ route('edit_establishment',['id'=>$companys->id]) }}'"><i class="fa fa-pencil-square-o"></i> แก้ไขข้อมูล</button> -->
+            <button type="button" class="btn btn-info btn-xs" onclick="location.href='{{ route('edit_establishment',['id'=>$companys->id]) }}'"><i class="fa fa-pencil-square-o"></i> แก้ไขข้อมูล</button>
          <button type="button" class="btn btn btn-danger btn-xs" onclick="if(confirm('Are you sure ?')) window.location.href = '{{ route('delete_establishment',['id'=>$companys->id]) }}'"><i class="fa fa-trash-o"></i> ลบข้อมูล</button>
          </td>
         </tr>
         @endforeach
       </tbody>
-
     </table>
   </div>
 </div>
 </div>
+<hr> 
+<footer id="footer">
+  <div class="col-md-12" style="margin-top: 20px">
+    <div class="container-fluid">
+      <div class="row">           
+        <div class="col-sm-6">
+          <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
+            Deverloped By Patiphan Uthang And Yuwa Saewang
+        </div>
+      </div>
+    </div>
+  <div class="col-md-12" style="margin-top: 20px">
+</footer>
 @endsection
 @section('javascript')
 <script>

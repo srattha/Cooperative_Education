@@ -18,18 +18,13 @@
     @endif
     <form action="{{ url('create_faculty') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
       @csrf
-      <div>
+      <div> 
         <label for="text">คณะ</label>
         <input type="text" name="name" class="form-control" id="pwd">
       </div>
       <br>
       <button class="btn btn-primary">OK</button>
     </form>
-
-
-
-
-
   </div>
 </div>
 </div>

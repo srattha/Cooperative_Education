@@ -6,7 +6,7 @@
 <br>
 <div class="row">
    <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading"> 
          <h1>จัดการข้อมูลนักศึกษา</h1>
       </div> 
       <div class="panel-body">
@@ -15,7 +15,7 @@
             <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
             <p>{{ Session::get('success') }}</p>
          </div>
-         @endif
+         @endif 
          <form  action="{{ url('create_student') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row">
@@ -81,14 +81,10 @@
                   <div class="input-group input-group-sm">
                      <span class="input-group-addon" id="sizing-addon1">คณะ</span>
                      <select id="faculty" name="faculty" class="form-control">
-                       <!--  <option selected>-กรุณาเลือกคณะ-</option>
+                        <option selected>-กรุณาเลือกคณะ-</option>
                         @foreach ($faculty as $index => $f)
                         <option value="{{$f->id}}">{{$f->name}}</option>
-                        @endforeach -->
-                        <!-- <option value="คณะบริหารธุรกิจและศิลปศาสตร์">คณะบริหารธุรกิจและศิลปศาสตร์</option>
-                           <option value="คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร">คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร</option>
-                           <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์ </option>
-                           <option value="คณะศิลปกรรมและสถาปัตยกรรมศาสตร์">คณะศิลปกรรมและสถาปัตยกรรมศาสตร์</option> -->
+                        @endforeach
                      </select>
                   </div>
                </div>
@@ -96,27 +92,6 @@
                   <div class="input-group input-group-sm">
                      <span class="input-group-addon" id="sizing-addon1">สาขาวิชา</span>
                      <select id="major" name="major" class="form-control">
-                        <!-- <option selected>-กรุณาเลือกสาขาวิชา-</option> -->
-                        <!--
-                           <option value="บช.บ. การบัญชี" >บช.บ. การบัญชี</option>
-                           <option value="บธ.บ. การจัดการ">บธ.บ. การจัดการ</option>
-                           <option value="บธ.บ. การตลาด">บธ.บ. การตลาด</option>
-                           <option value="บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์">บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์</option>
-                           <option value="ศศ.บ การท่องเที่ยวและการโรงแรม">ศศ.บ การท่องเที่ยวและารโรงแรม</option>
-                           <option value="ศศ.บ ภาษาอังกฤษเพื่อการสื่อสารสากล">ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล</option>
-                           <option value="วท.บ. เทคโนโลยีสารสนเทศ">วท.บ. เทคโนโลยีสารสนเทศ</option>
-                           <option value="คศ.บ. คหกรรมศาสตร์">คศ.บ. คหกรรมศาสตร์</option>
-                           <option value="ค.อ.บ. วิศวกรรมเครื่องกล">ค.อ.บ. วิศวกรรมเครื่องกล</option>
-                           <option value="วศ.บ. วิศวกรรมเครื่องกล">วศ.บ. วิศวกรรมเคื่องกล</option>
-                           <option value="ค.อ.บ. วิศวกรรมเครื่องกล">ค.อ.บ. วิศวกรรมเครื่องกล</option>
-                           <option value="วศ.บ. วิศวกรรมคอมพิวเตอร์">วศ.บ. วิศวกรรมคอมพิงเตอร์</option>
-                           <option value="วศ.บ. วิศวกรรมไฟฟ้า">วศ.บ. วิศวกรรมไฟฟ้า</option>
-                           <option value="วศ.บ. วิศวะกรรมอิเล็กทรอนิกส์">วศ.บ. วิศวะกรรมอิเล็กทรอนิกส์</option>
-                           <option value="วศ.บ. วิศวกรรมโยธา">วศ.บ. วิศวกรรมโยธา</option>
-                           <option value="ค.อ.บ วิศวกรรมอุตสาหการ">ค.อ.บ วิศวกรรมอุตสาหการ</option>
-                           <option value="วศ.บ. วิศวกรรมอุตสาหการ">วศ.บ. วิศวกรรมอุตสาหการ</option>
-                           <option value="ศบ.บ ออกแบบอุตสาหกรรม">ศบ.บ ออกแบบอุตสาหกรรม</option>
-                           <option value="ทล.บ. ออกแบบอุตสาหกรรม">ทล.บ. ออกแบบอุตสาหกรรม</option> -->
                      </select>
                   </div>
                </div>
@@ -147,7 +122,7 @@
                      <input type="number" name="class_year" class="form-control" id="class_year" placeholder="ปีที่รับการฝึก" aria-describedby="sizing-addon1" required>
                   </div>
                </div>
-            </div>
+            </div> 
             <br>
             <div class="row">
                <div class="col-sm-4" >
@@ -176,13 +151,33 @@
                      <br>
                      <button type="submit" class="btn btn-info">
                      <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
-                     <!-- <button class="btn btn-danger" type="button"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button> -->
+                      <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#modalalert"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button>
                   </div>
                </div>
             </div>
          </form>
       </div>
    </div>
+</div>
+<div class="modal in" id="modalalert">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title">คำเตือน !</h4>
+         </div>
+         <div class="modal-body">
+            <p>คุณแน่ใจหรือว่าต้องการยกเลิก  (สิ่งนี้)</p>
+            <div class="row">
+               <div class="col-12-xs text-center">
+                  <button class="btn btn-success btn-md" data-dismiss="modal" onclick="$('form')[1].reset();$('form')[0].reset();">Yes</button>
+                  <button class="btn btn-danger btn-md" data-dismiss="modal">No</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- /.modal-content -->
+   </div>
+   <!-- /.modal-dialog -->
 </div>
 @endsection
 @section('javascript')

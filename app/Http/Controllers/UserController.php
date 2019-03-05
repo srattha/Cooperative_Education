@@ -40,8 +40,15 @@ class UserController extends Controller
 
     }
 
+
+    public function createuser()
+    {
+        return view('admin.user.create_user');
+    }
+
      public function store(Request $request)
     {
+       // return $request->all();
 
         $add_user = new User; 
         $add_user->name = $request->name;
@@ -50,11 +57,23 @@ class UserController extends Controller
         $add_user->password = Hash::make($request->password);
         $add_user->save(); 
         if ($add_user) {
-           return back()->with('success', 'Insert Record successfully.');
+           return back()->with('success', 'Insert Record Successfully.'); 
        }
-
-
    }
+
+    public function update(Request $request, user $user)
+    {
+        // return $request->all();
+        $update_user = User::where('id',$request->id)->first();
+        $update_user->name = $request->name;
+        $update_user->user_type_id = $request->user_type_id;
+        $update_user->password = Hash::make($request->password);
+        $update_user->save();
+        if ($update_user) {
+           return back()->with('success', 'Update Record Successfully.');
+       }
+    }
+
 
    public function EditUser($id){
 
@@ -67,7 +86,7 @@ class UserController extends Controller
 
         $delete_user = User::where('id',$id)->delete();
         if($delete_user){
-          return back()->with('success', 'Insert Record successfully.');
+          return back()->with('success', 'Delete Record Successfully.');
         }else{
             return "error message..";
         }

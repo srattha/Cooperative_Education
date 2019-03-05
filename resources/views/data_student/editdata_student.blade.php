@@ -85,6 +85,7 @@
                   </div>
                </div>
                <br>
+               <!-- row-II -->
                <div class="row">
                   <div class="col-sm-6" >
                      <div class="input-group input-group-sm">
@@ -101,6 +102,7 @@
                   </div>
                </div>
                <br>
+               <!-- row-III -->
                <div class="row">
                   <div class="col-sm-4" >
                      <div class="input-group input-group-sm">
@@ -126,6 +128,7 @@
                   </div>
                </div>
                <br>
+               <!-- row-IIII -->
                <div class="row">
                   <div class="col-sm-4" >
                      <div class="input-group input-group-sm">
@@ -135,10 +138,6 @@
                            @foreach ($faculty as $index => $f)
                            <option value="{{$f->id}}" {{ "$f->id" == $data->faculty_id ? 'selected="selected"' : '' }}>{{$f->name}}</option>
                            @endforeach
-                           <!-- <option value="{{ $data->faculty }}" {{ "คณะบริหารธุรกิจและศิลปศาสตร์" == $data->faculty ? 'selected="selected"' : '' }}">คณะบริหารธุรกิจและศิลปศาสตร์</option>
-                              <option value="{{ $data->faculty }}" {{ "คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร" == $data->faculty ? 'selected="selected"' : '' }}">คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร</option>
-                              <option value="{{ $data->faculty }}" {{ "คณะวิศวกรรมศาสตร์" == $data->faculty ? 'selected="selected"' : '' }}">คณะวิศวกรรมศาสตร์</option>
-                              <option value="{{ $data->faculty }}" {{ "คณะศิลปกรรมและสถาปัตยกรรมศาสตร์" == $data->faculty ? 'selected="selected"' : '' }}">คณะศิลปกรรมและสถาปัตยกรรมศาสตร์</option> -->
                         </select>
                      </div>
                   </div>
@@ -149,26 +148,6 @@
                            class="form-control">
                            <!-- <option selected>-กรุณาเลือกสาขาวิชา-</option> -->
                            <option value="{{ $branch->id }}">{{ $branch->name }}</option>
-                           <!--
-                              <option value="{{ $data->major }}" {{ "บธ.บ. การจัดการ" == $data->major ? 'selected="selected"' : '' }}">บธ.บ. การจัดการ</option>
-                              <option value="{{ $data->major }}" {{ "การตลาด" == $data->major ? 'selected="selected"' : '' }}">การตลาด</option>
-                              <option value="{{ $data->major }}" {{ "บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์" == $data->major ? 'selected="selected"' : '' }}">บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์</option>
-                              <option value="{{ $data->major }}" {{ "ศศ.บ การท่องเที่ยวและารโรงแรม" == $data->major ? 'selected="selected"' : '' }}">ศศ.บ การท่องเที่ยวและารโรงแรม</option>
-                              <option value="{{ $data->major }}" {{ "ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล" == $data->major ? 'selected="selected"' : '' }}">ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล</option>
-                              
-                              <option value="{{ $data->major }}" {{ "วท.บ. เทคโนโลยีสารสนเทศ" == $data->major ? 'selected="selected"' : '' }}">วท.บ. เทคโนโลยีสารสนเทศ</option>
-                              <option value="{{ $data->major }}" {{ "คศ.บ. คหกรรมศาสตร์" == $data->major ? 'selected="selected"' : '' }}">คศ.บ. คหกรรมศาสตร์</option>
-                              <option value="{{ $data->major }}" {{ "ค.อ.บ. วิศวกรรมเครื่องกล" == $data->major ? 'selected="selected"' : '' }}">ค.อ.บ. วิศวกรรมเครื่องกล</option>
-                              <option value="{{ $data->major }}" {{ "วศ.บ. วิศวกรรมเคื่องกล" == $data->major ? 'selected="selected"' : '' }}">วศ.บ. วิศวกรรมเคื่องกล</option>
-                              <option value="{{ $data->major }}" {{ "วศ.บ. วิศวกรรมเคื่องกล" == $data->major ? 'selected="selected"' : '' }}">วศ.บ. วิศวกรรมเคื่องกล</option>
-                              <option value="{{ $data->major }}" {{ "ทล.บ. ออกแบบอุตสาหกรรม" == $data->major ? 'selected="selected"' : '' }}">ทล.บ. ออกแบบอุตสาหกรรม</option>
-                              <option value="{{ $data->major }}" {{ "วศ.บ. วิศวกรรมคอมพิงเตอร์" == $data->major ? 'selected="selected"' : '' }}">วศ.บ. วิศวกรรมคอมพิงเตอร์</option>
-                              <option value="{{ $data->major }}" {{ "วศ.บ. วิศวกรรมไฟฟ้า" == $data->major ? 'selected="selected"' : '' }}">วศ.บ. วิศวกรรมไฟฟ้า</option>
-                              <option value="{{ $data->major }}" {{ "วศ.บ. วิศวะกรรมอิเล็กทรอนิกส์" == $data->major ? 'selected="selected"' : '' }}">วศ.บ. วิศวะกรรมอิเล็กทรอนิกส์</option>
-                              <option value="{{ $data->major }}" {{ "วศ.บ. วิศวกรรมโยธา" == $data->major ? 'selected="selected"' : '' }}">วศ.บ. วิศวกรรมโยธา</option>
-                              <option value="{{ $data->major }}" {{ "ค.อ.บ วิศวกรรมอุตสาหการ" == $data->major ? 'selected="selected"' : '' }}">ค.อ.บ วิศวกรรมอุตสาหการ</option>
-                              <option value="{{ $data->major }}" {{ "วศ.บ. วิศวกรรมอุตสาหการ" == $data->major ? 'selected="selected"' : '' }}">ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล</option>
-                              <option value="{{ $data->major }}" {{ "ศบ.บ ออกแบบอุตสาหกรรม" == $data->major ? 'selected="selected"' : '' }}">ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล</option> -->
                         </select>
                      </div> 
                   </div>
@@ -180,6 +159,7 @@
                   </div>
                </div>
                <br>
+               <!-- row-IIIII -->
                <div class="row">
                   <div class="col-sm-4" >
                      <div class="input-group input-group-sm">
@@ -201,6 +181,7 @@
                   </div>
                </div>
                <br>
+               <!-- row-IIIIII -->
                <div class="row">
                   <div class="col-sm-4" >
                      <div class="input-group input-group-sm">
@@ -223,17 +204,20 @@
                </div>
                <br>
                <br>
+               <!-- file -->
                <div class="form-group">
-                  <label for="upload_file" class="control-label col-sm-3" style="font-size: 18px;" > อัพโหลดไฟล์</label>ขนาดไฟล์ไม่เกิน 10 MB
+                  <label for="upload_file" class="control-label col-sm-3" style="font-size: 18px;" > อัพโหลดไฟล์</label>ขนาดไฟล์ zip ไม่เกิน 200 MB
                   <div class="col-sm-5">
                   <input class="form-control" type="file" name="file" id="upload_file"></div>
                </div>
                <hr>
+               <!-- company -->
                <h3 style="color:#4e4e4e; font-weight:600; font-size: 18px;">
                   <p>ส่วนที่ 2 ข้อมูลสถานประกอบการ</p>
                   <small style="font-size: 13px;">(นอกเหนือจากระบบให้นักศึกษากรอกข้อมูลเพิ่มเติม)</small>
                </h3>
                <br>
+               <!-- row-I -->
                <div class="row">
                   <div class="col-sm-5">
                      <div class="input-group input-group-sm">
@@ -250,7 +234,7 @@
                <br>
                <br>
                <div class="row">
-                  <!-- row-I -->
+                  <!-- row-II -->
                   <div class="col-sm-6" >
                      <div class="input-group input-group-sm">
                         <span class="input-group-addon" id="sizing-addon1">ชื่อบริษัท </span>
@@ -266,6 +250,7 @@
                   </div>
                </div>
                <br>
+               <!-- row-III -->
                <div class="row">
                   <div class="col-sm-3" >
                      <div class="input-group input-group-sm">
@@ -287,6 +272,7 @@
                   </div>
                </div>
                <br>
+               <!-- row-IIII-->
                <div class="row">
                   <div class="col-sm-3" >
                      <div class="input-group input-group-sm">
@@ -314,6 +300,7 @@
                   </div>
                </div>
                <br>
+               <!-- row-IIIII -->
                <div class="row">
                   <div class="col-sm-3" >
                      <div class="input-group input-group-sm">
@@ -341,6 +328,7 @@
                   </div>
                </div>
                <br>
+               <!-- row-IIIIII -->
                <div class="row">
                   <div class="col-sm-4" >
                      <div class="input-group input-group-sm">
@@ -363,6 +351,7 @@
                   <!-- END row -->
                   <br>
                   <br>
+                  <!-- submit -->
                <div class="row" style="padding-left: 80px;">
                   <div class="col-md-6 col-md-offset-4">
                      <button type="submit" class="btn btn-info">
@@ -436,7 +425,7 @@
    });
      $('#faculty').change(function(){
       var faculty = $(this).val();
-   
+      $('#major').empty();
       $.post("/api/faculty",{id:faculty}, function( res ) {
         if(res){
          $.each(res, function(key, value) {
@@ -445,6 +434,7 @@
             .append($("<option></option>")
               .attr("value",value.id)
               .text(value.name));
+              $('#branch').hide();
          });
            console.log(res)
         }else{

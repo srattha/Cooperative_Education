@@ -19,7 +19,7 @@
         <input type="text" name="text"> -->
         <div class="col-sm-4" >
           <div class="input-group input-group-sm">
-            <span class="input-group-addon" id="sizing-addon1">สเตตัสไฟล์</span>
+            <span class="input-group-addon" id="sizing-addon1">จัดเรียงไฟล์เอกสาร</span>
             <select id="inputState" name="status"  class="form-control">
             <option selected>-กรุณาเลือก-</option>
             <option value="1">1</option>
@@ -73,6 +73,19 @@
     </div>
   </div>
 </div>
+<hr> 
+<footer id="footer">
+  <div class="col-md-12" style="margin-top: 20px">
+    <div class="container-fluid">
+      <div class="row">           
+        <div class="col-sm-6">
+          <p>Copyright <i class="fa fa-copyright"> 2018-Cooperative Education</i></p>
+            Deverloped By Patiphan Uthang And Yuwa Saewang
+        </div>
+      </div>
+    </div>
+  <div class="col-md-12" style="margin-top: 20px">
+</footer>
 @endsection
 @section('javascript')
 <script>

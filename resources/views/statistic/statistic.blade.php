@@ -17,28 +17,10 @@
                      <label class="col-md-4 control-label"><i class="glyphicon glyphicon-calendar"></i> ปี พ.ศ. &nbsp; : </label>
                      <div class="col-md-4">
                         <select id="class_year" name="class_year" class="form-control" >
-                           <option selected>-กรุณาเลือก ปี พ.ศ.-</option>
-                           <option value="2550" >2550</option>
-                           <option value="2551" >2551</option>
-                           <option value="2552" >2552</option>
-                           <option value="2553" >2553</option>
-                           <option value="2554" >2554</option>
-                           <option value="2555" >2555</option>
-                           <option value="2556" >2556</option>
-                           <option value="2557" >2557</option>
-                           <option value="2558" >2558</option>
-                           <option value="2559" >2559</option>
-                           <option value="2560" >2560</option>
-                           <option value="2561" >2561</option>
-                           <option value="2562" >2562</option>
-                           <option value="2563" >2563</option>
-                           <option value="2564" >2564</option>
-                           <option value="2565" >2565</option>
-                           <option value="2566" >2566</option>
-                           <option value="2567" >2567</option>
-                           <option value="2568" >2568</option>
-                           <option value="2569" >2569</option>
-                           <option value="2570" >2570</option>
+                          <option selected>-กรุณาเลือก ปี พ.ศ.-</option>
+                          @foreach ($year as $index => $y)
+                          <option value="{{$y}}">{{$y}}</option>
+                          @endforeach
                         </select>
                      </div>
                   </div>
@@ -85,26 +67,35 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script type="text/javascript">
    // Build the chart
-     $(document).ready(function() {
+   $(document).ready(function() {
+
    $('#class_year').change(function(){ 
-   
    var class_year = $(this).val();
    
    $.post("api/statistic",{item_id:class_year}, function( res ) {
-      console.log(res)
+   console.log(res)
    var items  = [];
-      if (res) {
-        // for(var i = 0; i < res.length; i++){
-        //     console.log(res[0].name)
-        //  }
-   
-         for (const r of res) { 
-         var list = {'name':r.y,'y':r.name};
-         items .push(list);
+   var color  = [];
+    if (res) {
+      for (const r of res) { 
+      var list = {'name':r.name,'y':r.y};
+      items .push(list);
+      if(r.key == 1){
+        color.push('#00FFFF'); 
+      }else if(r.key == 2){
+        color.push('#00FF00');
+      }else if(r.key == 3){
+        color.push('#800000');
+      }else{
+        color.push('#63320e');
       }
-   
-    console.log(items)
-   
+    }
+    // console.log(items)
+    // console.log(color)
+    Highcharts.setOptions({
+      colors: color,
+    });
+
    Highcharts.chart('container', {
    chart: {
      plotBackgroundColor: null,
@@ -121,19 +112,19 @@
    },
    plotOptions: {
      pie: {
-         allowPointSelect: true,
-         cursor: 'pointer',
-         dataLabels: {
-             enabled: false
-         },
-         showInLegend: true
-     }
+      allowPointSelect: true,
+      cursor: 'pointer',
+      dataLabels: {
+      enabled: false
+      },
+    showInLegend: true
+    }
    },
    series: [{
      name: 'จำนวนนักศึกษา',
      colorByPoint: true,
      data:items 
-   }]
+    }]
    });
    }
    });

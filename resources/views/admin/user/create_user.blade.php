@@ -7,7 +7,7 @@
 <div class="row">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h1>CreateUser</h1>
+      <h1>เพิ่มผู้ใช้งาน</h1>
     </div>
     <div class="panel-body">
        @if (Session::has('success'))
@@ -16,7 +16,7 @@
           <p>{{ Session::get('success') }}</p>
         </div>
         @endif
-      <form action="{{ url('CreateUser') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+      <form action="{{ url('createuser') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
         @csrf
         <div>
           <label for="text">ชื่อ-นามสกุล</label>
@@ -27,6 +27,7 @@
         <div>
          <label>กำหนดระดับผู้ใช้งาน</label>
          <select name="user_type_id"  class="form-control" required>
+          <option selected>-กรุณากำหนดผู้ใช้งาน-</option>
           <option value="1">นักศึกษา</option>
           <option value="2">ผู้ดูแลระบบ</option>
         </select>
@@ -40,11 +41,6 @@
       <br>
       <button class="btn btn-primary">OK</button>
     </form>
-
-
-
-
-
   </div>
 </div>
 </div>

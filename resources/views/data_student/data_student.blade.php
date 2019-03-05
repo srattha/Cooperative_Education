@@ -143,10 +143,6 @@
                         @foreach ($faculty as $index => $f)
                         <option value="{{$f->id}}">{{$f->name}}</option>
                         @endforeach
-                        <!-- <option value="คณะบริหารธุรกิจและศิลปศาสตร์">คณะบริหารธุรกิจและศิลปศาสตร์</option>
-                           <option value="คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร">คณะวิทยาศาสตร์และเทคโนโลยีการเกษตร</option>
-                           <option value="คณะวิศวกรรมศาสตร์">คณะวิศวกรรมศาสตร์ </option>
-                           <option value="คณะศิลปกรรมและสถาปัตยกรรมศาสตร์">คณะศิลปกรรมและสถาปัตยกรรมศาสตร์</option> -->
                      </select>
                   </div>
                </div>
@@ -154,27 +150,6 @@
                   <div class="input-group input-group-sm">
                      <span class="input-group-addon" id="sizing-addon1">สาขาวิชา</span>
                      <select id="major" name="major" class="form-control">
-                        <!-- <option selected>-กรุณาเลือกสาขาวิชา-</option> -->
-                        <!--
-                           <option value="บช.บ. การบัญชี" >บช.บ. การบัญชี</option>
-                           <option value="บธ.บ. การจัดการ">บธ.บ. การจัดการ</option>
-                           <option value="บธ.บ. การตลาด">บธ.บ. การตลาด</option>
-                           <option value="บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์">บธ.บ. ระบบสารสนเทศทางคอมพิวเตอร์</option>
-                           <option value="ศศ.บ การท่องเที่ยวและการโรงแรม">ศศ.บ การท่องเที่ยวและารโรงแรม</option>
-                           <option value="ศศ.บ ภาษาอังกฤษเพื่อการสื่อสารสากล">ศศ.บ ภาษาอังกฤตเพื่อการสื่อสารสากล</option>
-                           <option value="วท.บ. เทคโนโลยีสารสนเทศ">วท.บ. เทคโนโลยีสารสนเทศ</option>
-                           <option value="คศ.บ. คหกรรมศาสตร์">คศ.บ. คหกรรมศาสตร์</option>
-                           <option value="ค.อ.บ. วิศวกรรมเครื่องกล">ค.อ.บ. วิศวกรรมเครื่องกล</option>
-                           <option value="วศ.บ. วิศวกรรมเครื่องกล">วศ.บ. วิศวกรรมเคื่องกล</option>
-                           <option value="ค.อ.บ. วิศวกรรมเครื่องกล">ค.อ.บ. วิศวกรรมเครื่องกล</option>
-                           <option value="วศ.บ. วิศวกรรมคอมพิวเตอร์">วศ.บ. วิศวกรรมคอมพิงเตอร์</option>
-                           <option value="วศ.บ. วิศวกรรมไฟฟ้า">วศ.บ. วิศวกรรมไฟฟ้า</option>
-                           <option value="วศ.บ. วิศวะกรรมอิเล็กทรอนิกส์">วศ.บ. วิศวะกรรมอิเล็กทรอนิกส์</option>
-                           <option value="วศ.บ. วิศวกรรมโยธา">วศ.บ. วิศวกรรมโยธา</option>
-                           <option value="ค.อ.บ วิศวกรรมอุตสาหการ">ค.อ.บ วิศวกรรมอุตสาหการ</option>
-                           <option value="วศ.บ. วิศวกรรมอุตสาหการ">วศ.บ. วิศวกรรมอุตสาหการ</option>
-                           <option value="ศบ.บ ออกแบบอุตสาหกรรม">ศบ.บ ออกแบบอุตสาหกรรม</option>
-                           <option value="ทล.บ. ออกแบบอุตสาหกรรม">ทล.บ. ออกแบบอุตสาหกรรม</option> -->
                      </select>
                   </div>
                </div>
@@ -444,7 +419,7 @@
    });
      $('#faculty').change(function(){
       var faculty = $(this).val();
-   
+    $('#major').empty();
       $.post("/api/faculty",{id:faculty}, function( res ) {
         if(res){
          $.each(res, function(key, value) {
@@ -453,6 +428,7 @@
             .append($("<option></option>")
               .attr("value",value.id)
               .text(value.name));
+              $('#branch').hide();
          });
            console.log(res)
         }else{

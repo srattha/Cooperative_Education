@@ -24,7 +24,6 @@ public function __construct()
     }
 public function mpdf_report($id)
 {
-
     $Student = Student::where('user_id', $id)->first();
     $faculty = Faculty::where('id', $Student->faculty_id)->first();
     $branch = Branch::where('id', $Student->major)->first(); 
@@ -70,7 +69,7 @@ case 10 : $month="ตุลาคม"; break;
 case 11 : $month="พฤศจิกายน"; break;
 case 12 : $month="ธันวาคม"; break;
 }
-$html .= '<p style="width: 400px;/*border: 1px solid black;*/ position: absolute;left: 130px;top: 316px;"><b>'.$day[0].' '.$month.' '.(intval($date[0])+543).'</b></p>';
+$html .= '<p style="width: 400px;/*border: 1px solid black;*/ position: absolute;left: 130px;top: 316px;"><b>'.intval($day[0]).' '.$month.' '.(intval($date[0])+543).'</b></p>';
 $mpdf->WriteHTML ($html);
 $mpdf->Output();
 }
@@ -167,26 +166,6 @@ $html .= '<p style="width: 344px;/*border: 1px solid black;*/ position: absolute
 $html .= '<p style="width: 190px;/*border: 1px solid black;*/ position: absolute;left: 580px;top: 748;"><b>'.$company->coordinator_number.'</b></p>';
 $mpdf->WriteHTML ($html);
 $mpdf->Output();
-    //$mpdf = new \Mpdf\Mpdf();
-    //$mpdf->SetImportUse();
-    //$mpdf->SetDocTemplate('../../../temple.pdf', true);
-//$mpdf->WriteHTML ('<h1>Hello world!</h1>');
-//return $mpdf->Output();
-    // $data = [
-    //     'foo' => 'bar'
-    // ]; 
-    // $mpdf = new \Mpdf\Mpdf();
-    // // return view('data_student.mpdf_student',['mpdf' => $mpdf]);
-    // // $config = ['instanceConfigurator' => function($mpdf) {
-    // //     $mpdf->SetImportUse();
-    // //     $mpdf->SetDocTemplate('../../public/temple.pdf', true);
-    // // }];
-  // / $pdf = PDF::loadView('mpdf_student',$data , [], $config);
-   //  return $pdf->stream('document.pdf');
-   // ////  $pdf = new PDF;
-        
-   //  $mpdf->loadView('data_student.mpdf_student');
-    // return $mpdf->stream('mpdf_student.pdf');
 }
 
 // public function __construct()  
@@ -224,15 +203,7 @@ public function add_data_student(Request $request)
 {
 // return $request->all();
     if ($request->hasFile('file')) {
-//                 $file = $request->file('file');
-// $extension = $file->getClientOriginalExtension(); // you can also use file name
-//  $fileName = time().'.'.$extension;
-// $path = public_path().'/adminpdf';
-// $uplaod = $file->move($path,$fileName);
-// $fileModel = new File;
-// $fileModel->user_id = $request->user_id;
-// $fileModel->name = $fileName;
-// $fileModel->save();
+//                
 }
 
     $faculty = Faculty::get();
@@ -439,27 +410,27 @@ $update_data_student->telephone = $request->telephone;
 $update_data_student->save();
 if ($update_data_student) {
    if ($request->hasFile('file')) {
-       $file = $request->file('file');
-    $deleteFile = File::where('user_id',$user->id)->first();
-
+        $file = $request->file('file');
+        $deleteFile = File::where('user_id',$user->id)->first();
     if ($deleteFile) {
-          $delete_faculty = File::where('id',$deleteFile->id)->delete();
-          
-          if(file_exists(public_path('/adminpdf/' . $deleteFile->name))){
-
-      unlink(public_path('/adminpdf/' . $deleteFile->name));
-
+        $delete_faculty = File::where('id',$deleteFile->id)->delete();
+    if(file_exists(public_path('/adminpdf/' . $deleteFile->name))){
+    unlink(public_path('/adminpdf/' . $deleteFile->name));
     }else{
-
-      dd('File does not exists.');
-
+    dd('File does not exists.');
     }
-       }   
+}
 //$extension = $file->getClientOriginalExtensionName();  // you can also use file name
+ $max_size = 209715200;
 $fileName = $file->getClientOriginalName();
+ $fileSize= $file->getClientSize();
+if ( $fileSize > $max_size  ) {
+   Session::flash('error', 'ขาดไฟล์ไหญ่เกินไป');
+    return redirect()->back();
+}
+//return "ss";
 $path = public_path().'/adminpdf';
 $uplaod = $file->move($path,$fileName);
-
 $fileModel = new File; 
 $fileModel->user_id = $user->id;
 $fileModel->name = $fileName;

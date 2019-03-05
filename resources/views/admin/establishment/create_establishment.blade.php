@@ -6,7 +6,7 @@
 <br>
 <div class="row">
    <div class="panel panel-default"> 
-      <div class="panel-heading">
+      <div class="panel-heading"> 
          <h1>จัดการข้อมูลสถานประกอบการ</h1>
       </div>
       <div class="panel-body">
@@ -132,17 +132,37 @@
                <br>
               <div class="row">
                   <div class="col-md-12"></div>
-                  <div class="container" style="padding-left: 520px;margin-top: 50px;">
+                  <div class="container" style="padding-left: 400px;margin-top: 50px;">
                      <br>
                      <button type="submit" class="btn btn-info">
                      <i class="fa fa-floppy-o " aria-hidden="true"></i> บันทึก</button>
-                     <!-- <button class="btn btn-danger" type="button"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button> -->
+                     <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#modalalert"> <i class="fa fa-times-circle-o" aria-hidden="true"></i> ยกเลิก</button>
                   </div>
                </div>
             </div>
          </form>
       </div>
    </div>
+</div>
+<div class="modal in" id="modalalert">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title">คำเตือน !</h4>
+         </div>
+         <div class="modal-body">
+            <p>คุณแน่ใจหรือว่าต้องการยกเลิก  (สิ่งนี้)</p>
+            <div class="row">
+               <div class="col-12-xs text-center">
+                  <button class="btn btn-success btn-md" data-dismiss="modal" onclick="$('form')[1].reset();$('form')[0].reset();">Yes</button>
+                  <button class="btn btn-danger btn-md" data-dismiss="modal">No</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- /.modal-content -->
+   </div>
+   <!-- /.modal-dialog -->
 </div>
 @endsection
 @section('javascript')

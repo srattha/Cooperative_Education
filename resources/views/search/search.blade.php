@@ -108,13 +108,13 @@
                      <table id="table_faculty_list" class="table table-hover table-bordered table-striped">
                         <thead>
                            <tr>
-                              <th class="text">พ.ศ.</th>
-                              <th class="text">บริษัท</th>
-                              <th class="text">จังหวัด</th>
-                              <th class="text">เบอร์โทรบริษัท</th>
-                              <th class="text">นักศึกษา</th>
-                              <th class="text">เบอร์โทรนักศึกษา</th>
-                              <th class="text">ผลงานนักศึกษา</th> 
+                              <th class="text-center">พ.ศ.</th>
+                              <th class="text-center">บริษัท</th>
+                              <th class="text-center">จังหวัด</th>
+                              <th class="text-center">เบอร์โทรบริษัท</th>
+                              <th class="text-center">นักศึกษา</th>
+                              <th class="text-center">เบอร์โทรนักศึกษา</th>
+                              <th class="text-center">ผลงานนักศึกษา</th> 
                            </tr>
                         </thead>
                         <tbody>
@@ -196,6 +196,7 @@
    
       var faculty = $(this).val();
       var $select = $('#major');
+      $('#major').empty();
       $.post("/api/faculty",{id:faculty}, function( res ) {
    
        if(res.length){
@@ -203,6 +204,7 @@
           $.each(res,function(key, value)
           {
              $select.append('<option value=' + value.id + '>' + value.name + '</option>');
+              $('#branch').hide();
           });
        //  $.each(res, function(key, value) {
        //    $('#major')

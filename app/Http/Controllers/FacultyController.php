@@ -87,7 +87,7 @@ class FacultyController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request 
      * @param  \App\faculty  $faculty
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response 
      */
     public function update(Request $request, faculty $faculty)
     {
