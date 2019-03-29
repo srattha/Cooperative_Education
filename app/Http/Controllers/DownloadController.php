@@ -28,5 +28,5 @@ class DownloadController extends Controller
          //return $file;
         return view('download.download', ['file' => $file]);
     }
-   
+    
 }

@@ -5,7 +5,7 @@
 @section('content')
 <br>
 <div class="row">
-  <div class="panel panel-default">
+  <div class="panel panel-default"> 
     <div class="panel-heading">
       <h1>จัดการข้อมูลนักศึกษา</h1>
     </div>
@@ -42,7 +42,7 @@
         <button class="btn btn-primary"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Import File</button>
       </form>
       <br>
-      <!-- <button class="btn btn-primary" onclick="location.href='{{ route('CreateUser') }}'">Create User</button> -->
+      
       <br>
       <br>
       <table  id="dataTables-example" class="table table-striped table-bordered table-hover" style="width:100%;">

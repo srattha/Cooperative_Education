@@ -9,7 +9,7 @@
       <div class="col-md-12">
          <div class="panel panel-default">
             <div class="panel-heading">
-               <h3 class="panel-title" ><i class="fa fa-bar-chart"></i>&nbsp;รายงานนักศึกษาโครงงานสหกิจศึกษา</h3>
+               <h3 class="panel-title" ><i class="fa fa-bar-chart"></i>&nbsp;กราฟแสดงจำนวนนักศึกษาสหกิจศึกษาตาม คณะ</h3>
             </div>
             <div class="panel-body">
                <div class="form-horizontal">
@@ -104,7 +104,7 @@
      type: 'pie'
    },
    title: {
-     text: 'สรุปนักศึกษาโครงการสหกิจศึกษา' 
+     text: 'กราฟแสดงจำนวนนักศึกษาสหกิจศึกษาตาม คณะ' 
    },
    tooltip: {
      pointFormat: '<b>{series.name}</b> : {point.y} คน',

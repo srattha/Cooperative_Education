@@ -108,24 +108,24 @@
                      <table id="table_faculty_list" class="table table-hover table-bordered table-striped">
                         <thead>
                            <tr>
-                              <th class="text-center">พ.ศ.</th>
-                              <th class="text-center">บริษัท</th>
-                              <th class="text-center">จังหวัด</th>
-                              <th class="text-center">เบอร์โทรบริษัท</th>
-                              <th class="text-center">นักศึกษา</th>
-                              <th class="text-center">เบอร์โทรนักศึกษา</th>
-                              <th class="text-center">ผลงานนักศึกษา</th> 
+                              <th class="text-left">พ.ศ.</th>
+                              <th class="text-left">บริษัท</th>
+                              <th class="text-left">จังหวัด</th>
+                              <th class="text-left">เบอร์โทรบริษัท</th>
+                              <th class="text-left">นักศึกษา</th>
+                              <th class="text-left">เบอร์โทรนักศึกษา</th>
+                              <th class="text-left">ผลงานนักศึกษา</th> 
                            </tr>
                         </thead>
                         <tbody>
                            @foreach ($student as $index => $students) 
                            <tr>
-                              <td class="text-right">{{$students->year}}</td>
+                              <td class="text-left">{{$students->year}}</td>
                               <td class="text-left">{{$students['company'][0]->company_name}}</td>
                               <td class="text-left">{{$students['company'][0]->province}}</td>
-                              <td class="text-right">{{$students['company'][0]->tel}}</td>
+                              <td class="text-left">{{$students['company'][0]->tel}}</td>
                               <td class="text-left">{{$students->name_student}}</td>
-                              <td class="text-right">{{str_replace('\n', "",$students->telephone)}}</td>
+                              <td class="text-left">{{str_replace('\n', "",$students->telephone)}}</td>
                               <td class="text-left">
                                  <a href="down/<?php if(isset($students['file'][0]->name)){echo $students['file'][0]->name;} ?>"style="text-decoration:none; target="_blank">&nbsp;&nbsp;<?php if(isset($students['file'][0]->name)){echo $students['file'][0]->name;} ?></a>
                                  <br />
